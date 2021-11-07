@@ -36,6 +36,8 @@ const style = {
   },
 };
 
+
+
 const UserTypeSignup = () => {
   return (
     <div>
