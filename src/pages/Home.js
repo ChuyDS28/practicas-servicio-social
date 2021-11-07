@@ -44,11 +44,6 @@ const style = {
     margin: "auto",
     marginTop: "-100px",
   },
-  cardImg: {
-    maxHeight: "200px",
-    objectFit: "cover",
-    filter: "brightness(0.8)",
-  },
 };
 
 const Home = () => {
