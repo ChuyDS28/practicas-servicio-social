@@ -135,7 +135,7 @@ const Home = () => {
             titulo="Consultar historial total de registros"
             subtitulo="Puedes ver el nombre de todos los programas."
             min="LISTADO"
-            imag="https://images.pexels.com/photos/1122865/pexels-photo-1122865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            imag="https://images.pexels.com/photos/1476243/pexels-photo-1476243.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             link="/historialRegistros"
           />
           <Tarjeta
