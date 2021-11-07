@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const style = {
   cardImg: {
-    maxHeight: "300px",
+    
     width: "100%",
     objectFit: "cover",
     height: "100%",
@@ -23,7 +23,7 @@ return(
               />
             </div>
             <div className="card-stacked">
-              <div className="card-content" style={{minHeight:"350px"}}>
+              <div className="card-content" style={{minHeight:"180px"}}>
                 <span className="card-title">{props.user}</span>
                 <p>
                   {props.description}
