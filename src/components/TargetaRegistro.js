@@ -23,7 +23,7 @@ return(
               />
             </div>
             <div className="card-stacked">
-              <div className="card-content">
+              <div className="card-content" style={{minHeight:"350px"}}>
                 <span className="card-title">{props.user}</span>
                 <p>
                   {props.description}
