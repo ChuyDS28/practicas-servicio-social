@@ -7,9 +7,7 @@ const style = {
     objectFit: "cover",
     filter: "brightness(0.8)",
   },
-  cardsize: {
-    maxHeight: "800px",
-  },
+
 };
 
 const Tarjeta = (props) => {
@@ -25,7 +23,7 @@ const Tarjeta = (props) => {
                 />
                 <span className="card-title">{props.titI}</span>
               </div>
-              <div className="card-content" style={{minHeight:"200px"}}>
+              <div className="card-content" style={{minHeight:"220px"}}>
                 <span className="card-title">
                   {props.titulo}
                 </span>
