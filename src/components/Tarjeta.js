@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const style = {
   cardImg: {
-  
     objectFit: "cover",
     filter: "brightness(0.8)",
   },
@@ -15,7 +14,7 @@ const Tarjeta = (props) => {
           <div className="col s12 m6 l4 center" style={style.cardsize}>
             <div className="card vertical"
             >
-              <div className="card-image " style={{minHeight:"220px"}} >
+              <div className="card-image ">
                 <img
                   style={style.cardImg}
                   src={props.imag}
