@@ -92,5 +92,5 @@ const UserTypeSignup = () => {
     </div>
   );
 };
-//pusimos los mismos sibtitulos porque espramos futuros cambios.
+
 export default UserTypeSignup;

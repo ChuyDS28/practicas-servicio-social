@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const style = {
   cardImg: {
-    maxHeight: "300px", //ACA HAY DUDA, SI MARCA ERROR LO QUITAMOS
+    maxHeight: "300px",
     width: "100%",
     objectFit: "cover",
     height: "100%",
@@ -18,7 +18,7 @@ return(
             <div className="card-image">
               <img
                 src={props.pic}
-                alt="" //preguntar que era "revisor"
+                alt=""
                 style={style.cardImg}
               />
             </div>
