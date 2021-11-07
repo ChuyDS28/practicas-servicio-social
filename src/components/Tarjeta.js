@@ -3,25 +3,25 @@ import { Link } from "react-router-dom";
 
 const style = {
   cardImg: {
-   
+    mixHeight: "200px",
     objectFit: "cover",
     filter: "brightness(0.8)",
   },
 };
 
-const cardsize ={
+//const cardsize ={
 
-   dimension: {
+  //dimension: {
 
-    maxHeight: "200px",
-   },
-};
+   // maxHeight: "200px",
+  // }, cardsize={cardsize.dimension}
+//};
 
 const Tarjeta = (props) => {
     return ( 
           <div className="col s12 m6 l4 center">
             <div className="card vertical"
-            cardsize={cardsize.dimension}>
+            >
               <div className="card-image">
                 <img
                   style={style.cardImg}
