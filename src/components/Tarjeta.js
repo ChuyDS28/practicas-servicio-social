@@ -13,13 +13,9 @@ const cardsize ={
 
    dimension: {
 
-    mixHeight: "200px",
-
-   }
-
-
-
-}
+    maxHeight: "200px",
+   },
+};
 
 const Tarjeta = (props) => {
     return ( 
