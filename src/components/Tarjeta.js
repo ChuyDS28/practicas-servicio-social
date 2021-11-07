@@ -23,7 +23,7 @@ const Tarjeta = (props) => {
                 <span className="card-title">{props.titI}</span>
               </div>
               <div className="card-content" style={{minHeight:"220px"}}>
-                <span className="card-title">
+                <span className="card-title" style={{minHeight:"100px"}}>
                   {props.titulo}
                 </span>
                 <p>{props.subtitulo}</p>
