@@ -73,13 +73,7 @@ const UserTypeSignup = () => {
           link="/signup/Subdirector"
           pic="https://picsum.photos/400/400?random=3"
         />
-        <TargetaRegistro
-          user="Administrador "
-          description="Tendra acceso a ver los registros pendientes por revisar
-                además de las acciones de contenido que le correspondan.."
-          link="/signup/Administrador"
-          pic="https://picsum.photos/400/400?random=4"
-        />
+       
         <TargetaRegistro
           user="Director Academico "
           description="Tendra acceso a ver los registros pendientes por revisar
@@ -87,7 +81,13 @@ const UserTypeSignup = () => {
           link="/signup/Director%20Academico"
           pic="https://picsum.photos/400/400?random=5"
         />
-    
+     <TargetaRegistro
+          user="Administrador"
+          description="Tendra acceso a ver los registros pendientes por revisar
+                además de las acciones de contenido que le correspondan.."
+          link="/signup/Administrador"
+          pic="https://picsum.photos/400/400?random=1"
+        />
       </main>
 
       <Footer />

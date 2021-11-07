@@ -13,18 +13,21 @@ const style = {
 
 const TargetaRegistro = (props) => {
 return(            
-<div className="col s12 m6 l6 center">    
- <div className="card horizontal">
-            <div className="card-image">
+<div className="col s12 m6 l6 center" >    
+ <div className="card horizontal"         style={{maxWidth:"380px"}}>
+            <div className="card-image"  >
               <img
                 src={props.pic}
                 alt=""
                 style={style.cardImg}
-                style={{minHeight:"180px"}}
+                style={{minHeight:"300px"}}
+        
+                
               />
             </div>
             <div className="card-stacked">
-              <div className="card-content" style={{minHeight:"180px"}}>
+              <div className="card-content" style={{maxHeight:"230px"}}
+              >
                 <span className="card-title">{props.user}</span>
                 <p>
                   {props.description}
