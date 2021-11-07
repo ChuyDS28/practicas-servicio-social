@@ -146,7 +146,7 @@ const Home = () => {
           <Tarjeta
             titI="Registros"
             titulo="Consultar historial total registros vigentes"
-            subtitulo="Puedes ver el listado de todos los programas vigentes."
+            subtitulo="Puedes ver el listado de todos los programas lorem asdnapksdmapkdfnapsdkapdfnapsdkpdnpasdkapsdjpakdpakosdpa."
             min="LISTADO"
             imag="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             link="/historialRegistrosVigentes"

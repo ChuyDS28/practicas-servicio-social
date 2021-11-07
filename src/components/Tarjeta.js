@@ -3,19 +3,11 @@ import { Link } from "react-router-dom";
 
 const style = {
   cardImg: {
-    mixHeight: "200px",
+    maxHeight: "200px",
     objectFit: "cover",
     filter: "brightness(0.8)",
   },
 };
-
-//const cardsize ={
-
-  //dimension: {
-
-   // maxHeight: "200px",
-  // }, cardsize={cardsize.dimension}
-//};
 
 const Tarjeta = (props) => {
     return ( 
