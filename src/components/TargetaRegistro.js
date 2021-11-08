@@ -11,6 +11,7 @@ const style = {
   },
 };
 
+
 const TargetaRegistro = (props) => {
 return(            
 <div className="col s12 m6 l6 center">    
