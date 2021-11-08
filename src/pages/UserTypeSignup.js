@@ -36,15 +36,12 @@ const style = {
   },
 };
 
-const HeaderImg = style.headerImg
-const headerImg = style
-
 const UserTypeSignup = () => {
   return (
     <div>
       <header style={{ position: "relative", height: "50vh" }}>
         <img
-          style={HeaderImg}
+          style={style.headerImg}
           src="https://picsum.photos/1800/900"
           alt=""
         />
