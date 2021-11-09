@@ -82,7 +82,7 @@ const UserTypeSignup = () => {
           pic="https://picsum.photos/400/400?random=5"
         />
      <TargetaRegistro
-          user="Administrador"
+          user="Administra"
           description="Tendra acceso a ver los registros pendientes por revisar
                 además de las acciones de contenido que le correspondan.."
           link="/signup/Administrador"
