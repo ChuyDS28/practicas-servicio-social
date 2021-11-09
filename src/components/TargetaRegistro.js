@@ -1,13 +1,16 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+
 const style = {
   cardImg: {
     
     width: "100%",
     objectFit: "cover",
     height: "100%",
+
   },
 };
+
 const TargetaRegistro = (props) => {
 return(            
 <div className="col s12 m6 l6 center" >    
