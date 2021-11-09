@@ -41,5 +41,6 @@ return(
           </div>
         </div>
 );
+//delgadillo es gai
 }
 export default TargetaRegistro;
