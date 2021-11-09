@@ -4,22 +4,21 @@ import { Link } from "react-router-dom";
 const style = {
   cardImg: {
     
-    width: "100%",
+    minWidth: "170px",
     objectFit: "cover",
-    height: "100%",
+    height: "300px",
   },
 };
 
 const TargetaRegistro = (props) => {
 return(            
 <div className="col s12 m6 l6 center" >    
- <div className="card horizontal" style={{maxWidth:"380px"}}>
+ <div className="card horizontal " style={{minWidth:"400px"}}>
             <div className="card-image" >
               <img
                 src={props.pic}
                 alt=""
                 style={style.cardImg}
-                style={{minHeight:"300px"}}
               />
             </div>
             <div className="card-stacked">

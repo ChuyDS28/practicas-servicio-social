@@ -59,7 +59,7 @@ const UserTypeSignup = () => {
           </div>
         </div>
       </header>
-      <main className="row container section">
+      <main className="row container section" style={{minWidth:"100%"}} >
         <TargetaRegistro
           user="Revisor"
           description="Tendra acceso a ver los registros pendientes por revisar además de las acciones de contenido que le correspondan.."
