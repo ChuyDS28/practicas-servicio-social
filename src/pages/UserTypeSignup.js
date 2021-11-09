@@ -13,7 +13,7 @@ const style = {
   },
   headerFilter: {
     position: "absolute",
-    width: "100%",
+    width: "100%", 
     maxHeight: "100%",
     top: "0",
     height: "100%",
