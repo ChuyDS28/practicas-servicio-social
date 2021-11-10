@@ -15,12 +15,13 @@ const style = {
 
 
 const TargetaRegistro = (props) => {
+const { pic, user, description, link } = props;
 return(            
 <div className="col s12 m6 l6 center" >    
  <div className="card horizontal " style={{minWidth:"400px"}}>
             <div className="card-image" >
               <img
-                src={props.pic}
+                src={pic}
                 alt=""
                 style={style.cardImg}
               />
@@ -28,14 +29,14 @@ return(
             <div className="card-stacked">
               <div className="card-content" style={{minWidth:"230px"}}
               >
-                <span className="card-title">{props.user}</span>
+                <span className="card-title">{user}</span>
                 <p>
-                  {props.description}
+                  {description}
                 </p>
               </div>
               <div className="card-action" >
                 <Link
-                  to={props.link} 
+                  to={link} 
                   className="waves-effect waves-light btn-small">
                   Registrarse
                 </Link>
