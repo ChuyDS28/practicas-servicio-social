@@ -10,6 +10,7 @@ const style = {
 };
 
 const Tarjeta = (props) => {
+  const {titI, titulo, subtitulo, min, imag, link} = props;
     return ( 
           <div className="col s12 m6 l4 center">
             <div className="card vertical"
@@ -17,20 +18,20 @@ const Tarjeta = (props) => {
               <div className="card-image ">
                 <img
                   style={style.cardImg}
-                  src={props.imag}
+                  src={imag}
                   alt=""
                 />
-                <span className="card-title">{props.titI}</span>
+                <span className="card-title">{titI}</span>
               </div>
               <div className="card-content" style={{minHeight:"220px"}}>
                 <span className="card-title" style={{minHeight:"100px"}}>
-                  {props.titulo}
+                  {titulo}
                 </span>
-                <p>{props.subtitulo}</p>
+                <p>{subtitulo}</p>
               </div>
               <div className="card-action teal">
-                <Link to={props.link} className=" white-text ">
-                  Ver {props.min}
+                <Link to={link} className=" white-text ">
+                  Ver {min}
                   <i className="material-icons right">east</i>
                 </Link>
               </div>
