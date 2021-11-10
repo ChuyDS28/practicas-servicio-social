@@ -45,6 +45,6 @@ return(
           </div>
         </div>
 );
-//todo
+
 }
 export default TargetaRegistro;
