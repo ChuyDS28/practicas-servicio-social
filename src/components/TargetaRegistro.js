@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
+
 const style = {
   cardImg: {
     
@@ -10,7 +11,7 @@ const style = {
   },
 };
  
-//const {user, description, link, pic} = props
+
 
 
 const TargetaRegistro = (props) => {

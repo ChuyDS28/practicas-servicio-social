@@ -44,7 +44,7 @@ const UserTypeSignup = () => {
       <header style={{ position: "relative", height: "50vh" }}>
         <img
           style={style.headerImg}
-          src="https://picsum.photos/1800/900"
+          src="https://th.bing.com/th/id/OIP.ZHP6rhb75I4PDC7YF8isPAHaFL?pid=ImgDet&rs=1"
           alt=""
         />
         <div style={style.headerFilter}></div>
@@ -94,5 +94,5 @@ const UserTypeSignup = () => {
     </div>
   );
 };
-
+//asd
 export default UserTypeSignup;
