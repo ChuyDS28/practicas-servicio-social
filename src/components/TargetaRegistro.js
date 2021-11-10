@@ -9,44 +9,32 @@ const style = {
     height: "300px",
   },
 };
-
-const props = {
  
-user:{},
-description:"",
-link:"",
-pic:{
-   alt="",
-style={style.cardImg}},
-};
-
-const {user, description, link, pic} = props.propiedades
+//const {user, description, link, pic} = props
 
 
-
-
-
-const TargetaRegistro = () => {
+const TargetaRegistro = (props) => {
 return(            
 <div className="col s12 m6 l6 center" >    
  <div className="card horizontal " style={{minWidth:"400px"}}>
             <div className="card-image" >
               <img
-                src={pic}
-               
+                src={props.pic}
+                alt=""
+                style={style.cardImg}
               />
             </div>
             <div className="card-stacked">
               <div className="card-content" style={{minWidth:"230px"}}
               >
-                <span className="card-title">{user}</span>
+                <span className="card-title">{props.user}</span>
                 <p>
-                  {description}
+                  {props.description}
                 </p>
               </div>
               <div className="card-action" >
                 <Link
-                  to={link} 
+                  to={props.link} 
                   className="waves-effect waves-light btn-small">
                   Registrarse
                 </Link>
