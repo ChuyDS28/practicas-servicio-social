@@ -44,18 +44,15 @@ const CentrosDVDR = () => {
       <header style={{ position: "relative", height: "50vh" }}>
         <img
           style={style.headerImg}
-          src="https://picsum.photos/1800/900"
+          src="http://4.bp.blogspot.com/-HUqCuNLD1-M/T8GBtFawSzI/AAAAAAAAAIg/OR3FtRABczE/s1600/Mapa_Mexico_Con_Bandera.png"
           alt=""
         />
         <div style={style.headerFilter}></div>
         <div className=" " style={style.headerTitle}>
           <h3 style={{ fontSize: "5rem" }}>Registro</h3>
           <div style={style.subtitleContainer}>
-            <h4>Bienvenido</h4>
-            <p>
-              Seleccione su
-              <span className="purple-text text-accent-1"> usuario</span>
-            </p>
+            <h4>CENTROS DENTRO DEL PAIS</h4>
+            
           </div>
         </div>
       </header>
