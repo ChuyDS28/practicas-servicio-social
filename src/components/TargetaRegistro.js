@@ -38,7 +38,7 @@ return(
                 <Link
                   to={link} 
                   className="waves-effect waves-light btn-small">
-                  Registrarse
+                  {props.texto}
                 </Link>
               </div>
             </div>
