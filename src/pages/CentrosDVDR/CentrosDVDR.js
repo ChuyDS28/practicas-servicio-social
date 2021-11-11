@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "..//Footer"
 import TargetaRegistro from "../../components/TargetaRegistro";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 
 
@@ -36,7 +37,69 @@ const style = {
 
 
 const CentrosDVDR = () => {
-  return <div>
+  useEffect(() => {
+    var elems = document.querySelectorAll(".modal");
+    M.Modal.init(elems, {});
+  }, []);
+
+
+  const ModalHelp = () => {
+    return (
+      <div id="modal1" class="modal">
+        <div class="modal-content  ">
+          <h5>Tipos de registro</h5>
+          <br />
+          <span className="new badge grey darken-2 left" data-badge-caption="">
+            Deprecado
+          </span>
+          <div className="  ">
+            &nbsp; &nbsp;- Programa con mas de 2 años de antiguedad, ya no puede
+            ser impartido
+            <br /> <br />
+          </div>
+          <span className="new badge blue left" data-badge-caption="">
+            Vigente
+          </span>
+          <div className=" ">
+            &nbsp; &nbsp; - Programa vigente actualizado que puede ser impartido
+            de nuevo
+            <br /> <br />
+          </div>
+          <span
+            className="new badge yellow darken-4  left"
+            data-badge-caption=""
+          >
+            EnProceso
+          </span>
+          <div className="">
+            &nbsp; &nbsp; - Programa en proceso que necesita terminar de ser
+            aprobado
+            <br /> <br />
+          </div>
+          <span className="new badge green left " data-badge-caption="">
+            Impartiendo
+          </span>
+          <div className="">
+            &nbsp; &nbsp; - Programa que esta siendo impartido en este momento
+            <br /> <br />
+          </div>
+          <button
+            href="#!"
+            className="modal-close waves-effect waves-green btn-flat right"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    );
+  };
+
+
+
+  return(
+  <>
+<ModalHelp/>  
+  <div>
        <header style={{ position: "relative", height: "50vh" }}>
         <img
           style={style.headerImg}
@@ -142,9 +205,11 @@ const CentrosDVDR = () => {
           pic="https://www.ipn.mx/assets/files/vinculacion/img/Vinculacion_princ/cobertura/Ico_centros_2/veracruz-1.png"
           texto= "VER UNIDAD"
         />
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
       </main>
       <Footer />
   </div>;
+  </>);
 };
 
 

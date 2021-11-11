@@ -1,6 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 const style = {
   cardImg: {
@@ -35,11 +34,11 @@ return(
                 </p>
               </div>
               <div className="card-action" >
-                <a
-                  href={link} 
+                <Link
+                  to={link} 
                   className="waves-effect waves-light btn-small">
                   {texto}
-                </a>
+                </Link>
 
               </div>
             </div>
