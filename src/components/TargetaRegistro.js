@@ -15,7 +15,7 @@ const style = {
 
 
 const TargetaRegistro = (props) => {
-const {pic, user, description, link, texto} = props;
+const {pic, user, description, link, texto,} = props;
 return(            
 <div className="col s12 m6 l6 center" >    
  <div className="card horizontal " style={{minWidth:"400px"}}>
@@ -35,11 +35,12 @@ return(
                 </p>
               </div>
               <div className="card-action" >
-                <Link
-                  to={link} 
+                <a
+                  href={link} 
                   className="waves-effect waves-light btn-small">
                   {texto}
-                </Link>
+                </a>
+
               </div>
             </div>
           </div>

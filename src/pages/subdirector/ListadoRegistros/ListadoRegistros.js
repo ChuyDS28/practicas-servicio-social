@@ -419,4 +419,5 @@ const ListadoRegistros = () => {
   );
 };
 
+
 export default ListadoRegistros;

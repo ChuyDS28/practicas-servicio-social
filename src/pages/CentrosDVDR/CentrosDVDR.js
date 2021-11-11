@@ -50,13 +50,14 @@ const CentrosDVDR = () => {
         </div>
       </header>
       <main className="row container section" style={{minWidth:"100%"}} >
+    
         <TargetaRegistro
-          user="CIITA-CHIHUAHUA"
-          description="Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Chihuahua"
-          link="/signup/Administrador"
-          pic="https://www.ipn.mx/assets/files/vinculacion/img/Vinculacion_princ/cobertura/Ico_centros_2/Chihuahua.png"
-          texto= "VER UNIDAD"
-        />
+        user="CIITA-CHIHUAHUA"
+        description="Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Chihuahua"
+        link="/signup/Administrador"
+        pic="https://www.ipn.mx/assets/files/vinculacion/img/Vinculacion_princ/cobertura/Ico_centros_2/Chihuahua.png"
+        texto= "VER UNIDAD" />
+
           <TargetaRegistro
           user="CVDR-CAJEME"
           description="Centro de Vinculación y Desarrollo Regional Unidad Cajeme"
@@ -140,10 +141,13 @@ const CentrosDVDR = () => {
           link="/signup/Administrador"
           pic="https://www.ipn.mx/assets/files/vinculacion/img/Vinculacion_princ/cobertura/Ico_centros_2/veracruz-1.png"
           texto= "VER UNIDAD"
-        /> 
+        />
       </main>
       <Footer />
   </div>;
 };
+
+
+
 
 export default CentrosDVDR;
