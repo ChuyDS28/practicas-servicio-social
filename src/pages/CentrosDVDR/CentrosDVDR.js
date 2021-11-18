@@ -23,7 +23,7 @@ const CentrosDVDR = () => {
     return (
       <div id="modal11" className="modal" ref={tabs}>
         <div class="modal-content  ">
-          <h5></h5>
+          <h5>hola</h5>
           <br />
           <div className="  ">
             <br /> <br />
