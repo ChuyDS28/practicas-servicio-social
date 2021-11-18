@@ -1,39 +1,83 @@
-import React, { useEffect } from "react";
-import Footer from "..//Footer"
-import Modal from "./Modal"
+import React, { useState, useEffect } from "react";
+import Footer from "..//Footer";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 const CentrosDVDR = () => {
+  useEffect(() => {
+    var elems = document.querySelectorAll(".modal");
+    M.Modal.init(elems, {});
+  }, []);
 
-  return(
-  <>
-  <div>
-       <header>
-       
-      </header>
-      <main>
-      <div className="Row containerrow section ">
+  const [centro, setCentro] = useState("Centro");
 
-<Modal
-titulo="cientos"
->
+  function cambiodeTexto(texto) {
+    setCentro(texto);
+  }
 
- 
-
-</Modal>
-
-<Modal
-titulo="Hola mundo">
-
-
-
-</Modal>
-
-
+  const ModalHelp = () => {
+    return (
+      <div id="modal11" className="modal">
+        <div class="modal-content  ">
+          <h5></h5>
+          <br />
+          <div className="  ">
+            <br /> <br />
+          </div>
+          <div className=" ">
+            <br /> <br />
+          </div>
+          <div className="">
+            <br /> <br />
+          </div>
+          <div className="">
+            <br /> <br />
+          </div>
+          <button
+            href="#!"
+            className="modal-close waves-effect waves-green btn-flat right"
+          >
+            Cerrar
+          </button>
+        </div>
       </div>
-      </main>
-      <Footer/>
-  </div>;
-  </>
+    );
+  };
+
+  return (
+    <>
+      <ModalHelp />
+      <div>
+        <header></header>
+        <main>
+          <h1>{centro}</h1>
+          <button
+            class="waves-effect waves-light btn modal-trigger"
+            onClick={() => cambiodeTexto("Centro1")}
+          >
+            {" "}
+            CENTRO1{" "}
+          </button>
+
+          <button
+            class="waves-effect waves-light btn modal-trigger"
+            onClick={() => cambiodeTexto("Centro2")}
+          >
+            {" "}
+            CENTRO2
+          </button>
+
+          <button
+            class="waves-effect waves-light btn modal-trigger"
+            href="modal11"
+          >
+            {" "}
+            Modal
+          </button>
+        </main>
+        <Footer />
+      </div>
+      ;
+    </>
   );
 };
 

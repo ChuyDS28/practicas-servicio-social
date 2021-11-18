@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 
-const Modal = (props) => {
-  const {titulo} = props;
+const Modal = () => {
+
   useEffect(() => {
     var elems = document.querySelectorAll(".modal");
     M.Modal.init(elems, {});
@@ -10,30 +10,20 @@ const Modal = (props) => {
   const ModalHelp = () => {
    
     return (
-      <div id="modal1" class="modal">
+      <div id="modal11" className="modal">
         <div class="modal-content  ">
-          <h5>{titulo}</h5>
+          <h5></h5>
           <br />
-
           <div className="  ">
-
             <br /> <br />
           </div>
-
           <div className=" ">
-
             <br /> <br />
           </div>
-
           <div className="">
-          
-
-
             <br /> <br />
           </div>
-
           <div className="">
- 
             <br /> <br />
           </div>
           <button
