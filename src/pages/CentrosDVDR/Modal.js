@@ -8,6 +8,7 @@ const Modal = (props) => {
     M.Modal.init(elems, {});
   }, []);
   const ModalHelp = () => {
+   
     return (
       <div id="modal1" class="modal">
         <div class="modal-content  ">
@@ -45,9 +46,11 @@ const Modal = (props) => {
       </div>
     );
   };
+
   return(
   <>
  <ModalHelp/> 
+ 
   <div>
        <header>
        
@@ -63,3 +66,4 @@ const Modal = (props) => {
   </>);
 };
 export default Modal;
+//madre

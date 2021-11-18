@@ -12,13 +12,23 @@ const CentrosDVDR = () => {
       </header>
       <main>
       <div className="Row containerrow section ">
-      <Modal
-      titulo="FREEFIRE"
-      />
-      <Modal
-      titulo="PEWDIEPIE"
-      />
-    
+
+<Modal
+titulo="cientos"
+>
+
+ 
+
+</Modal>
+
+<Modal
+titulo="Hola mundo">
+
+
+
+</Modal>
+
+
       </div>
       </main>
       <Footer/>
