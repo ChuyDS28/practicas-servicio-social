@@ -1,22 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Footer from "..//Footer";
 import M from "materialize-css/dist/js/materialize.min.js";
 
 const CentrosDVDR = () => {
+  const tabs = useRef(null);
   useEffect(() => {
     var elems = document.querySelectorAll(".modal");
-    M.Modal.init(elems, {});
+    M.Modal.init(tabs.current, {});
   }, []);
 
   const [centro, setCentro] = useState("Centro");
 
   function cambiodeTexto(texto) {
     setCentro(texto);
+    var elems = document.querySelector(".modal");
+    var instance = M.Modal.getInstance(tabs.current);
+    instance.open();
+    
   }
 
   const ModalHelp = () => {
     return (
-      <div id="modal11" className="modal">
+      <div id="modal11" className="modal" ref={tabs}>
         <div class="modal-content  ">
           <h5></h5>
           <br />
@@ -54,25 +59,21 @@ const CentrosDVDR = () => {
             class="waves-effect waves-light btn modal-trigger"
             onClick={() => cambiodeTexto("Centro1")}
           >
-            {" "}
-            CENTRO1{" "}
+            
+            CENTRO1
           </button>
 
           <button
             class="waves-effect waves-light btn modal-trigger"
             onClick={() => cambiodeTexto("Centro2")}
           >
-            {" "}
+            
             CENTRO2
           </button>
 
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            href="modal11"
-          >
-            {" "}
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal11">
             Modal
-          </button>
+          </a>
         </main>
         <Footer />
       </div>
