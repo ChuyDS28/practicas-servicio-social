@@ -22,19 +22,23 @@ const CentrosDVDR = () => {
   const ModalHelp = () => {
     return (
       <div id="modal11" className="modal" ref={tabs}>
-        <div class="modal-content  ">
-          <h5>hola</h5>
+        <div class="modal-content row container">
+          <h1>Delgadillo </h1>
           <br />
-          <div className="  ">
+          <div>
+          <h1>DIAZ </h1>
             <br /> <br />
           </div>
           <div className=" ">
+          <h1>MELENDEZ </h1>
             <br /> <br />
           </div>
           <div className="">
+          <h1>Delgadillo</h1>
             <br /> <br />
           </div>
           <div className="">
+          <h1>DIAZ</h1>
             <br /> <br />
           </div>
           <button

@@ -11,8 +11,9 @@ const Modal = () => {
    
     return (
       <div id="modal11" className="modal">
-        <div class="modal-content  ">
-          <h5></h5>
+        <div class="modal-content container">
+          <h1>Delgadillo es gay</h1>
+          
           <br />
           <div className="  ">
             <br /> <br />
