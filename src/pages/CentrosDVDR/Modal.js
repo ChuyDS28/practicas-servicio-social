@@ -10,21 +10,24 @@ const Modal = () => {
   const ModalHelp = () => {
    
     return (
-      <div id="modal11" className="modal">
-        <div class="modal-content container">
-          <h1>Delgadillo es gay</h1>
-          
+      <div id="modal11" className="modal" ref={tabs}>
+        <div class="modal-content row container">
+          <img src="https://www.encb.ipn.mx/assets/files/encb/img/escudos/logo-ipn.png"/>
           <br />
-          <div className="  ">
+          <div>
+          <img src="https://www.ipn.mx/assets/files/vinculacion/img/Vinculacion_princ/logo-DVDR.jpg"/>
             <br /> <br />
           </div>
           <div className=" ">
+          <h1>MELENDEZ </h1>
             <br /> <br />
           </div>
           <div className="">
+          <h1>Delgadillo</h1>
             <br /> <br />
           </div>
           <div className="">
+          <h1>DIAZ</h1>
             <br /> <br />
           </div>
           <button
