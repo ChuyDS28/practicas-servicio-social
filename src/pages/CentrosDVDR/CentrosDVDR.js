@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Footer from "..//Footer";
 import M from "materialize-css/dist/js/materialize.min.js";
+import cvdrcajeme from "..//CentrosDVDR/CodigosQR/cvdrcajeme.png"
+
 
 const CentrosDVDR = () => {
   const tabs = useRef(null);
@@ -23,6 +25,7 @@ const CentrosDVDR = () => {
       width: "180px",
       objectFit: "cover",
       height: "130px",
+      
     },
   };
 
@@ -35,24 +38,25 @@ const CentrosDVDR = () => {
         style={{ minWidth: "80%" }}
       >
         <div className="row container section" style={{ minWidth: "100%" }}>
-          <div className="modal-content" style={{ minWidth: "100%" }}>
+          <div className="modal-content center" style={{ minWidth: "100%" }}>
             <table>
               <tr>
                 <td>
                   <img
                     src="https://www.encb.ipn.mx/assets/files/encb/img/escudos/logo-ipn.png"
                     style={style.modalImg}
+                    
                   />
                 </td>
                 <td>
                   <p align="center" style={{ minWidth: "100%" }}>
                     <h5>
-                      <b>
+                      <b><i>
                         Instituto Politécnico Nacional <br />
                         Secretaría de Innovación e Integración Social
                         <br />
                         Dirección de Vinculación y Desarrollo Regional
-                      </b>{" "}
+                        </i></b>
                     </h5>
                   </p>
                 </td>
@@ -60,6 +64,7 @@ const CentrosDVDR = () => {
                   <img
                     src="https://www.ipn.mx/assets/files/vinculacion/img/Vinculacion_princ/logo-DVDR.jpg"
                     style={style.modalImg}
+                    
                   />
                 </td>
               </tr>
@@ -68,9 +73,9 @@ const CentrosDVDR = () => {
             <div>
               <p align="center">
                 
-                  <h6><b>
+                  <h5><b>
                     Centro de Vinculación y Desarrollo Regional Unidad Cajeme
-                    </b> </h6>
+                    </b> </h5>
                   <br />
                
               </p>
@@ -86,6 +91,26 @@ const CentrosDVDR = () => {
                 allowfullscreen
               ></iframe>
             </div>
+
+            <div>
+              <p align="center">
+                
+                  <h5><b>
+                  Más Información en:
+                    </b> </h5>
+                  <br />
+               
+              </p>
+            </div>
+
+<div>
+<img
+                    src={cvdrcajeme}
+                    style={style.modalImg}
+                    
+                  />
+</div>
+
 
             <button
               href="#!"
