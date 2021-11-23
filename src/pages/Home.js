@@ -129,7 +129,9 @@ const Home = () => {
           src={welcome}
           style={style.welcome}
         />
-        <div className="row container ">
+
+        <div className="row container">
+        
           <Tarjeta
             titI="Registros "
             titulo="Consultar historial total de registros"
@@ -154,6 +156,7 @@ const Home = () => {
             imag="https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             link=""
           />
+        
         </div>
         <div className="center" style={{marginBottom:"35px"}}>
           <Link
