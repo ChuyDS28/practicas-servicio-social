@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import Footer from "..//Footer";
 import M from "materialize-css/dist/js/materialize.min.js";
-import cvdrcajeme from "..//CentrosDVDR/CodigosQR/cvdrcajeme.png"
-
+import cvdrcajeme from "..//CentrosDVDR/CodigosQR/cvdrcajeme.png";
+import Modal from "../../components/Modal.js";
+import InformacionDelCentro from "./InformacionDelCentro";
 
 const CentrosDVDR = () => {
   const tabs = useRef(null);
@@ -12,6 +13,8 @@ const CentrosDVDR = () => {
   }, []);
 
   const [centro, setCentro] = useState("Centro");
+
+  const [manejadorModal, setmanejadorModal] = useState(false);
 
   function cambiodeTexto(texto) {
     setCentro(texto);
@@ -25,7 +28,6 @@ const CentrosDVDR = () => {
       width: "180px",
       objectFit: "cover",
       height: "130px",
-      
     },
   };
 
@@ -45,18 +47,19 @@ const CentrosDVDR = () => {
                   <img
                     src="https://www.encb.ipn.mx/assets/files/encb/img/escudos/logo-ipn.png"
                     style={style.modalImg}
-                    
                   />
                 </td>
                 <td>
                   <p align="center" style={{ minWidth: "100%" }}>
                     <h5>
-                      <b><i>
-                        Instituto Politécnico Nacional <br />
-                        Secretaría de Innovación e Integración Social
-                        <br />
-                        Dirección de Vinculación y Desarrollo Regional
-                        </i></b>
+                      <b>
+                        <i>
+                          Instituto Politécnico Nacional <br />
+                          Secretaría de Innovación e Integración Social
+                          <br />
+                          Dirección de Vinculación y Desarrollo Regional
+                        </i>
+                      </b>
                     </h5>
                   </p>
                 </td>
@@ -64,7 +67,6 @@ const CentrosDVDR = () => {
                   <img
                     src="https://www.ipn.mx/assets/files/vinculacion/img/Vinculacion_princ/logo-DVDR.jpg"
                     style={style.modalImg}
-                    
                   />
                 </td>
               </tr>
@@ -72,16 +74,16 @@ const CentrosDVDR = () => {
             <br />
             <div>
               <p align="center">
-                
-                  <h5><b>
+                <h5>
+                  <b>
                     Centro de Vinculación y Desarrollo Regional Unidad Cajeme
-                    </b> </h5>
-                  <br />
-               
+                  </b>{" "}
+                </h5>
+                <br />
               </p>
             </div>
             <br />
-            <div className= "center">
+            <div className="center">
               <iframe
                 width="424"
                 height="238"
@@ -94,23 +96,16 @@ const CentrosDVDR = () => {
 
             <div>
               <p align="center">
-                
-                  <h5><b>
-                  Más Información en:
-                    </b> </h5>
-                  <br />
-               
+                <h5>
+                  <b>Más Información en:</b>{" "}
+                </h5>
+                <br />
               </p>
             </div>
 
-<div>
-<img
-                    src={cvdrcajeme}
-                    style={style.modalImg}
-                    
-                  />
-</div>
-
+            <div>
+              <img src={cvdrcajeme} style={style.modalImg} />
+            </div>
 
             <button
               href="#!"
@@ -125,6 +120,32 @@ const CentrosDVDR = () => {
   };
   return (
     <>
+
+    <InformacionDelCentro/>
+
+
+
+      <Modal
+        open={manejadorModal}
+        fnCloseModal={() => setmanejadorModal(false)}
+      >
+        <div className="modal-content">
+          <h5>Modal Component</h5>
+          <p>TEXTO EJEMPLO</p>
+          <button
+            href="#!"
+            className="modal-close waves-effect waves-green btn-flat right"
+          >
+            Cerrar
+          </button>
+        </div>
+      </Modal>
+      <button
+        class="waves-effect waves-light btn modal-trigger"
+        onClick={() => setmanejadorModal(true)}
+      >
+        MODALES
+      </button>
       <ModalHelp />
       <div>
         <header></header>
