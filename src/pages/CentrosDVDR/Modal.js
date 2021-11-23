@@ -10,6 +10,7 @@ const Modal = () => {
   const ModalHelp = () => {
    
     return (
+      
       <div id="modal11" className="modal" ref={tabs}>
         <div class="modal-content row container">
           <img src="https://www.encb.ipn.mx/assets/files/encb/img/escudos/logo-ipn.png"/>
@@ -59,4 +60,6 @@ const Modal = () => {
   </div>
   </>);
 };
+
+//chuy es fanático de los x-men
 export default Modal;
