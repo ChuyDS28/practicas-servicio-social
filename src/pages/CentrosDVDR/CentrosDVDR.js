@@ -6,18 +6,21 @@ import InformacionDelCentro from "./InformacionDelCentro";
 
 const CentrosDVDR = () => {
   const [centro, setCentro] = useState("Centro");
-  const [media, setMedia] = useState("media");
+  const [link, setLink] = useState("Link")
   const [manejadorModal, setmanejadorModal] = useState(false);
+
 
   function cambiodeTexto(texto) {
     setCentro(texto);
     setmanejadorModal(true);
   }
 
-  function cambiodeVideo(video) {
-    setMedia(video);
+  function cambiodeVinculo(texto) {
+    setLink(texto);
     setmanejadorModal(true);
   }
+
+
 
   return (
     <>
@@ -25,152 +28,41 @@ const CentrosDVDR = () => {
         open={manejadorModal}
         fnCloseModal={() => setmanejadorModal(false)}
       >
-        <InformacionDelCentro unidad={centro} />{" "}
-      </Modal>{" "}
-      <Modal
-        open={manejadorModal}
-        fnCloseModal={() => setmanejadorModal(false)}
-      >
-        <InformacionDelCentro link={media} />{" "}
+        <InformacionDelCentro 
+        unidad={centro} 
+        vinculo={link}
+        
+        
+        />
       </Modal>
       <div>
-        <header> </header>{" "}
+        <header></header>
         <main>
-          <h1> {centro} </h1>{" "}
+          <h1>{centro}</h1>
           <button
             class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Cajeme"
-              )
-            }
+            onClick={() => (cambiodeTexto("Centro de Vinculación y Desarrollo Regional Unidad Cajeme"), cambiodeVinculo("https://www.youtube.com/watch?v=TOKmS6e_2FY"))}
           >
-            CVDR Cajeme{" "}
+            Cajeme
           </button>
+
           <button
             class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Campeche"
-              )
-            }
+            onClick={() => (cambiodeTexto("Centro de Vinculación y Desarrollo Regional Unidad Campeche"), cambiodeVinculo("https://www.youtube.com/watch?v=qvJRXP-KpAc"))}
           >
-            CVDR Campeche{" "}
+            Campeche
           </button>
+
           <button
             class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Cancún"
-              )
-            }
+            onClick={() => (cambiodeTexto("Centro de Vinculación y Desarrollo Regional Unidad Cancún"), cambiodeVinculo("https://www.youtube.com/watch?v=zV0YjW3EN_0"))}
           >
-            CVDR Cancún{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Chihuahua"
-              )
-            }
-          >
-            CIITA Chihuahua{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Culiacán"
-              )
-            }
-          >
-            CVDR Culiacán{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Durango"
-              )
-            }
-          >
-            CVDR Durango{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Mazatlán"
-              )
-            }
-          >
-            CVDR Mazatlán{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Monchis"
-              )
-            }
-          >
-            CVDR Monchis{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Morelia"
-              )
-            }
-          >
-            CVDR Morelia{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Oaxaca"
-              )
-            }
-          >
-            CVDR Oaxaca{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Tampico"
-              )
-            }
-          >
-            CVDR Tampico{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Vinculación y Desarrollo Regional Unidad Tijuana"
-              )
-            }
-          >
-            CVDR Tijuana{" "}
-          </button>{" "}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              cambiodeTexto(
-                "Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Veracruz"
-              )
-            }
-          >
-            CIITA Veracruz{" "}
-          </button>{" "}
-        </main>{" "}
+            Cancún
+          </button>
+        </main>
         <Footer />
       </div>
-      ;{" "}
+      ;
     </>
   );
 };
