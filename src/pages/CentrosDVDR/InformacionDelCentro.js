@@ -56,7 +56,7 @@ const InformacionDelCentro = (props) => {
           <br />
           <div className="center">
             <iframe
-              width="424"
+              width="423"
               height="238"
               src={props.vinculo}
               frameborder="0"
