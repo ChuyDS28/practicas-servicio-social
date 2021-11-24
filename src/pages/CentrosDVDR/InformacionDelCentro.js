@@ -68,9 +68,10 @@ const InformacionDelCentro = (props) => {
           <div>
             <p align="center">
               <h5>
+              <br />
                 <b>Más Información en:</b>{" "}
               </h5>
-              <br />
+              
             </p>
           </div>
 
