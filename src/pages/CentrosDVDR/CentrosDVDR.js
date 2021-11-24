@@ -8,26 +8,24 @@ import cvdrcancun from "..//..//assets/images/CodigosQR/cvdrcancun.jpg";
 
 const CentrosDVDR = () => {
   const [centro, setCentro] = useState("Centro");
-  const [link, setLink] = useState("Link")
-  const [imagenurl, setimagenUrl] = useState("URL")
+  const [link, setLink] = useState("Link");
+  const [imagenurl, setimagenUrl] = useState("URL");
   const [manejadorModal, setmanejadorModal] = useState(false);
-
-
+ 
   function cambiodeTexto(texto) {
     setCentro(texto);
     setmanejadorModal(true);
   }
 
-  function cambiodeVinculo(texto) {
-    setLink(texto);
+  function cambiodeVinculo(vinculo) {
+    setLink(vinculo);
     setmanejadorModal(true);
   }
 
-  function cambiodeURL(texto) {
-    setimagenUrl(texto);
+  function cambiodeURL(vinculo) {
+    setimagenUrl(vinculo);
     setmanejadorModal(true);
   }
-
 
   return (
     <>
@@ -38,38 +36,52 @@ const CentrosDVDR = () => {
         <InformacionDelCentro 
         unidad={centro} 
         vinculo={link}
-        url={imagenurl}
-        
-        />
+        url={imagenurl} />
       </Modal>
       <div>
-        <header></header>
+        <header> </header>{" "}
         <main>
-          <h1>{centro}</h1>
+          <h1> {centro} </h1>{" "}
           <button
             class="waves-effect waves-light btn modal-trigger"
-            onClick={() => (cambiodeTexto("Centro de Vinculación y Desarrollo Regional Unidad Cajeme"), cambiodeVinculo("https://www.youtube.com/watch?v=TOKmS6e_2FY"), cambiodeURL(cvdrcajeme))}
+            onClick={() => (
+              cambiodeTexto(
+                "Centro de Vinculación y Desarrollo Regional Unidad Cajeme"
+              ),
+              cambiodeVinculo("https://www.youtube.com/watch?v=TOKmS6e_2FY"),
+              cambiodeURL(cvdrcajeme)
+            )}
           >
-            Cajeme
+            Cajeme{" "}
           </button>
-
           <button
             class="waves-effect waves-light btn modal-trigger"
-            onClick={() => (cambiodeTexto("Centro de Vinculación y Desarrollo Regional Unidad Campeche"), cambiodeVinculo("https://www.youtube.com/watch?v=qvJRXP-KpAc"), cambiodeURL(cvdrcampeche))}
+            onClick={() => (
+              cambiodeTexto(
+                "Centro de Vinculación y Desarrollo Regional Unidad Campeche"
+              ),
+              cambiodeVinculo("https://www.youtube.com/watch?v=qvJRXP-KpAc"),
+              cambiodeURL(cvdrcampeche)
+            )}
           >
-            Campeche
+            Campeche{" "}
           </button>
-
           <button
             class="waves-effect waves-light btn modal-trigger"
-            onClick={() => (cambiodeTexto("Centro de Vinculación y Desarrollo Regional Unidad Cancún"), cambiodeVinculo("https://www.youtube.com/watch?v=zV0YjW3EN_0"), cambiodeURL(cvdrcancun))}
+            onClick={() => (
+              cambiodeTexto(
+                "Centro de Vinculación y Desarrollo Regional Unidad Cancún"
+              ),
+              cambiodeVinculo("https://www.youtube.com/watch?v=zV0YjW3EN_0"),
+              cambiodeURL(cvdrcancun)
+            )}
           >
             Cancún
           </button>
         </main>
         <Footer />
       </div>
-      ;
+      ;{" "}
     </>
   );
 };

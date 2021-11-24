@@ -75,7 +75,7 @@ const InformacionDelCentro = (props) => {
           </div>
 
           <div>
-            <img src={props.url} style={style.modalImg} />
+            <img src={props.url}  />
           </div>
           <button
             href="#!"
