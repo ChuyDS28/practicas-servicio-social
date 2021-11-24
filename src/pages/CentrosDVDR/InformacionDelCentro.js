@@ -1,5 +1,5 @@
 import React from "react";
-import cvdrcajeme from "..//..//assets/images/CodigosQR/cvdrcajeme.png";
+
 
 const InformacionDelCentro = (props) => {
   const style = {
@@ -75,7 +75,7 @@ const InformacionDelCentro = (props) => {
           </div>
 
           <div>
-            <img src={cvdrcajeme} style={style.modalImg} />
+            <img src={props.url} style={style.modalImg} />
           </div>
           <button
             href="#!"
