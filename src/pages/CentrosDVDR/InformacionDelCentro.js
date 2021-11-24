@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const InformacionDelCentro = (props) => {
   const style = {
     modalImg: {
@@ -48,7 +47,7 @@ const InformacionDelCentro = (props) => {
           <div>
             <p align="center">
               <h5>
-                <b> {props.unidad}  </b>{" "}
+                <b> {props.unidad} </b>{" "}
               </h5>
               <br />
             </p>
@@ -68,15 +67,14 @@ const InformacionDelCentro = (props) => {
           <div>
             <p align="center">
               <h5>
-              <br />
+                <br />
                 <b>Más Información en:</b>{" "}
               </h5>
-              
             </p>
           </div>
 
           <div>
-            <img src={props.url}  />
+            <img src={props.url} />
           </div>
           <button
             href="#!"

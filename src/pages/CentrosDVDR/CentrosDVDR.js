@@ -16,13 +16,12 @@ import tampico from "..//..//assets/images/CodigosQR/tampico.png";
 import tijuana from "..//..//assets/images/CodigosQR/tijuana.jpg";
 import veracruz from "..//..//assets/images/CodigosQR/veracruz.jpg";
 
-
 const CentrosDVDR = () => {
   const [centro, setCentro] = useState("Centro");
   const [link, setLink] = useState("Link");
   const [imagenurl, setimagenUrl] = useState("URL");
   const [manejadorModal, setmanejadorModal] = useState(false);
- 
+
   function cambiodeTexto(texto) {
     setCentro(texto);
     setmanejadorModal(true);
@@ -44,10 +43,7 @@ const CentrosDVDR = () => {
         open={manejadorModal}
         fnCloseModal={() => setmanejadorModal(false)}
       >
-        <InformacionDelCentro 
-        unidad={centro} 
-        vinculo={link}
-        url={imagenurl} />
+        <InformacionDelCentro unidad={centro} vinculo={link} url={imagenurl} />
       </Modal>
       <div>
         <header> </header>{" "}
@@ -89,11 +85,6 @@ const CentrosDVDR = () => {
           >
             Cancún
           </button>
-
-
-
-
-
           <button
             class="waves-effect waves-light btn modal-trigger"
             onClick={() => (
@@ -214,11 +205,6 @@ const CentrosDVDR = () => {
           >
             Veracruz
           </button>
-
-
-
-
-
         </main>
         <Footer />
       </div>
