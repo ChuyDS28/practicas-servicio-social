@@ -34,7 +34,8 @@ const data = [{
 ];
 
 const CentrosDVDR = () => {
-    const [centro, setCentro] = useState("Centro");
+    const [Centro, setcentro, ] = useState("Centro");
+    const [centro, setCentro, ] = useState("Centro");
     const [link, setLink] = useState("Link");
     const [imagenurl, setimagenUrl] = useState("URL");
     const [manejadorModal, setmanejadorModal] = useState(false);
