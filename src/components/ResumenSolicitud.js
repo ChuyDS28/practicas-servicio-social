@@ -18,12 +18,12 @@ const ResumenSolicitud = () => {
       <div className=" col s12">
         <div className=" input-field orange lighten-4 col s12">
           <p style={{ fontSize: "22px" }}>
-            Seccion 1 • Datos Generales de Identificación del Programa
+            Sección 1 • Datos generales de identificación del programa
           </p>
         </div>
         <div className="col s12 m12 l12 xl9">
           <p>
-            <strong>Nombre Programa:&nbsp;&nbsp;</strong>Programa de Informatica
+            <strong>Nombre del programa:&nbsp;&nbsp;</strong>Programa de Informática
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const ResumenSolicitud = () => {
         </div>
         <div className="col s12 m4 xl4">
           <p>
-            <strong>Nivel:&nbsp;&nbsp;</strong>Basico
+            <strong>Nivel:&nbsp;&nbsp;</strong>Básico
           </p>
         </div>
         <div className="col s12 m4 xl4">
@@ -52,7 +52,7 @@ const ResumenSolicitud = () => {
         </div>
         <div className="col s12 m4 xl4">
           <p>
-            <strong>Area:&nbsp;&nbsp;</strong>TICs
+            <strong>Área:&nbsp;&nbsp;</strong>TICs
           </p>
         </div>
         <div className="col s12 m4 xl4">
@@ -95,7 +95,7 @@ const ResumenSolicitud = () => {
       <div className=" col s12">
         <div className=" input-field orange lighten-4 col s12">
           <p style={{ fontSize: "22px" }}>
-            Seccion 2 • Datos específicos por Programa{" "}
+            Sección 2 • Datos específicos por Programa{" "}
           </p>
         </div>
         <div className="col s12  xl6">
@@ -106,28 +106,28 @@ const ResumenSolicitud = () => {
         <div className=" col s12 xl12">
           <p>
             <strong>
-              Requisitos Académicos y Administrativos de Ingreso del
-              Participante:&nbsp;&nbsp;
+              Requisitos académicos y administrativos de ingreso del
+              participante:&nbsp;&nbsp;
             </strong>
             Estudiantes
           </p>
         </div>
         <div className="col s12 xl12">
           <p>
-            <strong>Recursos de operación del Programa:&nbsp;&nbsp;</strong>
+            <strong>Recursos de operación del programa:&nbsp;&nbsp;</strong>
             Hojas
           </p>
         </div>
         <div className="col s12 xl12">
           <p>
-            <strong>Unidades Académicas de Colaboración:&nbsp;&nbsp;</strong>
+            <strong>Unidades Académicas de colaboración:&nbsp;&nbsp;</strong>
             Puebla
           </p>
         </div>
         <div className="col s12 xl6">
           <p>
             <strong>
-              Sector con el que se vincula el Programa:&nbsp;&nbsp;
+              Sector con el que se vincula el programa:&nbsp;&nbsp;
             </strong>
             Alumnos
           </p>
@@ -135,49 +135,49 @@ const ResumenSolicitud = () => {
         <div className="col s12 xl12">
           <p>
             <strong>
-              Evaluación y tipo de Reconocimiento que se entregará:&nbsp;&nbsp;
+              Evaluación y tipo de reconocimiento que se entregará:&nbsp;&nbsp;
             </strong>
-            Examen Final
+            Examen final
           </p>
         </div>
       </div>
       <div className="col s12">
         <div className="input-field orange lighten-4">
-          <p style={{ fontSize: "22px" }}>Seccion 3 • Planeación</p>
+          <p style={{ fontSize: "22px" }}>Sección 3 • Planeación</p>
         </div>
         <div className="  col s12">
           <p>
-            <strong>Fundamentación:&nbsp;&nbsp;</strong>Examen Final
+            <strong>Fundamentación:&nbsp;&nbsp;</strong>Examen final
           </p>
         </div>
         <div className="  col s12">
           <p>
-            <strong>Introducción:&nbsp;&nbsp;</strong>Examen Final
+            <strong>Introducción:&nbsp;&nbsp;</strong>Examen final
           </p>
         </div>
         <div className="  col s12">
           <p>
-            <strong>Competencia General a desarrollar:&nbsp;&nbsp;</strong>
-            Examen Final
+            <strong>Competencia general a desarrollar:&nbsp;&nbsp;</strong>
+            Examen final
           </p>
         </div>
       </div>
       <div className="  col s12">
         <div className="input-field orange lighten-4">
-          <p style={{ fontSize: "22px" }}>Seccion 4 • Programa</p>
+          <p style={{ fontSize: "22px" }}>Sección 4 • Programa</p>
         </div>
         <div className="col s12 red lighten-5" style={style.temaContainer}>
           <h6>
-            <strong>Tema 1 · Nombre del Tema</strong>
+            <strong>Tema 1 · Nombre del tema</strong>
           </h6>
           <p>
-            <strong>· Competencias Específicas: </strong>Lorem ipsum dolor sit
+            <strong>· Competencias específicas: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Actividades de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Actividades de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Evidencias de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Evidencias de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
             <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
@@ -186,16 +186,16 @@ const ResumenSolicitud = () => {
         </div>{" "}
         <div className="col s12 red lighten-5 " style={style.temaContainer}>
           <h6>
-            <strong>Tema 1 · </strong>Nombre del Tema
+            <strong>Tema 1 · </strong>Nombre del tema
           </h6>
           <p>
-            <strong>· Competencias Específicas: </strong>Lorem ipsum dolor sit
+            <strong>· Competencias específicas: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Actividades de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Actividades de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Evidencias de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Evidencias de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
             <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
@@ -204,16 +204,16 @@ const ResumenSolicitud = () => {
         </div>{" "}
         <div className=" red lighten-5 col s12 " style={style.temaContainer}>
           <h6>
-            <strong>Tema 1 · </strong>Nombre del Tema
+            <strong>Tema 1 · </strong>Nombre del tema
           </h6>
           <p>
-            <strong>· Competencias Específicas: </strong>Lorem ipsum dolor sit
+            <strong>· Competencias específicas: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Actividades de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Actividades de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Evidencias de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Evidencias de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
             <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
@@ -230,7 +230,7 @@ const ResumenSolicitud = () => {
 
       <div className="  col s12">
         <div className="input-field orange lighten-4">
-          <p style={{ fontSize: "22px" }}> Seccion 5 • Datos del instructor</p>
+          <p style={{ fontSize: "22px" }}> Sección 5 • Datos del instructor</p>
         </div>
         <div className="  col s12 m5 xl5">
           <p>
@@ -244,7 +244,7 @@ const ResumenSolicitud = () => {
         </div>
         <div className="  col s6 m3 xl3">
           <button className="waves-effect waves-light btn white black-text outlined" style={{borderColor:"teal accent-4"}}>
-            Documentos Probatorios
+            Documentos probatorios
           </button>
         </div>
         <div className="col s12 xl6">
@@ -258,7 +258,7 @@ const ResumenSolicitud = () => {
       <div className="  col s12">
         <div className="input-field orange lighten-4">
           <p style={{ fontSize: "22px" }}>
-            Seccion 6 • Datos del Coordinador Academico (CA) o Jefe de Educación
+            Sección 6 • Datos del Coordinador Academico (CA) o Jefe de Educación
             Continua
           </p>
         </div>
@@ -269,39 +269,39 @@ const ResumenSolicitud = () => {
               Nota
             </span>
             <p>
-              Esta seccion se llena en automatico al seleccionar el centro,
-              verificar que los campos sean correctos
+              Esta sección se llena en automático al seleccionar el Centro,
+              verificar que los campos sean correctos.
             </p>
           </div>
         </div>
         <div className="col s12 m6 xl6">
           <p>
             <strong>Nombre completo del CA:&nbsp;&nbsp;</strong>Programa de
-            Informatica
+            Informática
           </p>
         </div>
         <div className="col s12 m6 xl6">
           <p>
-            <strong>Numero telefonico del CA:&nbsp;&nbsp;</strong>Programa de
-            Informatica
+            <strong>Número telefónico del CA:&nbsp;&nbsp;</strong>Programa de
+            Informática
           </p>
         </div>
         <div className="col s12 m6 xl6">
           <p>
             <strong>Extensión del CA:&nbsp;&nbsp;</strong>Programa de
-            Informatica
+            Informática
           </p>
         </div>
         <div className="col s12 m6 xl6">
           <p>
             <strong>Correo electrónico del CA:&nbsp;&nbsp;</strong>Programa de
-            Informatica
+            Informática
           </p>
         </div>
       </div>
       <div className="  col s12">
       <div className="input-field orange lighten-4">
-          <p style={{ fontSize: "22px" }}>Seccion 7 • Datos de firma</p>
+          <p style={{ fontSize: "22px" }}>Sección 7 • Datos de firma</p>
        </div>
         <p className="light">Datos de quien firma y autoriza la solicitud.</p>
         <div className="  col s12">
@@ -312,33 +312,33 @@ const ResumenSolicitud = () => {
             </span>
             
             <p>
-            Esta seccion se llena en automatico al seleccionar el centro,
-              verificar que los campos sean correctos
+            Esta sección se llena en automático al seleccionar el Centro,
+              verificar que los campos sean correctos.
             </p>
           </div>
         </div>
         <div className=" col s12 m6 xl6">
           <p>
             <strong>Nombre del Director:&nbsp;&nbsp;</strong>Programa de
-            Informatica
+            Informática
           </p>
         </div>
         <div className="col s12 m6 xl6">
           <p>
             <strong>Correo electrónico del Director:&nbsp;&nbsp;</strong>
-            Programa de Informatica
+            Programa de Informática
           </p>
         </div>
         <div className="col s12 m6 xl6">
           <p>
             <strong>Nombre del Subdirector:&nbsp;&nbsp;</strong>Programa de
-            Informatica
+            Informática
           </p>
         </div>
         <div className="col  s12 m6 xl6" style={{marginBottom:"10px"}}>
           <p>
             <strong>Correo electrónico del Subdirector:&nbsp;&nbsp;</strong>
-            Programa de Informatica
+            Programa de Informática
           </p>
         </div>
       </div>

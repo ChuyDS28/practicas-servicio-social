@@ -119,8 +119,8 @@ const MenuRevisor = () => {
               <b>Listado de registros</b>
             </h5>
             <p className="textHeight">
-              Aqui puedes consultar el historial de todos tus registros, agregar
-              nuevos darle seguimiento...
+              Aquí puedes consultar el historial de todos tus registros, agregar
+              nuevos y darle seguimiento...
             </p>
            
             <Link
@@ -142,8 +142,8 @@ const MenuRevisor = () => {
               <b>Listado general</b>
             </h5>
             <p className="  textHeight">
-              Aqui puedes consultar la <br/>informacion
-              basica de todos los programas...
+              Aquí puedes consultar la <br/>información
+              básica de todos los programas...
             </p>
             <Link
               to="/revisor/listadoRegistrosGeneral"

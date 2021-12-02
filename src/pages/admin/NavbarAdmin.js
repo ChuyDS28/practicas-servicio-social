@@ -25,7 +25,7 @@ const NavbarAdmin = () => {
               </li>
               <li>
                 <Link to="/" className="navTitle">
-                  Dirección de Vincualción y Desarrollo Regional
+                  Dirección de Vinculación y Desarrollo Regional
                 </Link>
               </li>
             </ul>

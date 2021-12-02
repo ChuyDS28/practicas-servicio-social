@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import ba10 from "../../assets/images/ba10.png";
 const style = {
-  blockquote:{
-    borderColor: "#ffffff",/* Just change the color value and that's it*/
+  blockquote: {
+    borderColor: "#ffffff" /* Just change the color value and that's it*/,
   },
   headerImg: {
     position: "relative",
@@ -79,13 +79,9 @@ const RevisarRegistro = () => {
 
   const Paso1 = () => {
     return (
-      
       <div className="row">
-        <div className="col xl4 m4 s4 l4" >
-          <span
-            className="new badge left cyan accent-4 "
-            data-badge-caption=""
-          >
+        <div className="col xl4 m4 s4 l4">
+          <span className="new badge left cyan accent-4 " data-badge-caption="">
             Paso 1
           </span>
           <span>
@@ -93,14 +89,14 @@ const RevisarRegistro = () => {
           </span>
         </div>
         <div className="col xl3 m3 s4 l3">
-          <span className="new badge red "  data-badge-caption="">
+          <span className="new badge red " data-badge-caption="">
             Pendiente por revisar
-          </span> 
+          </span>
         </div>
-        <div className="col xl3 m3 " >
+        <div className="col xl3 m3 ">
           <Link
             to="/revisor/revisarRegistro/solicitud"
-            className="waves-effect waves-light btn  outlined"  
+            className="waves-effect waves-light btn  outlined"
           >
             Ver Solicitud
           </Link>
@@ -130,16 +126,20 @@ const RevisarRegistro = () => {
           <span
             className="new badge  cyan accent-4 left white-text "
             data-badge-caption=""
-            style={{overflow:"hidden"}}
+            style={{ overflow: "hidden" }}
           >
             Paso 2
           </span>
           <span>
-            <strong>&nbsp;&nbsp; Enviar Solicitud firmada</strong>
+            <strong>&nbsp;&nbsp; Enviar solicitud firmada</strong>
           </span>
         </div>
         <div className="col xl3 s4 m3 l3 ">
-          <span className="new badge  red " style={{overflow:"hidden"}} data-badge-caption="">
+          <span
+            className="new badge  red "
+            style={{ overflow: "hidden" }}
+            data-badge-caption=""
+          >
             Pendiente por revisar
           </span>
         </div>
@@ -172,7 +172,6 @@ const RevisarRegistro = () => {
   const Paso3 = () => {
     return (
       <div className="row">
-       
         <div className="col s4 xl4 m4 l4 ">
           <span
             className="new badge  cyan accent-4 left white-text  "
@@ -185,7 +184,11 @@ const RevisarRegistro = () => {
           </span>
         </div>
         <div className="col xl3 s5 m3 l3 ">
-          <span className="new badge yellow darken-4 " style={{overflow:"hidden"}} data-badge-caption="">
+          <span
+            className="new badge yellow darken-4 "
+            style={{ overflow: "hidden" }}
+            data-badge-caption=""
+          >
             Revisado con corecciones
           </span>
         </div>
@@ -194,7 +197,7 @@ const RevisarRegistro = () => {
             type="submit"
             className="waves-effect waves-light btn  outlined"
           >
-            Ver Carta AVAL
+            Ver carta AVAL
           </button>
         </div>
         <div className="col xl2 s4 l4">
@@ -206,14 +209,12 @@ const RevisarRegistro = () => {
           <i className="material-icons right">picture_as_pdf</i>
         </a> */}
         </div>
-       
       </div>
     );
   };
   const Paso4 = () => {
     return (
       <div className="row">
-    
         <div className="col s5 ">
           <span
             className="new badge  cyan accent-4 left white-text  "
@@ -222,7 +223,9 @@ const RevisarRegistro = () => {
             Paso 4
           </span>
           <span>
-            <strong>&nbsp;&nbsp;Documentos Probatorios de&nbsp;&nbsp;AVAL</strong>
+            <strong>
+              &nbsp;&nbsp;Documentos probatorios de&nbsp;&nbsp;AVAL
+            </strong>
           </span>
         </div>
 
@@ -254,7 +257,6 @@ const RevisarRegistro = () => {
   const Paso5 = () => {
     return (
       <div className="row">
-    
         <div className="col s4 xl3 m3 l3">
           <span
             className="new badge  cyan accent-4 left white-text    "
@@ -301,7 +303,12 @@ const RevisarRegistro = () => {
   return (
     <>
       <header className="" style={{ position: "relative", height: "50vh" }}>
-        <img style={style.headerImg} className="responsive-img" src={ba10} alt="" />
+        <img
+          style={style.headerImg}
+          className="responsive-img"
+          src={ba10}
+          alt=""
+        />
         <div className="" style={style.headerFilter}></div>
         <div className="" style={style.headerTitle}>
           <h3 className="white-text center" style={{ fontSize: "3rem" }}>
@@ -309,11 +316,9 @@ const RevisarRegistro = () => {
           </h3>
           <div className="">
             <center>
-             
-                <h5 className="white-text ">
-                  Centro de vinculación y desarrollo regional
-                </h5>
-           
+              <h5 className="white-text ">
+                Centro de vinculación y desarrollo regional
+              </h5>
             </center>
           </div>
         </div>
@@ -331,21 +336,15 @@ const RevisarRegistro = () => {
           <strong className="teal-text"> 70%</strong> <br />
           Pasos completados <strong>1 de 5</strong>
         </p>
-        
-        <br/>      
-        <div className="col s12  ">
-          <p className="  light  ">
-            <strong>Observaciones:&nbsp;&nbsp;</strong>
-            El campo x es incorrecto necesita...
-          </p>
-        </div>
+
+        <br />
       </div>
       <div className="container section  ">
-      <div className="collection">
-      <p className="white-text collection-item active   blue darken-4 center">
+        <div className="collection">
+          <p className="white-text collection-item active   blue darken-4 center">
             <b>Pasos</b>
           </p>
-        {/*   <Link to="/user/registroDetalle" className="collection-item">
+          {/*   <Link to="/user/registroDetalle" className="collection-item">
             <span className="new badge grey darken-2" data-badge-caption="">
               Deprecado
             </span>
@@ -369,24 +368,38 @@ const RevisarRegistro = () => {
             </span>
             Curso de Informatica
           </Link> */}
-        <Link  className="collection-item black-text " style={{ border: "0px" }}>
-         <Paso1/>
-        </Link>
-        <Link  className="collection-item black-text blue lighten-5 " style={{ border: "0px" }}>
-          <Paso2/>
-        </Link>
-        <Link className="collection-item black-text" style={{ border: "0px" }}>
-         <Paso3/>
-        </Link>
-        <Link  style={{ border: "0px" }} className="collection-item blue lighten-5 black-text ">
-         <Paso4/>
-        </Link>
-        <Link  style={{ border: "0px" }} className="collection-item  black-text ">
-         <Paso5/>
-        </Link>
-        
+          <Link
+            className="collection-item black-text "
+            style={{ border: "0px" }}
+          >
+            <Paso1 />
+          </Link>
+          <Link
+            className="collection-item black-text blue lighten-5 "
+            style={{ border: "0px" }}
+          >
+            <Paso2 />
+          </Link>
+          <Link
+            className="collection-item black-text"
+            style={{ border: "0px" }}
+          >
+            <Paso3 />
+          </Link>
+          <Link
+            style={{ border: "0px" }}
+            className="collection-item blue lighten-5 black-text "
+          >
+            <Paso4 />
+          </Link>
+          <Link
+            style={{ border: "0px" }}
+            className="collection-item  black-text "
+          >
+            <Paso5 />
+          </Link>
+        </div>
       </div>
-    </div>
     </>
   );
 };
