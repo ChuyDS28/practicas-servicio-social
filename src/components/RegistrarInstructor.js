@@ -15,13 +15,13 @@ const RegistrarInstructor = () => {
       <div className="input-field col s12">
         <input id="nombreCurso" type="text" required />
         <label htmlFor="nombreCurso">Nombre completo del Instructor/es</label>
-        <span class="helper-text" data-error="wrong" data-success="right">Sin titulo de grado*</span>
+        <span class="helper-text" data-error="wrong" data-success="right">Sin título de grado*</span>
 
       </div>
 
       <div className="input-field col s6">
         <input id="nombreArea" type="text" required />
-        <label htmlFor="nombreArea">Area</label>
+        <label htmlFor="nombreArea">Área</label>
       </div>
       <div className="input-field col s6">
         <input id="input_text" type="text" data-length="13" required />
@@ -43,8 +43,8 @@ const RegistrarInstructor = () => {
       </div>
       <div className="input-field col s12">
         <p className="  light ">
-          Adjuntar documentos Académicos y Probatorios del Instructor en formato
-          PDF, recuerda nombrarlos de acuerdo a la nomenclatura especificada
+          Adjuntar documentos académicos y probatorios del Instructor en formato
+          PDF, recuerda nombrarlos de acuerdo a la nomenclatura especificada.
         </p>
         <div className="teal lighten-5 " style={style.infoContainer}>
           <span className="small material-icons blue-text ">error</span>

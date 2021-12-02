@@ -1,7 +1,39 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
-
+import ba17 from "../../../assets/images/ba17.png";
+const style = {
+  blockquote:{
+    borderColor: "#ffffff",/* Just change the color value and that's it*/
+  },
+  headerImg: {
+    position: "relative",
+    width: "100%",
+    height: "110%",
+    top: "0",
+    objectFit: "cover",
+  },
+  headerFilter: {
+    position: "absolute",
+    width: "100%",
+    maxHeight: "100%",
+    top: "0",
+    height: "100%",
+  },
+  headerTitle: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: " translate(-50% , -50%)",
+    color: "#fff",
+  },
+  subtitleContainer: {
+    width: "fit-content",
+    border: "2px solid #fff",
+    margin: "auto",
+    padding: "0 1rem",
+  },
+};
 const CrudEscuelas = () => {
   useEffect(() => {
     var modales = document.querySelectorAll(".modal");
@@ -25,7 +57,7 @@ const CrudEscuelas = () => {
           </div>
           <div className="input-field col s12">
             <blockquote>
-              <p>Datos del Coordinador Academico (CA) o Jefe de Educación Continua - (Opcional)</p>
+              <p>Datos del Coordinador Académico (CA) o Jefe de Educación Continua - (Opcional)</p>
             </blockquote>
           </div>
           <div className="input-field col s12">
@@ -34,11 +66,11 @@ const CrudEscuelas = () => {
           </div>
           <div className="input-field col s4">
             <input id="nombreCurso" type="text" required />
-            <label htmlFor="nombreCurso">Numero telefonico del CA</label>
+            <label htmlFor="nombreCurso">Número telefónico del CA</label>
           </div>
           <div className="input-field col s3">
             <input id="nombreCurso" type="text" required />
-            <label htmlFor="nombreCurso">Extención del CA</label>
+            <label htmlFor="nombreCurso">Extensión del CA</label>
           </div>
           <div className="input-field col s5">
             <input id="nombreCurso" type="text" required />
@@ -55,11 +87,11 @@ const CrudEscuelas = () => {
           </div>
           <div className="input-field col s4">
             <input id="nombreCurso" type="text" required />
-            <label htmlFor="nombreCurso">Numero telefonico del Director</label>
+            <label htmlFor="nombreCurso">Número telefónico del Director</label>
           </div>
           <div className="input-field col s3">
             <input id="nombreCurso" type="text" required />
-            <label htmlFor="nombreCurso">Extención del Director</label>
+            <label htmlFor="nombreCurso">Extensión del Director</label>
           </div>
           <div className="input-field col s5">
             <input id="nombreCurso" type="text" required />
@@ -77,12 +109,12 @@ const CrudEscuelas = () => {
           <div className="input-field col s6">
             <input id="nombreCurso" type="text" required />
             <label htmlFor="nombreCurso">
-              Numero telefonico del Subdirector
+              Número telefónico del Subdirector
             </label>
           </div>
           <div className="input-field col s6">
             <input id="nombreCurso" type="text" required />
-            <label htmlFor="nombreCurso">Extención del Subdirector</label>
+            <label htmlFor="nombreCurso">Extensión del Subdirector</label>
           </div>
           <div className="input-field col s12">
             <input id="nombreCurso" type="text" required />
@@ -111,14 +143,14 @@ const CrudEscuelas = () => {
       <div id="modal2" className="modal">
         <div className="modal-content row ">
           <h5>
-            CIC - Centro de Investigación en Computación <br />
+           <b> CIC - Centro de Investigación en Computación </b><br />
             <br />
           </h5>
           <h6>
             <i className="tiny material-icons white-text text-darken-2  left circle  teal ">
               school
             </i>
-            Coordinador Academico
+            Coordinador Académico
           </h6>
           <p>
             <strong>Nombre:</strong> Antonio Ayola
@@ -126,9 +158,9 @@ const CrudEscuelas = () => {
               <strong>&nbsp;&nbsp;Correo :</strong> antonio@ipn.gob
             </span>
             <br />
-            <strong>Numero telefonico:</strong> 7711825959
+            <strong>Número telefónico:</strong> 7711825959
             <span className="right">
-              <strong>&nbsp;&nbsp;Extención:</strong> 7711825959
+              <strong>&nbsp;&nbsp;Extensión:</strong> 7711825959
             </span>
           </p>
           <div className="divider teal"></div>
@@ -144,9 +176,9 @@ const CrudEscuelas = () => {
               <strong>&nbsp;&nbsp;Correo :</strong> antonio@ipn.gob
             </span>
             <br />
-            <strong>Numero telefonico:</strong> 7711825959
+            <strong>Número telefónico:</strong> 7711825959
             <span className="right">
-              <strong>&nbsp;&nbsp;Extención:</strong> 7711825959
+              <strong>&nbsp;&nbsp;Extensión:</strong> 7711825959
             </span>
           </p>
           <div className="divider teal"></div> <h6>
@@ -161,9 +193,9 @@ const CrudEscuelas = () => {
               <strong>&nbsp;&nbsp;Correo :</strong> antonio@ipn.gob
             </span>
             <br />
-            <strong>Numero telefonico:</strong> 7711825959
+            <strong>Número telefónico:</strong> 7711825959
             <span className="right">
-              <strong>&nbsp;&nbsp;Extención:</strong> 7711825959
+              <strong>&nbsp;&nbsp;Extensión:</strong> 7711825959
             </span>
           </p>
           
@@ -183,6 +215,28 @@ const CrudEscuelas = () => {
     <>
       <ModalAgregarEscuela />
       <ModalDetalleEscuela />
+      <header className="" style={{ position: "relative", height: "50vh" }}>
+        <img style={style.headerImg} className="responsive-img" src={ba17} alt="" />
+        <div className="" style={style.headerFilter}></div>
+        <div className="" style={style.headerTitle}>
+          <h3 className="white-text center" style={{ fontSize: "3rem" }}>
+            <b>UNIDADES ACADÉMICAS CENTROS Y ESCUELAS</b>
+          </h3>
+          
+          <div className="">
+            <center>
+             
+                <h5 className="black-text ">
+               <blockquote><b><i> Aquí puedes consultar, agregar, editar o eliminar escuelas.</i></b></blockquote>
+                </h5>
+          
+           
+            </center>
+          </div>
+        </div>
+      </header>
+      <br/><br/>
+      
       <div className="container">
         <Link
           to="/admin/listadoCatalogos"
@@ -196,20 +250,14 @@ const CrudEscuelas = () => {
         >
           Agregar Escuela
         </a>
-
-        <blockquote>
-          <h5 className="light teal-text">
-            Unidades Academicas, Centros y Escuelas
-          </h5>
-          <p>Aqui puedes consultar, agregar, editar o eliminar escuelas. </p>
-        </blockquote>
+       
         <div className="row ">
-          <div className="input-field col s10  ">
+          <div className="input-field col s8 xl5 m5 l5   ">
             <input id="input_text" type="text" data-length="13" required />
             <label htmlFor="nombreCurso">Escuela</label>
           </div>
 
-          <div className="input-field col s2 right  ">
+          <div className="input-field col s2   ">
             <button
               type="submit"
               className="waves-effect waves-light btn outlined  "
@@ -221,9 +269,9 @@ const CrudEscuelas = () => {
         </div>
 
       <table className="striped responsive-table ">
-        <thead>
-          <tr>
-            <th>Escuela</th>
+        <thead className=" light-blue lighten-4">
+          <tr className=" ">
+            <th className=" ">Escuela</th>
            {/*  <th> Coordinador Academico (CA)</th>
             <th> Director</th>
             <th> Subdirector </th> */}
@@ -234,12 +282,12 @@ const CrudEscuelas = () => {
         </thead>
 
         <tbody>
-          <tr>
+          <tr className="white">
             <td>
               <i className="material-icons  white-text text-darken-2  left circle  ipn  ">
                 account_balance
               </i>
-              CIC - Centro de Investigación en Computación
+              <b>CIC - Centro de Investigación en Computación</b>
             </td>
            {/*  <td>
               <i className="material-icons  white-text text-darken-2  left circle  teal ">
@@ -257,9 +305,16 @@ const CrudEscuelas = () => {
             <td>
               <a
                 href="#modal2"
-                className="modal-trigger waves-effect waves-light btn outlined"
+                className="modal-trigger waves-effect waves-light cyan-text text-darken-3 btn outlined"
+                  style={{
+                    borderColor: "#0091ea",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+              
               >
-                Ver Detalles
+                <b>Ver Detalles</b>
               </a>
             </td>
             <td>
@@ -273,12 +328,12 @@ const CrudEscuelas = () => {
               </button>
             </td>
           </tr>
-          <tr>
+          <tr className=" light-blue lighten-5">
             <td>
               <i className="material-icons  white-text text-darken-2  left circle  ipn  ">
                 account_balance
               </i>
-              CIC - Centro de Investigación en Computación
+              <b>CIC - Centro de Investigación en Computación</b>
             </td>
            {/*  <td>
               <i className="material-icons  white-text text-darken-2  left circle  teal ">
@@ -296,9 +351,107 @@ const CrudEscuelas = () => {
             <td>
               <a
                 href="#modal2"
-                className="modal-trigger waves-effect waves-light btn outlined"
+                className="modal-trigger waves-effect waves-light cyan-text text-darken-3 btn outlined"
+               
+                  style={{
+                    borderColor: "#0091ea",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+              
               >
-                Ver Detalles
+                <b>Ver Detalles</b>
+              </a>
+            </td>
+            <td>
+              <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
+                <i class="material-icons left ">edit</i>
+              </button>
+            </td>
+            <td>
+              <button class="waves-effect waves-light  btn-flat red-text">
+                <i class="material-icons left ">delete</i>
+              </button>
+            </td>
+          </tr><tr className= "white">
+            <td>
+              <i className="material-icons  white-text text-darken-2  left circle  ipn  ">
+                account_balance
+              </i>
+              <b>CIC - Centro de Investigación en Computación</b>
+            </td>
+           {/*  <td>
+              <i className="material-icons  white-text text-darken-2  left circle  teal ">
+                school
+              </i>
+              Juan Francisco Islas Austria
+            </td>
+            <td>
+              <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
+                local_library
+              </i>
+              Juan Francisco Islas Austria
+            </td>
+            <td>Juan Francisco Islas Austria</td> */}
+            <td>
+            <a href="#modal2"
+                className="modal-trigger waves-effect waves-light cyan-text text-darken-3 btn outlined"
+               
+                  style={{
+                    borderColor: "#0091ea",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+              
+              >
+                <b>Ver Detalles</b>
+              </a>
+            </td>
+            <td>
+              <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
+                <i class="material-icons left ">edit</i>
+              </button>
+            </td>
+            <td>
+              <button class="waves-effect waves-light  btn-flat red-text">
+                <i class="material-icons left ">delete</i>
+              </button>
+            </td>
+          </tr><tr className="light-blue lighten-5">
+            <td>
+              <i className="material-icons  white-text text-darken-2  left circle  ipn  ">
+                account_balance
+              </i>
+              <b>CIC - Centro de Investigación en Computación</b>
+            </td>
+           {/*  <td>
+              <i className="material-icons  white-text text-darken-2  left circle  teal ">
+                school
+              </i>
+              Juan Francisco Islas Austria
+            </td>
+            <td>
+              <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
+                local_library
+              </i>
+              Juan Francisco Islas Austria
+            </td>
+            <td>Juan Francisco Islas Austria</td> */}
+            <td>
+            <a href="#modal2"
+                className="modal-trigger waves-effect waves-light cyan-text text-darken-3 btn outlined"
+               
+                  style={{
+                    borderColor: "#0091ea",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+              
+              >
+                <b>Ver Detalles</b>
               </a>
             </td>
             <td>
@@ -316,7 +469,7 @@ const CrudEscuelas = () => {
               <i className="material-icons  white-text text-darken-2  left circle  ipn  ">
                 account_balance
               </i>
-              CIC - Centro de Investigación en Computación
+             <b> CIC - Centro de Investigación en Computación </b>
             </td>
            {/*  <td>
               <i className="material-icons  white-text text-darken-2  left circle  teal ">
@@ -332,87 +485,18 @@ const CrudEscuelas = () => {
             </td>
             <td>Juan Francisco Islas Austria</td> */}
             <td>
-              <a
-                href="#modal2"
-                className="modal-trigger waves-effect waves-light btn outlined"
+            <a href="#modal2"
+                className="modal-trigger waves-effect waves-light cyan-text text-darken-3 btn outlined"
+               
+                  style={{
+                    borderColor: "#0091ea",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+              
               >
-                Ver Detalles
-              </a>
-            </td>
-            <td>
-              <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
-                <i class="material-icons left ">edit</i>
-              </button>
-            </td>
-            <td>
-              <button class="waves-effect waves-light  btn-flat red-text">
-                <i class="material-icons left ">delete</i>
-              </button>
-            </td>
-          </tr><tr>
-            <td>
-              <i className="material-icons  white-text text-darken-2  left circle  ipn  ">
-                account_balance
-              </i>
-              CIC - Centro de Investigación en Computación
-            </td>
-           {/*  <td>
-              <i className="material-icons  white-text text-darken-2  left circle  teal ">
-                school
-              </i>
-              Juan Francisco Islas Austria
-            </td>
-            <td>
-              <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                local_library
-              </i>
-              Juan Francisco Islas Austria
-            </td>
-            <td>Juan Francisco Islas Austria</td> */}
-            <td>
-              <a
-                href="#modal2"
-                className="modal-trigger waves-effect waves-light btn outlined"
-              >
-                Ver Detalles
-              </a>
-            </td>
-            <td>
-              <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
-                <i class="material-icons left ">edit</i>
-              </button>
-            </td>
-            <td>
-              <button class="waves-effect waves-light  btn-flat red-text">
-                <i class="material-icons left ">delete</i>
-              </button>
-            </td>
-          </tr><tr>
-            <td>
-              <i className="material-icons  white-text text-darken-2  left circle  ipn  ">
-                account_balance
-              </i>
-              CIC - Centro de Investigación en Computación
-            </td>
-           {/*  <td>
-              <i className="material-icons  white-text text-darken-2  left circle  teal ">
-                school
-              </i>
-              Juan Francisco Islas Austria
-            </td>
-            <td>
-              <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                local_library
-              </i>
-              Juan Francisco Islas Austria
-            </td>
-            <td>Juan Francisco Islas Austria</td> */}
-            <td>
-              <a
-                href="#modal2"
-                className="modal-trigger waves-effect waves-light btn outlined"
-              >
-                Ver Detalles
+                <b>Ver Detalles</b>
               </a>
             </td>
             <td>
