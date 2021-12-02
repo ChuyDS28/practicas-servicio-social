@@ -155,13 +155,13 @@ const Signup = () => {
           </div>
           <div className="col s12 l4 center">
             <label className="white-text" style={style.inputLabel}>
-              Correo electrónico
+              Correo Electrónico
             </label>
             <input
               type="email"
               required
               className="indigo lighten-2"
-              placeholder="Ingresa tu Correo electrónico"
+              placeholder="Ingresa tu Correo Electrónico"
               style={style.formInput}
             />
             <span
@@ -173,13 +173,13 @@ const Signup = () => {
           </div>
           <div className="col s12 l4 center">
             <label className="white-text" style={style.inputLabel}>
-              Confirmar correo
+              Confirmar Correo
             </label>
             <input
               type="email"
               required
               className="indigo lighten-2"
-              placeholder="Ingresa tu correo electrónico"
+              placeholder="Ingresa tu Correo Electrónico"
               style={style.formInput}
             />
             <span
@@ -196,14 +196,14 @@ const Signup = () => {
             <input
               required
               className="indigo lighten-2"
-              placeholder="Ingresa tu nombre de usuario"
+              placeholder="Ingresa tu Nombre de Usuario"
               style={style.formInput}
             />
             <span
               className="helper-text grey-text text-lighten-3"
               style={{ fontSize: ".8rem" }}
             >
-              <i>Nombre de usuario para iniciar sesión </i>
+              <i>Nombre de Usuario para iniciar sesión </i>
             </span>
           </div>
 
@@ -215,19 +215,19 @@ const Signup = () => {
               type="password"
               required
               className="indigo lighten-2"
-              placeholder="Crear una contraseña"
+              placeholder="Crear una Contraseña"
               style={style.formInput}
             />
           </div>
           <div className="col s4 l4" style={{ marginTop: "1rem" }}>
             <label className="white-text" style={style.inputLabel}>
-              Confirmar contraseña
+              Confirmar Contraseña
             </label>
             <input
               type="password"
               required
               className="indigo lighten-2"
-              placeholder="Ingresa la contraseña creada"
+              placeholder="Ingresa la Contraseña creada"
               style={style.formInput}
             />
           </div>
@@ -264,7 +264,7 @@ const Signup = () => {
               </div>
               <div className="col  s12 m4 xl2">
                 <label className="white-text" style={style.inputLabel}>
-                  Extensión
+                  Extención
                 </label>
                 <input
                   type="text"
@@ -276,7 +276,7 @@ const Signup = () => {
               </div>
               <div className="col  s12 m4 xl4">
                 <label className="white-text" style={style.inputLabel}>
-                  Teléfono
+                  Telefono
                 </label>
                 <input
                   type="tel"
@@ -299,7 +299,7 @@ const Signup = () => {
               <i className="material-icons right">send</i>
             </button>
             <p className="white-text">
-              Se te enviará una confirmación de registro por correo
+              Se te enviara una confirmación de registro por correo
             </p>
             <p className="grey-text text-lighten-4">
               ¿Tienes una cuenta?

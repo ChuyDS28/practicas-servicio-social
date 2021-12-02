@@ -1,6 +1,4 @@
-*,
-*:before,
-*:after {
+*, *:before, *:after {
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
@@ -13,22 +11,20 @@ body {
 .btn {
   text-transform: none;
 }
-.btn.outlined,
-.btn-large.outlined {
+.btn.outlined,.btn-large.outlined {
   background: #fff;
   box-shadow: none;
-  color: #00695c;
+   color: #00695c;
   border: 1px solid #00897b;
 }
-.btn.outlined:hover,
-.btn-large.outlined:hover {
+.btn.outlined:hover,.btn-large.outlined:hover {
   background: #e0f2f1;
   border: 1px solid #00695c;
 }
-.ipn {
+.ipn{
   background: #821752;
 }
-.ipn-text {
+.ipn-text{
   color: #821752;
 }
 .btn-flat {
@@ -39,48 +35,52 @@ body {
 .btn-flat:hover {
   background: #f2f2f2;
 }
-blockquote {
+ blockquote {
   margin: 20px 0;
   padding-left: 1.5rem;
-  border-left: 5px solid #821752;
+  border-left: 5px solid #821752; 
 }
-
-.tabs .tab a {
+  
+ .tabs .tab a {
   color: rgba(38, 166, 154, 1);
-}
+ }
 
 .tabs .tab a:hover {
-  color: #26a69a;
+  color:#26a69a;
   background-color: #e0f2f1;
-}
-.tabs .tab a.active {
-  color: #26a69a;
+ }
+.tabs .tab a.active{
+  color:#26a69a;
+
 }
 
 .tabs .tab a:focus.active {
-  color: #637472;
-  background-color: rgba(38, 166, 154, 0.2);
-}
+  color:#637472;
+   background-color: rgba(38, 166, 154, 0.2);
+ }
 
 .tabs .indicator {
-  background-color: #26a69a;
-}
+  background-color:#26a69a;
+ }
 
-tbody tr:hover {
+ 
+tbody tr:hover{
   background: #e0f2f1 !important;
 }
 
-tbody tr.trPointer {
-  /*  cursor: pointer; */
-}
-tbody tr {
-  font-size: 13px;
-  font-weight: 500;
-}
-.MenuActionContainer {
+tbody tr.trPointer{
+ /*  cursor: pointer; */
+ }
+ tbody tr{
+   font-size: 13px;
+   font-weight: 500;
+ }
+ .MenuActionContainer{
   padding: 15px;
-  margin: 15px;
+  margin:  15px;
+
 }
+ 
 
 /* Tamaño del scroll */
 ::-webkit-scrollbar {
@@ -113,3 +113,4 @@ tbody tr {
 ::-webkit-scrollbar-track:active {
   background: rgba(38, 166, 154, 0.2);
 }
+

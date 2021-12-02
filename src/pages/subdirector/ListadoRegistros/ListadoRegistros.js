@@ -156,7 +156,7 @@ const ListadoRegistros = () => {
             </div>
             <div className="input-field col s12">
               <input id="nombreCurso" type="text" required />
-              <label htmlFor="nombreCurso">Nombre del curso</label>
+              <label htmlFor="nombreCurso">Nombre del Curso</label>
             </div>
             <div className="  col s4 m3 xl3">
           <label>Su solicitud es:</label>
@@ -179,7 +179,7 @@ const ListadoRegistros = () => {
             to="/subdirector/registroDetalle"
             className="modal-close waves-effect waves-light btn   "
           >
-            Crear nuevo registro de programa
+            Crear nuevo registro de programaa
             <i className="material-icons right">picture_as_pdf</i>
           </Link>
           <button
@@ -311,10 +311,10 @@ const ListadoRegistros = () => {
             className="collection-item black-text "
             style={{ border: "0px" }}
           >
-           <span className="new badge blue " data-badge-caption="">
-                Vigente
-              </span>
-            <b>Curso de Informática</b>
+            <span className="new badge grey darken-2 " data-badge-caption="">
+              Deprecado
+            </span>
+            <b>Curso de Informatica</b>
           </Link>
           <Link
             to="/subdirector/RegistroDetalle"
@@ -322,10 +322,10 @@ const ListadoRegistros = () => {
             style={{ border: "0px" }}
           >
             <b>
-            <span className="new badge blue " data-badge-caption="">
-                Vigente
+              <span className="new badge grey darken-2" data-badge-caption="">
+                Deprecado
               </span>
-              Curso de Informática
+              Curso de Informatica
             </b>
           </Link>
           <Link
@@ -337,7 +337,7 @@ const ListadoRegistros = () => {
               <span className="new badge blue " data-badge-caption="">
                 Vigente
               </span>
-              Curso de Informática
+              Curso de Informatica
             </b>
           </Link>
           <Link
@@ -349,7 +349,7 @@ const ListadoRegistros = () => {
               <span className="new badge blue " data-badge-caption="">
                 Vigente
               </span>
-              Curso de Informática
+              Curso de Informatica
             </b>
           </Link>
           <Link
@@ -361,7 +361,7 @@ const ListadoRegistros = () => {
               <span className="new badge yellow darken-4" data-badge-caption="">
                 En proceso - 70% Completado
               </span>
-              Curso de Informática
+              Curso de Informatica
             </b>
           </Link>
           <Link
@@ -373,7 +373,7 @@ const ListadoRegistros = () => {
               <span className="new badge yellow darken-4" data-badge-caption="">
                 En proceso - 50% Completado
               </span>
-              Curso de Informática
+              Curso de Informatica
             </b>
           </Link>
           <Link
@@ -385,7 +385,7 @@ const ListadoRegistros = () => {
               <span className="new badge green " data-badge-caption="">
                 Impartiendo
               </span>
-              Curso de Informática
+              Curso de Informatica
             </b>
           </Link>
           <Link
@@ -397,7 +397,7 @@ const ListadoRegistros = () => {
               <span className="new badge green " data-badge-caption="">
                 Impartiendo
               </span>
-              Curso de Informática
+              Curso de Informatica
             </b>
           </Link>
           <Link
@@ -409,7 +409,7 @@ const ListadoRegistros = () => {
               <span className="new badge lime darken-1 " data-badge-caption="">
                 En proceso - Con revisiones
               </span>
-              Curso de Informática
+              Curso de Informatica
             </b>
           </Link>
         </div>
@@ -418,5 +418,6 @@ const ListadoRegistros = () => {
     </>
   );
 };
+
 
 export default ListadoRegistros;

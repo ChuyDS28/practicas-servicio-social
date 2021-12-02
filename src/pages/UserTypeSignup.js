@@ -35,6 +35,9 @@ const style = {
     padding: "0 1rem",
   },
 };
+
+
+
 const UserTypeSignup = () => {
   return (
     <div>
@@ -56,17 +59,17 @@ const UserTypeSignup = () => {
           </div>
         </div>
       </header>
-      <main className="row container section" >
+      <main className="row container section" style={{minWidth:"100%"}}>
         <TargetaRegistro
           user="Revisor"
-          description="Tendrá acceso a ver los registros pendientes por revisar además de las acciones de contenido que le correspondan.."
+          description="Tendra acceso a ver los registros pendientes por revisar además de las acciones de contenido que le correspondan.."
           link="/signup/revisor"
           pic="https://picsum.photos/400/400?random=2"
           texto= "REGISTRARSE"
         />
         <TargetaRegistro
           user="Subdirector "
-          description="Tendrá acceso a ver los registros pendientes por revisar
+          description="Tendra acceso a ver los registros pendientes por revisar
                 además de las acciones de contenido que le correspondan.."
           link="/signup/Subdirector"
           pic="https://picsum.photos/400/400?random=3"
@@ -74,8 +77,8 @@ const UserTypeSignup = () => {
         />
        
         <TargetaRegistro
-          user="Director"
-          description="El Director Académico tendra acceso a ver los registros pendientes por revisar
+          user="Director Academico "
+          description="Tendra acceso a ver los registros pendientes por revisar
                 además de las acciones de contenido que le correspondan.."
           link="/signup/Director%20Academico"
           pic="https://picsum.photos/400/400?random=5"
@@ -83,7 +86,7 @@ const UserTypeSignup = () => {
         />
      <TargetaRegistro
           user="Administrador"
-          description="Tendrá acceso a ver los registros pendientes por revisar
+          description="Tendra acceso a ver los registros pendientes por revisar
                 además de las acciones de contenido que le correspondan.."
           link="/signup/Administrador"
           pic="https://picsum.photos/400/400?random=1"
