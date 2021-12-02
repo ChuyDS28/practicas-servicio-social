@@ -107,7 +107,7 @@ const RegistroDetalle = () => {
           <span className="small material-icons blue-text ">error</span>
 
           <button type="submit" className="waves-effect waves-light btn right ">
-            Subir Instructivo
+            Subir instructivo
             <i className="material-icons right">picture_as_pdf</i>
           </button>
         </div>
@@ -175,12 +175,12 @@ const RegistroDetalle = () => {
           title="Solicitud de registro"
           status={0}
           callback={() => history.push("/subdirector/generarSolicitud")}
-          btnTitle="Solicitud de Registro"
+          btnTitle="Solicitud de registro"
           observaciones=""
         />
         <StepContainer
           step="2"
-          title="Enviar Solicitud de registro firmada"
+          title="Enviar solicitud de registro firmada"
           status={0}
           btnTitle="Solicitud de registro firmada"
         />
@@ -192,7 +192,7 @@ const RegistroDetalle = () => {
         />
         <StepContainer
           step="4"
-          title="Documentos Probatorios de Aval"
+          title="Documentos probatorios de Aval"
           status={0}
           btnTitle="Documento"
         />

@@ -7,7 +7,7 @@ import estudio from "../../../assets/images/estudio.png";
 import Background5 from "../../../assets/images/Background5.png";
 import puntitos from "../../../assets/images/puntitos.png";
 import "./GenerarSolicitud.css";
-import instructivo from "../../../assets/InstructivoSolicitud.pdf";
+import instructivo from "../../../assets/pdfs/InstructivoSolicitud.pdf";
 const style = {
   temaContainer: {
     marginBottom: "10px",
@@ -128,13 +128,13 @@ const GenerarSolicitud = () => {
       <>
         <div className="input-field col s12">
           <blockquote>
-            <p>Seccion 1 • Datos Generales de Identificación del Programa</p>
+            <p>Sección 1 • Datos generales de identificación del programa</p>
           </blockquote>
         </div>
 
         <div className="input-field col s8 m9 xl9">
           <input id="nombreCurso" type="text" required />
-          <label htmlFor="nombreCurso">Nombre del Programa</label>
+          <label htmlFor="nombreCurso">Nombre del programa</label>
         </div>
         {/* <div className="  col s4 m3 xl3">
           <label>Su solicitud es:</label>
@@ -149,18 +149,18 @@ const GenerarSolicitud = () => {
         <div className="col s12 m6 xl6  ">
           <div className="input-field col s12">
             <input id="horasTeoria" type="text" required />
-            <label htmlFor="horasTeoria">HRS. de Teoria</label>
+            <label htmlFor="horasTeoria">Horas de teoría</label>
           </div>
           <div className="input-field col s12 ">
             <input id="horasTeoria" type="text" required />
-            <label htmlFor="horasTeoria">HRS. de Práctica</label>
+            <label htmlFor="horasTeoria">Horas de práctica</label>
           </div>
           <div className=" col s6 m6 xl6 ">
-            <label htmlFor="horasTeoria">Total de Horas</label>
+            <label htmlFor="horasTeoria">Total de horas</label>
           </div>
-          <div className=" col s6 m6 xl6 ">15 Horas </div>
+          <div className=" col s6 m6 xl6 ">15 horas </div>
           <div className=" col s6 m6 xl6 ">
-            <label htmlFor="horasTeoria">Tipo de Programa</label>
+            <label htmlFor="horasTeoria">Tipo de programa</label>
           </div>
           <div className=" col s6 m6 xl6 ">Taller</div>
         </div>
@@ -173,7 +173,7 @@ const GenerarSolicitud = () => {
             <p>
               El total de horas no deberá de sobrepasar 25.
               <br />
-              El total de horas y el tipo de programa se calcula en automatico
+              El total de horas y el tipo de programa se calcula en automático
             </p>
             <p>
               Curso: Horas teoría &#62; Horas Práctica <br />
@@ -186,7 +186,7 @@ const GenerarSolicitud = () => {
           <input id="horasTeoriaa" type="number" required />
           <label htmlFor="horasTeoriaa">Horas de sesión</label>
           <span class="helper-text">
-            Numero de horas que dura cada sesión/clase
+            Número de horas que dura cada sesión/clase
           </span>
         </div>
 
@@ -196,8 +196,8 @@ const GenerarSolicitud = () => {
             <option value="" disabled>
               Selecciona una opción
             </option>
-            <option value="1">Basico</option>
-            <option value="2">Medio Superior</option>
+            <option value="1">Básico</option>
+            <option value="2">Medio superior</option>
             <option value="2">Superior</option>
             <option value="2">Posgrado</option>
           </select>
@@ -210,19 +210,19 @@ const GenerarSolicitud = () => {
               Selecciona una opción
             </option>
             <option value="1">Escolarizada</option>
-            <option value="1">No Escolarizada</option>
-            <option value="2">En linea</option>
+            <option value="1">No escolarizada</option>
+            <option value="2">En línea</option>
             <option value="2">Mixta</option>
           </select>
         </div>
         <div className=" col s4">
-          <label>Area:</label>
+          <label>Área:</label>
           <select className="browser-default" defaultValue="" required>
             <option value="" disabled>
               Selecciona una opción
             </option>
             <option value="1">
-              Ingeniería y Ciencias Físico y Matemáticas
+              Ingeniería y Ciencias Físico Matemáticas
             </option>
             <option value="2">Ciencias Médico Biológicas</option>
             <option value="2">Ciencias Sociales y Administrativas</option>
@@ -238,8 +238,8 @@ const GenerarSolicitud = () => {
         </div> */}
         <div className="col s12">
           <label>
-            Unidad que Solicita el Registro (Nombre completo del Centro, Escuela
-            o Unidad que solicita el Registro)
+            Unidad que solicita el registro (Nombre completo del Centro, Escuela
+            o Unidad que solicita el registro)
           </label>
           <select className="browser-default" defaultValue="4" required disabled>
             <option value="" disabled>
@@ -256,17 +256,16 @@ const GenerarSolicitud = () => {
             <option value="2">Morelia</option>
             <option value="2">Oaxaca</option>
             <option value="2">Tampico</option>
-            <option value="2">Tampico</option>
             <option value="2">Veracruz</option>
           </select>
         </div>
         <div className="input-field col s12 xl6">
           <input id="date" type="text" className="datepicker" required />
-          <label htmlFor="date">Fecha de Inicio del Programa</label>
+          <label htmlFor="date">Fecha de inicio del programa</label>
         </div>
         <div className="input-field col s12 xl6">
           <input id="datee" type="text" className="datepicker" required />
-          <label htmlFor="datee">Fecha de término del Programa</label>
+          <label htmlFor="datee">Fecha de término del programa</label>
         </div>
         <div className="input-field col s12">
           <input id="nombreCurso" type="text" required />
@@ -289,7 +288,7 @@ const GenerarSolicitud = () => {
       <>
         <div className=" col s12">
           <blockquote>
-            <p>Seccion 2 • Datos especificos por Programa</p>
+            <p>Sección 2 • Datos específicos por programa</p>
           </blockquote>
         </div>
         <div className="input-field col s12">
@@ -307,7 +306,7 @@ const GenerarSolicitud = () => {
                   // checkboxOnChange(e,setAreasServicios,areasServicios)
                 }}
               />
-              <span>Público General</span>
+              <span>Público general</span>
             </label>
           </p>
           <p className="col s12 m4 left-align">
@@ -349,7 +348,7 @@ const GenerarSolicitud = () => {
                   // checkboxOnChange(e,setAreasServicios,areasServicios)
                 }}
               />
-              <span>Profesionistas del Area</span>
+              <span>Profesionistas del Área</span>
             </label>
           </p>
           <p className="col s12 m4 left-align">
@@ -363,7 +362,7 @@ const GenerarSolicitud = () => {
                   // checkboxOnChange(e,setAreasServicios,areasServicios)
                 }}
               />
-              <span>Beneficiaros del convenio</span>
+              <span>Beneficiarios del convenio</span>
             </label>
           </p>
         </div>
@@ -378,18 +377,18 @@ const GenerarSolicitud = () => {
         <div className="input-field col s12">
           <input id="nombreCursoe" type="text" required />
           <label htmlFor="nombreCursoe">
-            Requisitos Académicos y Administrativos de Ingreso del Participante:
+            Requisitos académicos y administrativos de ingreso del participante:
           </label>
         </div>
         {/* <label>Recursos de operación del Programa: </label> */}
         <div className="input-field col s12">
           <input id="nombreCursoer" type="text" required />
           <label htmlFor="nombreCursoer">
-            Recursos de operación del Programa:
+            Recursos de operación del programa:
           </label>
           <span class="helper-text">
-            Insumos extra, Materiales especializados solo para este curso
-            (Licencias, Material de construcción, Material mecanico, Material
+            Insumos extra, materiales especializados solo para este curso
+            (Licencias, material de construcción, material mecánico, material
             extra)
           </span>
           <br />
@@ -404,7 +403,7 @@ const GenerarSolicitud = () => {
           </span>
         </div> */}
         <div className="col s6">
-          <label>Unidades Académicas de Colaboración (opcional)</label>
+          <label>Unidades Académicas de colaboración (opcional)</label>
           <select className="browser-default" defaultValue=""  >
             <option value="" disabled>
               Selecciona una opción
@@ -420,12 +419,11 @@ const GenerarSolicitud = () => {
             <option value="2">Morelia</option>
             <option value="2">Oaxaca</option>
             <option value="2">Tampico</option>
-            <option value="2">Tampico</option>
             <option value="2">Veracruz</option>
           </select>
         </div>
         <div className="  col s6">
-          <label>Sector con el que se vincula el Programa:</label>
+          <label>Sector con el que se vincula el programa:</label>
           <select className="browser-default" defaultValue="" required>
             <option value="" disabled>
               Selecciona una opción
@@ -436,7 +434,7 @@ const GenerarSolicitud = () => {
           </select>
         </div>
         <div className="input-field col s12">
-          <label> Evaluación y tipo de Reconocimiento que se entregará</label>
+          <label> Evaluación y tipo de reconocimiento que se entregará</label>
           <br /> <br />
           <br />
           {/*  <p className="col s12 m4 left-align">
@@ -520,7 +518,7 @@ const GenerarSolicitud = () => {
                   // checkboxOnChange(e,setAreasServicios,areasServicios)
                 }}
               />
-              <span>Examen Final</span>
+              <span>Examen final</span>
             </label>
           </p>
           <div className="input-field col s12">
@@ -563,7 +561,7 @@ const GenerarSolicitud = () => {
       <>
         <div className=" col s12">
           <blockquote>
-            <p>Seccion 3 • Planeación</p>
+            <p>Sección 3 • Planeación</p>
           </blockquote>
         </div>
         <div className="input-field col s12">
@@ -573,8 +571,8 @@ const GenerarSolicitud = () => {
               Ejemplo
             </span>
             <p>
-              Guiarse de la estructura de este ejemplo para llenar los campos de
-              esta sección
+              Guíese de la estructura de este ejemplo para llenar los campos de
+              esta sección.
               <br />
             </p>
             <p>
@@ -600,7 +598,7 @@ const GenerarSolicitud = () => {
         </div>
         <div className="input-field col s12">
           <input id="nombreCurso" type="text" required />
-          <label htmlFor="nombreCurso">Competencia General a desarrollar</label>
+          <label htmlFor="nombreCurso">Competencia general a desarrollar</label>
         </div>
         <div className="col s6 center">
           <button
@@ -615,7 +613,7 @@ const GenerarSolicitud = () => {
             onClick={() => nextSection("test4")}
             className="waves-effect waves-light btn   "
           >
-            Guardar y Continuar
+            Guardar y continuar
           </button>
         </div>
       </>
@@ -626,11 +624,11 @@ const GenerarSolicitud = () => {
       <>
         <div className="col s12">
           <blockquote>
-            <p>Seccion 4 • Programa</p>
+            <p>Sección 4 • Programa</p>
           </blockquote>
           <p className="  light ">
-            Describir las competencias Específicas, Actividades de Aprendizaje,
-            Evidencias de Aprendizaje y Horas por cada uno de los temas.
+            Describir las competencias específicas, actividades de aprendizaje,
+            evidencias de aprendizaje y horas por cada uno de los temas.
           </p>
           <div className="row teal lighten-5" style={style.infoContainer}>
             <span className="small material-icons green-text ">list_alt</span>
@@ -639,11 +637,11 @@ const GenerarSolicitud = () => {
             </span>
             <p>
               Estos campos se deberán de llenar por cada uno de los temas que
-              componen el programa
+              componen el programa.
             </p>
             <div className="input-field col s12 m6 xl6">
               <input id="nombreCurso" type="text" />
-              <label htmlFor="nombreCurso">Nombre del Tema</label>
+              <label htmlFor="nombreCurso">Nombre del tema</label>
             </div>
             <div className="input-field col s12 m6 xl6">
               <input id="nombreCurso" type="text" />
@@ -651,11 +649,11 @@ const GenerarSolicitud = () => {
             </div>
             <div className="input-field col s12 m6 xl6">
               <input id="nombreCurso" type="text" />
-              <label htmlFor="nombreCurso">Actividad de Aprendizaje</label>
+              <label htmlFor="nombreCurso">Actividad de aprendizaje</label>
             </div>
             <div className="input-field col s12 m6 xl6">
               <input id="nombreCurso" type="text" />
-              <label htmlFor="nombreCurso">Evidencia de Aprendizaje</label>
+              <label htmlFor="nombreCurso">Evidencia de aprendizaje</label>
             </div>
             <div className="input-field col s12 m6 xl6">
               <input id="nombreCurso" type="text" />
@@ -663,14 +661,36 @@ const GenerarSolicitud = () => {
             </div>
             <div className="input-field col s6 center">
               <button type="submit" className="waves-effect waves-light btn   ">
-                Agregar Tema
+                Agregar tema
               </button>
             </div>
           </div>
         </div>
         <div className="col s12  grey lighten-3" style={style.temaContainer}>
           <h6>
-            <strong>Tema 1 · </strong>Nombre del Tema
+            <strong>Tema 1 · </strong>Nombre del tema
+            <button className="waves-effect waves-light  btn-flat right red-text valign-wrapper">
+              Borrar
+              <span className="small material-icons red-text ">delete</span>
+            </button>
+          </h6>
+          <p>
+            <strong>· Competencias específicas: </strong>Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit
+            <br />
+            <strong>· Actividades de aprendizaje: </strong>Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit
+            <br />
+            <strong>· Evidencias de aprendizaje: </strong>Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit
+            <br />
+            <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit
+          </p>
+        </div>
+        <div className="col s12  grey lighten-3" style={style.temaContainer}>
+          <h6>
+            <strong>Tema 1 · </strong>Nombre del tema
             <button className="waves-effect waves-light  btn-flat right red-text valign-wrapper">
               Borrar
               <span className="small material-icons red-text ">delete</span>
@@ -692,20 +712,20 @@ const GenerarSolicitud = () => {
         </div>
         <div className="col s12  grey lighten-3" style={style.temaContainer}>
           <h6>
-            <strong>Tema 1 · </strong>Nombre del Tema
+            <strong>Tema 1 · </strong>Nombre del tema
             <button className="waves-effect waves-light  btn-flat right red-text valign-wrapper">
               Borrar
               <span className="small material-icons red-text ">delete</span>
             </button>
           </h6>
           <p>
-            <strong>· Competencias Específicas: </strong>Lorem ipsum dolor sit
+            <strong>· Competencias específicas: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Actividades de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Actividades de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Evidencias de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Evidencias de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
             <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
@@ -714,20 +734,20 @@ const GenerarSolicitud = () => {
         </div>
         <div className="col s12  grey lighten-3" style={style.temaContainer}>
           <h6>
-            <strong>Tema 1 · </strong>Nombre del Tema
+            <strong>Tema 1 · </strong>Nombre del tema
             <button className="waves-effect waves-light  btn-flat right red-text valign-wrapper">
               Borrar
               <span className="small material-icons red-text ">delete</span>
             </button>
           </h6>
           <p>
-            <strong>· Competencias Específicas: </strong>Lorem ipsum dolor sit
+            <strong>· Competencias específicas: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Actividades de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Actividades de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Evidencias de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Evidencias de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
             <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
@@ -736,20 +756,20 @@ const GenerarSolicitud = () => {
         </div>
         <div className="col s12  grey lighten-3" style={style.temaContainer}>
           <h6>
-            <strong>Tema 1 · </strong>Nombre del Tema
+            <strong>Tema 1 · </strong>Nombre del tema
             <button className="waves-effect waves-light  btn-flat right red-text valign-wrapper">
               Borrar
               <span className="small material-icons red-text ">delete</span>
             </button>
           </h6>
           <p>
-            <strong>· Competencias Específicas: </strong>Lorem ipsum dolor sit
+            <strong>· Competencias específicas: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Actividades de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Actividades de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Evidencias de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Evidencias de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
             <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
@@ -758,42 +778,20 @@ const GenerarSolicitud = () => {
         </div>
         <div className="col s12  grey lighten-3" style={style.temaContainer}>
           <h6>
-            <strong>Tema 1 · </strong>Nombre del Tema
+            <strong>Tema 1 · </strong>Nombre del tema
             <button className="waves-effect waves-light  btn-flat right red-text valign-wrapper">
               Borrar
               <span className="small material-icons red-text ">delete</span>
             </button>
           </h6>
           <p>
-            <strong>· Competencias Específicas: </strong>Lorem ipsum dolor sit
+            <strong>· Competencias específicas: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Actividades de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Actividades de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
-            <strong>· Evidencias de Aprendizaje: </strong>Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit
-            <br />
-            <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit
-          </p>
-        </div>
-        <div className="col s12  grey lighten-3" style={style.temaContainer}>
-          <h6>
-            <strong>Tema 1 · </strong>Nombre del Tema
-            <button className="waves-effect waves-light  btn-flat right red-text valign-wrapper">
-              Borrar
-              <span className="small material-icons red-text ">delete</span>
-            </button>
-          </h6>
-          <p>
-            <strong>· Competencias Específicas: </strong>Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit
-            <br />
-            <strong>· Actividades de Aprendizaje: </strong>Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit
-            <br />
-            <strong>· Evidencias de Aprendizaje: </strong>Lorem ipsum dolor sit
+            <strong>· Evidencias de aprendizaje: </strong>Lorem ipsum dolor sit
             amet, consectetur adipiscing elit
             <br />
             <strong>· Horas dedicadas: </strong>Lorem ipsum dolor sit amet,
@@ -818,7 +816,7 @@ const GenerarSolicitud = () => {
             onClick={() => nextSection("test5")}
             className="waves-effect waves-light btn   "
           >
-            Guardar y Continuar
+            Guardar y continuar
           </button>
         </div>
       </>
@@ -838,7 +836,7 @@ const GenerarSolicitud = () => {
       return (
         <div id="modal2" className="modal">
           <div className="modal-content  ">
-            <h5>Buscar Instructor</h5>
+            <h5>Buscar instructor</h5>
             <p className="  light ">Selecciona tu Instructor</p>
 
             <div className="row ">
@@ -866,42 +864,42 @@ const GenerarSolicitud = () => {
                 <span className="new badge grey darken-2" data-badge-caption="">
                   VECJ880326 XXX
                 </span>
-                Curso de Informatica
+                Curso de Informática
               </a>
               <a href="" className="collection-item">
                 Antonio Ayola
                 <span className="new badge grey darken-2" data-badge-caption="">
                   VECJ880326 XXX
                 </span>
-                Curso de Informatica
+                Curso de Informática
               </a>
               <a href="" className="collection-item">
                 Antonio Ayola
                 <span className="new badge grey darken-2" data-badge-caption="">
                   VECJ880326 XXX
                 </span>
-                Curso de Informatica
+                Curso de Informática
               </a>
               <a href="" className="collection-item">
                 Antonio Ayola
                 <span className="new badge grey darken-2" data-badge-caption="">
                   VECJ880326 XXX
                 </span>
-                Curso de Informatica
+                Curso de Informática
               </a>
               <a href="" className="collection-item">
                 Antonio Ayola
                 <span className="new badge grey darken-2" data-badge-caption="">
                   VECJ880326 XXX
                 </span>
-                Curso de Informatica
+                Curso de Informática
               </a>
               <a href="" className="collection-item">
                 Antonio Ayola
                 <span className="new badge grey darken-2" data-badge-caption="">
                   VECJ880326 XXX
                 </span>
-                Curso de Informatica
+                Curso de Informática
               </a>
             </div>
             <br />
@@ -919,7 +917,7 @@ const GenerarSolicitud = () => {
         <ModalAgregarInstructor />
         <div className=" col s12">
           <blockquote>
-            <p>Seccion 5 • Datos del instructor</p>
+            <p>Sección 5 • Datos del instructor</p>
           </blockquote>
         </div>
 
@@ -965,7 +963,7 @@ const GenerarSolicitud = () => {
           </p>
         </div>
         <div className=" col s12">
-          <br /> En caso que no encuentres al intructor registralo.&nbsp;&nbsp;
+          <br /> En caso que no encuentres al intructor regístralo.&nbsp;&nbsp;
           <a
             className="modal-trigger waves-effect waves-light btn-flat   center"
             href="#modal1"
@@ -1002,7 +1000,7 @@ const GenerarSolicitud = () => {
       <>
         <div className="  col s12">
           <blockquote>
-            <p>Seccion 6 • Datos del Coordinador Academico (CA)</p>
+            <p>Sección 6 • Datos del Coordinador Academico (CA)</p>
           </blockquote>
           <div className="  newGroupContainer teal lighten-5 ">
             <span className="small material-icons blue-text ">error</span>
@@ -1010,7 +1008,7 @@ const GenerarSolicitud = () => {
               Nota
             </span>
             <p>
-              Esta seccion se llena en automatico al seleccionar el centro,
+              Esta sección se llena en automático al seleccionar el centro,
               verificar que los campos sean correctos.
             </p>
           </div>
@@ -1025,11 +1023,11 @@ const GenerarSolicitud = () => {
         </div>
         <div className="input-field col s4">
           <input id="nombreCurso" type="text" required />
-          <label htmlFor="nombreCurso">Numero telefonico del CA</label>
+          <label htmlFor="nombreCurso">Número telefónico del CA</label>
         </div>
         <div className="input-field col s3">
           <input id="nombreCurso" type="text" required />
-          <label htmlFor="nombreCurso">Extención del CA</label>
+          <label htmlFor="nombreCurso">Extensión del CA</label>
         </div>
         <div className="input-field col s5">
           <input id="nombreCurso" type="text" required />
@@ -1048,7 +1046,7 @@ const GenerarSolicitud = () => {
             onClick={() => nextSection("test7")}
             className="waves-effect waves-light btn   "
           >
-            Guardar y Continuar
+            Guardar y continuar
           </button>
         </div>
       </>
@@ -1059,7 +1057,7 @@ const GenerarSolicitud = () => {
       <>
         <div className=" col s12">
           <blockquote>
-            <p>Seccion 7 • Aval</p>
+            <p>Sección 7 • Aval</p>
           </blockquote>
           <p className="  light ">
             En esta sección deberá de adjuntar el Aval en formato PDF
@@ -1068,7 +1066,7 @@ const GenerarSolicitud = () => {
         </div>
         <div className="file-field input-field col s12">
           <div className="btn">
-            <span>Cargar Archivo</span>
+            <span>Cargar archivo</span>
             <input type="file" accept="application/pdf" required />
           </div>
           <div className="file-path-wrapper">
@@ -1081,10 +1079,10 @@ const GenerarSolicitud = () => {
         </div>
         <div className="file-field input-field col s12">
           <p className="  light ">
-            Documentos Probatorios de Aval (De quien lo firma?)
+            Documentos probatorios de Aval (De quien lo firma?)
           </p>
           <div className="btn">
-            <span>Cargar Archivo</span>
+            <span>Cargar archivo</span>
             <input type="file" accept="application/pdf" required />
           </div>
           <div className="file-path-wrapper">
@@ -1097,7 +1095,7 @@ const GenerarSolicitud = () => {
         </div>
         <div className="input-field col s9">
           <input id="nombreCurso" type="text" required />
-          <label htmlFor="nombreCurso">Nombre del Programa</label>
+          <label htmlFor="nombreCurso">Nombre del programa</label>
         </div>
         <div className="col s6 center">
           <button
@@ -1112,7 +1110,7 @@ const GenerarSolicitud = () => {
             onClick={() => nextSection("test8")}
             className="waves-effect waves-light btn   "
           >
-            Guardar y Continuar
+            Guardar y continuar
           </button>
         </div>
       </>
@@ -1123,7 +1121,7 @@ const GenerarSolicitud = () => {
       <>
         <div className="col s12">
           <blockquote>
-            <p>Seccion 8 • Datos de firma</p>
+            <p>Sección 8 • Datos de firma</p>
           </blockquote>
           <p className="  light ">
             Datos de quien firma y autoriza la solicitud.
@@ -1134,8 +1132,8 @@ const GenerarSolicitud = () => {
               Nota
             </span>
             <p>
-              Esta seccion se llena en automatico al seleccionar el centro,
-              verificar que los campos sean correctos
+              Esta sección se llena en automático al seleccionar el centro,
+              verificar que los campos sean correctos.
             </p>
           </div>
         </div>
@@ -1171,7 +1169,7 @@ const GenerarSolicitud = () => {
             className="waves-effect waves-light btn   "
             onClick={() => nextSection("test9")}
           >
-            Guardar y Continuar
+            Guardar y continuar
           </button>
         </div>
       </>
@@ -1402,8 +1400,8 @@ const GenerarSolicitud = () => {
             <div className="col s12 center">
               <p>
                 <i>
-                  Asegurate de que todos los campos estén correctos, al
-                  finalizar podras enviar la solicitud a revisión
+                  Asegúrate de que todos los campos estén correctos, al
+                  finalizar podras enviar la solicitud a revisión.
                 </i>
               </p>
             </div>

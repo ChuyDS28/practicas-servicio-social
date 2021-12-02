@@ -11,6 +11,7 @@ import DetalleRegistroS from "../components/DetalleRegistroS";
 import ScrollToTop from "./ScrollToTop";
 import CentrosDVDR from "../pages/CentrosDVDR/CentrosDVDR";
 import UserTypeSignup from "../pages/UserTypeSignup";
+import IndicadoresGeneral from "../pages/IndicadoresGenerales/IndicadoresGenerales";
 
 //subdirector
 import NavbarUser from "../pages/subdirector/NavbarUser";
@@ -29,8 +30,8 @@ import RevisarSolicitud from "../pages/revisor/RevisarSolicitud";
 //Admin
 import MenuAdmin from "../pages/admin/MenuAdmin";
 import NavbarAdmin from "../pages/admin/NavbarAdmin";
-import AdministrarSolicitudes from "../pages/admin/AdministrarSolicitudes";
-import AdministrarUsuarios from "../pages/admin/AdministrarUsuarios";
+import AdministrarSolicitudes from "../pages/admin/AdministrarSolicitudes/AdministrarSolicitudes";
+import AdministrarUsuarios from "../pages/admin/AdministrarUsuarios/AdministrarUsuarios";
 import ListadoCatalogos from "../pages/admin/ListadoCatalogos";
 import CRUDInstructores from "../pages/admin/CRUDInstructores";
 import CrudEscuelas from "../pages/admin/CRUDEscuelas/CrudEscuelas";
@@ -39,7 +40,12 @@ import MenuDirector from "../pages/director/MenuDirector";
 import NavbarDirector from "../pages/director/NavbarDirector";
 import ListadoInstructoresDirector from "../pages/director/ListadoInstructoresDirector";
 import DirectorListadoGeneral from "../pages/director/DirectorListadoGeneral";
-
+//Reporteador 
+import MenuEacuerdos from "../pages/eacuerdos/MenuEacuerdos";
+import Indicadores from "../pages/eacuerdos/Indicadores";
+import Tablas from "../pages/eacuerdos/Tablas";
+import Reportes from "../pages/eacuerdos/Reportes/Reportes";
+import NavbarEacuerdos from "../pages/eacuerdos/NavbarEacuerdos";
 
 const Router = () => {
   return (
@@ -66,6 +72,10 @@ const Router = () => {
           <NavbarHome />
           <HistorialRegistros />
         </Route>
+        <Route exact path="/indicadoresGeneral">
+          <NavbarHome />
+          <IndicadoresGeneral />
+        </Route>
 
         <Route exact path="/historialRegistrosVigentes">
           <NavbarHome />
@@ -73,7 +83,7 @@ const Router = () => {
         </Route>
         <Route exact path="/centros">
           <NavbarHome />
-          <CentrosDVDR/>
+          <CentrosDVDR />
         </Route>
         <Route
           path="/subdirector"
@@ -198,7 +208,31 @@ const Router = () => {
             </>
           )}
         />
-
+ <Route
+          path="/eacuerdos"
+          render={({ match: { url } }) => (
+            <>
+              <NavbarEacuerdos/>
+              <Route path={`${url}/menu`} component={MenuEacuerdos} exact />
+              <Route
+                path={`${url}/reportes`}
+                component={Reportes}
+                exact
+              />
+              <Route
+                path={`${url}/tablas`}
+                component={Tablas}
+                exact
+              />
+              <Route
+                path={`${url}/indicadores`}
+                component={Indicadores}
+                exact
+              />
+              
+            </>
+          )}
+        />
         <Route>
           <NavbarHome />
           <Error404 />

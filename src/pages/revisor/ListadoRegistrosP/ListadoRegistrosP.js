@@ -158,25 +158,25 @@ const ListadoRegistrosP = () => {
           <span className="new badge blue  " data-badge-caption="">
             En proceso
           </span>
-          <b>Curso de Informatica</b>
+          <b>Curso de Informática</b>
         </Link>
         <Link to="/revisor/revisarRegistro" className="collection-item black-text purple lighten-5 " style={{ border: "0px" }}>
           <span className="new badge yellow darken-4" data-badge-caption="">
             Pendiente por revisar
           </span>
-          <b>Curso de Informatica</b>
+          <b>Curso de Informática</b>
         </Link>
         <Link to="/revisor/revisarRegistro"className="collection-item black-text" style={{ border: "0px" }}>
           <span className="new badge yellow darken-4" data-badge-caption="">
             Pendiente por revisar
           </span>
-          <b>Curso de Informatica</b>
+          <b>Curso de Informática</b>
         </Link>
         <Link to="/revisor/revisarRegistro" style={{ border: "0px" }} className="collection-item black-text purple lighten-5">
           <span className="new badge yellow darken-4 " data-badge-caption="">
             Pendiente por revisar
           </span>
-          <b>Curso de Informatica</b>
+          <b>Curso de Informática</b>
         </Link>
         
       </div>

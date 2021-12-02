@@ -2,7 +2,39 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import RegistrarInstructor from "../../components/RegistrarInstructor";
-
+import ba18 from "../../assets/images/ba18.png";
+const style = {
+  blockquote:{
+    borderColor: "#ffffff",/* Just change the color value and that's it*/
+  },
+  headerImg: {
+    position: "relative",
+    width: "100%",
+    height: "100%",
+    top: "0",
+    objectFit: "cover",
+  },
+  headerFilter: {
+    position: "absolute",
+    width: "100%",
+    maxHeight: "100%",
+    top: "0",
+    height: "100%",
+  },
+  headerTitle: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: " translate(-50% , -50%)",
+    color: "#fff",
+  },
+  subtitleContainer: {
+    width: "fit-content",
+    border: "2px solid #fff",
+    margin: "auto",
+    padding: "0 1rem",
+  },
+};
 const CRUDInstructores = () => {
   useEffect(() => {
     var modales = document.querySelectorAll(".modal");
@@ -24,7 +56,28 @@ const CRUDInstructores = () => {
   return (
     <>
       <ModalAgregarInstructor />
-
+      <header className="" style={{ position: "relative", height: "50vh" }}>
+        <img style={style.headerImg} className="responsive-img" src={ba18} alt="" />
+        <div className="" style={style.headerFilter}></div>
+        <div className="" style={style.headerTitle}>
+          <h2 className="white-text center" style={{ fontSize: "3rem" }}>
+            <b>INSTRUCTORES</b>
+          </h2>
+          
+          <div className="">
+            <center>
+             <blockquote>
+                <h5 className="black-text ">
+               <b><i> Aquí puedes consultar, agregar, editar o eliminar instructores.</i></b>
+                </h5>
+          </blockquote>
+           
+            </center>
+          </div>
+        </div>
+      </header>
+      <br/>
+      <br/>
       <div className="container  ">
         <Link
           to="/admin/listadoCatalogos"
@@ -39,12 +92,9 @@ const CRUDInstructores = () => {
           Agregar nuevo Instructor
         </a>
 
-        <blockquote>
-          <h5 className="light teal-text">Instructores</h5>
-          <p>Aqui puedes consultar, agregar, editar o eliminar instructore. </p>
-        </blockquote>
+       
         <div className="row ">
-          <div className="input-field col s4  ">
+          <div className="input-field col s8 m4 l4 xl4  ">
             <input id="input_text" type="text" data-length="13" required />
             <label htmlFor="nombreCurso">RFC con Homoclave</label>
           </div>
@@ -60,35 +110,43 @@ const CRUDInstructores = () => {
           </div>
         </div>
         <table className="striped responsive-table ">
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th> RFC</th>
-              <th> Area</th>
-              <th> CV</th> <th> Doc. Probatorios </th>
+          <thead className="yellow lighten-2">
+            <tr className="yellow lighten-2">
+              <th className="yellow lighten-2">Nombre</th>
+              <th className="yellow lighten-2"> RFC</th>
+              <th className="yellow lighten-2"> Area</th>
+              <th className= "yellow lighten-2"> CV</th> <th> Doc. Probatorios </th>
               {/* <th> Status</th> */}
-              <th>Editar</th>
-              <th>Borrar</th>
+              <th className= "yellow lighten-2">Editar</th>
+              <th className= "yellow lighten-2">Borrar</th>
             </tr>
           </thead>
 
           <tbody>
-            <tr>
+            <tr className="white">
               <td>
                 <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
                   local_library
                 </i>
-                Antonio Ayola
+                <b>Antonio Ayola</b>
               </td>
-              <td>VECJ880326 XXX</td>
-              <td>TICs</td>
+              <td><b>VECJ880326 XXX</b></td>
+              <td><b>TICs</b></td>
 
               <td>
-                <button className="waves-effect waves-light btn  ">CV</button>
+                <button className="waves-effect waves-light btn yellow darken-3 ">CV</button>
               </td>
               <td>
-                <button className="waves-effect waves-light btn  outlined ">
-                  Documentación
+                <button
+                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
+                  style={{
+                    borderColor: "#ffeb3b",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+                >
+                  <b>Documentación</b>
                 </button>
               </td>
              {/*  <td>
@@ -107,22 +165,30 @@ const CRUDInstructores = () => {
                 </button>
               </td>
             </tr>
-            <tr>
+            <tr className="lime lighten-5">
               <td>
                 <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
                   local_library
                 </i>
-                Antonio Ayola
+                <b>Antonio Ayola</b>
               </td>
-              <td>VECJ880326 XXX</td>
-              <td>TICs</td>
+              <td><b>VECJ880326 XXX</b></td>
+              <td><b>TICs</b></td>
 
               <td>
-                <button className="waves-effect waves-light btn  ">CV</button>
+                <button className="waves-effect waves-light btn yellow darken-3 ">CV</button>
               </td>
               <td>
-                <button className="waves-effect waves-light btn  outlined ">
-                  Documentación
+              <button
+                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
+                  style={{
+                    borderColor: "#ffeb3b",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+                >
+                  <b>Documentación</b>
                 </button>
               </td>
              {/*  <td>
@@ -140,22 +206,30 @@ const CRUDInstructores = () => {
                   <i class="material-icons left ">delete</i>
                 </button>
               </td>
-            </tr>   <tr>
+            </tr>   <tr className="white">
               <td>
                 <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
                   local_library
                 </i>
-                Antonio Ayola
+                <b>Antonio Ayola</b>
               </td>
-              <td>VECJ880326 XXX</td>
-              <td>TICs</td>
+              <td><b>VECJ880326 XXX</b></td>
+              <td><b>TICs</b></td>
 
               <td>
-                <button className="waves-effect waves-light btn  ">CV</button>
+                <button className="waves-effect waves-light btn yellow darken-3  ">CV</button>
               </td>
               <td>
-                <button className="waves-effect waves-light btn  outlined ">
-                  Documentación
+              <button
+                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
+                  style={{
+                    borderColor: "#ffeb3b",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+                >
+                  <b>Documentación</b>
                 </button>
               </td>
              {/*  <td>
@@ -173,22 +247,30 @@ const CRUDInstructores = () => {
                   <i class="material-icons left ">delete</i>
                 </button>
               </td>
-            </tr>   <tr>
+            </tr>   <tr className="lime lighten-5">
               <td>
                 <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
                   local_library
                 </i>
-                Antonio Ayola
+                <b>Antonio Ayola</b>
               </td>
-              <td>VECJ880326 XXX</td>
-              <td>TICs</td>
+              <td><b>VECJ880326 XXX</b></td>
+              <td><b>TICs</b></td>
 
               <td>
-                <button className="waves-effect waves-light btn  ">CV</button>
+                <button className="waves-effect waves-light btn yellow darken-3 ">CV</button>
               </td>
               <td>
-                <button className="waves-effect waves-light btn  outlined ">
-                  Documentación
+              <button
+                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
+                  style={{
+                    borderColor: "#ffeb3b",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+                >
+                 <b> Documentación</b>
                 </button>
               </td>
              {/*  <td>
@@ -206,22 +288,30 @@ const CRUDInstructores = () => {
                   <i class="material-icons left ">delete</i>
                 </button>
               </td>
-            </tr>   <tr>
+            </tr>   <tr className="white">
               <td>
                 <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
                   local_library
                 </i>
-                Antonio Ayola
+                <b>Antonio Ayola</b>
               </td>
-              <td>VECJ880326 XXX</td>
-              <td>TICs</td>
+              <td><b>VECJ880326 XXX</b></td>
+              <td><b>TICs</b></td>
 
               <td>
-                <button className="waves-effect waves-light btn  ">CV</button>
+                <button className="waves-effect waves-light btn 5 yellow darken-3 ">CV</button>
               </td>
               <td>
-                <button className="waves-effect waves-light btn  outlined ">
-                  Documentación
+              <button
+                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
+                  style={{
+                    borderColor: "#ffeb3b",
+                    borderWidth: "2px",
+                    position: "relative",
+                    marginBottom: "0px",
+                  }}
+                >
+                  <b>Documentación</b>
                 </button>
               </td>
              {/*  <td>
