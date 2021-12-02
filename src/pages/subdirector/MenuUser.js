@@ -119,8 +119,8 @@ const MenuUser = () => {
               <b>Listado de registros</b>
             </h5>
             <p className="textHeight">
-              Aquí puedes consultar el historial de todos tus registros, agregar
-              nuevos y darle seguimiento...
+              Aqui puedes consultar el historial de todos tus registros, agregar
+              nuevos darle seguimiento...
             </p>
            
             <Link
@@ -142,8 +142,8 @@ const MenuUser = () => {
               <b>Listado general</b>
             </h5>
             <p className="  textHeight">
-              Aquí puedes consultar la <br/>información
-              básica de todos los programas...
+              Aqui puedes consultar la <br/>informacion
+              basica de todos los programas...
             </p>
             <Link
                to="/subdirector/menu"
@@ -163,7 +163,7 @@ const MenuUser = () => {
             <h5>
               <b>Indicadores</b>
             </h5>
-            <p className="textHeight">Aquí puedes ver estadísticas de...</p>
+            <p className="textHeight">Aqui puedes ver estadisticas de...</p>
             <Link
                to="/subdirector/menu"
               className="waves-effect waves-light btn red accent-2  "
@@ -182,7 +182,7 @@ const MenuUser = () => {
             <h5>
               <b>Instructores</b>
             </h5>
-            <p className="textHeight">Aquí puedes ver estadísticas de...</p>
+            <p className="textHeight">Aqui puedes ver estadisticas de...</p>
             <Link
               to="/subdirector/ListadoInstructores"
               className="waves-effect waves-light btn red accent-2  "

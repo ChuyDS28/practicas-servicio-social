@@ -142,9 +142,9 @@ const ListadoInstructores = () => {
           </div>
           <div className="input-field col s12">
             <p className="  light ">
-              Adjuntar documentos académicos y probatorios del Instructor en
+              Adjuntar documentos Académicos y Probatorios del Instructor en
               formato PDF, recuerda nombrarlos de acuerdo a la nomenclatura
-              especificada.
+              especificada
             </p>
             <div className="teal lighten-5" style={style.infoContainer}>
               <span className="small material-icons blue-text ">error</span>
@@ -161,7 +161,7 @@ const ListadoInstructores = () => {
             </div>
             <div className="file-field input-field col s12">
               <div className="btn">
-                <span>Cargar archivo</span>
+                <span>Cargar Archivo</span>
                 <input type="file" accept="application/pdf" required />
               </div>
               <div className="file-path-wrapper">
@@ -219,7 +219,7 @@ const ListadoInstructores = () => {
               </b>
             </h6>
             <p className="black-text ">
-              Solo podrás actualizar los vinculados a tu centro
+              Solo podras actualizar los vinculados a tu centro
             </p>
           </blockquote>
         </div>

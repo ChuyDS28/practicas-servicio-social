@@ -144,9 +144,6 @@ const Login = () => {
       if(formValues.nickname === "admin"){
         history.push("/admin/menu");
       }
-      if(formValues.nickname === "eacuerdos"){
-        history.push("/eacuerdos/menu");
-      }
     };
 
     const handleChange = (e) => {
@@ -187,7 +184,7 @@ const Login = () => {
               className="grey-text"
               style={{ marginLeft: "45px", fontSize: "1rem", float: "left" }}
             >
-              ¿Has olvidado tu contraseña?
+              Has olvidado tu contraseña?
             </Link>
             <input
               name="password"

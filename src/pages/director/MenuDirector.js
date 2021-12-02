@@ -119,8 +119,8 @@ const MenuDirector = () => {
               <b>Listado de registros</b>
             </h5>
             <p className="textHeight">
-              Aquí puedes consultar el historial de todos tus registros, agregar
-              nuevos y darle seguimiento...
+              Aqui puedes consultar el historial de todos tus registros, agregar
+              nuevos darle seguimiento...
             </p>
            
             <Link
@@ -141,7 +141,7 @@ const MenuDirector = () => {
             <h5>
               <b>Instructores</b>
             </h5>
-            <p className="textHeight">Aquí puedes consultar a todos los instructores <br/> así como registrarlos...</p>
+            <p className="textHeight">Aqui puedes consultar a todos los instructores <br/> asi como registrarlos...</p>
             <Link
               to="/director/listadoInstructores"
               className="waves-effect waves-light btn deep-purple lighten-3 "

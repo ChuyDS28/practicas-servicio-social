@@ -9,6 +9,7 @@ import ipn from "../assets/images/logo_ipn_guinda.svg";
 import cicG from "../assets/images/cicG.jpg";
 import ccaB from "../assets/images/CCA_big.png";
 import Tarjeta from "../components/Tarjeta";
+
 import Footer from "./Footer";
 import M from "materialize-css/dist/js/materialize.min.js";
 
@@ -76,7 +77,7 @@ const Home = () => {
                 style={{ fontSize: "2rem", fontStyle: "italic" }}
               >
                 Registro de programas de formación a lo largo de la vida
-                (Programas menores a 25 horas)
+                (Programas menores a 25 Horas)
               </h2>
             </blockquote>
             <div className="row ">
@@ -111,10 +112,10 @@ const Home = () => {
                 <img alt="" src={cic} />
               </a>
               <a className="carousel-item" href="#three!">
-                <img alt="" src={ipn} />
+                <img alt="" src={cca} />
               </a>
               <a className="carousel-item" href="#six!">
-                <img alt="" src={dvdr} />
+                <img alt="" src={ccaB} />
               </a>
               <a className="carousel-item" href="#four!">
                 <img alt="" src={cicG} />
@@ -128,19 +129,21 @@ const Home = () => {
           src={welcome}
           style={style.welcome}
         />
-        <div className="row container ">
+
+        <div className="row container">
+        
           <Tarjeta
-            titI="Indicadores"
-            titulo="Consulta general de Indicadores"
-            subtitulo="Indicadores generales de los registros"
-            min="INDICADORES"
-            imag="https://cdn.pixabay.com/photo/2019/03/24/08/52/planning-4077086_960_720.jpg"
-            link="/indicadoresGeneral"
+            titI="Registros "
+            titulo="Consultar historial total de registros"
+            subtitulo="Puedes ver el nombre de todos los programas."
+            min="LISTADO"
+            imag="https://images.pexels.com/photos/159832/justice-law-case-hearing-159832.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            link="/historialRegistros"
           />
           <Tarjeta
             titI="Registros"
-            titulo="Historico total de registros vigentes"
-            subtitulo="Ver el listado de todos los programas vigentes."
+            titulo="Consultar historial total registros vigentes"
+            subtitulo="Puedes ver el listado de todos los programas vigentes."
             min="LISTADO"
             imag="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             link="/historialRegistrosVigentes"
@@ -148,11 +151,12 @@ const Home = () => {
           <Tarjeta
             titI="Manual"
             titulo="Manual de usuario "
-            subtitulo="¿Estás perdido?, Puedes ver el manual de usuario."
+            subtitulo="¿Estas perdido?, Puedes ver el manual de usuario."
             min="MANUAL"
             imag="https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             link=""
           />
+        
         </div>
         <div className="center" style={{marginBottom:"35px"}}>
           <Link

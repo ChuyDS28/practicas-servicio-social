@@ -119,8 +119,8 @@ const MenuAdmin = () => {
               <b>Usuarios</b>
             </h5>
             <p className="textHeight">
-              Aquí puedes consultar el historial de todos tus registros, agregar
-              nuevos y darle seguimiento...
+              Aqui puedes consultar el historial de todos tus registros, agregar
+              nuevos darle seguimiento...
             </p>
            
             <Link
@@ -142,7 +142,7 @@ const MenuAdmin = () => {
               <b>Solicitudes</b>
             </h5>
             <p className="  textHeight">
-              Aquí puedes consultar el historial de todos 
+              Aqui puedes consultar el historial de todos 
               los registros pendientes por registrar y los ya completados...
             </p>
             <Link
@@ -163,7 +163,7 @@ const MenuAdmin = () => {
             <h5>
               <b>Indicadores</b>
             </h5>
-            <p className="textHeight">Aquí puedes ver estadísticas de...</p>
+            <p className="textHeight">Aqui puedes ver estadisticas de...</p>
             <Link
                to="/admin/menu"
               className="waves-effect waves-light btn teal accent-4"
@@ -182,7 +182,7 @@ const MenuAdmin = () => {
             <h5>
               <b>Catálogos</b>
             </h5>
-            <p className="textHeight">Aquí puedes consultar y modificar el listado de catálogos</p>
+            <p className="textHeight">Aqui puedes consultar y modificar el listado de catálogos</p>
             <Link
               to="/admin/listadoCatalogos"
               className="waves-effect waves-light btn teal accent-4"
