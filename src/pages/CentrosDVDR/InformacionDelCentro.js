@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const InformacionDelCentro = (props) => {
   const style = {
     modalImg: {
