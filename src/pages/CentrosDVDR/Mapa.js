@@ -1,5 +1,7 @@
 import React from "react";
 import "./mapaStyle.css";
+import cajeme from "..//..//assets/images/CodigosQR/cajeme.png";
+
 const Mapa = (props) => {
   return (
     <svg
@@ -13,7 +15,9 @@ const Mapa = (props) => {
         name="Aguascalientes"
         d="M 392.85 284.966 L 391.462 283.625 L 391.421 282.907 L 392.156 281.204 L 394.132 278.481 L 394.684 276.559 L 395.318 276.126 L 396.38 275.901 L 398.439 274.732 L 399.157 274.186 L 399.388 273.438 L 399.821 273.338 L 400.278 274.162 L 401.067 274.957 L 403.701 276.518 L 404.051 277.965 L 404.728 279.175 L 404.728 279.175 L 404.882 279.525 L 404.739 280.475 L 405.902 281.744 L 403.363 282.913 L 401.85 285.019 L 401.423 285.316 L 399.631 285.933 L 398.884 285.968 L 397.596 285.363 L 396.564 284.527 L 394.067 284.301 Z"
       />
-      <g className="g" onClick={()=>alert("Baja Calif")}>
+      <g className="g" onClick={()=>props.fnabrirmodal( "Centro de Vinculación y Desarrollo Regional Unidad Cajeme",
+                "https://www.youtube.com/embed/TOKmS6e_2FY",
+                cajeme)}>
         <path
           id="bcn"
           name="Baja California"
