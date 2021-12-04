@@ -137,7 +137,11 @@ const CentrosDVDR = () => {
         </main>
         <Mapa 
         fnabrirmodal={abrirModal} 
-        
+        imagen={cajeme }
+
+
+
+
         />
         <Footer />
       </div>
