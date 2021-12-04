@@ -88,7 +88,7 @@ const data = [
 
 
 const CentrosDVDR = () => {
-    const [estadoSeleccionado, setEstadoSeleccionado] = useState({titul:"", link:"", imagenurl:""});
+    const [estadoSeleccionado, setEstadoSeleccionado] = useState({titulo:"", link:"", imagenurl:""});
 
     /*const [centro, setCentro] = useState("Centro");
     const [link, setLink] = useState("Link");
