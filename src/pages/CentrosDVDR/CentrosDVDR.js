@@ -88,16 +88,20 @@ const data = [
 
 
 const CentrosDVDR = () => {
-  
-    const [centro, setCentro] = useState("Centro");
+    const [estadoSeleccionado, setEstadoSeleccionado] = useState({titul:"", link:"", imagenurl:""});
+
+    /*const [centro, setCentro] = useState("Centro");
     const [link, setLink] = useState("Link");
-    const [imagenurl, setimagenUrl] = useState("URL");
+    const [imagenurl, setimagenUrl] = useState("URL");*/
     const [manejadorModal, setmanejadorModal] = useState(false);
   
   function abrirModal(titulo, youtube, codigo) {
-    setCentro(titulo);
+    setEstadoSeleccionado({titulo:titulo,
+    link:youtube,
+    imagenurl:codigo})
+    /*setCentro(titulo); 
     setLink(youtube);
-    setimagenUrl(codigo);
+    setimagenUrl(codigo);*/
     setmanejadorModal(true);
   }
   return (
@@ -106,12 +110,12 @@ const CentrosDVDR = () => {
         open={manejadorModal}
         fnCloseModal={() => setmanejadorModal(false)}
       >
-        <InformacionDelCentro unidad={centro} vinculo={link} url={imagenurl} />{" "}
+        <InformacionDelCentro /*unidad={centro} vinculo={link} url={imagenurl}*/ data={estadoSeleccionado} />{" "}
       </Modal>{" "}
       <div>
         <header> </header>
         <main>
-          <h1> {centro} </h1>
+          <h1> {estadoSeleccionado.titulo} </h1>
           {data.map((centro) => (
             <button
               class="waves-effect waves-light btn modal-trigger"

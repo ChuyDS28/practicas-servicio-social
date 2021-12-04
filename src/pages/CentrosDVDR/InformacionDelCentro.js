@@ -48,7 +48,7 @@ const InformacionDelCentro = (props) => {
           <div>
             <p align="center">
               <h5>
-                <b> {props.unidad} </b>{" "}
+                <b> {props.data.titulo} </b>{" "}
               </h5>
               <br />
             </p>
@@ -58,7 +58,7 @@ const InformacionDelCentro = (props) => {
             <iframe
               width="423"
               height="238"
-              src={props.vinculo}
+              src={props.data.link}
               frameborder="0"
               allow="autoplay; encrypted-media"
               allowfullscreen
@@ -75,7 +75,7 @@ const InformacionDelCentro = (props) => {
           </div>
 
           <div>
-            <img src={props.url} />
+            <img src={props.data.imagenurl} />
           </div>
           <button
             href="#!"
