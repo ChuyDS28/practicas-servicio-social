@@ -108,19 +108,30 @@ const CentrosDVDR = () => {
           <h1> {estadoSeleccionado.titulo} </h1>
           {data.map((centro) => (
             <button
-            
               class="waves-effect waves-light btn modal-trigger"
               onClick={() =>
                 abrirModal(centro.titulo, centro.link, centro.imagenurl)
-              }
-            >
+              }>
               {centro.titulo}
             </button>
           ))}
         </main>
         <Mapa 
         fnabrirmodal={abrirModal} 
-        imagen={cajeme}/>
+        imagen1={cajeme}
+        imagen2={campeche}
+        imagen3={cancun}
+        imagen4={chihuahua}
+        imagen5={culiacan}
+        imagen6={durango}
+        imagen7={mazatlan}
+        imagen8={mochis}
+        imagen9={morelia}
+        imagen10={oaxaca}
+        imagen11={tampico}
+        imagen12={tijuana}
+        imagen13={veracruz}
+        />
         <Footer />
       </div>;
     </>
