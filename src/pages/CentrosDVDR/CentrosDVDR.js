@@ -85,32 +85,22 @@ const data = [
   },
 ];
 
-
-
 const CentrosDVDR = () => {
     const [estadoSeleccionado, setEstadoSeleccionado] = useState({titulo:"", link:"", imagenurl:""});
-
-    /*const [centro, setCentro] = useState("Centro");
-    const [link, setLink] = useState("Link");
-    const [imagenurl, setimagenUrl] = useState("URL");*/
     const [manejadorModal, setmanejadorModal] = useState(false);
   
   function abrirModal(titulo, youtube, codigo) {
     setEstadoSeleccionado({titulo:titulo,
     link:youtube,
     imagenurl:codigo})
-    /*setCentro(titulo); 
-    setLink(youtube);
-    setimagenUrl(codigo);*/
     setmanejadorModal(true);
   }
   return (
     <>
       <Modal
         open={manejadorModal}
-        fnCloseModal={() => setmanejadorModal(false)}
-      >
-        <InformacionDelCentro /*unidad={centro} vinculo={link} url={imagenurl}*/ data={estadoSeleccionado} />{" "}
+        fnCloseModal={() => setmanejadorModal(false)}>
+        <InformacionDelCentro data={estadoSeleccionado} />{" "}
       </Modal>{" "}
       <div>
         <header> </header>
@@ -118,6 +108,7 @@ const CentrosDVDR = () => {
           <h1> {estadoSeleccionado.titulo} </h1>
           {data.map((centro) => (
             <button
+            
               class="waves-effect waves-light btn modal-trigger"
               onClick={() =>
                 abrirModal(centro.titulo, centro.link, centro.imagenurl)
@@ -126,30 +117,12 @@ const CentrosDVDR = () => {
               {centro.titulo}
             </button>
           ))}
-          <button
-            class="waves-effect waves-light btn modal-trigger"
-            onClick={() =>
-              abrirModal(
-                "Centro de Vinculación y Desarrollo Regional Unidad Cajeme",
-                "https://www.youtube.com/embed/TOKmS6e_2FY",
-                cajeme
-              )
-            }
-          >
-            prueba{""}
-          </button>
         </main>
         <Mapa 
         fnabrirmodal={abrirModal} 
-        imagen={cajeme }
-
-
-
-
-        />
+        imagen={cajeme}/>
         <Footer />
-      </div>
-      ;
+      </div>;
     </>
   );
 };
