@@ -92,7 +92,7 @@ const CentrosDVDR = () => {
     imagenurl: "",
   });
   const [manejadorModal, setmanejadorModal] = useState(false);
-
+//DELGADILLO SE PASO DE LA RAYA
   function abrirModal(titulo, youtube, codigo) {
     setEstadoSeleccionado({
       titulo: titulo,
