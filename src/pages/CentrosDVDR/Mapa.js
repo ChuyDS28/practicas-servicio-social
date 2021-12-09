@@ -1,5 +1,5 @@
 import React from "react";
-import "./mapaStyle.css";
+import "./mapaStyle.css";//estilo del mapa
 
 const Mapa = (props) => {
   return (
