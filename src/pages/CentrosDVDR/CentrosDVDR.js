@@ -74,7 +74,7 @@ const data = {
     imagenurl: tampico,
   },
   utijuana: {
-    titulo: "Tijuana",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Tijuana",
     link: "https://www.youtube.com/embed/Y5CK0CAcN5I",
     imagenurl: tijuana,
   },
