@@ -17,125 +17,134 @@ import tijuana from "..//..//assets/images/CodigosQR/tijuana.jpg";
 import veracruz from "..//..//assets/images/CodigosQR/veracruz.jpg";
 import Mapa from "./Mapa";
 
-const data = [
-  {
-    titulo: "Cajeme",
-    link: "https://www.youtube.com/embed/TOKmS6e_2FY",
-    imagenurl: cajeme,
-  },
-  {
-    titulo: "Campeche",
-    link: "https://www.youtube.com/embed/TOKmS6e_2FY",
-    imagenurl: campeche,
-  },
-  {
-    titulo: "Cancun",
-    link: "https://www.youtube.com/embed/TOKmS6e_2FY",
-    imagenurl: cancun,
-  },
-  {
-    titulo: "Chihuhua",
-    link: "https://www.youtube.com/embed/mGhpdhj-WqA",
-    imagenurl: chihuahua,
-  },
-  {
-    titulo: "Culiacan",
-    link: "https://www.youtube.com/embed/mpJkOS8T1sI",
-    imagenurl: culiacan,
-  },
-  {
-    titulo: "Durango",
-    link: "https://www.youtube.com/embed/WKDlUFXtuXM",
-    imagenurl: durango,
-  },
-  {
-    titulo: "Mazatlan",
-    link: "https://www.youtube.com/embed/GAta9sP7OMQ",
-    imagenurl: mazatlan,
-  },
-  {
-    titulo: "Monchis",
-    link: "https://www.youtube.com/embed/AWL2oAgY97w",
-    imagenurl: mochis,
-  },
-  {
-    titulo: "Morelia",
-    link: "https://www.youtube.com/embed/4DMc_KxMlfQ",
-    imagenurl: morelia,
-  },
-  {
-    titulo: "Oaxaca",
-    link: "https://www.youtube.com/embed/w5D4fCDkxeM",
-    imagenurl: oaxaca,
-  },
-  {
-    titulo: "Tampico",
-    link: "https://www.youtube.com/embed/GFCy-c7P9Oo",
-    imagenurl: tampico,
-  },
-  {
-    titulo: "Tijuana",
-    link: "https://www.youtube.com/embed/Y5CK0CAcN5I",
-    imagenurl: tijuana,
-  },
-  {
-    titulo: "Veracruz",
-    link: "https://www.youtube.com/embed/lZYyoqtKtuw",
-    imagenurl: veracruz,
-  },
-];
+const data = {
+    ucajeme: {
+        titulo: "Cajeme",
+        link: "https://www.youtube.com/embed/TOKmS6e_2FY",
+        imagenurl: cajeme,
+    },
+    ucampenche: {
+        titulo: "Campeche",
+        link: "https://www.youtube.com/embed/TOKmS6e_2FY",
+        imagenurl: campeche,
+    },
+    ucancun: {
+        titulo: "Cancun",
+        link: "https://www.youtube.com/embed/TOKmS6e_2FY",
+        imagenurl: cancun,
+    },
+    uchihuahua: {
+        titulo: "Chihuhua",
+        link: "https://www.youtube.com/embed/mGhpdhj-WqA",
+        imagenurl: chihuahua,
+    },
+    uculiacan: {
+        titulo: "Culiacan",
+        link: "https://www.youtube.com/embed/mpJkOS8T1sI",
+        imagenurl: culiacan,
+    },
+    udurango: {
+        titulo: "Durango",
+        link: "https://www.youtube.com/embed/WKDlUFXtuXM",
+        imagenurl: durango,
+    },
+    umazatlan: {
+        titulo: "Mazatlan",
+        link: "https://www.youtube.com/embed/GAta9sP7OMQ",
+        imagenurl: mazatlan,
+    },
+    umochis: {
+        titulo: "Monchis",
+        link: "https://www.youtube.com/embed/AWL2oAgY97w",
+        imagenurl: mochis,
+    },
+    umorelia: {
+        titulo: "Morelia",
+        link: "https://www.youtube.com/embed/4DMc_KxMlfQ",
+        imagenurl: morelia,
+    },
+    uoaxaca: {
+        titulo: "Oaxaca",
+        link: "https://www.youtube.com/embed/w5D4fCDkxeM",
+        imagenurl: oaxaca,
+    },
+    utampico: {
+        titulo: "Tampico",
+        link: "https://www.youtube.com/embed/GFCy-c7P9Oo",
+        imagenurl: tampico,
+    },
+    utijuana: {
+        titulo: "Tijuana",
+        link: "https://www.youtube.com/embed/Y5CK0CAcN5I",
+        imagenurl: tijuana,
+    },
+    uveracruz: {
+        titulo: "Veracruz",
+        link: "https://www.youtube.com/embed/lZYyoqtKtuw",
+        imagenurl: veracruz,
+    },
+};
 
 const CentrosDVDR = () => {
-    const [estadoSeleccionado, setEstadoSeleccionado] = useState({titulo:"", link:"", imagenurl:""});
+    const [estadoSeleccionado, setEstadoSeleccionado] = useState({ titulo: "", link: "", imagenurl: "" });
     const [manejadorModal, setmanejadorModal] = useState(false);
-  
-  function abrirModal(titulo, youtube, codigo) {
-    setEstadoSeleccionado({titulo:titulo,
-    link:youtube,
-    imagenurl:codigo})
-    setmanejadorModal(true);
-  }
-  return (
-    <>
-      <Modal
-        open={manejadorModal}
-        fnCloseModal={() => setmanejadorModal(false)}>
-        <InformacionDelCentro data={estadoSeleccionado} />{" "}
-      </Modal>{" "}
-      <div>
-        <header> </header>
-        <main>
-          <h1> {estadoSeleccionado.titulo} </h1>
-          {data.map((centro) => (
-            <button
-              class="waves-effect waves-light btn modal-trigger"
-              onClick={() =>
-                abrirModal(centro.titulo, centro.link, centro.imagenurl)
-              }>
-              {centro.titulo}
-            </button>
-          ))}
-        </main>
-        <Mapa 
-        fnabrirmodal={abrirModal} 
-        imagen1={cajeme}
-        imagen2={campeche}
-        imagen3={cancun}
-        imagen4={chihuahua}
-        imagen5={culiacan}
-        imagen6={durango}
-        imagen7={mazatlan}
-        imagen8={mochis}
-        imagen9={morelia}
-        imagen10={oaxaca}
-        imagen11={tampico}
-        imagen12={tijuana}
-        imagen13={veracruz}
+
+    function abrirModal(titulo, youtube, codigo) {
+        setEstadoSeleccionado({
+            titulo: titulo,
+            link: youtube,
+            imagenurl: codigo
+        })
+        setmanejadorModal(true);
+    }
+    return ( <
+        >
+        <
+        Modal open = { manejadorModal }
+        fnCloseModal = {
+            () => setmanejadorModal(false) } >
+        <
+        InformacionDelCentro data = { estadoSeleccionado }
+        />{" "} <
+        /Modal>{" "} <
+        div >
+        <
+        header > < /header> <
+        main >
+        <
+        h1 > { estadoSeleccionado.titulo } < /h1> {
+            /*data.entries.map((centro) => ( 
+                        <button
+                          class="waves-effect waves-light btn modal-trigger"
+                          onClick={() =>
+                            abrirModal(centro.titulo, centro.link, centro.imagenurl)
+                          }>
+                          {centro.titulo}
+                        </button>
+                        ))*/
+        } <
+        /main> <
+        Mapa data = { data }
+        fnabrirmodal = { abrirModal }
+        imagen1 = { cajeme }
+        imagen2 = { campeche }
+        imagen3 = { cancun }
+        imagen4 = { chihuahua }
+        imagen5 = { culiacan }
+        imagen6 = { durango }
+        imagen7 = { mazatlan }
+        imagen8 = { mochis }
+        imagen9 = { morelia }
+        imagen10 = { oaxaca }
+        imagen11 = { tampico }
+        imagen12 = { tijuana }
+        imagen13 = { veracruz }
+        /> <
+        Footer / >
+        <
+        /div>; <
         />
-        <Footer />
-      </div>;
-    </>
-  );
+    );
 };
 
 export default CentrosDVDR;
