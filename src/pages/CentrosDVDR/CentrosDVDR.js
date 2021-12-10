@@ -19,27 +19,28 @@ import Mapa from "./Mapa";
 
 const data = {
   ucajeme: {
-    titulo: "Cajeme",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Cajeme",
     link: "https://www.youtube.com/embed/TOKmS6e_2FY",
     imagenurl: cajeme,
   },
   ucampenche: {
-    titulo: "Campeche",
-    link: "https://www.youtube.com/embed/TOKmS6e_2FY",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Campeche",
+    link: "https://www.youtube.com/embed/qvJRXP-KpAc",
     imagenurl: campeche,
   },
   ucancun: {
-    titulo: "Cancun",
-    link: "https://www.youtube.com/embed/TOKmS6e_2FY",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Cancún",
+    link: "https://www.youtube.com/embed/zV0YjW3EN_0",
     imagenurl: cancun,
   },
   uchihuahua: {
-    titulo: "Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Chihuahua",
+    titulo:
+      "Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Chihuahua",
     link: "https://www.youtube.com/embed/mGhpdhj-WqA",
     imagenurl: chihuahua,
   },
   uculiacan: {
-    titulo: "Culiacan",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Culiacán",
     link: "https://www.youtube.com/embed/mpJkOS8T1sI",
     imagenurl: culiacan,
   },
@@ -49,12 +50,12 @@ const data = {
     imagenurl: durango,
   },
   umazatlan: {
-    titulo: "Mazatlan",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Mazatlán",
     link: "https://www.youtube.com/embed/GAta9sP7OMQ",
     imagenurl: mazatlan,
   },
   umochis: {
-    titulo: "Monchis",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Los Mochis",
     link: "https://www.youtube.com/embed/AWL2oAgY97w",
     imagenurl: mochis,
   },
@@ -69,7 +70,7 @@ const data = {
     imagenurl: oaxaca,
   },
   utampico: {
-    titulo: "Tampico",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Tampico",
     link: "https://www.youtube.com/embed/GFCy-c7P9Oo",
     imagenurl: tampico,
   },
@@ -79,7 +80,8 @@ const data = {
     imagenurl: tijuana,
   },
   uveracruz: {
-    titulo: "Veracruz",
+    titulo:
+      "Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Veracruz",
     link: "https://www.youtube.com/embed/lZYyoqtKtuw",
     imagenurl: veracruz,
   },

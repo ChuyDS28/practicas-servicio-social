@@ -64,7 +64,8 @@ const Mapa = (props) => {
             props.data.uchihuahua.link,
             props.data.uchihuahua.imagenurl
           );
-        }}>
+        }}
+      >
         <path
           id="chh"
           name="Chihuahua"
@@ -97,7 +98,8 @@ const Mapa = (props) => {
             props.data.udurango.link,
             props.data.udurango.imagenurl
           );
-        }}>
+        }}
+      >
         <path
           id="dur"
           name="Durango"
@@ -150,7 +152,8 @@ const Mapa = (props) => {
             props.data.umorelia.link,
             props.data.umorelia.imagenurl
           );
-        }}>
+        }}
+      >
         <path
           id="mic"
           name="Michoacán"
@@ -188,7 +191,8 @@ const Mapa = (props) => {
             props.data.uoaxaca.link,
             props.data.uoaxaca.imagenurl
           );
-        }}>
+        }}
+      >
         <path
           id="oax"
           name="Oaxaca"
@@ -221,7 +225,8 @@ const Mapa = (props) => {
             props.data.ucancun.link,
             props.data.ucancun.imagenurl
           );
-        }}>
+        }}
+      >
         <path
           id="roo"
           name="Quintana Roo"
@@ -254,9 +259,9 @@ const Mapa = (props) => {
           height="20.037"
           onClick={() => {
             props.fnabrirmodal(
-              "Centro de Vinculación y Desarrollo Regional Unidad Monchis",
-              "https://www.youtube.com/embed/mpJkOS8T1sI",
-              props.imagen5
+              props.data.umochis.titulo,
+              props.data.umochis.link,
+              props.data.umochis.imagenurl
             );
           }}
         />
@@ -280,9 +285,9 @@ const Mapa = (props) => {
           height="20.037"
           onClick={() => {
             props.fnabrirmodal(
-              "Centro de Vinculación y Desarrollo Regional Unidad Culiacán",
-              "https://www.youtube.com/embed/mpJkOS8T1sI",
-              props.imagen5
+              props.data.uculiacan.titulo,
+              props.data.uculiacan.link,
+              props.data.uculiacan.imagenurl
             );
           }}
         />
@@ -300,9 +305,9 @@ const Mapa = (props) => {
           height="20.037"
           onClick={() => {
             props.fnabrirmodal(
-              "Centro de Vinculación y Desarrollo Regional Unidad Mazatlán",
-              "https://www.youtube.com/embed/mpJkOS8T1sI",
-              props.imagen5
+              props.data.umazatlan.titulo,
+              props.data.umazatlan.link,
+              props.data.umazatlan.imagenurl
             );
           }}
         />
@@ -322,7 +327,8 @@ const Mapa = (props) => {
             props.data.ucajeme.link,
             props.data.ucajeme.imagenurl
           );
-        }}>
+        }}
+      >
         <path
           id="son"
           name="Sonora"
@@ -352,9 +358,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            "Centro de Vinculación y Desarrollo Regional Unidad Tampico",
-            "https://www.youtube.com/embed/GFCy-c7P9Oo",
-            props.imagen11
+            props.data.utampico.titulo,
+            props.data.utampico.link,
+            props.data.utampico.imagenurl
           );
         }}
       >
@@ -381,9 +387,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            "Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Veracruz",
-            "https://www.youtube.com/embed/lZYyoqtKtuw",
-            props.imagen13
+            props.data.uveracruz.titulo,
+            props.data.uveracruz.link,
+            props.data.uveracruz.imagenurl
           );
         }}
       >
@@ -415,9 +421,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            "Centro de Vinculación y Desarrollo Regional Unidad Campeche",
-            "https://www.youtube.com/embed/TOKmS6e_2FY",
-            props.imagen2
+            props.data.ucampenche.titulo,
+            props.data.ucampenche.link,
+            props.data.ucampenche.imagenurl
           );
         }}
       >
