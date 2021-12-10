@@ -1,5 +1,5 @@
 import React from "react";
-import "./mapaStyle.css";//estilo del mapa
+import "./mapaStyle.css";
 
 const Mapa = (props) => {
   return (
@@ -60,12 +60,11 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            "Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Chihuahua",
-            "https://www.youtube.com/embed/mGhpdhj-WqA",
-            props.imagen4
+            props.data.uchihuahua.titulo,
+            props.data.uchihuahua.link,
+            props.data.uchihuahua.imagenurl
           );
-        }}
-      >
+        }}>
         <path
           id="chh"
           name="Chihuahua"
@@ -94,12 +93,11 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            "Centro de Vinculación y Desarrollo Regional Unidad Durango",
-            "https://www.youtube.com/embed/WKDlUFXtuXM",
-            props.imagen6
+            props.data.udurango.titulo,
+            props.data.udurango.link,
+            props.data.udurango.imagenurl
           );
-        }}
-      >
+        }}>
         <path
           id="dur"
           name="Durango"
@@ -148,12 +146,11 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            "Centro de Vinculación y Desarrollo Regional Unidad Michoacán",
-            "https://www.youtube.com/embed/4DMc_KxMlfQ",
-            props.imagen9
+            props.data.umorelia.titulo,
+            props.data.umorelia.link,
+            props.data.umorelia.imagenurl
           );
-        }}
-      >
+        }}>
         <path
           id="mic"
           name="Michoacán"
@@ -187,12 +184,11 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            "Centro de Vinculación y Desarrollo Regional Unidad Oaxaca",
-            "https://www.youtube.com/embed/w5D4fCDkxeM",
-            props.imagen10
+            props.data.uoaxaca.titulo,
+            props.data.uoaxaca.link,
+            props.data.uoaxaca.imagenurl
           );
-        }}
-      >
+        }}>
         <path
           id="oax"
           name="Oaxaca"
@@ -221,12 +217,11 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            "Centro de Vinculación y Desarrollo Regional Unidad Cancún",
-            "https://www.youtube.com/embed/TOKmS6e_2FY",
-            props.imagen3
+            props.data.ucancun.titulo,
+            props.data.ucancun.link,
+            props.data.ucancun.imagenurl
           );
-        }}
-      >
+        }}>
         <path
           id="roo"
           name="Quintana Roo"
@@ -321,14 +316,13 @@ const Mapa = (props) => {
       </g>
       <g
         className="g"
-        onClick={() =>
+        onClick={() => {
           props.fnabrirmodal(
-            "Centro de Vinculación y Desarrollo Regional Unidad Cajeme",
-            "https://www.youtube.com/embed/TOKmS6e_2FY",
-            props.imagen1
-          )
-        }
-      >
+            props.data.ucajeme.titulo,
+            props.data.ucajeme.link,
+            props.data.ucajeme.imagenurl
+          );
+        }}>
         <path
           id="son"
           name="Sonora"

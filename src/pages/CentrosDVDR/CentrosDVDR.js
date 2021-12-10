@@ -34,7 +34,7 @@ const data = {
     imagenurl: cancun,
   },
   uchihuahua: {
-    titulo: "Chihuhua",
+    titulo: "Centro de Innovación e Integración de Tecnologías Avanzadas Unidad Chihuahua",
     link: "https://www.youtube.com/embed/mGhpdhj-WqA",
     imagenurl: chihuahua,
   },
@@ -44,7 +44,7 @@ const data = {
     imagenurl: culiacan,
   },
   udurango: {
-    titulo: "Durango",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Durango",
     link: "https://www.youtube.com/embed/WKDlUFXtuXM",
     imagenurl: durango,
   },
@@ -59,12 +59,12 @@ const data = {
     imagenurl: mochis,
   },
   umorelia: {
-    titulo: "Morelia",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Morelia",
     link: "https://www.youtube.com/embed/4DMc_KxMlfQ",
     imagenurl: morelia,
   },
   uoaxaca: {
-    titulo: "Oaxaca",
+    titulo: "Centro de Vinculación y Desarrollo Regional Unidad Oaxaca",
     link: "https://www.youtube.com/embed/w5D4fCDkxeM",
     imagenurl: oaxaca,
   },
@@ -92,7 +92,7 @@ const CentrosDVDR = () => {
     imagenurl: "",
   });
   const [manejadorModal, setmanejadorModal] = useState(false);
-//DELGADILLO SE PASO DE LA RAYA
+
   function abrirModal(titulo, youtube, codigo) {
     setEstadoSeleccionado({
       titulo: titulo,
@@ -112,17 +112,8 @@ const CentrosDVDR = () => {
       <div>
         <header> </header>{" "}
         <main>
-          <h1> {estadoSeleccionado.titulo} </h1>{" "}
-          {/*data.entries.map((centro) => ( 
-                        <button
-                          class="waves-effect waves-light btn modal-trigger"
-                          onClick={() =>
-                            abrirModal(centro.titulo, centro.link, centro.imagenurl)
-                          }>
-                          {centro.titulo}
-                        </button>
-                        ))*/}{" "}
-        </main>{" "}
+          <h1> {estadoSeleccionado.titulo} </h1>
+        </main>
         <Mapa
           data={data}
           fnabrirmodal={abrirModal}
@@ -139,7 +130,7 @@ const CentrosDVDR = () => {
           imagen11={tampico}
           imagen12={tijuana}
           imagen13={veracruz}
-        />{" "}
+        />
         <Footer />
       </div>
       ;{" "}
