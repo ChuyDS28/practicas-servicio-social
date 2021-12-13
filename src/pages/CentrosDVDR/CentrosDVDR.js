@@ -114,28 +114,14 @@ const CentrosDVDR = () => {
       <div>
         <header> </header>{" "}
         <main>
-          <h1> {estadoSeleccionado.titulo} </h1>
+         
         </main>
         <Mapa
           data={data}
           fnabrirmodal={abrirModal}
-          imagen1={cajeme}
-          imagen2={campeche}
-          imagen3={cancun}
-          imagen4={chihuahua}
-          imagen5={culiacan}
-          imagen6={durango}
-          imagen7={mazatlan}
-          imagen8={mochis}
-          imagen9={morelia}
-          imagen10={oaxaca}
-          imagen11={tampico}
-          imagen12={tijuana}
-          imagen13={veracruz}
         />
-        <Footer />
+        <Footer/>
       </div>
-      ;{" "}
     </>
   );
 };

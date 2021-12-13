@@ -1,9 +1,3 @@
-import React, { Fragment } from "react";
-import "./mapaStyle.css";
-
-const Mapa = (props) => {
-const {data} = props
-  return (
     <svg
       className="svgMapa "
       viewBox="0 0 832.713 503.673"
@@ -459,7 +453,3 @@ const {data} = props
       <circle cx="626.077" cy="292.704" r="2.146" />
       <circle cx="416.485" cy="320.346" r="2.146" />
     </svg>
-  );
-};
-
-export default Mapa;
