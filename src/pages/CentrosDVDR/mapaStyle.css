@@ -39,10 +39,16 @@
 .svgMapa #bcn {
   fill: #77dd77;
 }
-.svgMapa #sin {
+.svgMapa #son {
   fill: #ff5733;
 }
-.svgMapa #son {
+.svgMapa #sinNort {
+  fill: #84b6f4;
+}
+.svgMapa #sinCent {
+  fill: #84b6f4;
+}
+.svgMapa #sinSur {
   fill: #84b6f4;
 }
 .svgMapa #dur {
