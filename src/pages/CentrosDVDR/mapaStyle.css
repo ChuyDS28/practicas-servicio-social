@@ -6,11 +6,23 @@
   transition: .5s;
 
 }
+.svgMapa circle {
+  fill: #ffffff8e;
+  transition: .5s;
+
+}
 .svgMapa line {
   fill: #d3d3d3;
   stroke: #424242;
   stroke-width: 2px;
   transition: .5s;
+
+}
+.ima {
+  
+  height: 80px;
+  width: 40px;
+  border-radius: 50px;
 
 }
 .svgMapa text {
