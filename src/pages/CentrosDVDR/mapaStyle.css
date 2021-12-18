@@ -56,12 +56,15 @@
 }
 .svgMapa #sinNort {
   fill: #84b6f4;
+  stroke-width: 1px;
 }
 .svgMapa #sinCent {
   fill: #84b6f4;
+  stroke-width: 1px;
 }
 .svgMapa #sinSur {
   fill: #84b6f4;
+  stroke-width: 1px;
 }
 .svgMapa #dur {
   fill: #fdcae1;
