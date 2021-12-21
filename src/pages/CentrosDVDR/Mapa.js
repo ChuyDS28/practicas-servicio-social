@@ -241,7 +241,7 @@ const Mapa = (props) => {
           <tspan>, Q. Roo</tspan>
         </text>
       
-        <image class="ima" href="https://media.primicias.ec/2021/12/16163827/spiderman-estreno-1024x574.jpg" x="700" y="300"/>
+        <image class="borde" href="https://media.primicias.ec/2021/12/16163827/spiderman-estreno-1024x574.jpg" x="700" y="300" />
         
         <line x1="626.232" y1="292.714" x2="700.404" y2="308.849" />
       </g>

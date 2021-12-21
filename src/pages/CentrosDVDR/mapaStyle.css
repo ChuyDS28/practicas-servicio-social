@@ -45,6 +45,11 @@
   stroke-linejoin: round;
   transition: .5s;
 }
+.borde {
+  border-radius: 5px;
+
+}
+
 .svgMapa #chh {
   fill: #6f8f34;
 }
