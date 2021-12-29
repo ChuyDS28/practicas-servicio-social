@@ -1,11 +1,6 @@
 .svgMapa {
   /*  width: 800px; */
 }
-.svgMapa rect {
-  fill: #8d18ec8e;
-  transition: .5s;
-
-}
 .svgMapa circle {
   fill: #ffffff8e;
   transition: .5s;
