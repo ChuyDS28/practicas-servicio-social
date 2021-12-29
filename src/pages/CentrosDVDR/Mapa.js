@@ -1967,7 +1967,7 @@ const Mapa = (props) => {
           <tspan>, Camp.</tspan>
         </text>
         <image href= {data.ucampenche.imgcentro} x="600" y="305" width="150" height="50"/>
-        <line x1="575.812" y1="318.236" x2="646.341" y2="330.497" />
+        <line x1="575.812" y1="318.236" x2="650.341" y2="330.497" />
       </g>
       <circle cx="288.188" cy="193.982" r="2.146" />
       <circle cx="310.422" cy="214.68" r="2.146" />
