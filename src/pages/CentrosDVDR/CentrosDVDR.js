@@ -17,11 +17,18 @@ import tijuana from "..//..//assets/images/CodigosQR/tijuana.jpg";
 import veracruz from "..//..//assets/images/CodigosQR/veracruz.jpg";
 import Mapa from "./Mapa";
 
+
+
+
+
+
+
 const data = {
   ucajeme: {
     titulo: "Centro de Vinculación y Desarrollo Regional Unidad Cajeme",
     link: "https://www.youtube.com/embed/TOKmS6e_2FY",
-    imagenurl: cajeme,
+    imagenurl: cajeme
+    
   },
   ucampenche: {
     titulo: "Centro de Vinculación y Desarrollo Regional Unidad Campeche",

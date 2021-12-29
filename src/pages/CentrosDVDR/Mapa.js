@@ -39,7 +39,7 @@ const Mapa = (props) => {
           </tspan>
           <tspan>, B.C.</tspan>
         </text>
-<image href= {ojo} x="29" y="55" width="150" height="50"/>
+        <image href= {ojo} x="29" y="55" width="150" height="50"/>
         <line
           x1="129.209"
           y1="65.259"
@@ -62,9 +62,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.uchihuahua.titulo,
-            props.data.uchihuahua.link,
-            props.data.uchihuahua.imagenurl
+            data.uchihuahua.titulo,
+            data.uchihuahua.link,
+            data.uchihuahua.imagenurl
           );
         }}
       >
@@ -96,9 +96,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.udurango.titulo,
-            props.data.udurango.link,
-            props.data.udurango.imagenurl
+            data.udurango.titulo,
+            data.udurango.link,
+            data.udurango.imagenurl
           );
         }}
       >
@@ -150,9 +150,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.umorelia.titulo,
-            props.data.umorelia.link,
-            props.data.umorelia.imagenurl
+             data.umorelia.titulo,
+             data.umorelia.link,
+             data.umorelia.imagenurl
           );
         }}
       >
@@ -189,9 +189,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.uoaxaca.titulo,
-            props.data.uoaxaca.link,
-            props.data.uoaxaca.imagenurl
+            data.uoaxaca.titulo,
+            data.uoaxaca.link,
+            data.uoaxaca.imagenurl
           );
         }}
       >
@@ -223,9 +223,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.ucancun.titulo,
-            props.data.ucancun.link,
-            props.data.ucancun.imagenurl
+            data.ucancun.titulo,
+            data.ucancun.link,
+            data.ucancun.imagenurl
           );
         }}
       >
@@ -253,9 +253,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.umochis.titulo,
-            props.data.umochis.link,
-            props.data.umochis.imagenurl
+           data.umochis.titulo,
+           data.umochis.link,
+           data.umochis.imagenurl
           );
         }}
       >
@@ -789,9 +789,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.uculiacan.titulo,
-            props.data.uculiacan.link,
-            props.data.uculiacan.imagenurl
+            data.uculiacan.titulo,
+           data.uculiacan.link,
+            data.uculiacan.imagenurl
           );
         }}
       >
@@ -1210,9 +1210,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.umazatlan.titulo,
-            props.data.umazatlan.link,
-            props.data.umazatlan.imagenurl
+            data.umazatlan.titulo,
+            data.umazatlan.link,
+            data.umazatlan.imagenurl
           );
         }}
       >
@@ -1847,9 +1847,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.ucajeme.titulo,
-            props.data.ucajeme.link,
-            props.data.ucajeme.imagenurl
+            data.ucajeme.titulo,
+            data.ucajeme.link,
+            data.ucajeme.imagenurl
           );
         }}
       >
@@ -1882,9 +1882,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.utampico.titulo,
-            props.data.utampico.link,
-            props.data.utampico.imagenurl
+            data.utampico.titulo,
+            data.utampico.link,
+            data.utampico.imagenurl
           );
         }}
       >
@@ -1911,9 +1911,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.uveracruz.titulo,
-            props.data.uveracruz.link,
-            props.data.uveracruz.imagenurl
+            data.uveracruz.titulo,
+            data.uveracruz.link,
+            data.uveracruz.imagenurl
           );
         }}
       >
@@ -1945,9 +1945,9 @@ const Mapa = (props) => {
         className="g"
         onClick={() => {
           props.fnabrirmodal(
-            props.data.ucampenche.titulo,
-            props.data.ucampenche.link,
-            props.data.ucampenche.imagenurl
+            data.ucampenche.titulo,
+            data.ucampenche.link,
+            data.ucampenche.imagenurl
           );
         }}
       >
