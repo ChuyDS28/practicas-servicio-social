@@ -34,12 +34,12 @@ const Mapa = (props) => {
 
        
         <text>
-          <tspan x="91.401" y="59.091">
+          <tspan x="81.401" y="88.091">
             Tijuana
           </tspan>
           <tspan>, B.C.</tspan>
         </text>
-        <image href= {data.utijuana.imgcentro} x="29" y="55" width="150" height="50"/>
+        <image href= {data.utijuana.imgcentro} x="34" y="25" width="150" height="50"/>
         <line
           x1="129.209"
           y1="65.259"
@@ -164,11 +164,12 @@ const Mapa = (props) => {
         />
       
         <text>
-          <tspan x="332.155" y="384.954">
+          <tspan x="327.855" y="431.954">
             Morelia
           </tspan>
           <tspan>, Mich</tspan>
         </text>
+        <image href= {data.umorelia.imgcentro} x="282" y="368" width="150" height="50"/>
         <line x1="370.929" y1="372.87" x2="416.21" y2="320.046" />
       </g>
       <path
@@ -203,11 +204,12 @@ const Mapa = (props) => {
         />
        
         <text>
-          <tspan x="604.34" y="418.598">
+          <tspan x="638.34" y="453.598">
             Oaxaca
           </tspan>
           <tspan>, Oax.</tspan>
         </text>
+        <image href= {data.uoaxaca.imgcentro} x="590" y="390" width="150" height="50"/>
         <line x1="487.333" y1="360.266" x2="641.661" y2="406.266" />
       </g>
       <path
@@ -772,15 +774,16 @@ const Mapa = (props) => {
         />
       
         <text>
-          <tspan x="97.783" y="165.327">
+          <tspan x="81.783" y="209.327">
             Los Mochis
           </tspan>
           <tspan>, Sin.</tspan>
         </text>
+        <image href= {data.umochis.imgcentro} x="38" y="144" width="150" height="50"/>
         <line
           x1="132.334"
           y1="171.287"
-          x2="309.898"
+          x2="304.898"
           y2="214.645"
           transform="matrix(-1, 0, 0, -1, 442.23201, 385.932007)"
         />
@@ -1897,11 +1900,12 @@ const Mapa = (props) => {
         />
    
         <text>
-          <tspan x="473.144" y="178.235">
+          <tspan x="549.144" y="166.235">
             Tampico
           </tspan>
           <tspan>, Tamps.</tspan>
         </text>
+        <image href= {data.utampico.imgcentro} x="445" y="137" width="150" height="50"/>
         <line x1="461.468" y1="267.517" x2="510.952" y2="184.403" />
       </g>
       <path
