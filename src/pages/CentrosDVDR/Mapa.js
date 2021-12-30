@@ -239,11 +239,12 @@ const Mapa = (props) => {
         />
         
         <text>
-          <tspan x="663.083" y="290.667">
+          <tspan x="692.083" y="302.667">
             Cancún
           </tspan>
           <tspan>, Q. Roo</tspan>
         </text>
+        <image href= {data.ucancun.imgcentro} x="646" y="243" width="150" height="50"/>        
         <line x1="626.232" y1="292.714" x2="700.404" y2="280" />
       </g>
       <path
@@ -1202,11 +1203,12 @@ const Mapa = (props) => {
         />
        
         <text>
-          <tspan x="149.582" y="284.439">
+          <tspan x="134.582" y="307.439">
             Culiacán
           </tspan>
           <tspan>, Sin.</tspan>
         </text>
+        <image href= {data.uculiacan.imgcentro} x="90" y="246" width="150" height="50"/>        
         <line x1="187.891" y1="271.18" x2="324.258" y2="237.273" />
       </g>
 
@@ -1839,11 +1841,12 @@ const Mapa = (props) => {
         />
     
         <text>
-          <tspan x="203.083" y="327.383">
+          <tspan x="193.083" y="369.383">
             Mazatlán
           </tspan>
           <tspan>, Sin.</tspan>
         </text>
+        <image href= {data.umazatlan.imgcentro} x="150" y="308" width="150" height="50"/>        
         <line x1="241.293" y1="314.224" x2="338.751" y2="249.892" />
       </g>
 
