@@ -110,11 +110,12 @@ const Mapa = (props) => {
         />
   
         <text>
-          <tspan x="389.402" y="119.061">
+          <tspan x="459.402" y="92.061">
             Durango
           </tspan>
           <tspan>, Dgo.</tspan>
         </text>
+        <image href= {data.udurango.imgcentro} x="358" y="79" width="150" height="50"/>        
         <line x1="364.692" y1="240.791" x2="423.905" y2="125.229" />
       </g>
       <path
