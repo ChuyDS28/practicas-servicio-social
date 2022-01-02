@@ -112,7 +112,7 @@ const MenuUser = () => {
       <main className="row container section">
         <div className="col s12 m6 l6 xl6">
           <div className="MenuActionContainer  center red lighten-5">
-            <i class="material-icons  white-text medium circle  red accent-2   ">
+            <i className="material-icons  white-text medium circle  red accent-2   ">
               view_list
             </i>
             <h5>
@@ -124,7 +124,7 @@ const MenuUser = () => {
             </p>
            
             <Link
-              to="/subdirector/ListadoRegistros"
+              to="/subdirector/programas"
               className="waves-effect waves-light btn red accent-2 "
               style={style.botones}
             >
@@ -135,7 +135,7 @@ const MenuUser = () => {
         </div>
         <div className="col s12 m6 l6 xl6">
           <div className=" MenuActionContainer center red lighten-5">
-            <i class="material-icons  white-text medium circle red accent-2 ">
+            <i className="material-icons  white-text medium circle red accent-2 ">
               list
             </i>
             <h5>
@@ -157,7 +157,7 @@ const MenuUser = () => {
         </div>
         <div className="col s12 m6 l6 xl6">
           <div className=" MenuActionContainer center red lighten-5">
-            <i class="material-icons  white-text medium circle red accent-2  ">
+            <i className="material-icons  white-text medium circle red accent-2  ">
               signal_cellular_alt
             </i>
             <h5>
@@ -176,7 +176,7 @@ const MenuUser = () => {
         </div>
         <div className="col s12 m6 l6 xl6">
           <div className=" MenuActionContainer center red lighten-5">
-            <i class="material-icons  white-text medium circle red accent-2  ">
+            <i className="material-icons  white-text medium circle red accent-2  ">
               local_library
             </i>
             <h5>

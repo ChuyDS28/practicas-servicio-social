@@ -99,7 +99,8 @@ tbody tr {
 	background-color: #555; */
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00897b;
+  /* background: #00897b; */
+  background: #333;
 }
 /* Estilos track de scroll */
 ::-webkit-scrollbar-track {

@@ -129,32 +129,38 @@ const Home = () => {
           style={style.welcome}
         />
         <div className="row container ">
-          <Tarjeta
-            titI="Indicadores"
-            titulo="Consulta general de Indicadores"
-            subtitulo="Indicadores generales de los registros"
-            min="INDICADORES"
-            imag="https://cdn.pixabay.com/photo/2019/03/24/08/52/planning-4077086_960_720.jpg"
-            link="/indicadoresGeneral"
-          />
-          <Tarjeta
-            titI="Registros"
-            titulo="Historico total de registros vigentes"
-            subtitulo="Ver el listado de todos los programas vigentes."
-            min="LISTADO"
-            imag="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            link="/historialRegistrosVigentes"
-          />
-          <Tarjeta
-            titI="Manual"
-            titulo="Manual de usuario "
-            subtitulo="¿Estás perdido?, Puedes ver el manual de usuario."
-            min="MANUAL"
-            imag="https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-            link=""
-          />
+          <div className="col s12 m6 l4 center">
+            <Tarjeta
+              titI="Indicadores"
+              titulo="Consulta general de Indicadores"
+              subtitulo="Indicadores generales de los registros"
+              min="INDICADORES"
+              imag="https://cdn.pixabay.com/photo/2019/03/24/08/52/planning-4077086_960_720.jpg"
+              link="/indicadoresGeneral"
+            />
+          </div>
+          <div className="col s12 m6 l4 center">
+            <Tarjeta
+              titI="Registros"
+              titulo="Historico total de registros vigentes"
+              subtitulo="Ver el listado de todos los programas vigentes."
+              min="LISTADO"
+              imag="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              link="/historialRegistrosVigentes"
+            />
+          </div>
+          <div className="col s12 m6 l4 center">
+            <Tarjeta
+              titI="Manual"
+              titulo="Manual de usuario "
+              subtitulo="¿Estás perdido?, Puedes ver el manual de usuario."
+              min="MANUAL"
+              imag="https://images.pexels.com/photos/48148/document-agreement-documents-sign-48148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              link=""
+            />
+          </div>
         </div>
-        <div className="center" style={{marginBottom:"35px"}}>
+        <div className="center" style={{ marginBottom: "35px" }}>
           <Link
             to="/centros"
             className="waves-effect waves-light btn-large outlined"

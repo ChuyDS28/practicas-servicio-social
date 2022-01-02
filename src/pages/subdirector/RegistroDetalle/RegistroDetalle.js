@@ -139,7 +139,10 @@ const RegistroDetalle = () => {
             <center>
               <blockquote>
                 <h5 className="black-text ">
-                  <i>Sigue los pasos a continuación para registrar</i>
+                  <i>
+                    Sigue los pasos a continuación para terminar el registro del
+                    programa
+                  </i>
                 </h5>
               </blockquote>
             </center>
@@ -148,60 +151,68 @@ const RegistroDetalle = () => {
       </header>
       <div className="row container section">
         <Link
-          to="/subdirector/listadoRegistros"
+          to="/subdirector/programas"
           className="waves-effect waves-light btn-flat right"
         >
           Regresar
         </Link>
-        <blockquote>
-          <h5 className="header light teal-text">Programa de informática</h5>
-          <p>Sigue los pasos a continuación para registrar</p>
-        </blockquote>
+
         <p className="header light col s10 ">
           El proceso del registro esta en el
           <strong className="teal-text"> 70%</strong> <br />
           Pasos completados <strong>1 de 5</strong>
         </p>
-        <a
-          className=" modal-trigger right white-text btn center"
-          href="#modal1"
-        >
-          Simbología&nbsp;
-        </a>
-        <br />
-        <br />
-        <StepContainer
-          step="1"
-          title="Solicitud de registro"
-          status={0}
-          callback={() => history.push("/subdirector/generarSolicitud")}
-          btnTitle="Solicitud de registro"
-          observaciones=""
-        />
-        <StepContainer
-          step="2"
-          title="Enviar solicitud de registro firmada"
-          status={0}
-          btnTitle="Solicitud de registro firmada"
-        />
-        <StepContainer
-          step="3"
-          title="Carta AVAL"
-          status={0}
-          btnTitle="Carta AVAL"
-        />
-        <StepContainer
-          step="4"
-          title="Documentos probatorios de Aval"
-          status={0}
-          btnTitle="Documento"
-        />
-        <StepContainer
-          step="5"
-          title="Cronograma"
-          status={0}
-          btnTitle="Cronograma"
-        />
+
+        <div className="col s12 " style={{ margin: "15px 0" }}>
+          <Link
+            to="/subdirector/programas/3/grupos"
+            className="waves-effect waves-light left btn "
+          >
+            Grupos
+          </Link>
+          <a
+            className=" modal-trigger right  btn center outlined"
+            href="#modal1"
+          >
+            Simbología&nbsp;
+          </a>
+        </div>
+        <div className="col s12 " style={{ padding: "0" }}>
+          <StepContainer
+            step="1"
+            title="Solicitud de registro"
+            status={0}
+            callback={() =>
+              history.push("/subdirector/programas/2/generarSolicitud")
+            }
+            btnTitle="Solicitud de registro"
+            observaciones=""
+          />
+          <StepContainer
+            step="2"
+            title="Enviar solicitud de registro firmada"
+            status={0}
+            btnTitle="Solicitud de registro firmada"
+          />
+          <StepContainer
+            step="3"
+            title="Carta AVAL"
+            status={0}
+            btnTitle="Carta AVAL"
+          />
+          <StepContainer
+            step="4"
+            title="Documentos probatorios de Aval"
+            status={0}
+            btnTitle="Documento"
+          />
+          <StepContainer
+            step="5"
+            title="Cronograma"
+            status={0}
+            btnTitle="Cronograma"
+          />
+        </div>
       </div>
     </div>
   );

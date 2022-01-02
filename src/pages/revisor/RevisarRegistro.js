@@ -45,7 +45,7 @@ const RevisarRegistro = () => {
     return (
       <div id="modal1" className="modal">
         <div className="modal-content  ">
-          <h5>Enviar revición</h5>
+          <h5>Enviar revisión</h5>
           <div className="  col s6">
             <label>La documentación a sido:</label>
             <select className="browser-default" defaultValue="" required>
@@ -66,7 +66,7 @@ const RevisarRegistro = () => {
           </div>
           <br />
           <button type="submit" className="waves-effect waves-light btn   ">
-            Enviar Revición
+            Enviar Revisión
             <i className="material-icons right">picture_as_pdf</i>
           </button>
           <button className="modal-close waves-effect waves-green btn-flat right">

@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import parteba5 from "../../../assets/images/parteba5.png";
 import ba5 from "../../../assets/images/ba5.png";
 import Footer from "../../Footer";
 import "./ListadoRegistros.css";
+import Modal from "../../../components/Modal";
 
 const style = {
   headerTitle: {
@@ -80,122 +81,142 @@ const style = {
 };
 
 const ListadoRegistros = () => {
-  useEffect(() => {
+  const [modalRenovaciones, setModalRenovaciones] = useState(false);
+  const [modalAyuda, setModalAyuda] = useState(false);
+  const [modalAgregarRegistro, setModalAgregarRegistro] = useState(false);
+  /*   useEffect(() => {
     var elems = document.querySelectorAll(".modal");
     M.Modal.init(elems, {});
-  }, []);
+  }, []); */
 
   const ModalHelp = () => {
     return (
-      <div id="modal1" class="modal">
-        <div class="modal-content  ">
-          <h5>Tipos de registro</h5>
-          <br />
-          <span className="new badge grey darken-2 left" data-badge-caption="">
-            Deprecado
-          </span>
-          <div className="  ">
-            &nbsp; &nbsp;- Programa con mas de 2 años de antiguedad, ya no puede
-            ser impartido
-            <br /> <br />
-          </div>
-          <span className="new badge blue left" data-badge-caption="">
-            Vigente
-          </span>
-          <div className=" ">
-            &nbsp; &nbsp; - Programa vigente actualizado que puede ser impartido
-            de nuevo
-            <br /> <br />
-          </div>
-          <span
-            className="new badge yellow darken-4  left"
-            data-badge-caption=""
-          >
-            EnProceso
-          </span>
-          <div className="">
-            &nbsp; &nbsp; - Programa en proceso que necesita terminar de ser
-            aprobado
-            <br /> <br />
-          </div>
-          <span className="new badge green left " data-badge-caption="">
-            Impartiendo
-          </span>
-          <div className="">
-            &nbsp; &nbsp; - Programa que esta siendo impartido en este momento
-            <br /> <br />
-          </div>
-          <button
-            href="#!"
-            className="modal-close waves-effect waves-green btn-flat right"
-          >
-            Cerrar
-          </button>
+      <div class="modal-content  ">
+        <h5>Tipos de registro</h5>
+        <br />
+        <span className="new badge grey darken-2 left" data-badge-caption="">
+          Deprecado
+        </span>
+        <div className="  ">
+          &nbsp; &nbsp;- Programa con mas de 2 años de antiguedad, ya no puede
+          ser impartido
+          <br /> <br />
         </div>
+        <span className="new badge blue left" data-badge-caption="">
+          Vigente
+        </span>
+        <div className=" ">
+          &nbsp; &nbsp; - Programa vigente actualizado que puede ser impartido
+          de nuevo
+          <br /> <br />
+        </div>
+        <span className="new badge yellow darken-4  left" data-badge-caption="">
+          EnProceso
+        </span>
+        <div className="">
+          &nbsp; &nbsp; - Programa en proceso que necesita terminar de ser
+          aprobado
+          <br /> <br />
+        </div>
+        <span className="new badge green left " data-badge-caption="">
+          Impartiendo
+        </span>
+        <div className="">
+          &nbsp; &nbsp; - Programa que esta siendo impartido en este momento
+          <br /> <br />
+        </div>
+        <button
+          href="#!"
+          className="modal-close waves-effect waves-green btn-flat right"
+        >
+          Cerrar
+        </button>
       </div>
     );
   };
   const ModalAgregarRegistro = () => {
     return (
-      <div id="modal2" className="modal">
-        <div className="modal-content  ">
-          <h5>Agregar nuevo registro</h5>
+      <div className="modal-content  ">
+        <h5>Agregar nuevo registro</h5>
 
-          <div className="input-field col s12">
-            <p className="  light ">Ingresar los datos solicitados</p>
-            <div className="teal lighten-5 " style={style.infoContainer}>
-              <span className="small material-icons blue-text ">error</span>
-              <span className="new badge blue darken-2" data-badge-caption="">
-                Nota
-              </span>
-              <p>
-                Verificar nombre del curso, el nombre del registro no se podra
-                modificar ni eliminar.
-                <br /> · Indicaciones.........
-              </p>
-            </div>
-            <div className="input-field col s12">
-              <input id="nombreCurso" type="text" required />
-              <label htmlFor="nombreCurso">Nombre del curso</label>
-            </div>
-            <div className="  col s4 m3 xl3">
-          <label>Su solicitud es:</label>
-          <select className="browser-default" defaultValue="Normal" required>
-            <option value="" disabled>
-              Selecciona una opción
-            </option>
-            <option value="1">Normal</option>
-            <option value="2">Urgente</option>
-          </select>
-        </div>
+        <div className="input-field col s12">
+          <p className="  light ">Ingresar los datos solicitados</p>
+          <div className="teal lighten-5 " style={style.infoContainer}>
+            <span className="small material-icons blue-text ">error</span>
+            <span className="new badge blue darken-2" data-badge-caption="">
+              Nota
+            </span>
+            <p>
+              Verificar nombre del curso, el nombre del registro no se podra
+              modificar ni eliminar.
+              <br /> · Indicaciones.........
+            </p>
           </div>
+          <div className="input-field col s12">
+            <input id="nombreCurso" type="text" required />
+            <label htmlFor="nombreCurso">Nombre del curso</label>
+          </div>
+          <div className="  col s4 m3 xl3">
+            <label>Su solicitud es:</label>
+            <select className="browser-default" defaultValue="Normal" required>
+              <option value="" disabled>
+                Selecciona una opción
+              </option>
+              <option value="1">Normal</option>
+              <option value="2">Urgente</option>
+            </select>
+          </div>
+        </div>
 
-          <br />
-          {/*   <button type="submit" className="modal-close waves-effect waves-light btn   ">
+        <br />
+        {/*   <button type="submit" className="modal-close waves-effect waves-light btn   ">
             Crear nuevo registro de programa
             <i className="material-icons right">picture_as_pdf</i>
           </button> */}
-          <Link
-            to="/subdirector/registroDetalle"
-            className="modal-close waves-effect waves-light btn   "
-          >
-            Crear nuevo registro de programa
-            <i className="material-icons right">picture_as_pdf</i>
-          </Link>
-          <button
-            href="#!"
-            className="modal-close waves-effect waves-green btn-flat right"
-          >
-            Cerrar
-          </button>
-        </div>
+        <Link
+          to="/subdirector/registroDetalle"
+          className="modal-close waves-effect waves-light btn   "
+        >
+          Crear nuevo registro de programa
+          <i className="material-icons right">picture_as_pdf</i>
+        </Link>
+        <button
+          href="#!"
+          className="modal-close waves-effect waves-green btn-flat right"
+        >
+          Cerrar
+        </button>
+      </div>
+    );
+  };
+
+  const ModalRenovaciones = () => {
+    return (
+      <div>
+        solo puedes renovar programas no caducados, sin vigencia o a un mes
+        proximo a expirar
+        <br />
+        tabla...
       </div>
     );
   };
   return (
     <>
-      <ModalHelp />
-      <ModalAgregarRegistro />
+      <Modal
+        open={modalRenovaciones}
+        fnCloseModal={() => setModalRenovaciones(false)}
+      >
+        <ModalRenovaciones />
+      </Modal>
+      <Modal open={modalAyuda} fnCloseModal={() => setModalAyuda(false)}>
+        <ModalHelp />
+      </Modal>
+      <Modal
+        open={modalAgregarRegistro}
+        fnCloseModal={() => setModalAgregarRegistro(false)}
+      >
+        <ModalAgregarRegistro />
+      </Modal>
 
       <header className="row" style={{ position: "relative", height: "50vh" }}>
         <div
@@ -239,13 +260,20 @@ const ListadoRegistros = () => {
       </header>
       <br />
       <div className="container section">
-        <a
-          className="modal-trigger purple accent-4 waves-effect waves-light btn right"
+        <button
+          className="waves-effect waves-light btn outlined teal-text"
+          onClick={() => setModalRenovaciones(true)}
+        >
+          Renovaciones
+        </button>
+        <button
+          className="purple accent-4 waves-effect waves-light btn right"
           href="#modal2"
+          onClick={() => setModalAgregarRegistro(true)}
         >
           Agregar nuevo registro
           <i className="material-icons right">add</i>
-        </a>
+        </button>
         <blockquote>
           {/* <h5 className="light teal-text">
             Listado de programas del centro de
@@ -299,37 +327,43 @@ const ListadoRegistros = () => {
         </div>
 
         <div className="collection">
-          <p className="white-text collection-item active  deep-purple accent-1 ">
+          <p
+            className="white-text collection-item active  deep-purple accent-1 "
+            style={{ padding: "20px" }}
+          >
             <b>Nombre</b>
-            <a className=" modal-trigger right white-text" href="#modal1">
+            <button
+              className="right white-text btn-flat"
+              onClick={() => setModalAyuda(true)}
+            >
               <b>Ayuda</b>&nbsp;
               <span className="small material-icons white-text ">help</span>
-            </a>
+            </button>
           </p>
           <Link
-            to="/subdirector/registroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text "
             style={{ border: "0px" }}
           >
-           <span className="new badge blue " data-badge-caption="">
-                Vigente
-              </span>
+            <span className="new badge blue " data-badge-caption="">
+              Vigente
+            </span>
             <b>Curso de Informática</b>
           </Link>
           <Link
-            to="/subdirector/RegistroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text light-blue lighten-5"
             style={{ border: "0px" }}
           >
             <b>
-            <span className="new badge blue " data-badge-caption="">
+              <span className="new badge blue " data-badge-caption="">
                 Vigente
               </span>
               Curso de Informática
             </b>
           </Link>
           <Link
-            to="/subdirector/RegistroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text"
             style={{ border: "0px" }}
           >
@@ -341,7 +375,7 @@ const ListadoRegistros = () => {
             </b>
           </Link>
           <Link
-            to="/subdirector/registroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text light-blue lighten-5"
             style={{ border: "0px" }}
           >
@@ -353,7 +387,7 @@ const ListadoRegistros = () => {
             </b>
           </Link>
           <Link
-            to="/subdirector/registroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text"
             style={{ border: "0px" }}
           >
@@ -365,7 +399,7 @@ const ListadoRegistros = () => {
             </b>
           </Link>
           <Link
-            to="/subdirector/registroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text light-blue lighten-5"
             style={{ border: "0px" }}
           >
@@ -377,7 +411,7 @@ const ListadoRegistros = () => {
             </b>
           </Link>
           <Link
-            to="/subdirector/registroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text"
             style={{ border: "0px" }}
           >
@@ -389,7 +423,7 @@ const ListadoRegistros = () => {
             </b>
           </Link>
           <Link
-            to="/subdirector/registroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text light-blue lighten-5"
             style={{ border: "0px" }}
           >
@@ -401,7 +435,7 @@ const ListadoRegistros = () => {
             </b>
           </Link>
           <Link
-            to="/subdirector/registroDetalle"
+            to="/subdirector/programas/2"
             className="collection-item black-text"
             style={{ border: "0px" }}
           >

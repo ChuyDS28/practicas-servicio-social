@@ -108,7 +108,7 @@ const ListadoCatalogos = () => {
         </div>
         <div className="col s12 m9 l9 xl8 white-text" style={style.headerTitle}>
           <h1 class="titulo">
-            LISTADO DE <b>SOLICITUDES</b>
+            LISTADO DE <b>CATÁLOGOS</b>
           </h1>
           <blockquote>
             <h6 className="subtitulo black-text ">

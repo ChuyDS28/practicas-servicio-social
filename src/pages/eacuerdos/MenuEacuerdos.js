@@ -112,7 +112,7 @@ const MenuEacuerdos = () => {
       <main className="row container section">
         <div className="col s12 m6 l6 xl6">
           <div className="MenuActionContainer  center orange lighten-5">
-            <i class="material-icons  white-text medium circle  amber darken-4  ">
+            <i className="material-icons  white-text medium circle  amber darken-4  ">
               view_list
             </i>
             <h5>
@@ -124,7 +124,7 @@ const MenuEacuerdos = () => {
             </p>
            
             <Link
-              to="/eacuerdos/Reportes"
+              to="/eacuerdos/buscarReporte"
               className="waves-effect waves-light btn  amber darken-4  "
               style={style.botones}
             >
@@ -135,7 +135,7 @@ const MenuEacuerdos = () => {
         </div>
         <div className="col s12 m6 l6 xl6">
           <div className=" MenuActionContainer center orange lighten-5">
-            <i class="material-icons  white-text medium circle amber darken-4 ">
+            <i className="material-icons  white-text medium circle amber darken-4 ">
               list
             </i>
             <h5>
@@ -157,7 +157,7 @@ const MenuEacuerdos = () => {
         </div>
         <div className="col s12 m12 l12 xl12">
           <div className=" MenuActionContainer center orange lighten-5">
-            <i class="material-icons  white-text medium circle amber darken-4   ">
+            <i className="material-icons  white-text medium circle amber darken-4   ">
               signal_cellular_alt
             </i>
             <h5>

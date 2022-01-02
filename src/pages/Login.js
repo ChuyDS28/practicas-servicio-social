@@ -7,6 +7,8 @@ import imgt4 from "../assets/images/imgt4.jpg";
 import imgt6 from "../assets/images/imgt6.jpg";
 import cancha from "../assets/images/cancha.jpg";
 import M from "materialize-css/dist/js/materialize.min.js";
+import { login } from "../api/services/acceso";
+
 const style = {
   inputLabel: {
     fontSize: "1rem",
@@ -40,6 +42,7 @@ const style = {
   img3: {
     width: "170px",
     marginTop: "20px",
+    margin: "10px auto",
   },
 };
 
@@ -124,6 +127,8 @@ const Login = () => {
   };
   const LoginForm = () => {
     let history = useHistory();
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState({ error: false, message: "" });
     const [formValues, setFormValues] = useState({
       nickname: "",
       password: "",
@@ -131,20 +136,43 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
       event.preventDefault();
+      if (formValues.nickname === "" || formValues.password === "") {
+        setError({ error: true, message: "Llenar campos" });
+        return;
+      }
       console.log("submit");
-      if(formValues.nickname === "subdirector"){
+      setError({ error: false, message: "" });
+      setIsLoading(true);
+      const data = {
+        nickname: formValues.nickname,
+        secretword: formValues.password,
+      };
+      /* try {
+         const response = await login(data);
+        console.log(response);
+        setIsLoading(false);
+        //history.push("/account/".concat("331"));
+      } catch (error) {
+        console.log(error);
+        /* setError({ error: true, message: error.response.data.error_message });
+        if (error.response.data.error_message === undefined) {
+          setError({ error: true, message: error.response.data.message });
+        } 
+        setIsLoading(false);
+      } */
+      if (formValues.nickname === "subdirector") {
         history.push("/subdirector/menu");
       }
-      if(formValues.nickname === "director"){
+      if (formValues.nickname === "director") {
         history.push("/director/menu");
       }
-      if(formValues.nickname === "revisor"){
+      if (formValues.nickname === "revisor") {
         history.push("/revisor/menu");
       }
-      if(formValues.nickname === "admin"){
+      if (formValues.nickname === "admin") {
         history.push("/admin/menu");
       }
-      if(formValues.nickname === "eacuerdos"){
+      if (formValues.nickname === "eacuerdos") {
         history.push("/eacuerdos/menu");
       }
     };
@@ -157,8 +185,17 @@ const Login = () => {
     };
 
     return (
-      <div className="container center">
-        <img src={dvdr} className="" style={style.img3} alt="" />
+      <div
+        className="container center "
+        style={{
+          minHeight: "calc(100vh - 70px)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignContent: "center",
+        }}
+      >
+        <img src={dvdr} className="center" style={style.img3} alt="" />
         <h5 className="center white-text">
           <b>Iniciar sesión</b>
         </h5>
@@ -218,7 +255,7 @@ const Login = () => {
               </Link>
             </p>
             <br />
-         {/*    <div className="col s12 center">
+            {/*    <div className="col s12 center">
               <Link
                 to="/director/menu"
                 className="waves-effect waves-light btn-small col s5 m4"
@@ -257,10 +294,13 @@ const Login = () => {
 
   return (
     <div className="row" style={style.min}>
-      <div className="col s12 m12 l7 x15" style={{ padding: "0" }}>
+      <div
+        className="col s12 m12 l7 x15  hide-on-med-and-down"
+        style={{ padding: "0" }}
+      >
         <Carrusel />
       </div>
-      <div className="col s12 m12 l5 x17">
+      <div className="col s12 m12 l5 x17 ">
         <LoginForm />
       </div>
     </div>

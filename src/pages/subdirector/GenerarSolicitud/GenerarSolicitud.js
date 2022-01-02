@@ -221,9 +221,7 @@ const GenerarSolicitud = () => {
             <option value="" disabled>
               Selecciona una opción
             </option>
-            <option value="1">
-              Ingeniería y Ciencias Físico Matemáticas
-            </option>
+            <option value="1">Ingeniería y Ciencias Físico Matemáticas</option>
             <option value="2">Ciencias Médico Biológicas</option>
             <option value="2">Ciencias Sociales y Administrativas</option>
             <option value="2">TICs</option>
@@ -241,7 +239,12 @@ const GenerarSolicitud = () => {
             Unidad que solicita el registro (Nombre completo del Centro, Escuela
             o Unidad que solicita el registro)
           </label>
-          <select className="browser-default" defaultValue="4" required disabled>
+          <select
+            className="browser-default"
+            defaultValue="4"
+            required
+            disabled
+          >
             <option value="" disabled>
               Selecciona una opción
             </option>
@@ -404,7 +407,7 @@ const GenerarSolicitud = () => {
         </div> */}
         <div className="col s6">
           <label>Unidades Académicas de colaboración (opcional)</label>
-          <select className="browser-default" defaultValue=""  >
+          <select className="browser-default" defaultValue="">
             <option value="" disabled>
               Selecciona una opción
             </option>
@@ -1002,6 +1005,75 @@ const GenerarSolicitud = () => {
           <blockquote>
             <p>Sección 6 • Datos del Coordinador Academico (CA)</p>
           </blockquote>
+          <div className="teal lighten-5 " style={style.infoContainer}>
+            <span className="small material-icons blue-text ">error</span>
+            <span className="new badge blue darken-2" data-badge-caption="">
+              Nota
+            </span>
+            <p>
+              Esta sección se llena en automático al seleccionar el centro,
+              verificar que los campos sean correctos.
+            </p>
+          </div>
+        </div>
+        <div className="col s12">
+          <label> Coordinador Academico (CA):</label>
+          <select className="browser-default" defaultValue="" required>
+            <option value="" disabled>
+              Selecciona una opción
+            </option>
+            <option value="1">Marco</option>
+            <option value="1">Antonio</option>
+            <option value="2">En línea</option>
+            <option value="2">Mixta</option>
+          </select>
+        </div>
+        <p className="  light " style={{ margin: "15px 0" }}>
+          Datos de quien firma y autoriza la solicitud.
+        </p>
+        <div className="col s6">
+          <label> Subdirector:</label>
+          <select className="browser-default" defaultValue="" required>
+            <option value="" disabled>
+              Selecciona una opción
+            </option>
+            <option value="1">Marco</option>
+            <option value="1">Antonio</option>
+            <option value="2">En línea</option>
+            <option value="2">Mixta</option>
+          </select>
+        </div>
+        <div className="col s6">
+          <label> Director:</label>
+          <select className="browser-default" defaultValue="" required>
+            <option value="" disabled>
+              Selecciona una opción
+            </option>
+            <option value="1">Marco</option>
+            <option value="1">Antonio</option>
+            <option value="2">En línea</option>
+            <option value="2">Mixta</option>
+          </select>
+        </div>
+        
+        <div className="col s6 center">
+          <button
+            onClick={() => nextSection("test7")}
+            className="waves-effect waves-light btn   "
+          >
+            Guardar y continuar
+          </button>
+        </div>
+      </>
+    );
+  };
+  const Section66 = () => {
+    return (
+      <>
+        <div className="  col s12">
+          <blockquote>
+            <p>Sección 6 • Datos del Coordinador Academico (CA)</p>
+          </blockquote>
           <div className="  newGroupContainer teal lighten-5 ">
             <span className="small material-icons blue-text ">error</span>
             <span className="new badge blue darken-2" data-badge-caption="">
@@ -1224,15 +1296,18 @@ const GenerarSolicitud = () => {
           <li className="tab col s1">
             <a href="#test5">5</a>
           </li>
-          {/*  <li className="tab col s1">
-              <a href="#test6">6</a>
-            </li> */}
-          {/* <li className="tab col s1">
-              <a href="#test7">7</a>
-            </li> */}
-          {/*  <li className="tab col s1">
-              <a href="#test8">7</a>
-            </li> */}
+          <li className="tab col s1">
+            <a href="#test6">6</a>
+          </li>
+         {/*  <li className="tab col s1">
+            <a href="#test7">7</a>
+          </li>
+          <li className="tab col s1">
+            <a href="#test8">7</a>
+          </li>
+          <li className="tab col s1">
+            <a href="#test66">66</a>
+          </li> */}
           <li className="tab col s1">
             <a href="#test9">Terminar</a>
           </li>
@@ -1253,18 +1328,21 @@ const GenerarSolicitud = () => {
         <div id="test5" className="col s12">
           <Section5 />
         </div>
-        {/*  <div id="test6" className="col s12">
+        <div id="test6" className="col s12">
           <Section6 />
-        </div> */}
-        {/* <div id="test7" className="col s12">
+        </div>
+        {/* <div id="test66" className="col s12">
+          <Section66 />
+        </div>
+        <div id="test7" className="col s12">
           <Section7 />
-        </div> */}
-        {/*  <div id="test8" className="col s12">
+        </div>
+        <div id="test8" className="col s12">
           <Section8 />
-        </div> */}
+        </div>*/}
         <div id="test9" className="col s12">
           <Section9 />
-        </div>
+        </div> 
       </div>
     );
   };
@@ -1344,7 +1422,7 @@ const GenerarSolicitud = () => {
             </a>
 
             <Link
-              to="/subdirector/registroDetalle"
+              to="/subdirector/programas/2"
               className=" waves-effect waves-light btn white black-text col s12 m5 l5 xl5"
             >
               <b>Regresar</b>
@@ -1386,9 +1464,9 @@ const GenerarSolicitud = () => {
           </b>
         </p>
         <p className="header light col s10 ">
-          El proceso del llenado de la solicitud  esta en el
+          El proceso del llenado de la solicitud esta en el
           <strong className="teal-text"> 70%</strong> <br />
-         </p>
+        </p>
         <div className="teal accent-5 ">
           <p className="center white-text" style={{ fontSize: "22px" }}>
             Secciones:

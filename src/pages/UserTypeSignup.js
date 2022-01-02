@@ -56,39 +56,47 @@ const UserTypeSignup = () => {
           </div>
         </div>
       </header>
-      <main className="row container section" >
-        <TargetaRegistro
-          user="Revisor"
-          description="Tendrá acceso a ver los registros pendientes por revisar además de las acciones de contenido que le correspondan.."
-          link="/signup/revisor"
-          pic="https://picsum.photos/400/400?random=2"
-          texto= "REGISTRARSE"
-        />
-        <TargetaRegistro
-          user="Subdirector "
-          description="Tendrá acceso a ver los registros pendientes por revisar
+      <main className="row container section">
+        <div className="col s12 m12 l6 center">
+          <TargetaRegistro
+            user="Revisor"
+            description="Tendrá acceso a ver los registros pendientes por revisar además de las acciones de contenido que le correspondan.."
+            link="/signup/revisor"
+            pic="https://picsum.photos/400/400?random=2"
+            texto="REGISTRARSE"
+          />
+        </div>
+        <div className="col s12 m12 l6 center">
+          <TargetaRegistro
+            user="Subdirector "
+            description="Tendrá acceso a ver los registros pendientes por revisar
                 además de las acciones de contenido que le correspondan.."
-          link="/signup/Subdirector"
-          pic="https://picsum.photos/400/400?random=3"
-          texto= "REGISTRARSE"
-        />
-       
-        <TargetaRegistro
-          user="Director"
-          description="El Director Académico tendra acceso a ver los registros pendientes por revisar
+            link="/signup/Subdirector"
+            pic="https://picsum.photos/400/400?random=3"
+            texto="REGISTRARSE"
+          />
+        </div>
+
+        <div className="col s12 m12 l6 center">
+          <TargetaRegistro
+            user="Director"
+            description="El Director Académico tendra acceso a ver los registros pendientes por revisar
                 además de las acciones de contenido que le correspondan.."
-          link="/signup/Director%20Academico"
-          pic="https://picsum.photos/400/400?random=5"
-          texto= "REGISTRARSE"
-        />
-     <TargetaRegistro
-          user="Administrador"
-          description="Tendrá acceso a ver los registros pendientes por revisar
+            link="/signup/Director%20Academico"
+            pic="https://picsum.photos/400/400?random=5"
+            texto="REGISTRARSE"
+          />
+        </div>
+        <div className="col s12 m12 l6 center">
+          <TargetaRegistro
+            user="Administrador"
+            description="Tendrá acceso a ver los registros pendientes por revisar
                 además de las acciones de contenido que le correspondan.."
-          link="/signup/Administrador"
-          pic="https://picsum.photos/400/400?random=1"
-          texto= "REGISTRARSE"
-        />
+            link="/signup/Administrador"
+            pic="https://picsum.photos/400/400?random=1"
+            texto="REGISTRARSE"
+          />
+        </div>
       </main>
 
       <Footer />

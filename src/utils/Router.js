@@ -40,12 +40,15 @@ import MenuDirector from "../pages/director/MenuDirector";
 import NavbarDirector from "../pages/director/NavbarDirector";
 import ListadoInstructoresDirector from "../pages/director/ListadoInstructoresDirector";
 import DirectorListadoGeneral from "../pages/director/DirectorListadoGeneral";
-//Reporteador 
+//Reporteador
 import MenuEacuerdos from "../pages/eacuerdos/MenuEacuerdos";
 import Indicadores from "../pages/eacuerdos/Indicadores";
 import Tablas from "../pages/eacuerdos/Tablas";
 import Reportes from "../pages/eacuerdos/Reportes/Reportes";
 import NavbarEacuerdos from "../pages/eacuerdos/NavbarEacuerdos";
+import VerReporte from "../pages/eacuerdos/VerReporte";
+import ListadoGrupos from "../pages/subdirector/Grupos/ListadoGrupos";
+import BuscarReportes from "../pages/eacuerdos/BuscarReportes/BuscarReportes";
 
 const Router = () => {
   return (
@@ -92,18 +95,23 @@ const Router = () => {
               <NavbarUser />
               <Route path={`${url}/menu`} component={MenuUser} exact />
               <Route
-                path={`${url}/generarSolicitud`}
+                path={`${url}/programas/:programaId/generarSolicitud`}
                 component={GenerarSolicitud}
                 exact
               />
               <Route
-                path={`${url}/ListadoRegistros`}
+                path={`${url}/programas`}
                 component={ListadoRegistros}
                 exact
               />
               <Route
-                path={`${url}/registroDetalle`}
+                path={`${url}/programas/:programaId`}
                 component={RegistroDetalle}
+                exact
+              />
+              <Route
+                path={`${url}/programas/:programaId/grupos`}
+                component={ListadoGrupos}
                 exact
               />
               <Route
@@ -208,28 +216,30 @@ const Router = () => {
             </>
           )}
         />
- <Route
+        <Route
           path="/eacuerdos"
           render={({ match: { url } }) => (
             <>
-              <NavbarEacuerdos/>
+              <NavbarEacuerdos />
               <Route path={`${url}/menu`} component={MenuEacuerdos} exact />
+              <Route path={`${url}/reportes`} component={Reportes} exact />
               <Route
-                path={`${url}/reportes`}
-                component={Reportes}
+                path={`${url}/buscarReporte`}
+                component={BuscarReportes}
                 exact
               />
               <Route
-                path={`${url}/tablas`}
-                component={Tablas}
+                path={`${url}/reportes/:formato`}
+                component={VerReporte}
                 exact
               />
+
+              <Route path={`${url}/tablas`} component={Tablas} exact />
               <Route
                 path={`${url}/indicadores`}
                 component={Indicadores}
                 exact
               />
-              
             </>
           )}
         />

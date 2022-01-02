@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import M from "materialize-css/dist/js/materialize.min.js";
 import ba14 from "../../../assets/images/ba14.png";
 import parteba11 from "../../../assets/images/parteba11.png";
 import FilaS from "./FilaS";
+import Modal from "../../../components/Modal";
+
 const style = {
   infoContainer: {
     padding: "25px",
@@ -93,103 +94,106 @@ const style = {
   },
 };
 const AdministrarSolicitudes = () => {
-  let history = useHistory();
+  const [modalAprobar, setModalAprobar] = useState(false);
+  const [modalAyuda, setModalAyuda] = useState(false);
+  const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
 
-  useEffect(() => {
-    var elems = document.querySelectorAll(".modal");
-    M.Modal.init(elems, {});
-  }, []);
+  let history = useHistory();
 
   const ModalAsignarRevisor = () => {
     return (
-      <div id="modal1" className="modal">
-        <div className="modal-content  ">
-          <h5>Asignar Revisor</h5>
-          <div className="  col s6">
-            <label>Revisores:</label>
-            <select className="browser-default" defaultValue="" required>
-              <option value="" disabled>
-                Selecciona una opción
-              </option>
-              <option value="1">Antonio</option>
-              <option value="2">Luis</option>
-              <option value="2">ssdsd </option>
-            </select>
-          </div>
-
-          <br />
-          <button type="submit" className="waves-effect waves-light btn   ">
-            Asignar
-            <i className="material-icons right">picture_as_pdf</i>
-          </button>
-          <button className="modal-close waves-effect waves-green btn-flat right">
-            Cerrar
-          </button>
+      <div className="modal-content  ">
+        <h5>Asignar Revisor</h5>
+        <div className="  col s6">
+          <label>Revisores:</label>
+          <select className="browser-default" defaultValue="" required>
+            <option value="" disabled>
+              Selecciona una opción
+            </option>
+            <option value="1">Antonio</option>
+            <option value="2">Luis</option>
+            <option value="2">ssdsd </option>
+          </select>
         </div>
+
+        <br />
+        <button type="submit" className="waves-effect waves-light btn   ">
+          Asignar
+          <i className="material-icons right">picture_as_pdf</i>
+        </button>
+        <button className="modal-close waves-effect waves-green btn-flat right">
+          Cerrar
+        </button>
       </div>
     );
   };
   const ModalHelp = () => {
     return (
-      <div id="modal2" class="modal">
-        <div class="modal-content ">
-          <div className="teal lighten-3 white-text section center">
-            <h5 className="">Simbología</h5>
-          </div>
-          <br />
-          <span
-            className="new badge red left"
-            data-badge-caption=""
-          >
-            Pendiente - Asignar revisor 
-          </span>
-          <div className="  ">
-            &nbsp; &nbsp;- Aún no se ha asignado un revisor
-            <br /> <br />
-          </div>
-          <span
-            className="new badge blue left"
-            data-badge-caption=""
-          >
-            Asignado
-          </span>
-          <div className=" ">
-            &nbsp; &nbsp; - Se ha otorgado un revisor
-            <br /> <br />
-          </div>
-          <span className="new badge yellow darken-4 left" data-badge-caption="">
-            En proceso
-          </span>
-          <div className="">
-            &nbsp; &nbsp; - Ya están asignados y empezaron su proceso de registro
-            <br /> <br />
-          </div>
-          <span className="new badge green left" data-badge-caption="">
-            Aceptado
-          </span>
-          <div className="">
-            &nbsp; &nbsp; - Se ha aceptado la solicitud
-            <br /> <br />
-          </div>
-          
-         
-           
-            <button
-              href="#!"
-              className="modal-close waves-effect waves-green white-text teal lighten-3 btn-flat right"
-            >
-              Cerrar
-            </button>
-         <br/>
+      <div class="modal-content ">
+        <div className="teal lighten-3 white-text section center">
+          <h5 className="">Simbología</h5>
         </div>
+        <br />
+        <span className="new badge red left" data-badge-caption="">
+          Pendiente - Asignar revisor
+        </span>
+        <div className="  ">
+          &nbsp; &nbsp;- Aún no se ha asignado un revisor
+          <br /> <br />
+        </div>
+        <span className="new badge blue left" data-badge-caption="">
+          Asignado
+        </span>
+        <div className=" ">
+          &nbsp; &nbsp; - Se ha otorgado un revisor
+          <br /> <br />
+        </div>
+        <span className="new badge yellow darken-4 left" data-badge-caption="">
+          En proceso
+        </span>
+        <div className="">
+          &nbsp; &nbsp; - Ya están asignados y empezaron su proceso de registro
+          <br /> <br />
+        </div>
+        <span className="new badge green left" data-badge-caption="">
+          Aceptado
+        </span>
+        <div className="">
+          &nbsp; &nbsp; - Se ha aceptado la solicitud
+          <br /> <br />
+        </div>
+
+        <button
+          href="#!"
+          className="modal-close waves-effect waves-green white-text teal lighten-3 btn-flat right"
+        >
+          Cerrar
+        </button>
+        <br />
       </div>
     );
   };
+  const Aprobar = () => (
+    <div>
+      Solo se pueden aprobar solicitudes completas al 100 <br />
+      Generar/ asignar clave
+    </div>
+  );
 
   return (
     <>
-      <ModalAsignarRevisor />
-      <ModalHelp />
+      <Modal open={modalAprobar} fnCloseModal={() => setModalAprobar(false)}>
+        <Aprobar />
+      </Modal>
+      <Modal open={modalAyuda} fnCloseModal={() => setModalAyuda(false)}>
+        <ModalHelp />
+      </Modal>
+      <Modal
+        open={modalAsignarRevisor}
+        fnCloseModal={() => setModalAsignarRevisor(false)}
+      >
+        <ModalAsignarRevisor />
+      </Modal>
       <header className="row" style={{ position: "relative", height: "50vh" }}>
         <div
           className="col s12 m11 l10 xl8 "
@@ -209,8 +213,8 @@ const AdministrarSolicitudes = () => {
           <blockquote>
             <h6 className="subtitulo black-text ">
               <b>
-              Aquí puedes consultar el historial de <br/>solicitudes y asignar un
-            revisor
+                Aquí puedes consultar el historial de <br />
+                solicitudes y asignar un revisor
               </b>
             </h6>
           </blockquote>
@@ -225,60 +229,73 @@ const AdministrarSolicitudes = () => {
           />
         </div>
       </header>
-     <br/>
+      <br />
       <div className="container  ">
-      <a
+        <button
           href="#modal2"
           className="modal-trigger waves-effect waves-light btn right lime darken-2"
+          onClick={() => setModalAyuda(true)}
         >
           Símbología
-         
-        </a>
-        <br/>
-        <br/>
+        </button>
+        <br />
+        <br />
         <table className="striped responsive-table ">
           <thead className="cyan darken-1">
             <tr className="cyan darken-1">
               <th className="cyan darken-1 white-text">Solicitudes</th>
               <th className="cyan darken-1 white-text">Status</th>
               <th className="cyan darken-1 white-text">Revisor</th>
+              <th className="cyan darken-1 white-text">Aprobar</th>
               <th className="cyan darken-1 white-text">Ver</th>
             </tr>
           </thead>
 
           <tbody>
-            <FilaS 
-            color1="trPointer teal lighten-5"
-            solicitud="Solicitud Curso Informática"
-            status="Pendiente - Asignar Revisor"
-            link="#modal1"
-            texto2="Asignar revisor"
+            <FilaS
+              color1="trPointer teal lighten-5"
+              solicitud="Solicitud Curso Informática"
+              status="Pendiente - Asignar Revisor"
+              link="#modal1"
+              texto2="Asignar revisor"
+              fnAsignar={() => setModalAsignarRevisor(true)}
             />
-               <FilaS 
-            color1="trPointer white"
-            solicitud="Solicitud Curso Informática"
-            status="Pendiente - Asignar Revisor"
-            link="#modal1"
-            texto2="Asignar revisor"
+            <FilaS
+              color1="trPointer white"
+              solicitud="Solicitud Curso Informática"
+              status="Pendiente - Asignar Revisor"
+              link="#modal1"
+              texto2="Asignar revisor"
+              fnAsignar={() => setModalAsignarRevisor(true)}
             />
-            <FilaS 
-            color1="trPointer teal lighten-5"
-            solicitud="Solicitud Curso Informática"
-            status="Asignado"
-            texto2="Antonio Ayola"
+            <FilaS
+              color1="trPointer teal lighten-5"
+              solicitud="Solicitud Curso Informática"
+              status="Asignado"
+              revisor
+              texto2="Antonio Ayola"
+              completado
+              fn={() => setModalAprobar(true)}
+              fnAsignar={() => setModalAsignarRevisor(true)}
             />
-              <FilaS 
-            color1="trPointer white"
-            solicitud="Solicitud Curso Informática"
-            status="Asignado"
-            status2="En proceso"
-            texto2="Antonio Ayola"
+            <FilaS
+              color1="trPointer white"
+              solicitud="Solicitud Curso Informática"
+              status="Asignado"
+              status2="En proceso"
+              revisor
+              texto2="Antonio Ayola"
+              fnAsignar={() => setModalAsignarRevisor(true)}
             />
-              <FilaS 
-            color1="trPointer teal lighten-5"
-            solicitud="Solicitud Curso Informática"
-            status="Asignado"
-            texto2="Antonio Ayola"
+            <FilaS
+              color1="trPointer teal lighten-5"
+              solicitud="Solicitud Curso Informática"
+              status="Asignado"
+              revisor
+              texto2="Antonio Ayola"
+              completado
+              fn={() => setModalAprobar(true)}
+              fnAsignar={() => setModalAsignarRevisor(true)}
             />
           </tbody>
         </table>

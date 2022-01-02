@@ -8,14 +8,14 @@ import {
   Image,
   Font,
 } from "@react-pdf/renderer";
-import Header from "./Header";
+import Header from "../Header";
 import Table from "./Table";
 
 const ServiciosExtracurricularesRegistrados = (props) => {
   return (
     <Document>
       {props.data && (
-        <Page style={styles.body} orientation="landscape">
+        <Page size="A4" style={styles.body} orientation="landscape">
           <Header />
           <Table data={props.data} />
 

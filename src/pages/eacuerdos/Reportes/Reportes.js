@@ -4,8 +4,10 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import Fila from "../../eacuerdos/Reportes/Fila";
 import Footer from "../../Footer";
 import ba21 from "../../../assets/images/ba21.png";
-import parteba15 from"../../../assets/images/parteba15.png";
+import RegistrosAcademicos from "../../../components/Documents/ReporteRegistrosAcademicosss/RegistrosAcademicos";
+import parteba15 from "../../../assets/images/parteba15.png";
 import { PDFDownloadLink, BlobProvider, PDFViewer } from "@react-pdf/renderer";
+import registrosTotal from "../../../data/registrosTotal.json";
 import Servicios from "../../../components/Documents/ServiciosExtracurricularesRegistrados/ServiciosExtracurricularesRegistrados";
 const style = {
   infoContainer: {
@@ -100,7 +102,7 @@ const Reportes = () => {
     var elems = document.querySelectorAll(".modal");
     M.Modal.init(elems, {});
   }, []);
-  const ModalEscoger = () => {
+  /* const ModalEscoger = () => {
     return (
       <div id="modal2" className="modal">
         <div className="modal-content  ">
@@ -118,7 +120,7 @@ const Reportes = () => {
                 modificar ni eliminar.
                 <br /> · Indicaciones.........
               </p>
-            </div> */}
+            </div> 
             <div className="input-field col s12">
               <input id="nombreCurso" type="text" required />
               <label htmlFor="nombreCurso">Nombre del reporte</label>
@@ -154,9 +156,9 @@ const Reportes = () => {
           {/*   <button type="submit" className="modal-close waves-effect waves-light btn   ">
             Crear nuevo registro de programa
             <i className="material-icons right">picture_as_pdf</i>
-          </button> */}
+          </button> 
           <Link
-            to="/subdirector/registroDetalle"
+            to="/eacuerdos/Reportes/dvdr_3T?trimestre=3&fecha=2021"
             className="modal-close waves-effect waves-light btn   "
           >
            Buscar
@@ -171,11 +173,11 @@ const Reportes = () => {
         </div>
       </div>
     );
-  };
+  }; */
   return (
     <>
-    <ModalEscoger />
-    
+      {/* <ModalEscoger /> */}
+
       <header className="row" style={{ position: "relative", height: "50vh" }}>
         <div
           className="col s12 m11 l10 xl8 "
@@ -189,8 +191,9 @@ const Reportes = () => {
           <img alt="" src={ba21} className="responsive-img" style={style.fon} />
         </div>
         <div className="col s12 m9 l9 xl8 white-text" style={style.headerTitle}>
-          <h1 class="titulo">
-            LISTADO DE <br/><b>REPORTES</b>
+          <h1 className="titulo">
+            LISTADO DE <br />
+            <b>REPORTES</b>
           </h1>
           <blockquote>
             <h6 className="subtitulo black-text ">
@@ -199,9 +202,7 @@ const Reportes = () => {
                 reportes
               </b>
             </h6>
-            <p className="black-text ">
-              Podrás consultarlos por trimestre
-            </p>
+            <p className="black-text ">Podrás consultarlos por trimestre</p>
           </blockquote>
         </div>
 
@@ -212,53 +213,41 @@ const Reportes = () => {
             className="responsive-img"
             style={style.imag4}
           />
-          </div>
-       
+        </div>
       </header>
-      
-     <br/>
+
+      <br />
       <div className="container section  ">
-      <div className="collection">
-      <p className="white-text collection-item active  yellow darken-4">
+        <div className="collection">
+          <p className="white-text collection-item active  yellow darken-4">
             <b>Título</b>
-            
           </p>
-      
-       <Fila titulo="DVDR_3T_2021"/>
-       <Fila titulo="Reportes Registros Académicos trimestre actual"/>
-       <Fila titulo="Estandares Compet trimestre actual"/>
-       <Fila titulo="Concent Eventos trimestre actual"/>
-       <Fila titulo="Event Presenciales trimestre actual"/>
-       <Fila titulo="Event a Distancia trimestre actual"/>
-       <Fila titulo="Event Prese Idiom Reg CELEX trimestre actual"/>
-       <Fila titulo="Prog Ofert_Presenc trimestre actual"/>
-       <Fila titulo="Prog Ofert_Distanc trimestre actual"/>
-       <Fila titulo="Prog Ofert_Idiomas Reg CELEX trimestre actual"/>
-       <Fila titulo="Prog Ofert_Idiomas trimestre actual"/>
-       <Fila titulo="Prog Ofert_Unid Móviles trimestre actual"/>
-       <Fila titulo="Con Órden y Acuerd trimestre actual"/>
+
+          <Fila id="1" titulo="DVDR_3T_2021" />
+          <Fila
+            id="2"
+            titulo="Reportes Registros Académicos trimestre actual"
+          />
+          <Fila id="3" titulo="Estandares Compet trimestre actual" />
+          <Fila id="4" titulo="Concent Eventos trimestre actual" />
+          <Fila id="5" titulo="Event Presenciales trimestre actual" />
+          <Fila id="6" titulo="Event a Distancia trimestre actual" />
+          <Fila id="7" titulo="Event Prese Idiom Reg CELEX trimestre actual" />
+          <Fila id="8" titulo="Prog Ofert_Presenc trimestre actual" />
+          <Fila id="9" titulo="Prog Ofert_Distanc trimestre actual" />
+          <Fila
+            id="10"
+            titulo="Prog Ofert_Idiomas Reg CELEX trimestre actual"
+          />
+          <Fila id="11" titulo="Prog Ofert_Idiomas trimestre actual" />
+          <Fila id="12" titulo="Prog Ofert_Unid Móviles trimestre actual" />
+          <Fila id="13" titulo="Con Órden y Acuerd trimestre actual" />
+        </div>
       </div>
-    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      {/* <PDFViewer width="100%" height="850px">
-        <Servicios data={[]} />
-      </PDFViewer> */}
+      <PDFViewer width="100%" height="850px">
+        <RegistrosAcademicos /* data={registrosTotal.slice(0,60)} */ />
+      </PDFViewer>
     </>
   );
 };

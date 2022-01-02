@@ -107,7 +107,15 @@ const Signup = () => {
       history.push("/Login");
     };
     return (
-      <div className="  ">
+      <div
+        className="  "
+        style={{
+          padding: "2%",
+          maxHeight: "calc(100vh - 65px)",
+          overflowX: "hidden",
+          overflowY: "auto",
+        }}
+      >
         <h5 className="center white-text" style={{ marginTop: "20px" }}>
           Regístrate {userType}
         </h5>
@@ -207,7 +215,7 @@ const Signup = () => {
             </span>
           </div>
 
-          <div className="col s4 l4" style={{ marginTop: "1rem" }}>
+          <div className="col s12 l4" style={{ marginTop: "1rem" }}>
             <label className="white-text" style={style.inputLabel}>
               Contraseña
             </label>
@@ -219,7 +227,7 @@ const Signup = () => {
               style={style.formInput}
             />
           </div>
-          <div className="col s4 l4" style={{ marginTop: "1rem" }}>
+          <div className="col s12 l4" style={{ marginTop: "1rem" }}>
             <label className="white-text" style={style.inputLabel}>
               Confirmar contraseña
             </label>
@@ -314,10 +322,13 @@ const Signup = () => {
   };
   return (
     <div className="row" style={style.min}>
-      <div className="col s12 m12 l6 xl5" style={{ padding: "0" }}>
+      <div
+        className="col s12 m12 l6 xl5 hide-on-med-and-down"
+        style={{ padding: "0" }}
+      >
         <Carrusel />
       </div>
-      <div className="col s12 m12 l6 xl7">
+      <div className="col s12 m12 l6 xl7" style={{ padding: "0" }}>
         <SignupForm />
       </div>
     </div>
