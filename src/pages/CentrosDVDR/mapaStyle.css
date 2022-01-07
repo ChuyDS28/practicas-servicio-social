@@ -1,0 +1,118 @@
+.svgMapa {
+  /*   width: 900px;
+  margin: auto; */
+}
+.svgMapa line {
+  fill: #d3d3d3;
+  stroke: #424242;
+  stroke-width: 2px;
+  transition: 0.5s;
+}
+
+.svgMapa text {
+  white-space: pre;
+  fill: rgb(51, 51, 51);
+  font-family: Arial, sans-serif;
+  font-size: 9.7px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.svgMapa text tspan:first-child {
+  font-weight: 700;
+}
+.svgMapa circle {
+  fill: #212121;
+}
+.svgMapa path {
+  fill: #d3d3d3;
+  stroke: #fff;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  transition: 0.5s;
+}
+
+.svgMapa #chh {
+  fill: #6f8f34;
+}
+.svgMapa #bcn {
+  fill: #77dd77;
+}
+.svgMapa #son {
+  fill: #ff5733;
+}
+.svgMapa #sinNort {
+  fill: #84b6f4;
+  stroke-width: 1px;
+}
+.svgMapa #sinCent {
+  fill: #84b6f4;
+  stroke-width: 1px;
+}
+.svgMapa #sinSur {
+  fill: #84b6f4;
+  stroke-width: 1px;
+}
+.svgMapa #dur {
+  fill: #fdcae1;
+}
+.svgMapa #tam {
+  fill: #633974;
+}
+.svgMapa #mic {
+  fill: #ff6961;
+}
+.svgMapa #ver {
+  fill: #6f8f34;
+}
+.svgMapa #oax {
+  fill: #77dd77;
+}
+.svgMapa #roo {
+  fill: #ff5733;
+}
+.svgMapa #cam {
+  fill: #84b6f4;
+}
+
+/* .svgMapa #chh:hover,
+#bcn:hover,
+#sin:hover,
+#son:hover,
+#dur:hover,
+#tam:hover,
+#mic:hover,
+#ver:hover,
+#oax:hover,
+#roo:hover,
+#cam:hover {
+    fill: #a1a1a1 !important;
+    cursor: pointer;
+} */
+
+.svgMapa .g:hover rect {
+  fill: #a1a1a1;
+  cursor: pointer;
+}
+.svgMapa .g:hover path {
+  fill: #616161 !important;
+  cursor: pointer;
+}
+.svgMapa .g:hover line {
+  stroke: #757575;
+  cursor: pointer;
+}
+
+.svgMapa .g:hover text {
+  font-size: small;
+  /* text-decoration: underline; */
+  /* fill: #004d40; */
+  cursor: pointer;
+}
+
+.svgMapa .g:hover image {
+  cursor: pointer;
+}
+
+.svgMapa path:hover {
+  fill: #616161 !important;
+}
