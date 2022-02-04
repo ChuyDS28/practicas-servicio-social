@@ -7,7 +7,8 @@ const AgregarUsuario = () => {
 
   useEffect(() => {
     
-    M.Tabs.init(tabsRef.current, { duration: 500 });
+    let elems = document.querySelectorAll(".tabs");
+    M.Tabs.init(elems, {} );
   });
 
 
@@ -142,7 +143,7 @@ const AgregarUsuario = () => {
                </div>
 
                <button type="submit" className="waves-effect waves-light btn   ">
-        Registrar Director
+        Registrar Subdirector
         <i className="material-icons right">picture_as_pdf</i>
       </button>
                 </div>
