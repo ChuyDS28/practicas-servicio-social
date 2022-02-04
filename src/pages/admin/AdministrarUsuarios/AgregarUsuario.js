@@ -1,6 +1,18 @@
 import React, { useEffect, useRef } from "react";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 const AgregarUsuario = () => {
+
+  const tabsRef = useRef(null);
+
+  useEffect(() => {
+    
+    M.Tabs.init(tabsRef.current, { duration: 500 });
+  });
+
+
+
+
   return (
     <div className="modal-content">
       <div className="teal white-text section center">
@@ -10,16 +22,16 @@ const AgregarUsuario = () => {
         <div class="col s12">
           <ul class="tabs">
             <li class="tab col s6">
-              <a href="#Director">Director</a>
+              <a href="#director">Director</a>
             </li>
             <li class="tab col s6">
-              <a class="active" href="#Subdirector">
+              <a class="active" href="#subdirector">
                 Subdirector
               </a>
             </li>
           </ul>
         </div>
-        <div id="Director" class="col s12">
+        <div id="director" class="col s12">
       
             <div class="row">
               <form class="col s12">
@@ -77,10 +89,8 @@ const AgregarUsuario = () => {
                 </div>
               </form>
             </div>
-        
-       
         </div>
-        <div id="Subdirector" class="col s12"> 
+        <div id="subdirector" class="col s12"> 
         
         <div class="row">
               <form class="col s12">
@@ -152,5 +162,6 @@ const AgregarUsuario = () => {
     </div>
   );
 };
+
 
 export default AgregarUsuario;

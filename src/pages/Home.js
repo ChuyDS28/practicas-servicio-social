@@ -49,10 +49,10 @@ const Home = () => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
-    let elems = document.querySelectorAll(".carousel");
-    M.Carousel.init(carouselRef.current, { duration: 500 });
+      let elems = document.querySelectorAll(".carousel");
+      M.Carousel.init(carouselRef.current, { duration: 500 });
 
-    let instance = M.Carousel.getInstance(carouselRef.current);
+      let instance = M.Carousel.getInstance(carouselRef.current);
     const timer = setInterval(() => {
       instance.next();
     }, 4000);
