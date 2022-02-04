@@ -1,18 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef} from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 
 const AgregarUsuario = () => {
 
   const tabsRef = useRef(null);
 
+
   useEffect(() => {
     
-    let elems = document.querySelectorAll(".tabs");
-    M.Tabs.init(elems, {} );
+    let elems = document.querySelectorAll(".tabs", ".select");
+    M.Tabs.init(elems, {duration: 30} );
+   
   });
-
-
-
 
   return (
     <div className="modal-content">
@@ -32,7 +31,8 @@ const AgregarUsuario = () => {
             </li>
           </ul>
         </div>
-        <div id="director" class="col s12">
+        
+        <div id="director" class="col s12 ">
       
             <div class="row">
               <form class="col s12">
@@ -85,13 +85,13 @@ const AgregarUsuario = () => {
 
                <button type="submit" className="waves-effect waves-light btn   ">
         Registrar Director
-        <i className="material-icons right">picture_as_pdf</i>
+        <i className="material-icons right">done</i>
       </button>
                 </div>
               </form>
             </div>
         </div>
-        <div id="subdirector" class="col s12"> 
+        <div id="subdirector" class="col s12 "> 
         
         <div class="row">
               <form class="col s12">
@@ -125,10 +125,27 @@ const AgregarUsuario = () => {
                  <input type="text" placeholder="Ingresa tu No. de empleado" id="numemp"/>
                   <label for="numemp">Numero de Empleado:</label> 
                </div>
+               
+               
+               
+               
+               
                <div class="input-field col s6">
-                 <input type="text" placeholder="Opcion" id="unidad"/>
+                 <selec>
+                 <option value="" disabled selected>Choose your option</option>
+                 <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                 </selec>
                   <label for="unidad">Unidad academica:</label> 
                </div>
+
+
+
+
+
+
+
                <div class="input-field col s6">
                  <input type="text" placeholder="Cargo" id="Cargo"/>
                   <label for="Cargo">Cargo:</label> 
@@ -144,7 +161,7 @@ const AgregarUsuario = () => {
 
                <button type="submit" className="waves-effect waves-light btn   ">
         Registrar Subdirector
-        <i className="material-icons right">picture_as_pdf</i>
+        <i className="material-icons right">done</i>
       </button>
                 </div>
               </form>
@@ -154,8 +171,6 @@ const AgregarUsuario = () => {
         
         </div>
       </div>
-
-      <br />
       <button className=" modal-close waves-effect waves-green btn-flat right">
         Cerrar
       </button>
