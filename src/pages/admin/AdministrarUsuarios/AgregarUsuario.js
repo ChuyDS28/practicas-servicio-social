@@ -1,17 +1,96 @@
-import React, { useEffect, useRef} from "react";
+import React, { useEffect, useRef, useState} from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
+import { obtenerUnidades } from "../../../api/services/unidadAcademica";
+import { registrarUsuario } from "../../../api/services/registro";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AgregarUsuario = () => {
 
+  let navigate = useNavigate();
+  let { userType } = useParams();
   const tabsRef = useRef(null);
 
 
   useEffect(() => {
     
-    let elems = document.querySelectorAll(".tabs", ".select");
+    let elems = document.querySelectorAll(".tabs");
     M.Tabs.init(elems, {duration: 30} );
    
   });
+
+  const SignupForm = () => {
+    let navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false);
+    const [unidades, setUnidades] = useState([]);
+    const [error, setError] = useState({ error: false, message: "" });
+    const [formValues, setFormValues] = useState({
+      rol: userType.toUpperCase(),
+      nombre: "",
+      primerApellido: "",
+      segundoApellido: "",
+      correoInstitucional: "",
+      confirmarCorreo: "",
+      username: "",
+      password: "",
+      Cpassword: "",
+      numeroDeEmpleado: "",
+      idUnidadAcademica: "",
+      cargo: "",
+      extension: "",
+      telefono: "",
+    });
+
+    useEffect(() => {
+      getUnidades();
+    }, []);
+
+    async function getUnidades() {
+      try {
+        const dataU = await obtenerUnidades(0);
+        setUnidades(dataU.data);
+        console.log(dataU);
+      } catch (error) {
+        console.log(error);
+        console.log(error.response);
+      }
+    }
+    const handleChange = (e) => {
+      setFormValues({
+        ...formValues,
+        [e.target.name]: e.target.value,
+      });
+    };
+
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      console.log(formValues);
+      if (formValues.password !== formValues.Cpassword) {
+        M.toast({ html: "Contraseñas diferentes", classes: "red" });
+
+        return;
+      }
+      if (formValues.correoInstitucional !== formValues.confirmarCorreo) {
+        M.toast({ html: "Correos diferentes", classes: "red" });
+        return;
+      }
+      try {
+        const response = await registrarUsuario(formValues);
+        M.toast({
+          html: "Usuario registrado espere a que activen su cuenta",
+          classes: "green",
+        });
+        console.log(response);
+        navigate("/login");
+      } catch (error) {
+        console.log(error);
+        console.log(error.response);
+        M.toast({ html: "Error al registrar", classes: "red" });
+      }
+    };}
+
+
+
+
 
   return (
     <div className="modal-content">
@@ -130,16 +209,28 @@ const AgregarUsuario = () => {
                
                
                
-               <div class="input-field col s6">
-                 <selec>
-                 <option value="" disabled selected>Choose your option</option>
-                 <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-                 </selec>
-                  <label for="unidad">Unidad academica:</label> 
-               </div>
-
+               <div className="col s12 l6">
+            <label className="white-text">
+              Unidad Academica
+            </label>
+            <select
+              className="browser-default indigo lighten-2"
+              required
+              name="idUnidadAcademica"
+              value={"formValues.idUnidadAcademica"}
+              onChange={"handleChange"}
+              
+            >
+              <option value="" disabled>
+                Selecciona una opción
+              </option>
+              <option>
+                free
+              </option>
+         
+              ))
+            </select>
+          </div>
 
 
 
@@ -171,12 +262,16 @@ const AgregarUsuario = () => {
         
         </div>
       </div>
+      
       <button className=" modal-close waves-effect waves-green btn-flat right">
         Cerrar
       </button>
       <br />
     </div>
   );
+
+
+
 };
 
 
