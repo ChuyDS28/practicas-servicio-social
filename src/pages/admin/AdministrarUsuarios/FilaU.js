@@ -115,4 +115,4 @@ const FilaU = (props) => {
   );
 };
 
-export default Filas;
+export default FilaU;
