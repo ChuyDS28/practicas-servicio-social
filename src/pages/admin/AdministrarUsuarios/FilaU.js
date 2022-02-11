@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { activarUsuario } from "../../../api/services/usuarios";
 import M from "materialize-css/dist/js/materialize.min.js";
@@ -23,7 +23,7 @@ const status = {
 };
 const FilaU = (props) => {
   const { user, fn, getUsuarios } = props;
-  const [modalInfo, setModalInfo] = UseState(false);
+  const [modalInfo, setModalInfo] = useState(false);
 
   function getStatus() {
     if (!user.activo) {
