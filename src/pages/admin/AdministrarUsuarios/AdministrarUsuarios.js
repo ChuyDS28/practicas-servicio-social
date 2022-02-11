@@ -182,9 +182,7 @@ const AdministrarUsuarios = () => {
       >
         <AgregarUsuario />
       </Modal>
-      <Modal open={modalInfo} fnCloseModal={() => setModalInfo(false)}>
-        <ModalInfo />
-      </Modal>
+      
       <header className="row" style={{ position: "relative", height: "50vh" }}>
         <div
           className="col s12 m11 l10 xl8 "

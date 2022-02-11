@@ -50,7 +50,7 @@ const Signup = () => {
 
   const Carrusel = () => {
     const carouselRef = useRef(null);
- 
+
     useEffect(() => {
       let elems = document.querySelectorAll(".carousel");
       M.Carousel.init(elems, {
@@ -343,27 +343,6 @@ const Signup = () => {
               style={style.formInput}
             />
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <div className="col s12 l6" style={{ marginTop: ".4rem" }}>
             <label className="white-text" style={style.inputLabel}>
               Unidad Academica
@@ -386,26 +365,6 @@ const Signup = () => {
               ))}
             </select>
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           {(userType === "Subdirector" || userType === "Director") && (
             <>

@@ -1,7 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { activarUsuario } from "../../../api/services/usuarios";
 import M from "materialize-css/dist/js/materialize.min.js";
+import Modal from "../../../components/Modal";
+import DatosUsuario from "./DatosUsuario";
+
 
 const users = {
   ADMINISTRADOR: { icon: "book" },
@@ -18,8 +21,9 @@ const status = {
   },
   deshabilitada: { badge: "new badge grey", title: "Cuenta desactivada" },
 };
-const Filas = (props) => {
+const FilaU = (props) => {
   const { user, fn, getUsuarios } = props;
+  const [modalInfo, setModalInfo] = useState(false);
 
   function getStatus() {
     if (!user.activo) {
@@ -42,8 +46,14 @@ const Filas = (props) => {
       console.log(error.response);
     }
   }
-
+  
   return (
+    <>
+    
+      <Modal open={modalInfo} fnCloseModal={() => setModalInfo(false)}>
+        <DatosUsuario user={user}/>
+      </Modal>
+      
     <tr style={{ fontSize: "1rem" }}>
       <td>{`${user.nombre} ${user.primerApellido} ${user.segundoApellido}`}</td>
       <td>
@@ -82,7 +92,7 @@ const Filas = (props) => {
       <td>
         <button
           className="waves-effect waves-light btn-small blue darken-2"
-          onClick={() => fn()}
+          onClick={() => {setModalInfo(true)}}
         >
           Ver
         </button>
@@ -102,7 +112,8 @@ const Filas = (props) => {
         </>
       )}
     </tr>
+    </>
   );
 };
 
-export default Filas;
+export default FilaU;
