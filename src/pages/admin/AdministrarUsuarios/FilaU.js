@@ -5,6 +5,7 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import Modal from "../../../components/Modal";
 import DatosUsuario from "./DatosUsuario";
 
+
 const users = {
   ADMINISTRADOR: { icon: "book" },
   SUBDIRECTOR: { icon: "local_library" },
@@ -22,7 +23,7 @@ const status = {
 };
 const FilaU = (props) => {
   const { user, fn, getUsuarios } = props;
-  const [modalInfo, setModalInfo] = useState(false);
+  const [modalInfo, setModalInfo] = UseState(false);
 
   function getStatus() {
     if (!user.activo) {

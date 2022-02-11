@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { obtenerUsuarios } from "../../../api/services/usuarios";
 import { Link } from "react-router-dom";
 import Modal from "../../../components/Modal";
 
 
-const DatosUsuario = () => {
+const DatosUsuario = (props) => {
     return (
       <div className="modal-content  ">
         <div className="light-blue lighten-2 white-text section center">
@@ -13,45 +14,45 @@ const DatosUsuario = () => {
         <div className="row">
           <div className="col s12 m12 l7 xl7">
             <p>
-              <strong>Nombre:&nbsp;&nbsp;</strong>Pedro Díaz Coronel
+              <strong>Nombre:&nbsp;&nbsp;</strong>{user.nombre}
             </p>
           </div>
 
           <div className="col s12 m12 l4 xl4">
             <p>
-              <strong>Tipo de usuario:&nbsp;&nbsp;</strong>Subdirector
+              <strong>Tipo de usuario:&nbsp;&nbsp;</strong>{user.usuario}
             </p>
           </div>
 
           <div className="col s12 l7">
             <p>
               <strong>Escuela, unidad o centro:&nbsp;&nbsp;</strong>
-              Juan de Dios Bátiz
+              {user.unidad}
             </p>
           </div>
           <div className="col s12 m4 l5">
             <p>
-              <strong>Cargo:&nbsp;&nbsp;</strong>Principal
+              <strong>Cargo:&nbsp;&nbsp;</strong>{user.Cargo}
             </p>
           </div>
           <div className="col s12 m7 xl7">
             <p>
-              <strong>Fecha de registro:&nbsp;&nbsp;</strong>16/11/2021
+              <strong>Fecha de registro:&nbsp;&nbsp;</strong>{user.sdate}
             </p>
           </div>
           <div className="col s12 m5 xl5">
             <p>
-              <strong>Fecha de inactividad:&nbsp;&nbsp;</strong>17/11/2021
+              <strong>Fecha de inactividad:&nbsp;&nbsp;</strong>{user.fdate}
             </p>
           </div>
           <div className="col s12 m7 xl7">
             <p>
-              <strong>Número de telefono:&nbsp;&nbsp;</strong>5570293846
+              <strong>Número de telefono:&nbsp;&nbsp;</strong>{user.Telefono}
             </p>
           </div>
           <div className="col s12 m5 xl5">
             <p>
-              <strong>Extensión:&nbsp;&nbsp;</strong>551728
+              <strong>Extensión:&nbsp;&nbsp;</strong>{user.Extencion}
             </p>
           </div>
         </div>
