@@ -15,6 +15,8 @@ const DatosUsuario = (props) => {
           <div className="col s12 m12 l7 xl7">
             <p>
               <strong>Nombre:&nbsp;&nbsp;</strong>{props.user.nombre}
+              <strong>&nbsp;&nbsp;</strong>{props.user.primerApellido}
+              <strong>&nbsp;&nbsp;</strong>{props.user.segundoApellido}              
             </p>
           </div>
 
