@@ -55,7 +55,7 @@ const FilaU = (props) => {
       </Modal>
       
     <tr style={{ fontSize: "1rem" }}>
-      <td>{`${user.nombre} ${user.primerApellido} ${user.segundoApellido} ${user.usuario} ${user.unidad}`}</td>
+      <td>{`${user.nombre} ${user.primerApellido} ${user.segundoApellido}`}</td>
       <td>
         <i className="material-icons  blue-grey-text text-darken-3  left circle  teal lighten-4   ">
           {users[user.rol].icon}
