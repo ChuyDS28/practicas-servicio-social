@@ -20,7 +20,7 @@ const DatosUsuario = (props) => {
             </p>
           </div>
           <br/>
-          <div className="col s12 m12 l4 xl4">
+          <div className="col s12 m12 l12 xl12">
             <p>
               <strong>Tipo de usuario:&nbsp;&nbsp;</strong>{props.user.rol}
             </p>
