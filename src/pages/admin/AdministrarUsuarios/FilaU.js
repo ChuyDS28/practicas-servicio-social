@@ -4,7 +4,7 @@ import { activarUsuario } from "../../../api/services/usuarios";
 import M from "materialize-css/dist/js/materialize.min.js";
 import Modal from "../../../components/Modal";
 import DatosUsuario from "./DatosUsuario";
-
+import EditarUsuario from "./EditarUsuario";
 
 const users = {
   ADMINISTRADOR: { icon: "book" },
@@ -101,7 +101,9 @@ const FilaU = (props) => {
         <>
           <td>
             <button class="waves-effect waves-teal  btn-flat">
-              <i class="material-icons yellow-text text-darken-4">edit</i>
+              <i class="material-icons yellow-text text-darken-4"
+                onClick={() => {setModalInfo(true)}}>
+                edit</i>
             </button>
           </td>
           <td>
