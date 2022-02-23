@@ -24,6 +24,7 @@ const status = {
 const FilaU = (props) => {
   const { user, fn, getUsuarios } = props;
   const [modalInfo, setModalInfo] = useState(false);
+  const [EditInfo, setEditlInfo] = useState(false);
 
   function getStatus() {
     if (!user.activo) {
@@ -52,7 +53,13 @@ const FilaU = (props) => {
     
       <Modal open={modalInfo} fnCloseModal={() => setModalInfo(false)}>
         <DatosUsuario user={user}/>
+        
       </Modal>
+      <Modal open={EditInfo} fnCloseModal={() => setEditlInfo(false)}>
+        
+        <EditarUsuario user={user}/>
+      </Modal>
+      
       
     <tr style={{ fontSize: "1rem" }}>
       <td>{`${user.nombre} ${user.primerApellido} ${user.segundoApellido}`}</td>
@@ -102,7 +109,7 @@ const FilaU = (props) => {
           <td>
             <button class="waves-effect waves-teal  btn-flat">
               <i class="material-icons yellow-text text-darken-4"
-                onClick={() => {setModalInfo(true)}}>
+                onClick={() => {setEditlInfo(true)}}>
                 edit</i>
             </button>
           </td>
