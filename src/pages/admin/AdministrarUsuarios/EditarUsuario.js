@@ -109,19 +109,21 @@ const EditarUsuario = (props) => {
 
                     <button
                       type="submit"
-                      className="waves-effect waves-light btn-flat right  "
+                      className="waves-effect waves-light btn right  "
                     >
                       Realizar Cambios
-                      <i className="material-icons right">done</i>
+                      <i className="material-icons right">save</i>
                     </button>
                   </div>
                 </form>
               </div>
             </div>
+          <div>
             <button className=" modal-close waves-effect waves-green btn-flat right">
             Cerrar
-          </button>
-          
+            <i className="material-icons right">close</i>
+            </button>
+          </div>
           </div>
             
    );
