@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+
 import M from "materialize-css/dist/js/materialize.min.js";
 import { obtenerUnidades } from "../../../api/services/unidadAcademica";
 import { registrarUsuario } from "../../../api/services/registro";
@@ -8,6 +9,31 @@ import DatosUsuario from "./DatosUsuario";
 import AdministrarUsuarios from "./AdministrarUsuarios";
 
 const EditarUsuario = (props) => {
+  const [isLoading, setIsLoading] = useState(false);
+    const [unidades, setUnidades] = useState([]);
+    const [error, setError] = useState({ error: false, message: "" });
+    const [formValues, setFormValues] = useState({
+      
+      nombre: "",
+      primerApellido: "",
+      segundoApellido: props.user.segundoApellido,
+      correoInstitucional: "",
+      confirmarCorreo: "",
+      username: "",
+      password: "",
+      Cpassword: "",
+      numeroDeEmpleado: "",
+      idUnidadAcademica: "",
+      cargo: "",
+      extension: "",
+      telefono: "",
+    });
+    const handleChange = (e) => {
+      setFormValues({
+        ...formValues,
+        [e.target.name]: e.target.value,
+      });
+    };
     return (
         
       <div className="modal-content">
@@ -18,6 +44,20 @@ const EditarUsuario = (props) => {
               <div class="row">
                 <form  class="col s12">
                   <div class="row">
+                  <div className="col  s12 m6 xl4">
+                    <label>
+                      Apellido materno
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Apellido materno"
+                      name="segundoApellido"
+                      value={formValues.segundoApellido}
+                      onChange={handleChange}
+                      
+                    />
+                  </div>
                     <div class="input-field col s4">
                       <input
                         type="text"
@@ -32,7 +72,7 @@ const EditarUsuario = (props) => {
                         placeholder=""
                         id="apellido1"
                       />
-                      <label for="apellido1">{props.user.primerApellido}</label>
+                      <label for="apellido1">Ingresa el apellido paterno</label>
                     </div>
                     <div class="input-field col s4">
                       <input
