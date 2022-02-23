@@ -80,7 +80,7 @@ const EditarUsuario = (props) => {
                         placeholder=""
                         id="apellido2"
                       />
-                      <label for="apellido2">{props.user.segundoApellido} </label>
+                      <label for="apellido2">Ingresa el apellido materno</label>
                     </div>
                     <div class="input-field col s6">
                       <input
