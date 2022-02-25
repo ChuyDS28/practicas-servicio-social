@@ -52,8 +52,8 @@ const EditarUsuario = (props) => {
                     <input
                       type="text"
                       required
-                      placeholder="Apellido paterno"
-                      name="segundoApellido"
+                      placeholder="Nombre"
+                      name="Nombre"
                       value={formValues.nombre}
                       onChange={handleChange}
                       
@@ -66,8 +66,8 @@ const EditarUsuario = (props) => {
                     <input
                       type="text"
                       required
-                      placeholder="Nombre"
-                      name="segundoApellido"
+                      placeholder="Apellido paterno"
+                      name="primerApellido"
                       value={formValues.primerApellido}
                       onChange={handleChange}
                       
@@ -80,8 +80,8 @@ const EditarUsuario = (props) => {
                     <input
                       type="text"
                       required
-                      placeholder="Apellido paterno"
-                      name="primerApellido"
+                      placeholder="Apellido materno"
+                      name="segundoApellido"
                       value={formValues.segundoApellido}
                       onChange={handleChange}
                       
@@ -94,8 +94,8 @@ const EditarUsuario = (props) => {
                     <input
                       type="text"
                       required
-                      placeholder="Apellido materno"
-                      name="segundoApellido"
+                      placeholder="Correo Personal"
+                      name="Correo Personal"
                       value={formValues.correoPersonal}
                       onChange={handleChange}
                       
@@ -123,7 +123,7 @@ const EditarUsuario = (props) => {
                       type="text"
                       required
                       placeholder="Número de Empleado"
-                      name="Nombre Usuario"
+                      name="Número de Empleado"
                       value={formValues.id}
                       onChange={handleChange}
                       
@@ -197,7 +197,7 @@ const EditarUsuario = (props) => {
                             </option>
                           </select>
                         </div>
-                    
+                    <br/><br/>
                     <button
                       type="submit"
                       className="waves-effect waves-light btn right  "
