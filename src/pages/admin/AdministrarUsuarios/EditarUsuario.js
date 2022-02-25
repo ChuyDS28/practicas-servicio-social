@@ -14,19 +14,20 @@ const EditarUsuario = (props) => {
     const [error, setError] = useState({ error: false, message: "" });
     const [formValues, setFormValues] = useState({
       
-      nombre: "",
-      primerApellido: "",
+      nombre: props.user.nombre,
+      primerApellido: props.user.primerApellido,
       segundoApellido: props.user.segundoApellido,
       correoInstitucional: "",
+      correoPersonal: props.user.correoPersonal,
       confirmarCorreo: "",
-      username: "",
+      username: props.user.username,
       password: "",
       Cpassword: "",
-      numeroDeEmpleado: "",
+      numeroDeEmpleado: props.user.id,
       idUnidadAcademica: "",
-      cargo: "",
-      extension: "",
-      telefono: "",
+      cargo: props.user.rol,
+      extension: props.user.Extencion,
+      telefono: props.user.Telefono,
     });
     const handleChange = (e) => {
       setFormValues({
@@ -46,58 +47,131 @@ const EditarUsuario = (props) => {
                   <div class="row">
                   <div className="col  s12 m6 xl4">
                     <label>
+                      Nombre
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Apellido paterno"
+                      name="segundoApellido"
+                      value={formValues.nombre}
+                      onChange={handleChange}
+                      
+                    />
+                  </div>
+                  <div className="col  s12 m6 xl4">
+                    <label>
+                      Apellido paterno
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Nombre"
+                      name="segundoApellido"
+                      value={formValues.primerApellido}
+                      onChange={handleChange}
+                      
+                    />
+                  </div>
+                  <div className="col  s12 m6 xl4">
+                    <label>
                       Apellido materno
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Apellido paterno"
+                      name="primerApellido"
+                      value={formValues.segundoApellido}
+                      onChange={handleChange}
+                      
+                    />
+                  </div>
+                  <div className="col  s12 m6 xl4">
+                    <label>
+                      Correo Personal
                     </label>
                     <input
                       type="text"
                       required
                       placeholder="Apellido materno"
                       name="segundoApellido"
-                      value={formValues.segundoApellido}
+                      value={formValues.correoPersonal}
                       onChange={handleChange}
                       
                     />
                   </div>
-                    <div class="input-field col s4">
-                      <input
-                        type="text"
-                        placeholder=""
-                        id="nombre"
-                      />
-                      <label for="nombre">{props.user.nombre}</label>
+                  <div className="col  s12 m6 xl4">
+                    <label>
+                      Nombre Usuario
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Nombre Usuario"
+                      name="Nombre Usuario"
+                      value={formValues.username}
+                      onChange={handleChange}
+                      
+                    />
+                  </div>
+                  <div className="col  s12 m6 xl4">
+                    <label>
+                      Número de Empleado
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Número de Empleado"
+                      name="Nombre Usuario"
+                      value={formValues.id}
+                      onChange={handleChange}
+                      
+                    />
                     </div>
-                    <div class="input-field col s4">
-                      <input
-                        type="text"
-                        placeholder=""
-                        id="apellido1"
-                      />
-                      <label for="apellido1">Ingresa el apellido paterno</label>
+                    <div className="col  s12 m6 xl4">
+                    <label>
+                      Tipo de usuario
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Tipo de usuario"
+                      name="Tipo de usuario"
+                      value={formValues.rol}
+                      onChange={handleChange}
+                      
+                    />
                     </div>
-                    <div class="input-field col s4">
-                      <input
-                        type="text"
-                        placeholder=""
-                        id="apellido2"
-                      />
-                      <label for="apellido2">Ingresa el apellido materno</label>
+                    <div className="col  s12 m6 xl4">
+                    <label>
+                      Extensión
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Extensión"
+                      name="Extensión"
+                      value={formValues.Extencion}
+                      onChange={handleChange}
+                      
+                    />
                     </div>
-                    <div class="input-field col s6">
-                      <input
-                        type="text"
-                        placeholder=""
-                        id="correo"
-                      />
-                      <label for="correo">{props.user.correoPersonal}</label>
+                    <div className="col  s12 m6 xl4">
+                    <label>
+                    Teléfono
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="Teléfono"
+                      name="Teléfono"
+                      value={formValues.Telefono}
+                      onChange={handleChange}
+                      
+                    />
                     </div>
-                    <div class="input-field col s6">
-                      <input
-                        type="text"
-                        placeholder=""
-                        id="usuario"
-                      />
-                      <label for="usuario">{props.user.username}</label>
-                    </div>
+                    
                     <div class="input-field col s6">
                       <input
                         type="text"
@@ -106,47 +180,24 @@ const EditarUsuario = (props) => {
                       />
                       <label for="contraseña">Contraseña:</label>
                     </div>
-                    <div class="input-field col s6">
-                      <input
-                        type="text"
-                        placeholder=""
-                        id="numemp"
-                      />
-                      <label for="numemp">{props.user.id}</label>
-                    </div>
+                    
                     <div className="col s12 l6">
-            <label  >
-              Unidad Academica
-            </label>
-            <select
-              className="browser-default"
-              required
-              name="idUnidadAcademica"
+                          <label  >
+                            Unidad Academica
+                          </label>
+                          <select
+                            className="browser-default"
+                            required
+                            name="idUnidadAcademica"
 
-            
-            >
-              <option value="" disabled>
-                Selecciona una opción
-              </option>
-            </select>
-          </div>
-                    <div class="input-field col s6">
-                      <input type="text" placeholder="Cargo" id="Cargo" />
-                      <label for="Cargo"></label>
-                    </div>
-                    <div class="input-field col s6">
-                      <input type="text" placeholder="Extencion" id="Extencion" />
-                      <label for="Extencion">{props.user.Extencion}</label>
-                    </div>
-                    <div class="input-field col s6">
-                      <input type="text" placeholder="" id="Tipo de Usuario" />
-                      <label for="Tipo de Usuario">{props.user.rol}</label>
-                    </div>
-                    <div class="input-field col s6">
-                      <input type="text" placeholder="Telefono" id="Telefono" />
-                      <label for="Telefono">{props.user.Telefono}</label>
-                    </div>
-
+                          
+                          >
+                            <option value="" disabled>
+                              Selecciona una opción
+                            </option>
+                          </select>
+                        </div>
+                    
                     <button
                       type="submit"
                       className="waves-effect waves-light btn right  "

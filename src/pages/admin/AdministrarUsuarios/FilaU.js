@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import Modal from "../../../components/Modal";
 import DatosUsuario from "./DatosUsuario";
+import EditarUsuario from "./EditarUsuario";
 import {
   activarUsuario,
   desactivarUsuario,
@@ -26,6 +27,7 @@ const status = {
 const FilaU = (props) => {
   const { user, fn, getUsuarios } = props;
   const [modalInfo, setModalInfo] = useState(false);
+  const [EditInfo, setEditlInfo] = useState(false);
 
   function getStatus() {
     if (!user.activo) {
@@ -70,7 +72,10 @@ const FilaU = (props) => {
       <Modal open={modalInfo} fnCloseModal={() => setModalInfo(false)}>
         <DatosUsuario user={user} />
       </Modal>
-
+      <Modal open={EditInfo} fnCloseModal={() => setEditlInfo(false)}>
+        
+        <EditarUsuario user={user}/>
+      </Modal>
       <tr style={{ fontSize: "1rem" }}>
         <td>{`${user.nombre} ${user.primerApellido} ${user.segundoApellido}`}</td>
         <td>
@@ -126,7 +131,10 @@ const FilaU = (props) => {
           <>
             <td>
               <button className="waves-effect waves-teal  btn-flat">
-                <i className="material-icons yellow-text text-darken-4">edit</i>
+                
+                <i class="material-icons yellow-text text-darken-4"
+                onClick={() => {setEditlInfo(true)}}>
+                edit</i>
               </button>
             </td>
             <td>
