@@ -15,14 +15,14 @@ const EditarUsuario = (props) => {
     nombre: props.user.nombre,
     primerApellido: props.user.primerApellido,
     segundoApellido: props.user.segundoApellido,
-    correoInstitucional: "",
+    correoInstitucional: props.user.correoInstitucional,
     correoPersonal: props.user.correoPersonal,
     confirmarCorreo: "",
     username: props.user.username,
     password: "",
     Cpassword: "",
     numeroDeEmpleado: props.user.id,
-    idUnidadAcademica: "",
+    idUnidadAcademica: props.user.idUnidadAcademica,
     cargo: props.user.rol,
     extension: props.user.Extencion,
     telefono: props.user.Telefono,
@@ -55,6 +55,12 @@ const EditarUsuario = (props) => {
     <div className="modal-content">
       <div className="teal white-text section center">
         <h5 className="center ">Agregar nuevo Usuario</h5>
+      </div>
+      <div className="center ">
+          <p>
+            <strong >Tipo de usuario:&nbsp;&nbsp;</strong>
+            {props.user.rol}
+          </p>         
       </div>
       <div id="director" class="col s12 ">
         <div class="row">
@@ -105,6 +111,17 @@ const EditarUsuario = (props) => {
                 />
               </div>
               <div className="col  s12 m6 xl4">
+                <label>Correo Institucional</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Correo Institucional"
+                  name="Correo Institucional"
+                  value={formValues.correoInstitucional}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="col  s12 m6 xl4">
                 <label>Nombre Usuario</label>
                 <input
                   type="text"
@@ -122,18 +139,7 @@ const EditarUsuario = (props) => {
                   required
                   placeholder="Número de Empleado"
                   name="Número de Empleado"
-                  value={formValues.id}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="col  s12 m6 xl4">
-                <label>Tipo de usuario como dato</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Tipo de usuario"
-                  name="Tipo de usuario"
-                  value={formValues.rol}
+                  value={formValues.numeroDeEmpleado}
                   onChange={handleChange}
                 />
               </div>
@@ -144,7 +150,7 @@ const EditarUsuario = (props) => {
                   required
                   placeholder="Extensión"
                   name="Extensión"
-                  value={formValues.Extencion}
+                  value={formValues.extension}
                   onChange={handleChange}
                 />
               </div>
@@ -155,7 +161,7 @@ const EditarUsuario = (props) => {
                   required
                   placeholder="Teléfono"
                   name="Teléfono"
-                  value={formValues.Telefono}
+                  value={formValues.telefono}
                   onChange={handleChange}
                 />
               </div>
