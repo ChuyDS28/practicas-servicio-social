@@ -18,4 +18,11 @@ export function obtenerUsuarios(pag) {
   });
 }
 
+export function obtenerUsuarios(pag) {
+  return axios.put(`usuarios`, {
+    params: { pagina: pag, tam: 50 },
+  });
+}
+
+
 

@@ -176,11 +176,18 @@ const EditarUsuario = (props) => {
                   onChange={handleChange}
                 >
                   <option value="">
-                    selecciona una opción
+                  {/*{props.user.unidadAcademica && (
+          <div className="col s12 l12">
+            <p>
+              <strong>Escuela, unidad o centro:&nbsp;&nbsp;</strong>
+              {props.user.unidadAcademica.nombre}
+            </p>
+          </div>
+        )}*/}
                   </option>
                   {
                     unidades.map((centro)=>(
-                      <option value= {centro}>
+                      <option value= {centro.id}>
                       {
                         centro.nombre
                       }
