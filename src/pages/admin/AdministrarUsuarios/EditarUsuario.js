@@ -67,8 +67,21 @@ const EditarUsuario = (props) => {
         <div class="row">
           <form class="col s12" onSubmit={submit}>
             <div class="row">
+            { props.user.rol==="SUBDIRECTOR" && 
               <div className="col  s12 m6 xl4">
-                <label>Nombre</label>
+                <label>Nombre no1</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Nombre"
+                  name="Nombre"
+                  value={formValues.nombre}
+                  onChange={handleChange}
+                />  
+              </div>
+}
+              <div className="col  s12 m6 xl4">
+                <label>Nombre no2</label>
                 <input
                   type="text"
                   required
