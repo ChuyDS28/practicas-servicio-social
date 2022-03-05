@@ -3,6 +3,7 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import { obtenerUnidades } from "../../../api/services/unidadAcademica";
 import { registrarUsuario } from "../../../api/services/registro";
 import { useNavigate, useParams } from "react-router-dom";
+import { editarUsuarios } from "../../../api/services/usuarios";
 
 import DatosUsuario from "./DatosUsuario";
 import AdministrarUsuarios from "./AdministrarUsuarios";
@@ -46,8 +47,8 @@ const EditarUsuario = (props) => {
     e.preventDefault();
     console.log(formValues)
     try {
-      const response = await obtenerUnidades(0);
-      console.log(response); setUnidades(response.data) 
+      const response = await editarUsuarios(0);
+      console.log(response); 
     } catch (error) {}
   };
 
@@ -176,14 +177,7 @@ const EditarUsuario = (props) => {
                   onChange={handleChange}
                 >
                   <option value="">
-                  {/*{props.user.unidadAcademica && (
-          <div className="col s12 l12">
-            <p>
-              <strong>Escuela, unidad o centro:&nbsp;&nbsp;</strong>
-              {props.user.unidadAcademica.nombre}
-            </p>
-          </div>
-        )}*/}
+                  Seleccionar Unidad Académica
                   </option>
                   {
                     unidades.map((centro)=>(
