@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import ipn from "../assets/images/ipnBlanco.png";
 import dvd from "../assets/images/dvd.png";
-import Footer from "../pages/Footer";
+import Footer from "./Footer";
 
 const style = {
   imgLink: {

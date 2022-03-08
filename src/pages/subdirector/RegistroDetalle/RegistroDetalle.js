@@ -4,8 +4,6 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import ba8 from "../../../assets/images/ba8.png";
 import StepContainer from "./StepContainer";
 import { obtenerPrograma } from "../../../api/services/subdirector/programas";
-import { obtenerSolicitud } from "../../../api/services/subdirector/solicitudRegistro";
-
 
 const style = {
   headerImg: {
@@ -52,8 +50,6 @@ const RegistroDetalle = () => {
     try {
       const dataU = await obtenerPrograma(params.programaId);
       console.log(dataU);
-      const dataS = await obtenerSolicitud(params.programaId);
-      console.log(dataS);
       setPrograma(dataU.data);
     } catch (error) {
       console.log(error);
@@ -215,9 +211,7 @@ const RegistroDetalle = () => {
             title="Solicitud de registro"
             status={0}
             callback={() =>
-              navigate(
-                `/subdirector/programas/${params.programaId}/generarSolicitud`
-              )
+              navigate("/subdirector/programas/2/generarSolicitud")
             }
             btnTitle="Solicitud de registro"
             observaciones=""

@@ -5,6 +5,7 @@ import sub from "../../assets/images/sub.png";
 import ba20 from "../../assets/images/ba20.png";
 import Background6 from "../../assets/images/Background6.png";
 import rec from "../../assets/images/rec.png";
+import Footer from "../Footer";
 const style = {
   headerTitle: {
     position: "absolute",

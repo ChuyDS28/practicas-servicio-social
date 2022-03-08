@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import RegistrarInstructor from "../../../components/RegistrarInstructor";
 import parteba6 from "../../../assets/images/parteba6.png";
 import ba6 from "../../../assets/images/ba6.png";
+import Footer from "../../../pages/Footer";
 import "./ListadoInstructores.css";
-import { obtenerInstructores } from "../../../api/services/instructores.js";
-import { getUserData } from "../../../utils/userData";
-import Modal from "../../../components/Modal.js";
-import FilasInstructor from "./FilasInstructor.js";
-
 const style = {
   infoContainer: {
     padding: "25px",
@@ -99,53 +95,105 @@ const style = {
   },
 };
 const ListadoInstructores = () => {
-  const [modalAgregarInstructorr, setModalAgregarInstructorr] = useState(false);
-  const [instructores, setInstructores] = useState([]);
-
-  function capitalize(word) {
-    return word.length > 0
-      ? word[0].toUpperCase() + word.slice(1).toLowerCase()
-      : word;
-  }
-
-  function capitalizeName(name) {
-    try {
-      const words = name.split(" ");
-      const capitalizeArray = words.map((str) => capitalize(str));
-      return capitalizeArray.join(" ");
-    } catch (error) {
-      return name;
-    }
-  }
-
   useEffect(() => {
-    getInstructores();
+    var modales = document.querySelectorAll(".modal");
+    M.Modal.init(modales, {});
+    var textNeedCount = document.querySelectorAll("#input_text, #textarea1");
+    M.CharacterCounter.init(textNeedCount);
   }, []);
 
-  console.log(instructores);
-  async function getInstructores() {
-    try {
-      const dataU = await obtenerInstructores(0);
-      setInstructores(dataU.data);
-    } catch (error) {
-      console.log(error);
-      console.log(error.response);
-    }
-  }
+  const ModalAgregarInstructor = () => {
+    return (
+      <div id="modal1" className="modal">
+        <div className="modal-content  ">
+          <RegistrarInstructor />
+        </div>
+      </div>
+    );
+  };
+  const ModalActualizarInstructor = () => {
+    return (
+      <div id="modal2" className="modal">
+        <div className="modal-content  ">
+          <h5>Actualizar Instructor</h5>
+          <p>
+            <strong>Nombre del Instructor:</strong> Antonio Ayola
+            <br />
+            <strong>RFC con Homoclave:</strong> VECJ880326 XXX
+            <br />
+            <strong>Área:</strong> TICS
+          </p>
+
+          <div className="file-field input-field col s12">
+            <p className="  light ">
+              Adjuntar CV actualizado del Instructor en formato PDF
+            </p>
+            <div className="btn">
+              <span>Subir CV</span>
+              <input type="file" accept="application/pdf" required />
+            </div>
+            <div className="file-path-wrapper">
+              <input
+                className="file-path validate"
+                type="text"
+                placeholder="Adjuntar CV del Instructor en formato PDF"
+              />
+            </div>
+          </div>
+          <div className="input-field col s12">
+            <p className="  light ">
+              Adjuntar documentos académicos y probatorios del Instructor en
+              formato PDF, recuerda nombrarlos de acuerdo a la nomenclatura
+              especificada.
+            </p>
+            <div className="teal lighten-5" style={style.infoContainer}>
+              <span className="small material-icons blue-text ">error</span>
+              <span className="new badge blue darken-2" data-badge-caption="">
+                Nota
+              </span>
+              <p>
+                Documentos probatorios:
+                <br /> · Título · Certificado · Cédula · Constancias · Diplomas
+                o documentos que avalen su experiencia
+                <br />
+                <strong>Subir solo un pdf con todos los documentos.</strong>
+              </p>
+            </div>
+            <div className="file-field input-field col s12">
+              <div className="btn">
+                <span>Cargar archivo</span>
+                <input type="file" accept="application/pdf" required />
+              </div>
+              <div className="file-path-wrapper">
+                <input
+                  className="file-path validate"
+                  type="text"
+                  placeholder="Documentos probatorios"
+                />
+              </div>
+            </div>
+          </div>
+
+          <br />
+          <button type="submit" className="waves-effect waves-light btn   ">
+            Actualizar Instructor
+            <i className="material-icons right">picture_as_pdf</i>
+          </button>
+          <button
+            href="#!"
+            className="modal-close waves-effect waves-green btn-flat right"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <>
-      <Modal
-        open={modalAgregarInstructorr}
-        fnCloseModal={() => setModalAgregarInstructorr(false)}
-      >
-        <div className="modal-content">
-          <RegistrarInstructor
-            getInstructores={getInstructores}
-            ModalRegistro={setModalAgregarInstructorr}
-          />
-        </div>
-      </Modal>
+      <ModalAgregarInstructor />
+      <ModalActualizarInstructor />
 
       <header
         className="row"
@@ -163,7 +211,7 @@ const ListadoInstructores = () => {
           <img alt="" src={ba6} className="responsive-img" style={style.fon} />
         </div>
         <div className="col s12 m9 l9 xl8 white-text" style={style.headerTitle}>
-          <h1 className="titulo">
+          <h1 class="titulo">
             LISTADO DE <b>INSTRUCTORES</b>
           </h1>
           <blockquote>
@@ -201,13 +249,13 @@ const ListadoInstructores = () => {
           </div>
 
           <div className="col s12 l6 m12 xl6">
-            <button
+            <a
+              href="#modal1"
               className="modal-trigger waves-effect waves-light btn right"
-              onClick={() => setModalAgregarInstructorr(true)}
             >
               Agregar nuevo Instructor
               <i className="material-icons right">add</i>
-            </button>
+            </a>
             <button
               type="submit"
               className="waves-effect waves-light btn outlined right"
@@ -240,20 +288,227 @@ const ListadoInstructores = () => {
               </tr>
             </thead>
             <tbody>
-              {instructores.map((instructor) => {
-                let Area;
-                Area = capitalizeName(instructor.area.replace(/_/g, " "));
-                return (
-                  <FilasInstructor
-                    key={instructor.id}
-                    nombre={instructor.nombreCompleto}
-                    rfc={instructor.rfc}
-                    area={Area}
-                    unidad={instructor.unidadAcademica.nombre}
-                    id={instructor.id}
-                  />
-                );
-              })}
+              <tr>
+                <td>
+                  <i className="material-icons  teal-text text-darken-3  left circle  teal lighten-4">
+                    local_library
+                  </i>
+                  <b>Antonio Ayola</b>
+                </td>
+                <td>
+                  <b>VECJ880326 XXX</b>
+                </td>
+                <td>
+                  <b>TICs</b>
+                </td>
+                <td>
+                  <b>CIC</b>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    CV
+                  </button>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    Documentación
+                  </button>
+                </td>
+
+                <td>
+                  <a
+                    href="#modal2"
+                    class="modal-trigger waves-effect waves-teal  btn-flat"
+                  >
+                    <i class="material-icons yellow-text text-darken-4">edit</i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i className="material-icons  teal-text text-darken-3  left circle  teal lighten-4">
+                    local_library
+                  </i>
+                  <b>Antonio Ayola</b>
+                </td>
+                <td>
+                  <b>VECJ880326 XXX</b>
+                </td>
+                <td>
+                  <b>TICs</b>
+                </td>
+                <td>
+                  <b>CIC</b>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    CV
+                  </button>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    Documentación
+                  </button>
+                </td>
+
+                <td>
+                  <a
+                    href="#modal2"
+                    className="modal-trigger waves-light btn-flat  red accent-3 white-text "
+                    class="waves-effect waves-teal  btn-flat"
+                  >
+                    <i class="material-icons yellow-text text-darken-4">edit</i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i className="material-icons  teal-text text-darken-3  left circle  teal lighten-4">
+                    local_library
+                  </i>
+                  <b>Antonio Ayola</b>
+                </td>
+                <td>
+                  <b>VECJ880326 XXX</b>
+                </td>
+                <td>
+                  <b>TICs</b>
+                </td>
+                <td>
+                  <b>CIC</b>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    CV
+                  </button>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    Documentación
+                  </button>
+                </td>
+
+                <td>
+                  <a
+                    href="#modal2"
+                    className="modal-trigger waves-light btn-flat  red accent-3 white-text "
+                    class="waves-effect waves-teal  btn-flat"
+                  >
+                    <i class="material-icons yellow-text text-darken-4">edit</i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i className="material-icons  teal-text text-darken-3  left circle  teal lighten-4">
+                    local_library
+                  </i>
+                  <b>Antonio Ayola</b>
+                </td>
+                <td>
+                  <b>VECJ880326 XXX</b>
+                </td>
+                <td>
+                  <b>TICs</b>
+                </td>
+                <td>
+                  <b>CIC</b>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    CV
+                  </button>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    Documentación
+                  </button>
+                </td>
+
+                <td>
+                  <a
+                    href="#modal2"
+                    className="modal-trigger waves-light btn-flat  red accent-3 white-text "
+                    class="waves-effect waves-teal  btn-flat"
+                  >
+                    <i class="material-icons yellow-text text-darken-4">edit</i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i className="material-icons  teal-text text-darken-3  left circle  teal lighten-4">
+                    local_library
+                  </i>
+                  <b>Antonio Ayola</b>
+                </td>
+                <td>
+                  <b>VECJ880326 XXX</b>
+                </td>
+                <td>
+                  <b>TICs</b>
+                </td>
+                <td>
+                  <b>CIC</b>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    CV
+                  </button>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    Documentación
+                  </button>
+                </td>
+
+                <td>
+                  <a
+                    href="#modal2"
+                    className="modal-trigger waves-light btn-flat  red accent-3 white-text "
+                    class="waves-effect waves-teal  btn-flat"
+                  >
+                    <i class="material-icons yellow-text text-darken-4">edit</i>
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i className="material-icons  teal-text text-darken-3  left circle  teal lighten-4">
+                    local_library
+                  </i>
+                  <b>Antonio Ayola</b>
+                </td>
+                <td>
+                  <b>VECJ880326 XXX</b>
+                </td>
+                <td>
+                  <b>TICs</b>
+                </td>
+                <td>
+                  <b>CIC</b>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    CV
+                  </button>
+                </td>
+                <td>
+                  <button className="waves-effect waves-light btn  blue-grey darken-3">
+                    Documentación
+                  </button>
+                </td>
+
+                <td>
+                  <a
+                    href="#modal2"
+                    className="modal-trigger waves-light btn-flat  red accent-3 white-text "
+                    class="waves-effect waves-teal  btn-flat"
+                  >
+                    <i class="material-icons yellow-text text-darken-4">edit</i>
+                  </a>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>

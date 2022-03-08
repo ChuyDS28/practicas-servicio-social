@@ -1,39 +1,22 @@
-import axios from "../../axios";
+import axios from "../axios";
 
-export function obtenerStatusSolicitud(data) {
+export function solicitudDatosGenerales(data) {
   return axios.post(`/programas`, data);
 }
-
-export function solicitudAgregarDatosGenerales(data) {
-  return axios.post(`/programas`, data);
-}
-
-export function solicitudActualizarDatosGenerales(id, data) {
-  return axios.put(`/programas/${id}`, data);
-}
-
 export function obtenerSolicitud(id) {
   return axios.get(`/programas/${id}`);
 }
 
-export function solicitudAgregarDatosEspecificos(data) {
+export function solicitudDatosEspecificos(data) {
   return axios.post(`/datosEspecificos`, data);
 }
-export function solicitudActualizarDatosEspecificos(id, data) {
-  return axios.put(`/datosEspecificos/${id}`, data);
-}
 export function obtenerSolicitudDatosEspecificos(id) {
-  return axios.get(`/programas/${id}/datosEspecificos`);
+  return axios.get(`/programas/${id}/DatosEspecificos`);
 }
 
-export function solicitudAgregarPlaneacion(data) {
+export function solicitudPlaneacion(data) {
   return axios.post(`/planeaciones`, data);
 }
-
-export function solicitudActualizarPlaneacion(id, data) {
-  return axios.put(`/planeaciones/${id}`, data);
-}
-
 export function obtenerSolicitudPlaneacion(id) {
   return axios.get(`/programas/${id}/planeaciones`);
 }

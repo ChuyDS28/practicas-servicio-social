@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 const style = {
   temaContainer: {
     marginBottom: "10px",
@@ -13,10 +13,6 @@ const style = {
   },
 };
 const ResumenSolicitud = () => {
-  useEffect(() => {
-    console.log("resumen solici");
-  }, []);
-
   return (
     <>
       <div className=" col s12">
@@ -27,8 +23,7 @@ const ResumenSolicitud = () => {
         </div>
         <div className="col s12 m12 l12 xl9">
           <p>
-            <strong>Nombre del programa:&nbsp;&nbsp;</strong>Programa de
-            Informática
+            <strong>Nombre del programa:&nbsp;&nbsp;</strong>Programa de Informática
           </p>
         </div>
 
@@ -248,10 +243,7 @@ const ResumenSolicitud = () => {
           </button>
         </div>
         <div className="  col s6 m3 xl3">
-          <button
-            className="waves-effect waves-light btn white black-text outlined"
-            style={{ borderColor: "teal accent-4" }}
-          >
+          <button className="waves-effect waves-light btn white black-text outlined" style={{borderColor:"teal accent-4"}}>
             Documentos probatorios
           </button>
         </div>
@@ -260,6 +252,8 @@ const ResumenSolicitud = () => {
             <strong>RFC con Homoclave:&nbsp;&nbsp;</strong>VECJ880326 XXX
           </p>
         </div>
+        
+       
       </div>
       <div className="  col s12">
         <div className="input-field orange lighten-4">
@@ -306,9 +300,9 @@ const ResumenSolicitud = () => {
         </div>
       </div>
       <div className="  col s12">
-        <div className="input-field orange lighten-4">
+      <div className="input-field orange lighten-4">
           <p style={{ fontSize: "22px" }}>Sección 7 • Datos de firma</p>
-        </div>
+       </div>
         <p className="light">Datos de quien firma y autoriza la solicitud.</p>
         <div className="  col s12">
           <div className="cyan lighten-5" style={style.infoContainer}>
@@ -316,9 +310,9 @@ const ResumenSolicitud = () => {
             <span className="new badge blue darken-2" data-badge-caption="">
               Nota
             </span>
-
+            
             <p>
-              Esta sección se llena en automático al seleccionar el Centro,
+            Esta sección se llena en automático al seleccionar el Centro,
               verificar que los campos sean correctos.
             </p>
           </div>
@@ -341,7 +335,7 @@ const ResumenSolicitud = () => {
             Informática
           </p>
         </div>
-        <div className="col  s12 m6 xl6" style={{ marginBottom: "10px" }}>
+        <div className="col  s12 m6 xl6" style={{marginBottom:"10px"}}>
           <p>
             <strong>Correo electrónico del Subdirector:&nbsp;&nbsp;</strong>
             Programa de Informática

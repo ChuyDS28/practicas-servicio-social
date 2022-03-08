@@ -111,7 +111,7 @@ const Row = (props) => {
 };
 const Table3 = ({ data }) => {
   return (
-    <View break>
+    <View>
       <Text
         style={{
           fontSize: "8px",
@@ -188,7 +188,7 @@ const Table3 = ({ data }) => {
           <Row
             No="34"
             Unidad="ENMH"
-            Nombre="PREVENCION DE ADICCIONES"
+            Nombre="CURSO DE INGRESO NIVEL MEDIO SUPERIOR"
             NoR="Curso"
             Hom="422"
             Muj="377"
@@ -198,7 +198,7 @@ const Table3 = ({ data }) => {
           <Row
             No="35"
             Unidad="EMNH"
-            Nombre="DEPRESION Y ANSIEDAD"
+            Nombre="CURSO DE INGRESO AL NIVEL SUPERIOR"
             Tipo="Básico (Presencial)"
             NoR="Taller"
             Hom="14"
@@ -208,7 +208,7 @@ const Table3 = ({ data }) => {
           <Row
             No="36"
             Unidad="ESIA ZAC"
-            Nombre="INTELIGENCIA EMOCIONAL"
+            Nombre="Repensar la docencia desde las humanidades"
             Tipo="Básico (Presencial)"
             NoR="Curso"
             Hom="14"
@@ -218,7 +218,7 @@ const Table3 = ({ data }) => {
           <Row
             No="37"
             Unidad="CECyT 2"
-            Nombre="BULLYNG"
+            Nombre="Inclusión y discapacidad"
             Tipo="Básico"
             NoR="Curso"
             Hom="14"
@@ -228,7 +228,7 @@ const Table3 = ({ data }) => {
           <Row
             No="38"
             Unidad="CECyT 2"
-            Nombre="Masculinidades y paternidades"
+            Nombre="Marketing Digital"
             Tipo="Básico (Presencial)"
             NoR="Diplomado"
             Hom="14"
@@ -238,7 +238,7 @@ const Table3 = ({ data }) => {
           <Row
             No="39"
             Unidad="CECyT 2"
-            Nombre="Estrés en los adolescentes"
+            Nombre="Transformacion Digital"
             Tipo=""
             NoR="Diplomado"
             Hom="14"
@@ -248,7 +248,7 @@ const Table3 = ({ data }) => {
           <Row
             No="40"
             Unidad="CECyT 2"
-            Nombre="La negociación del condón para la prevención del embarazo"
+            Nombre="Tu imagen institucional en tiendas online"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -258,7 +258,7 @@ const Table3 = ({ data }) => {
           <Row
             No="41"
             Unidad="CECyT 2"
-            Nombre="Jóvenes en Acción (Toma de decisiones)"
+            Nombre="Retos Socioemocionales en la Pandemia"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -268,7 +268,7 @@ const Table3 = ({ data }) => {
           <Row
             No="42"
             Unidad="CECyT 2"
-            Nombre="Hábitos de Autocuidado Físico"
+            Nombre="Lenguaje incluyente"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -278,7 +278,8 @@ const Table3 = ({ data }) => {
           <Row
             No="43"
             Unidad="CECyT 2"
-            Nombre="Como aprender en Educación a Distancia"
+            Nombre='"Prevención del embarazo y Riesgos Psicosociales en los
+            adolescentes"'
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -288,7 +289,7 @@ const Table3 = ({ data }) => {
           <Row
             No="44"
             Unidad="CECyT 2"
-            Nombre="Como no morir de aburrimiento en la contingencia"
+            Nombre="Herramientas para la Educación a Distancia : Google Classroom"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -298,7 +299,7 @@ const Table3 = ({ data }) => {
           <Row
             No="45"
             Unidad="CECyT 2"
-            Nombre="¡Asomate al Protocolo!"
+            Nombre="Herramientas para la Educación a Distancia : Microsoft Teams"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -308,7 +309,7 @@ const Table3 = ({ data }) => {
           <Row
             No="46"
             Unidad="CECyT 2"
-            Nombre="Claves para la atención pública sin discriminación"
+            Nombre="Recursos Digitales para Entornos Educativos 4.0"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -318,7 +319,7 @@ const Table3 = ({ data }) => {
           <Row
             No="47"
             Unidad="CECyT 2"
-            Nombre="Educación Media superior: Retorno Seguro"
+            Nombre="INTERNET DE LAS COSAS"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -328,7 +329,8 @@ const Table3 = ({ data }) => {
           <Row
             No="48"
             Unidad="CECyT 2"
-            Nombre="Elaboración de rúbricas de evaluación"
+            Nombre="HERRAMIENTAS ONLINE PARA EL DESARROLLO DEL
+            TRABAJO ADMINISTRATIVO"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -338,8 +340,8 @@ const Table3 = ({ data }) => {
           <Row
             No="49"
             Unidad="CECyT 2"
-            Nombre="Las medidas para la igualdad en el marco de la Ley Federal para
-            Prevenir y Eliminar la Discriminación"
+            Nombre="LA GAMIFICACION COMO ESTRATEGIA PARA APOYAR LA
+            PRACTICA DOCENTE"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -349,27 +351,7 @@ const Table3 = ({ data }) => {
           <Row
             No="50"
             Unidad="CECyT 2"
-            Nombre="Los conflictos de Intereses en el ejercicio del servicio público"
-            Tipo="Básico (Presencial)"
-            NoR="Seminario"
-            Hom="14"
-            Muj="14"
-            Total="32"
-          />
-           <Row
-            No="51"
-            Unidad="CECyT 2"
-            Nombre="Módulo de Formalización de Instrumentos Jurídicos"
-            Tipo="Básico (Presencial)"
-            NoR="Seminario"
-            Hom="14"
-            Muj="14"
-            Total="32"
-          />
-           <Row
-            No="52"
-            Unidad="CECyT 2"
-            Nombre="Regreso a Clases con Microsoft 365 y Teams"
+            Nombre="CAD MODELADO BASICO CON SOLIWORKS BASICO"
             Tipo="Básico (Presencial)"
             NoR="Seminario"
             Hom="14"
@@ -413,7 +395,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "stretch",
     flexWrap: "nowrap",
-    height:"18px"
+    height:"21px"
     /*   top: "-1px", */
   },
   td: {

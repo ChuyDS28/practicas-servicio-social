@@ -49,10 +49,10 @@ const Home = () => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
-    let elems = document.querySelectorAll(".carousel");
-    M.Carousel.init(carouselRef.current, { duration: 500 });
+      let elems = document.querySelectorAll(".carousel");
+      M.Carousel.init(carouselRef.current, { duration: 500 });
 
-    let instance = M.Carousel.getInstance(carouselRef.current);
+      let instance = M.Carousel.getInstance(carouselRef.current);
     const timer = setInterval(() => {
       instance.next();
     }, 4000);
@@ -145,7 +145,7 @@ const Home = () => {
           <div className="col s12 m6 l4 center">
             <Tarjeta
               titI="Registros"
-              titulo="Historico total de registros vigentes hasta 2021"
+              titulo="Historico total de registros vigentes"
               subtitulo="Ver el listado de todos los programas vigentes."
               min="LISTADO"
               imag="https://images.pexels.com/photos/357514/pexels-photo-357514.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"

@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
- import dataPaginada from "../data/registrosPaginados.json";
+import data from "../data/registrosTotal.json";
+import dataPaginada from "../data/registrosPaginados.json";
 import solicitud from "../assets/pdfs/Big Data_Vfinal_ok.pdf";
 
 const HistorialRegistros = () => {
   const [searchList, setSearchList] = useState([]);
-  const [recordsList, setRecordsList] = useState(
-    dataPaginada.reduce((last, total) => [...total, ...last])
-  );
+  const [recordsList, setRecordsList] = useState(data);
   const [dataPages, setDataPages] = useState(dataPaginada);
   const [page, setPage] = useState(16);
 
@@ -55,7 +54,6 @@ const HistorialRegistros = () => {
         </div>
         <div
           style={{
-            border: "1px solid #d3d3d3",
             overflow: "auto",
           }}
         >
@@ -68,7 +66,7 @@ const HistorialRegistros = () => {
                 <th>Termino de vigencia</th>
                 <th style={{ minWidth: "100px" }}>Duracion Total en Hrs</th>
                 {/*  <th>Status</th> */}
-                {/*  <th>Info</th> */}
+               {/*  <th>Info</th> */}
               </tr>
             </thead>
 
@@ -119,7 +117,7 @@ const HistorialRegistros = () => {
                       Impartiendo
                     </span>
                   </td> */}
-                    {/*  <td>
+                   {/*  <td>
                       <a
                         className="waves-effect waves-light btn outlined "
                         href={solicitud}

@@ -202,63 +202,6 @@ const DetalleRegistroS = () => {
     );
   };
 
-  const Step = ({ number, title, status, btn }) => {
-    const badges = {
-      1: {
-        title: "S/D",
-        color: "blue",
-      },
-      2: {
-        title: "Pendiente por revisar",
-        color: "red",
-      },
-      3: {
-        title: "Revisado con corecciones",
-        color: "yellow darken-4",
-      },
-      4: {
-        title: "Revisado - Completo",
-        color: "green",
-      },
-    };
-    return (
-      <tr>
-        <td>
-          <span
-            className="new badge teal   white-text   black-text "
-            data-badge-caption=""
-          >
-            Paso {number}
-          </span>
-        </td>
-        <td>
-          <span>
-            <strong>&nbsp;&nbsp;{title}</strong>
-          </span>
-        </td>
-        <td>
-          <span
-            className={`new badge ${badges[status].color}`}
-            data-badge-caption=""
-            style={{ overflow: "hidden" }}
-          >
-            {badges[status].title}
-          </span>
-        </td>
-        <td>
-          {status !== "1" && (
-            <button
-              type="submit"
-              className="waves-effect waves-light btn  outlined"
-            >
-              {btn}
-            </button>
-          )}
-        </td>
-      </tr>
-    );
-  };
-
   return (
     <>
       <header className="" style={{ position: "relative", height: "50vh" }}>
@@ -301,65 +244,7 @@ const DetalleRegistroS = () => {
         </p>
         <br />
       </div>
-      <div className="container">
-        <div
-          style={{
-            border: "1px solid #d3d3d3",
-            overflow: "auto",
-            margin: "25px 0",
-          }}
-        >
-          <table
-          /* className="striped  responsive-table " */
-          >
-            <thead className="grey lighten-3   grey-text text-darken-3">
-              <tr>
-                <th className=" " colspan="2">
-                  Pasos
-                </th>
-                <th className="" colspan="2">
-                  Status
-                </th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <Step
-                number="1"
-                title="Solicitud de registro"
-                status="2"
-                btn="Ver solicitud"
-              />
-              <Step
-                number="2"
-                title="Enviar solicitud de registro firmada"
-                status="2"
-                btn="Ver solicitud"
-              />
-              <Step
-                number="3"
-                title="Carta AVAL"
-                status="3"
-                btn="Ver solicitud"
-              />
-              <Step
-                number="4"
-                title="Documentos probatorios AVAL"
-                status="1"
-                btn="Ver Carta AVAL"
-              />
-              <Step
-                number="5"
-                title="Cronograma"
-                status="4"
-                btn="Ver Cronograma"
-              />
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* <div className="container section  ">
+      <div className="container section  ">
         <div className="collection">
           <p className="white-text collection-item active  purple lighten-1 center">
             <b>Pasos</b>
@@ -386,7 +271,7 @@ const DetalleRegistroS = () => {
             <Paso5 />
           </a>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
