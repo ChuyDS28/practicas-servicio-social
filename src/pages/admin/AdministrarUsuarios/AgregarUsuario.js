@@ -21,7 +21,7 @@ const AgregarUsuario = () => {
     const [unidades, setUnidades] = useState([]);
     const [error, setError] = useState({ error: false, message: "" });
 
-    const [tipoUsuario, setTipoUsuario] = useState("REVISOR");
+    const [tipoUsuario, setTipoUsuario] = useState("DIRECTOR");
     
 
     const [formValues, setFormValues] = useState({
@@ -39,7 +39,6 @@ const AgregarUsuario = () => {
       extension: "",
       activo: "true",
       correoPersonal: "",
-      rol: tipoUsuario,
     });
 
     useEffect(() => {
@@ -66,8 +65,27 @@ const AgregarUsuario = () => {
     const handleSubmit = async () => {
 
       
+
+      const data = {
+        username: formValues.username,
+        password: formValues.password,
+        nombre: formValues.nombre,
+        primerApellido: formValues.primerApellido,
+        segundoApellido: formValues.segundoApellido,
+        numeroDeEmpleado: formValues.numeroDeEmpleado,
+        correoInstitucional: formValues.correoInstitucional,
+        idUnidadAcademica: formValues.idUnidadAcademica,
+        cargo: formValues.cargo,
+        telefono: formValues.telefono,
+        extension: formValues.extension,
+        rol: tipoUsuario,
+      }
+
+
+
+
       try {
-        const response = await registrarUsuario(formValues);
+        const response = await registrarUsuario(data);
         M.toast({
           html: "Usuario registrado espere a que activen su cuenta",
           classes: "green",
@@ -82,11 +100,31 @@ const AgregarUsuario = () => {
       
     };
 
+
+
+
+
+
+
     const handleSubmitRev = async () => {
-    
-      
+      console.log("revisor")
+      const data = {
+        username: formValues.username,
+        password: formValues.password,
+        nombre: formValues.nombre,
+        primerApellido: formValues.primerApellido,
+        segundoApellido: formValues.segundoApellido,
+        numeroDeEmpleado: formValues.numeroDeEmpleado,
+        correoInstitucional: formValues.correoInstitucional,
+        correoPersonal: formValues.correoInstitucional,
+        idUnidadAcademica: formValues.idUnidadAcademica,
+        rol: "REVISOR",
+        activo: true,
+      }
+
+
       try {
-        const responserev = await registrarRevisor(formValues);
+        const responserev = await registrarRevisor(data);
         M.toast({
           html: "Usuario registrado espere a que activen su cuenta",
           classes: "green",
@@ -108,6 +146,7 @@ const AgregarUsuario = () => {
       
       event.preventDefault();
       console.log(formValues);
+      
     };
 
     return (
@@ -118,18 +157,18 @@ const AgregarUsuario = () => {
         <div class="row">
           <div class="col s12">
             <ul class="tabs">
-              <li class="tab col s4" onClick={() => setTipoUsuario("DIRECTOR")}>
+              <li class="tab col s3" onClick={() => setTipoUsuario("DIRECTOR")}>
                 <a class="active" href="#director">
                   Director
                 </a>
               </li>
               <li
-                class="tab col s4"
+                class="tab col s3"
                 onClick={() => setTipoUsuario("SUBDIRECTOR")}
               >
                 <a href="#subdirector">Subdirector</a>
               </li>
-              <li class="tab col s4" onClick={() => setTipoUsuario("REVISOR")}>
+              <li class="tab col s3" onClick={() => setTipoUsuario("REVISOR")}>
                 <a href="#revisor">Revisor</a>
               </li>
             </ul>
