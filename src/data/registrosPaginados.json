@@ -11,7 +11,8 @@
       "Modalidad": "Presencial",
       "DuracionTotal": "20",
       "Expedición": "1/10/19",
-      "Vigencia": "1/9/21"
+      "Vigencia": "1/9/21",
+      "recursos": "ERGONOMIA.PDF"
     },
     {
       "Cosecutivo": "2",
@@ -11713,7 +11714,8 @@
       "Modalidad": "Presencial",
       "DuracionTotal": "10",
       "Expedición": "12/20/21",
-      "Vigencia": "12/19/23"
+      "Vigencia": "12/19/23",
+      "recursos": "SinDocumento"
     },
     {
       "Cosecutivo": "850",
@@ -11728,7 +11730,8 @@
       "Modalidad": "Presencial22",
       "DuracionTotal": "22",
       "Expedición": "12/20/21",
-      "Vigencia": "12/19/23"
+      "Vigencia": "12/19/23",
+      "recursos": "PAGINA1/Capacitacion en Geometría.pdf"
     },
     {
       "Cosecutivo": "851",
@@ -11743,7 +11746,8 @@
       "Modalidad": "Presencial",
       "DuracionTotal": "10",
       "Expedición": "12/20/21",
-      "Vigencia": "12/19/23"
+      "Vigencia": "12/19/23",
+      "recursos": "PAGINA1/ERGONOMIA.pdf"
     },
     {
       "Cosecutivo": "852",
@@ -11758,7 +11762,8 @@
       "Modalidad": "Presencial",
       "DuracionTotal": "22",
       "Expedición": "12/20/21",
-      "Vigencia": "12/19/23"
+      "Vigencia": "12/19/23",
+      "recursos": "PAGINA1/ERGONOMIA.pdf"
     }
   ]
 ]

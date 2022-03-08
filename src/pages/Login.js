@@ -157,6 +157,7 @@ const Login = () => {
         navigate(users[user.rol].path);
       } catch (error) {
         console.log(error);
+        setIsLoading(false);
         M.toast({
           html: `Error al iniciar sesión`,
           classes: "red",
@@ -167,7 +168,6 @@ const Login = () => {
             classes: "red",
           });
         }
-        setIsLoading(false);
       } /* 
       if (formValues.nickname === "subdirector") {
         navigate("/subdirector/menu");

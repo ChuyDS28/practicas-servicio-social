@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import ba12 from "../../assets/images/ba12.png";
 import parteba9 from"../../assets/images/parteba9.png";
+import { obtenerInstructores } from "../../api/services/instructores.js";
+import FilasInstructoresDirector from "./FilasInstructoresDirector";
+
 const style = {
   infoContainer: {
     padding: "25px",
@@ -92,12 +95,29 @@ const style = {
   },
 };
 const ListadoInstructoresDirector = () => {
+  const[instructores, setInstructores] = useState([]);
+
   useEffect(() => {
     var modales = document.querySelectorAll(".modal");
     M.Modal.init(modales, {});
     var textNeedCount = document.querySelectorAll("#input_text, #textarea1");
     M.CharacterCounter.init(textNeedCount);
   }, []);
+
+  useEffect(() => {
+    getInstructores();
+  }, []);
+
+  console.log(instructores);
+  async function getInstructores() {
+    try {
+      const dataU = await obtenerInstructores(0);
+      setInstructores(dataU.data);
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+    }
+  }
 
   return (
     <>
@@ -173,131 +193,20 @@ const ListadoInstructoresDirector = () => {
               <th className="amber darken-4 white-text"> RFC</th>
               <th className="amber darken-4 white-text"> CV</th> 
               <th className="amber darken-4 white-text"> Doc. Probatorios </th>
-              <th className="amber darken-4 white-text"> Status</th>
+              {/* <th className="amber darken-4 white-text"> Status</th> */}
             </tr>
           </thead>
 
           <tbody>
-            <tr className="amber lighten-5">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td>
-                <button className="waves-effect waves-light btn  cyan lighten-1">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn indigo-text text-darken-4  outlined"
-                  style={{
-                    borderColor: "#2196f3",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-              <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td>
-            </tr>
-            <tr className="white">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td>
-                <button className="waves-effect waves-light btn  cyan lighten-1 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn indigo-text text-darken-4  outlined"
-                  style={{
-                    borderColor: "#2196f3",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-              <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td>
-            </tr>
-            <tr  className="amber lighten-5">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td>
-                <button className="waves-effect waves-light btn  cyan lighten-1 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn indigo-text text-darken-4  outlined"
-                  style={{
-                    borderColor: "#2196f3",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-              <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td>
-            </tr>
-            <tr className="white">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td>
-                <button className="waves-effect waves-light btn  cyan lighten-1 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn indigo-text text-darken-4  outlined"
-                  style={{
-                    borderColor: "#2196f3",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-              <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td>
-            </tr>
+          {instructores.map((instructor) => (                
+                  <FilasInstructoresDirector
+                    nombre={instructor.nombreCompleto}
+                    rfc={instructor.rfc}
+                    // area={Area}
+                    // unidad={instructor.unidadAcademica.nombre}
+                    id = {instructor.id}
+                  />                
+          ))};
           </tbody>
         </table>
       </div>

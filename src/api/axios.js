@@ -2,14 +2,15 @@ import axios from "axios";
 import { getToken } from "./auth";
 
 //const baseURL = "http://148.204.63.165/api";
+// http://movilidadbackend.ipn.mx/api
 const baseURL = "http://148.204.63.240/api";
 
 //****usuarios****/
 //  admin
-//subdirector1 subdirector2
-// director1
+// subdirector1 subdirector2 subdirector3 subdirector4 subdirector5
+// director1 director2
 // revisor1
-// reporteador1
+// reporteador1 reporteador2 reporteador3
 
 export const instance = axios.create({
   baseURL,
@@ -48,7 +49,7 @@ instance.interceptors.response.use(
     }
     if (error && error.response.status === 404) {
       console.log("Recurso no encontrado");
-      alert("404 Recurso no encontrado");
+      //alert("404 Recurso no encontrado");
       return Promise.reject(error);
     }
     console.log(error.response);

@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
+import "./ListadoRegistros.css";
+import moment from "moment";
+import "moment/locale/es";
+import { getUserData } from "../../../utils/userData";
+//assets
 import parteba5 from "../../../assets/images/parteba5.png";
 import ba5 from "../../../assets/images/ba5.png";
+//components
 import Footer from "../../Footer";
-import "./ListadoRegistros.css";
 import Modal from "../../../components/Modal";
+//api
 import {
   obtenerProgramas,
+  obtenerMisProgramas,
   crearPrograma,
 } from "../../../api/services/subdirector/programas";
 
@@ -86,6 +93,7 @@ const style = {
 
 const ListadoRegistros = () => {
   let navigate = useNavigate();
+  moment.locale();
   const [modalRenovaciones, setModalRenovaciones] = useState(false);
   const [modalAyuda, setModalAyuda] = useState(false);
   const [modalAgregarRegistro, setModalAgregarRegistro] = useState(false);
@@ -96,12 +104,13 @@ const ListadoRegistros = () => {
   }, []); */
 
   useEffect(() => {
+    console.log(getUserData());
     getProgramas();
   }, []);
 
   async function getProgramas() {
     try {
-      const dataU = await obtenerProgramas(0);
+      const dataU = await obtenerMisProgramas(getUserData().id, 0);
       console.log(dataU);
       setProgramas(dataU.data);
     } catch (error) {
@@ -181,23 +190,25 @@ const ListadoRegistros = () => {
     const submitPrograma = async () => {
       console.log(formValues);
       if (formValues.nombrePrograma === "" || formValues.tipo === "") {
-        M.toast({ html: "Llenar campos", classes: "red" });
+        M.toast({ html: "Llenar campos", classNamees: "red" });
         return;
       }
 
       try {
         const response = await crearPrograma(formValues);
+
+        console.log(response);
+        setModalAgregarRegistro(false);
         M.toast({
           html: "Programa registrado",
           classes: "green",
         });
-        console.log(response);
-        setModalAgregarRegistro(false);
-        getProgramas();
+        //getProgramas();
+        navigate(response.data.id.toString());
       } catch (error) {
         console.log(error);
         console.log(error.response);
-        M.toast({ html: "Error al registrar", classes: "red" });
+        M.toast({ html: "Error al registrar", classNamees: "red" });
       }
     };
     return (
@@ -312,8 +323,9 @@ const ListadoRegistros = () => {
           <blockquote>
             <h6 className="subtitulo black-text">
               <b>
-                Aquí puedes consultar el historial <br /> de todos tus
-                registros, agregar <br /> nuevos y darles seguimiento...
+                Aquí puedes consultar el historial <br />
+                de programas de tu unidad academicaos
+                <br /> y darles seguimiento...
               </b>
             </h6>
           </blockquote>
@@ -334,7 +346,7 @@ const ListadoRegistros = () => {
           className="waves-effect waves-light btn  blue-grey darken-3"
           onClick={() => setModalRenovaciones(true)}
         >
-          <i class="material-icons left">description</i>
+          <i className="material-icons left">description</i>
           Renovaciones
         </button>
 
@@ -342,7 +354,7 @@ const ListadoRegistros = () => {
           className="waves-effect waves-light btn blue  darken-2"
           onClick={() => setModalAyuda(true)}
         >
-          <i class="material-icons right">help</i>
+          <i className="material-icons right">help</i>
           Ayuda
         </button>
         <button
@@ -357,7 +369,7 @@ const ListadoRegistros = () => {
           className="waves-effect waves-light btn outlined teal-text right"
           onClick={() => setModalRenovaciones(true)}
         >
-          <i class="material-icons right">search</i>
+          <i className="material-icons right">search</i>
           Buscar Programas
         </button>
         <blockquote>
@@ -399,7 +411,9 @@ const ListadoRegistros = () => {
                   style={{ cursor: "pointer" }}
                 >
                   <td>
-                    <i class="material-icons left teal-text text-darken-3">assignment</i>
+                    <i className="material-icons left teal-text text-darken-3">
+                      assignment
+                    </i>
                     {programa.programa.nombre}
                   </td>
                   <td>
@@ -410,7 +424,7 @@ const ListadoRegistros = () => {
                       {programa.estatus}
                     </span>
                   </td>
-                  <td>{programa.creado}</td>
+                  <td>{moment(programa.creado).format("LL h:mm a")}</td>
                 </tr>
               ))}
             </tbody>

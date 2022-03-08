@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import dvdr from "../../assets/images/dvdr.png";
-import Footer from "../Footer";
-import { getUserData, setUserData } from "../../utils/userData";
-import { logout } from "../../api/services/acceso";
-import { obtenerUsuario } from "../../api/services/usuarios";
+import dvdr from "../assets/images/dvdr.png";
+import Footer from "../pages/Footer";
+import { getUserData, setUserData } from "../utils/userData";
+import { logout } from "../api/services/acceso";
+import { obtenerUsuario } from "../api/services/usuarios";
+
 const style = {
   imgLink: {
     display: "flex",
@@ -14,7 +15,7 @@ const style = {
     height: "65px",
   },
 };
-const NavbarAdmin = () => {
+const NavBar = (props) => {
   const sidenavRef = useRef(null);
   let navigate = useNavigate();
   const [user, setUser] = useState({});
@@ -51,6 +52,49 @@ const NavbarAdmin = () => {
     console.log("sidemap");
     var instance = M.Sidenav.getInstance(sidenavRef.current);
     instance.open();
+  }
+
+  let cuentas = {
+    admin: {
+      account: "Administrador",
+      secciones: [
+        { texto: "Usuarios", ruta: "usuarios" },
+        { texto: "Solicitudes", ruta: "solicitudes" },
+        { texto: "Indicadores", ruta: "menu" },
+        { texto: "Catalogos", ruta: "listadoCatalogos" },
+      ],
+    },
+    director: {
+      account: "Director",
+      secciones: [
+        { texto: "Listado de Registros", ruta: "listadoRegistrosGeneral"},
+        { texto: "Instructores", ruta: "listadoInstructores"}
+      ]
+    },
+    eacuerdos: {
+        account: "Reporteador",
+        secciones: [
+            { texto: "Reportes", ruta: "buscarReporte"},
+            { texto: "Tablas", ruta: "Tablas"},
+            { texto: "Indicadores", ruta: "Indicadores"}
+        ]
+    },
+    revisor: {
+        account: "Revisor",
+        secciones: [
+            { texto: "Listado de Registros", ruta: "listadoRegistros"},
+            { texto: "Listado General", ruta: "listadoRegistrosGeneral"}
+        ]
+    },
+    subdirector:{
+        account:"Subdirector",
+        secciones: [
+            { texto: "Listado de Registros", ruta: "programas"},
+            { texto: "Listado General", ruta: "programasGeneral"},
+            { texto: "Indicadores", ruta: "menu"},
+            { texto: "Instructores", ruta: "ListadoInstructores"}
+        ]
+    }
   }
 
   const SideNav = () => (
@@ -92,26 +136,15 @@ const NavbarAdmin = () => {
       <li>
         <a className="subheader">Secciones</a>
       </li>
-      <li>
-        <a className="waves-effect" href="#!">
-          Listado de Registros
-        </a>
-      </li>
-      <li>
-        <a className="waves-effect" href="#!">
-          Listado General
-        </a>
-      </li>
-      <li>
-        <a className="waves-effect" href="#!">
-          Indicadores
-        </a>
-      </li>
-      <li>
-        <a className="waves-effect" href="#!">
-          Instructores
-        </a>
-      </li>
+      {cuentas[props.account].secciones.map((ruta,index) => 
+         (
+          <li key = {index}>
+            <Link to = {ruta.ruta} className = "waves-effect sidenav-close">
+              {ruta.texto}
+            </Link>
+          </li>
+        )
+      )}
     </>
   );
   return (
@@ -139,7 +172,7 @@ const NavbarAdmin = () => {
                 </Link>
               </li>
               <li className="  hide-on-med-and-down">
-                <Link to="#" className="navTitle">
+                <Link to="menu" className="navTitle">
                   Dirección de Vinculación y Desarrollo Regional
                 </Link>
               </li>
@@ -176,4 +209,4 @@ const NavbarAdmin = () => {
   );
 };
 
-export default NavbarAdmin;
+export default NavBar;
