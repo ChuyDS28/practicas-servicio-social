@@ -12,3 +12,15 @@ export function obtenerUsuarios(pag) {
     params: { pagina: pag, tam: 50 },
   });
 }
+
+
+export function editarUsuario(id, data) {
+  return axios.patch|(`/usuarios/${id}`, 
+    data
+  );
+}
+
+
+
+
+
