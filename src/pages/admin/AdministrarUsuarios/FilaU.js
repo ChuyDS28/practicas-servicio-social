@@ -4,7 +4,7 @@ import { activarUsuario } from "../../../api/services/usuarios";
 import M from "materialize-css/dist/js/materialize.min.js";
 import Modal from "../../../components/Modal";
 import DatosUsuario from "./DatosUsuario";
-
+import EditarUsuario from "./EditarUsuario";
 
 const users = {
   ADMINISTRADOR: { icon: "book" },
@@ -24,6 +24,7 @@ const status = {
 const FilaU = (props) => {
   const { user, fn, getUsuarios } = props;
   const [modalInfo, setModalInfo] = useState(false);
+  const [EditInfo, setEditlInfo] = useState(false);
 
   function getStatus() {
     if (!user.activo) {
@@ -52,6 +53,10 @@ const FilaU = (props) => {
     
       <Modal open={modalInfo} fnCloseModal={() => setModalInfo(false)}>
         <DatosUsuario user={user}/>
+      </Modal>
+      <Modal open={EditInfo} fnCloseModal={() => setEditlInfo(false)}>
+        
+        <EditarUsuario user={user}/>
       </Modal>
       
     <tr style={{ fontSize: "1rem" }}>
@@ -100,7 +105,9 @@ const FilaU = (props) => {
       {user.rol !== "ADMINISTRADOR" && (
         <>
           <td>
-            <button class="waves-effect waves-teal  btn-flat">
+            <button class="waves-effect waves-teal  btn-flat"
+            onClick={() => {setEditlInfo(true)}}
+            >
               <i class="material-icons yellow-text text-darken-4">edit</i>
             </button>
           </td>
