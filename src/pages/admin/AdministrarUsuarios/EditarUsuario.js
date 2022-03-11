@@ -45,11 +45,28 @@ const EditarUsuario = (props) => {
     getUnidades();
   }, []);
   const submit = async (e) => {
+    const data = {
+    nombre: props.user.nombre,
+    primerApellido: props.user.primerApellido,
+    segundoApellido: props.user.segundoApellido,
+    correoInstitucional: props.user.correoInstitucional,
+    correoPersonal: props.user.correoPersonal,
+    confirmarCorreo: "",
+    username: props.user.username,
+    password: "",
+    Cpassword: "",
+    numeroDeEmpleado: props.user.id,
+    idUnidadAcademica: props.user.idUnidadAcademica,
+    cargo: props.user.rol,
+    extension: props.user.Extencion,
+    telefono: props.user.Telefono,
+    Cargo: props.user.cargo,
+    }
     e.preventDefault();
     console.log(formValues)
     console.log("Estamos en la Funcion Submit")
     try {
-      const response = await editarUsuario(formValues);
+      const response = await editarUsuario(data);
       console.log(response); 
     } catch (error) {}
   };
