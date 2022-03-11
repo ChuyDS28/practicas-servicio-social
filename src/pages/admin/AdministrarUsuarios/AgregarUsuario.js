@@ -4,6 +4,7 @@ import { obtenerUnidades } from "../../../api/services/unidadAcademica";
 import { registrarUsuario } from "../../../api/services/registro";
 import { useNavigate, useParams } from "react-router-dom";
 import { registrarRevisor } from "../../../api/services/registro";
+import { Color } from "highcharts";
 
 const AgregarUsuario = () => {
   let navigate = useNavigate();
@@ -106,6 +107,7 @@ const AgregarUsuario = () => {
 
 
 
+
     const handleSubmitRev = async () => {
       console.log("revisor")
       const data = {
@@ -156,8 +158,26 @@ const AgregarUsuario = () => {
         </div>
         <div class="row">
           <div class="col s12">
-            <ul class="tabs">
-              <li class="tab col s3" onClick={() => setTipoUsuario("DIRECTOR")}>
+            <ul class="tabs" >
+              <li class="tab col s3" onClick={() => {setTipoUsuario("DIRECTOR"); 
+            setFormValues(
+              {      
+              username: "",
+              password: "",
+              nombre: "",
+              primerApellido: "",
+              segundoApellido: "",
+              numeroDeEmpleado: "",
+              correoInstitucional: "",
+              correoInstitucional: "",
+              idUnidadAcademica: "",
+              cargo: "",
+              telefono: "",
+              extension: "",
+              activo: "true",
+              correoPersonal: "",}
+            )
+            }}>
                 <a class="active" href="#director">
                   Director
                 </a>
