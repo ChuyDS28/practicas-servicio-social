@@ -49,7 +49,7 @@ const EditarUsuario = (props) => {
     console.log(formValues)
     console.log("Estamos en la Funcion Submit")
     try {
-      const response = await editarUsuario(0);
+      const response = await editarUsuario(formValues);
       console.log(response); 
     } catch (error) {}
   };
@@ -75,8 +75,8 @@ const EditarUsuario = (props) => {
                 <input
                   type="text"
                   required
-                  placeholder="Nombre"
-                  name="Nombre"
+                  placeholder="Nombre1"
+                  name="Nombre1"
                   value={formValues.nombre}
                   onChange={handleChange}
                 />  
@@ -87,8 +87,8 @@ const EditarUsuario = (props) => {
                 <input
                   type="text"
                   required
-                  placeholder="Nombre"
-                  name="Nombre"
+                  placeholder="Nombre2"
+                  name="Nombre2"
                   value={formValues.nombre}
                   onChange={handleChange}
                 />
@@ -159,7 +159,7 @@ const EditarUsuario = (props) => {
                   onChange={handleChange}
                 />
               </div>
-              { props.user.rol==="SUBDIRECTOR" && 
+              { props.user.rol!=="DIRECTOR" && 
               <div className="col  s12 m6 xl4">
                 <label>Extensión</label>
                 <input
@@ -172,7 +172,7 @@ const EditarUsuario = (props) => {
                 />
               </div>
 }
-            { props.user.rol==="SUBDIRECTOR" &&
+            { props.user.rol!=="DIRECTOR" &&
               <div className="col  s12 m6 xl4">
                 <label>Teléfono</label>
                 <input
@@ -185,7 +185,7 @@ const EditarUsuario = (props) => {
                 />
               </div>
 }
-            { props.user.rol==="SUBDIRECTOR" && 
+            { props.user.rol!=="DIRECTOR" && 
               <div className="col  s12 m6 xl4">
                 <label>Cargo</label>
                 <input
