@@ -53,8 +53,7 @@ const EditarUsuario = (props) => {
     correoPersonal: props.user.correoPersonal,
     confirmarCorreo: "",
     username: props.user.username,
-    password: "",
-    Cpassword: "",
+
     numeroDeEmpleado: props.user.id,
     idUnidadAcademica: props.user.idUnidadAcademica,
     cargo: props.user.rol,
@@ -86,7 +85,7 @@ const EditarUsuario = (props) => {
         <div class="row">
           <form class="col s12" onSubmit={submit}>
             <div class="row">
-            { props.user.rol==="SUBDIRECTOR" && 
+             
               <div className="col  s12 m6 xl4">
                 <label>Nombre no1</label>
                 <input
@@ -98,18 +97,8 @@ const EditarUsuario = (props) => {
                   onChange={handleChange}
                 />  
               </div>
-}
-              <div className="col  s12 m6 xl4">
-                <label>Nombre no2</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Nombre2"
-                  name="Nombre2"
-                  value={formValues.nombre}
-                  onChange={handleChange}
-                />
-              </div>
+
+              
               <div className="col  s12 m6 xl4">
                 <label>Apellido paterno</label>
                 <input
@@ -202,18 +191,18 @@ const EditarUsuario = (props) => {
                 />
               </div>
 }
-            { props.user.rol!=="DIRECTOR" && 
-              <div className="col  s12 m6 xl4">
-                <label>Cargo</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Cargo"
-                  name="Cargo"
-                  value={formValues.Cargo}
-                  onChange={handleChange}
-                />
-              </div>
+            { props.user.rol!=="REVISOR"  && 
+                          <div className="col  s12 m6 xl4">
+                            <label>Cargo</label>
+                            <input
+                              type="text"
+                              required
+                              placeholder="Cargo"
+                              name="Cargo"
+                              value={formValues.Cargo}
+                              onChange={handleChange}
+                            />
+                          </div>
 }
               <div className="col s12 l6">
                 <label>Unidad Academica</label>
