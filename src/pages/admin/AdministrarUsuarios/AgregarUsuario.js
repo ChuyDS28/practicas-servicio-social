@@ -4,27 +4,18 @@ import { obtenerUnidades } from "../../../api/services/unidadAcademica";
 import { registrarUsuario } from "../../../api/services/registro";
 import { useNavigate, useParams } from "react-router-dom";
 import { registrarRevisor } from "../../../api/services/registro";
-import { Color } from "highcharts";
 
 const AgregarUsuario = () => {
-  let navigate = useNavigate();
-  let { userType } = useParams();
-  const tabsRef = useRef(null);
 
   useEffect(() => {
     let elems = document.querySelectorAll(".tabs");
-    M.Tabs.init(elems, { duration: 30 });
+    M.Tabs.init(elems, {responsiveThreshold: "100%"});
   });
 
   const SignupForm = () => {
     let navigate = useNavigate();
-    const [isLoading, setIsLoading] = useState(false);
     const [unidades, setUnidades] = useState([]);
-    const [error, setError] = useState({ error: false, message: "" });
-
     const [tipoUsuario, setTipoUsuario] = useState("DIRECTOR");
-    
-
     const [formValues, setFormValues] = useState({
       username: "",
       password: "",
@@ -64,9 +55,6 @@ const AgregarUsuario = () => {
       });
     };
     const handleSubmit = async () => {
-
-      
-
       const data = {
         username: formValues.username,
         password: formValues.password,
@@ -80,10 +68,7 @@ const AgregarUsuario = () => {
         telefono: formValues.telefono,
         extension: formValues.extension,
         rol: tipoUsuario,
-      }
-
-
-
+      };
 
       try {
         const response = await registrarUsuario(data);
@@ -98,18 +83,10 @@ const AgregarUsuario = () => {
         console.log(error.response);
         M.toast({ html: "Error al registrar", classes: "red" });
       }
-      
     };
 
-
-
-
-
-
-
-
     const handleSubmitRev = async () => {
-      console.log("revisor")
+      console.log("revisor");
       const data = {
         username: formValues.username,
         password: formValues.password,
@@ -122,8 +99,7 @@ const AgregarUsuario = () => {
         idUnidadAcademica: formValues.idUnidadAcademica,
         rol: "REVISOR",
         activo: true,
-      }
-
+      };
 
       try {
         const responserev = await registrarRevisor(data);
@@ -138,63 +114,107 @@ const AgregarUsuario = () => {
         console.log(error.responserev);
         M.toast({ html: "Error al registrar", classes: "red" });
       }
-      
     };
 
     const handleUserSubmit = (event) => {
-      
-        (tipoUsuario === "DIRECTOR" || tipoUsuario === "SUBDIRECTOR") && handleSubmit();
-        tipoUsuario === "REVISOR" && handleSubmitRev();
-      
+      (tipoUsuario === "DIRECTOR" || tipoUsuario === "SUBDIRECTOR") &&
+        handleSubmit();
+      tipoUsuario === "REVISOR" && handleSubmitRev();
+
       event.preventDefault();
       console.log(formValues);
-      
     };
 
     return (
       <div className="modal-content">
         <div className="teal white-text section center">
-          <h5 className="center ">Agregar nuevo Usuario  </h5>
+          <h5 className="center ">Agregar nuevo Usuario </h5>
         </div>
         <div class="row">
           <div class="col s12">
-            <ul class="tabs" >
-              <li class="tab col s3" onClick={() => {setTipoUsuario("DIRECTOR"); 
-            setFormValues(
-              {      
-              username: "",
-              password: "",
-              nombre: "",
-              primerApellido: "",
-              segundoApellido: "",
-              numeroDeEmpleado: "",
-              correoInstitucional: "",
-              correoInstitucional: "",
-              idUnidadAcademica: "",
-              cargo: "",
-              telefono: "",
-              extension: "",
-              activo: "true",
-              correoPersonal: "",}
-            )
-            }}>
-                <a class="active" href="#director">
+            <ul class="tabs s4" >
+              <li
+               
+                class="tab col s4 "
+                onClick={() => {
+                  setTipoUsuario("DIRECTOR");
+                  setFormValues({
+                    username: "",
+                    password: "",
+                    nombre: "",
+                    primerApellido: "",
+                    segundoApellido: "",
+                    numeroDeEmpleado: "",
+                    correoInstitucional: "",
+                    correoInstitucional: "",
+                    idUnidadAcademica: "",
+                    cargo: "",
+                    telefono: "",
+                    extension: "",
+                    activo: "true",
+                    correoPersonal: "",
+                  });
+                }}
+              >
+                <a href="#director">
                   Director
                 </a>
               </li>
+            
+              
               <li
-                class="tab col s3"
-                onClick={() => setTipoUsuario("SUBDIRECTOR")}
+                class="tab col s4"
+                onClick={() => {
+                  setTipoUsuario("SUBDIRECTOR");
+                  setFormValues({
+                    username: "",
+                    password: "",
+                    nombre: "",
+                    primerApellido: "",
+                    segundoApellido: "",
+                    numeroDeEmpleado: "",
+                    correoInstitucional: "",
+                    correoInstitucional: "",
+                    idUnidadAcademica: "",
+                    cargo: "",
+                    telefono: "",
+                    extension: "",
+                    activo: "true",
+                    correoPersonal: "",
+                  });
+                }}
               >
                 <a href="#subdirector">Subdirector</a>
               </li>
-              <li class="tab col s3" onClick={() => setTipoUsuario("REVISOR")}>
-                <a href="#revisor">Revisor</a>
-              </li>
-            </ul>
-          </div>
 
-          <h3>{tipoUsuario}</h3>
+              <li
+                class="tab col s4"
+                style={{ maxWidth: "100px" }}
+                onClick={() => {
+                  setTipoUsuario("REVISOR");
+                  setFormValues({
+                    username: "",
+                    password: "",
+                    nombre: "",
+                    primerApellido: "",
+                    segundoApellido: "",
+                    numeroDeEmpleado: "",
+                    correoInstitucional: "",
+                    correoInstitucional: "",
+                    idUnidadAcademica: "",
+                    cargo: "",
+                    telefono: "",
+                    extension: "",
+                    activo: "true",
+                    correoPersonal: "",
+                  });
+                }}
+              >
+                <a  href="#revisor">Revisor</a>
+              </li>
+              </ul>
+            
+          </div>
           <form onSubmit={handleUserSubmit}>
             <div className="col s4 input-field">
               <label htmlFor="nombre">Nombre</label>
@@ -302,7 +322,7 @@ const AgregarUsuario = () => {
               </select>
             </div>
 
-            {(tipoUsuario === "DIRECTOR" || tipoUsuario === "SUBDIRECTOR") && (
+            {(tipoUsuario === "SUBDIRECTOR") && (
               <div>
                 <div className="col  s6 input-field">
                   <label htmlFor="cargo">Cargo</label>
@@ -343,18 +363,6 @@ const AgregarUsuario = () => {
                 <i className="material-icons right">done</i>
               </button>
             </div>
-          </form>
-
-          <form onSubmit={handleSubmit} className="row">
-            <div id="director" class="col s12 "></div>
-          </form>
-
-          <form onSubmit={handleSubmit} className="row">
-            <div id="subdirector" class="col s12 "></div>
-          </form>
-
-          <form onSubmit={handleSubmitRev} className="row">
-            <div id="revisor" class="col s12 "></div>
           </form>
         </div>
 
