@@ -12,6 +12,7 @@ const EditarUsuario = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [unidades, setUnidades] = useState([]);
   const [error, setError] = useState({ error: false, message: "" });
+  const [case1, setCase1] = useState([]);
   const [formValues, setFormValues] = useState({
     nombre: props.user.nombre,
     primerApellido: props.user.primerApellido,
@@ -53,7 +54,6 @@ const EditarUsuario = (props) => {
     correoPersonal: props.user.correoPersonal,
     confirmarCorreo: "",
     username: props.user.username,
-
     numeroDeEmpleado: props.user.id,
     idUnidadAcademica: props.user.idUnidadAcademica,
     cargo: props.user.rol,
@@ -64,10 +64,17 @@ const EditarUsuario = (props) => {
     e.preventDefault();
     console.log(formValues)
     console.log("Estamos en la Funcion Submit")
-    try {
-      const response = await editarUsuario(data);
+    const case1 = () => {if (data.props.user.rol==="DIRECTOR"){try {
+      const response = await editarUsuario(data.props.user.id, );
       console.log(response); 
-    } catch (error) {}
+      } catch (error) {}}  else{if (props.user.rol==="SUBDIRECTOR"){try {
+              const response = await editarUsuario(data.props.user.id, );
+              console.log(response); 
+              } catch (error) {}}  else{if (props.user.rol==="REVISOR"){try {
+                      const response = await editarUsuario(data.props.user.id, );
+                      console.log(response); 
+                    } catch (error) {}}else{}}}}
+      
   };
 
   return (
