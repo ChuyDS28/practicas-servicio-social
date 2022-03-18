@@ -61,20 +61,57 @@ const EditarUsuario = (props) => {
     telefono: props.user.Telefono,
     Cargo: props.user.cargo,
     }
+    const dir = {
+      nombre: props.user.nombre,
+      primerApellido: props.user.primerApellido,
+      segundoApellido: props.user.segundoApellido,
+      correoInstitucional: props.user.correoInstitucional,
+      correoPersonal: props.user.correoPersonal,
+      username: props.user.username,
+      idUnidadAcademica: props.user.idUnidadAcademica,
+      numeroDeEmpleado: props.user.id,
+      Cargo: props.user.cargo,
+    }
+    const sub = {
+      nombre: props.user.nombre,
+      primerApellido: props.user.primerApellido,
+      segundoApellido: props.user.segundoApellido,
+      correoInstitucional: props.user.correoInstitucional,
+      correoPersonal: props.user.correoPersonal,
+      username: props.user.username,
+      idUnidadAcademica: props.user.idUnidadAcademica,
+      numeroDeEmpleado: props.user.id,
+      extension: props.user.Extencion,
+      telefono: props.user.Telefono,
+      cargo: props.user.rol,
+      Cargo: props.user.cargo,
+      }
+    const rev = {
+      nombre: props.user.nombre,
+      primerApellido: props.user.primerApellido,
+      segundoApellido: props.user.segundoApellido,
+      correoInstitucional: props.user.correoInstitucional,
+      correoPersonal: props.user.correoPersonal,
+      username: props.user.username,
+      idUnidadAcademica: props.user.idUnidadAcademica,
+      numeroDeEmpleado: props.user.id,
+      cargo: props.user.rol,
+        } 
+    
     e.preventDefault();
     console.log(formValues)
     console.log("Estamos en la Funcion Submit")
+    
     const case1 = () => {if (data.props.user.rol==="DIRECTOR"){try {
-      const response = await editarUsuario(data.props.user.id, );
+      const response = await editarUsuario(data.props.user.id, {dir});
       console.log(response); 
       } catch (error) {}}  else{if (props.user.rol==="SUBDIRECTOR"){try {
-              const response = await editarUsuario(data.props.user.id, );
+              const response = await editarUsuario(data.props.user.id, {sub});
               console.log(response); 
               } catch (error) {}}  else{if (props.user.rol==="REVISOR"){try {
-                      const response = await editarUsuario(data.props.user.id, );
+                      const response = await editarUsuario(data.props.user.id, {rev});
                       console.log(response); 
                     } catch (error) {}}else{}}}}
-      
   };
 
   return (
