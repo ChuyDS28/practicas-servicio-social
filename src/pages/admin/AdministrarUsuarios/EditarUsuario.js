@@ -85,7 +85,7 @@ const EditarUsuario = (props) => {
       telefono: props.user.Telefono,
       cargo: props.user.rol,
       Cargo: props.user.cargo,
-      }
+    }
     const rev = {
       nombre: props.user.nombre,
       primerApellido: props.user.primerApellido,
@@ -96,7 +96,7 @@ const EditarUsuario = (props) => {
       idUnidadAcademica: props.user.idUnidadAcademica,
       numeroDeEmpleado: props.user.id,
       cargo: props.user.rol,
-        } 
+    } 
     
     e.preventDefault();
     console.log(formValues)
