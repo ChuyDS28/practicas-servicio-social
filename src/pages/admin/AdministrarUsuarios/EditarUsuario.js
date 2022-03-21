@@ -39,7 +39,8 @@ const EditarUsuario = (props) => {
   const getUnidades = async () => {
     try {
       const response = await obtenerUnidades(0);
-      console.log(response); setUnidades(response.data) 
+      console.log(response);
+      setUnidades(response.data);
     } catch (error) {}
   };
   useEffect(() => {
@@ -47,20 +48,20 @@ const EditarUsuario = (props) => {
   }, []);
   const submit = async (e) => {
     const data = {
-    nombre: props.user.nombre,
-    primerApellido: props.user.primerApellido,
-    segundoApellido: props.user.segundoApellido,
-    correoInstitucional: props.user.correoInstitucional,
-    correoPersonal: props.user.correoPersonal,
-    confirmarCorreo: "",
-    username: props.user.username,
-    numeroDeEmpleado: props.user.id,
-    idUnidadAcademica: props.user.idUnidadAcademica,
-    cargo: props.user.rol,
-    extension: props.user.Extencion,
-    telefono: props.user.Telefono,
-    Cargo: props.user.cargo,
-    }
+      nombre: props.user.nombre,
+      primerApellido: props.user.primerApellido,
+      segundoApellido: props.user.segundoApellido,
+      correoInstitucional: props.user.correoInstitucional,
+      correoPersonal: props.user.correoPersonal,
+      confirmarCorreo: "",
+      username: props.user.username,
+      numeroDeEmpleado: props.user.id,
+      idUnidadAcademica: props.user.idUnidadAcademica,
+      cargo: props.user.rol,
+      extension: props.user.Extencion,
+      telefono: props.user.Telefono,
+      Cargo: props.user.cargo,
+    };
     const dir = {
       nombre: props.user.nombre,
       primerApellido: props.user.primerApellido,
@@ -71,7 +72,7 @@ const EditarUsuario = (props) => {
       idUnidadAcademica: props.user.idUnidadAcademica,
       numeroDeEmpleado: props.user.id,
       Cargo: props.user.cargo,
-    }
+    };
     const sub = {
       nombre: props.user.nombre,
       primerApellido: props.user.primerApellido,
@@ -85,7 +86,7 @@ const EditarUsuario = (props) => {
       telefono: props.user.Telefono,
       cargo: props.user.rol,
       Cargo: props.user.cargo,
-    }
+    };
     const rev = {
       nombre: props.user.nombre,
       primerApellido: props.user.primerApellido,
@@ -96,22 +97,36 @@ const EditarUsuario = (props) => {
       idUnidadAcademica: props.user.idUnidadAcademica,
       numeroDeEmpleado: props.user.id,
       cargo: props.user.rol,
-    } 
-    
+    };
+
     e.preventDefault();
-    console.log(formValues)
-    console.log("Estamos en la Funcion Submit")
-    
-    const case1 = () => {if (data.props.user.rol==="DIRECTOR"){try {
-      const response = await editarUsuario(data.props.user.id, {dir});
-      console.log(response); 
-      } catch (error) {}}  else{if (props.user.rol==="SUBDIRECTOR"){try {
-              const response = await editarUsuario(data.props.user.id, {sub});
-              console.log(response); 
-              } catch (error) {}}  else{if (props.user.rol==="REVISOR"){try {
-                      const response = await editarUsuario(data.props.user.id, {rev});
-                      console.log(response); 
-                    } catch (error) {}}else{}}}}
+    console.log(formValues);
+    console.log("Estamos en la Funcion Submit");
+   
+    const case1 = async () => {
+      if (props.user.rol === "DIRECTOR") {
+        try {
+          const response = await editarUsuario(props.user.id,dir );
+          console.log(response);
+        } catch (error) {}
+      } else {
+        if (props.user.rol === "SUBDIRECTOR") {
+          try {
+            const response = await editarUsuario(props.user.id, sub);
+            console.log(response);
+          } catch (error) {}
+        } else {
+          if (props.user.rol === "REVISOR") {
+            try {
+              const response = await editarUsuario(props.user.id, rev );
+              console.log(response);
+            } catch (error) {}
+          } else {
+          }
+        }
+      }
+    };
+    case1();
   };
 
   return (
@@ -120,16 +135,15 @@ const EditarUsuario = (props) => {
         <h5 className="center ">Agregar nuevo Usuario</h5>
       </div>
       <div className="center ">
-          <p>
-            <strong >Tipo de usuario:&nbsp;&nbsp;</strong>
-            {props.user.rol}
-          </p>         
+        <p>
+          <strong>Tipo de usuario:&nbsp;&nbsp;</strong>
+          {props.user.rol}
+        </p>
       </div>
       <div id="director" class="col s12 ">
         <div class="row">
           <form class="col s12" onSubmit={submit}>
             <div class="row">
-             
               <div className="col  s12 m6 xl4">
                 <label>Nombre no1</label>
                 <input
@@ -139,10 +153,9 @@ const EditarUsuario = (props) => {
                   name="Nombre1"
                   value={formValues.nombre}
                   onChange={handleChange}
-                />  
+                />
               </div>
 
-              
               <div className="col  s12 m6 xl4">
                 <label>Apellido paterno</label>
                 <input
@@ -209,45 +222,45 @@ const EditarUsuario = (props) => {
                   onChange={handleChange}
                 />
               </div>
-              { props.user.rol!=="DIRECTOR" && 
-              <div className="col  s12 m6 xl4">
-                <label>Extensión</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Extensión"
-                  name="Extensión"
-                  value={formValues.extension}
-                  onChange={handleChange}
-                />
-              </div>
-}
-            { props.user.rol!=="DIRECTOR" &&
-              <div className="col  s12 m6 xl4">
-                <label>Teléfono</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Teléfono"
-                  name="Teléfono"
-                  value={formValues.telefono}
-                  onChange={handleChange}
-                />
-              </div>
-}
-            { props.user.rol!=="REVISOR"  && 
-                          <div className="col  s12 m6 xl4">
-                            <label>Cargo</label>
-                            <input
-                              type="text"
-                              required
-                              placeholder="Cargo"
-                              name="Cargo"
-                              value={formValues.Cargo}
-                              onChange={handleChange}
-                            />
-                          </div>
-}
+              {props.user.rol !== "DIRECTOR" && (
+                <div className="col  s12 m6 xl4">
+                  <label>Extensión</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Extensión"
+                    name="Extensión"
+                    value={formValues.extension}
+                    onChange={handleChange}
+                  />
+                </div>
+              )}
+              {props.user.rol !== "DIRECTOR" && (
+                <div className="col  s12 m6 xl4">
+                  <label>Teléfono</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Teléfono"
+                    name="Teléfono"
+                    value={formValues.telefono}
+                    onChange={handleChange}
+                  />
+                </div>
+              )}
+              {props.user.rol !== "REVISOR" && (
+                <div className="col  s12 m6 xl4">
+                  <label>Cargo</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Cargo"
+                    name="Cargo"
+                    value={formValues.Cargo}
+                    onChange={handleChange}
+                  />
+                </div>
+              )}
               <div className="col s12 l6">
                 <label>Unidad Academica</label>
                 <select
@@ -257,22 +270,12 @@ const EditarUsuario = (props) => {
                   value={formValues.idUnidadAcademica}
                   onChange={handleChange}
                 >
-                  <option value="">
-                  Seleccionar Unidad Académica
-                  </option>
-                  {
-                    unidades.map((centro)=>(
-                      <option value= {centro.id}>
-                      {
-                        centro.nombre
-                      }
-                      -
-                      {
-                        centro.clave
-                      }
-                      </option>
-                    ))
-                  }
+                  <option value="">Seleccionar Unidad Académica</option>
+                  {unidades.map((centro) => (
+                    <option value={centro.id}>
+                      {centro.nombre}-{centro.clave}
+                    </option>
+                  ))}
                 </select>
               </div>
               <br />
