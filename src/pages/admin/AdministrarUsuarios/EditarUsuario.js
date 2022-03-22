@@ -53,16 +53,19 @@ const EditarUsuario = (props) => {
     e.preventDefault();
     console.log(formValues);
     console.log("Estamos en la Funcion Submit");
-    if (props.user.rol === "DIRECTOR"){Caso1()} else{
+    /*if (props.user.rol === "DIRECTOR"){Caso1()} else{
       if (props.user.rol === "SUBDIRECTOR"){Caso2()} else{
         if (props.user.rol === "REVISOR"){Caso3()} else{
         }
       }
-    }
-    
+    }*/
+    if(props.user.rol === "DIRECTOR"){Caso1()}
+    if(props.user.rol === "SUBDIRECTOR"){Caso2()}
+    if(props.user.rol === "REVISOR"){Caso3()}
 
      //Caso1();}
       const Caso1 = async () => {
+        console.log("Estamos en la función Director");
         const dir = {
           nombre: props.user.nombre,
           primerApellido: props.user.primerApellido,
@@ -78,15 +81,19 @@ const EditarUsuario = (props) => {
             try {
               const response = await editarUsuario(props.user.id, dir );
               console.log(response);
-            } catch (error) {}}
+            } catch (error) {
+              console.log("Error en funcion Director")
+              console.log(error)
+            }}
 
       const Caso2 = async () => {
+        console.log("Estamos en la función Subdirector");
         const sub = {
           nombre: props.user.nombre,
           primerApellido: props.user.primerApellido,
           segundoApellido: props.user.segundoApellido,
           correoInstitucional: props.user.correoInstitucional,
-          correoPersonal: props.user.correoPersonal,
+          //correoPersonal: props.user.correoPersonal,
           username: props.user.username,
           idUnidadAcademica: props.user.idUnidadAcademica,
           numeroDeEmpleado: props.user.id,
@@ -98,9 +105,13 @@ const EditarUsuario = (props) => {
             try {
               const response = await editarUsuario(props.user.id, sub);
               console.log(response);
-            } catch (error) {}}
+            } catch (error) {
+              console.log("Error en funcion Subdirector")
+              console.log(error)
+            }}
         
       const Caso3 = async () => {
+        console.log("Estamos en la función Revisor");
         const rev = {
           nombre: props.user.nombre,
           primerApellido: props.user.primerApellido,
@@ -115,7 +126,10 @@ const EditarUsuario = (props) => {
             try {
               const response = await editarUsuario(props.user.id, rev );
               console.log(response);
-            } catch (error) {}} 
+            } catch (error) {
+              console.log("Error en funcion Revisor")
+              console.log(error)
+            }} 
   };
     
       
