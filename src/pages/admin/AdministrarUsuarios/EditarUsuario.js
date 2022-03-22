@@ -46,43 +46,9 @@ const EditarUsuario = (props) => {
     getUnidades();
   }, []);
   const submit = async (e) => {
-    const dir = {
-      nombre: props.user.nombre,
-      primerApellido: props.user.primerApellido,
-      segundoApellido: props.user.segundoApellido,
-      correoInstitucional: props.user.correoInstitucional,
-      correoPersonal: props.user.correoPersonal,
-      username: props.user.username,
-      idUnidadAcademica: props.user.idUnidadAcademica,
-      //numeroDeEmpleado: props.user.id,
-      numeroDeEmpleado: props.user.numeroDeEmpleado,
-      Cargo: props.user.cargo,
-    };
-    const sub = {
-      nombre: props.user.nombre,
-      primerApellido: props.user.primerApellido,
-      segundoApellido: props.user.segundoApellido,
-      correoInstitucional: props.user.correoInstitucional,
-      correoPersonal: props.user.correoPersonal,
-      username: props.user.username,
-      idUnidadAcademica: props.user.idUnidadAcademica,
-      numeroDeEmpleado: props.user.id,
-      extension: props.user.extencion,
-      telefono: props.user.telefono,
-      cargo: props.user.rol,
-      Cargo: props.user.cargo,
-    };
-    const rev = {
-      nombre: props.user.nombre,
-      primerApellido: props.user.primerApellido,
-      segundoApellido: props.user.segundoApellido,
-      correoInstitucional: props.user.correoInstitucional,
-      correoPersonal: props.user.correoPersonal,
-      username: props.user.username,
-      idUnidadAcademica: props.user.idUnidadAcademica,
-      numeroDeEmpleado: props.user.numeroDeEmpleado,
-      cargo: props.user.rol,
-    };
+    
+    
+    
 
     e.preventDefault();
     console.log(formValues);
@@ -97,18 +63,55 @@ const EditarUsuario = (props) => {
 
      //Caso1();}
       const Caso1 = async () => {
+        const dir = {
+          nombre: props.user.nombre,
+          primerApellido: props.user.primerApellido,
+          segundoApellido: props.user.segundoApellido,
+          correoInstitucional: props.user.correoInstitucional,
+          correoPersonal: props.user.correoPersonal,
+          username: props.user.username,
+          idUnidadAcademica: props.user.idUnidadAcademica,
+          //numeroDeEmpleado: props.user.id,
+          numeroDeEmpleado: props.user.numeroDeEmpleado,
+          Cargo: props.user.cargo,
+        };
             try {
               const response = await editarUsuario(props.user.id, dir );
               console.log(response);
             } catch (error) {}}
 
       const Caso2 = async () => {
+        const sub = {
+          nombre: props.user.nombre,
+          primerApellido: props.user.primerApellido,
+          segundoApellido: props.user.segundoApellido,
+          correoInstitucional: props.user.correoInstitucional,
+          correoPersonal: props.user.correoPersonal,
+          username: props.user.username,
+          idUnidadAcademica: props.user.idUnidadAcademica,
+          numeroDeEmpleado: props.user.id,
+          extension: props.user.extencion,
+          telefono: props.user.telefono,
+          cargo: props.user.rol,
+          Cargo: props.user.cargo,
+        };
             try {
               const response = await editarUsuario(props.user.id, sub);
               console.log(response);
             } catch (error) {}}
         
       const Caso3 = async () => {
+        const rev = {
+          nombre: props.user.nombre,
+          primerApellido: props.user.primerApellido,
+          segundoApellido: props.user.segundoApellido,
+          correoInstitucional: props.user.correoInstitucional,
+          correoPersonal: props.user.correoPersonal,
+          username: props.user.username,
+          idUnidadAcademica: props.user.idUnidadAcademica,
+          numeroDeEmpleado: props.user.numeroDeEmpleado,
+          cargo: props.user.rol,
+        };
             try {
               const response = await editarUsuario(props.user.id, rev );
               console.log(response);
