@@ -47,21 +47,6 @@ const EditarUsuario = (props) => {
     getUnidades();
   }, []);
   const submit = async (e) => {
-    const data = {
-      nombre: props.user.nombre,
-      primerApellido: props.user.primerApellido,
-      segundoApellido: props.user.segundoApellido,
-      correoInstitucional: props.user.correoInstitucional,
-      correoPersonal: props.user.correoPersonal,
-      confirmarCorreo: "",
-      username: props.user.username,
-      numeroDeEmpleado: props.user.id,
-      idUnidadAcademica: props.user.idUnidadAcademica,
-      cargo: props.user.rol,
-      extension: props.user.Extencion,
-      telefono: props.user.Telefono,
-      Cargo: props.user.cargo,
-    };
     const dir = {
       nombre: props.user.nombre,
       primerApellido: props.user.primerApellido,
@@ -103,31 +88,33 @@ const EditarUsuario = (props) => {
     console.log(formValues);
     console.log("Estamos en la Funcion Submit");
    
-    const case1 = async () => {
-      if (props.user.rol === "DIRECTOR") {
+    
+     //Caso1();
+  };
+  async function Caso1(){
+    if (props.user.rol === "DIRECTOR") {
+      try {
+        const response = await editarUsuario(props.user.id,dir );
+        console.log(response);
+      } catch (error) {}}
+    //} else {
+    async function Caso2(){
+      if (props.user.rol === "SUBDIRECTOR") {
         try {
-          const response = await editarUsuario(props.user.id,dir );
+          const response = await editarUsuario(props.user.id, sub);
           console.log(response);
-        } catch (error) {}
-      } else {
-        if (props.user.rol === "SUBDIRECTOR") {
+        } catch (error) {}}
+      //} else {
+    async function Caso3(){
+        if (props.user.rol === "REVISOR") {
           try {
-            const response = await editarUsuario(props.user.id, sub);
+            const response = await editarUsuario(props.user.id, rev );
             console.log(response);
           } catch (error) {}
         } else {
-          if (props.user.rol === "REVISOR") {
-            try {
-              const response = await editarUsuario(props.user.id, rev );
-              console.log(response);
-            } catch (error) {}
-          } else {
-          }
         }
       }
-    };
-    case1();
-  };
+    }
 
   return (
     <div className="modal-content">
@@ -145,12 +132,12 @@ const EditarUsuario = (props) => {
           <form class="col s12" onSubmit={submit}>
             <div class="row">
               <div className="col  s12 m6 xl4">
-                <label>Nombre no1</label>
+                <label>Nombre</label>
                 <input
                   type="text"
                   required
-                  placeholder="Nombre1"
-                  name="Nombre1"
+                  placeholder="Nombre"
+                  name="Nombre"
                   value={formValues.nombre}
                   onChange={handleChange}
                 />
@@ -282,6 +269,7 @@ const EditarUsuario = (props) => {
               <br />
               <button
                 type="submit"
+                onClick={Caso1}
                 className="waves-effect waves-light btn right  "
               >
                 Actualizar usuario.
