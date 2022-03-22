@@ -87,16 +87,16 @@ const EditarUsuario = (props) => {
     e.preventDefault();
     console.log(formValues);
     console.log("Estamos en la Funcion Submit");
-    if (props.user.rol === "DIRECTOR"){Caso1} else{
-      if (props.user.rol === "SUBDIRECTOR"){Caso2} else{
-        if (props.user.rol === "REVISOR"){Caso3} else{
+    if (props.user.rol === "DIRECTOR"){Caso1()} else{
+      if (props.user.rol === "SUBDIRECTOR"){Caso2()} else{
+        if (props.user.rol === "REVISOR"){Caso3()} else{
         }
       }
     }
     
 
      //Caso1();}
-     const Caso1 = async () => {
+      const Caso1 = async () => {
             try {
               const response = await editarUsuario(props.user.id, dir );
               console.log(response);
@@ -271,7 +271,7 @@ const EditarUsuario = (props) => {
               <br />
               <button
                 type="submit"
-                onClick={Caso1}
+                //onClick={Caso1}
                 className="waves-effect waves-light btn right  "
               >
                 Actualizar usuario.
