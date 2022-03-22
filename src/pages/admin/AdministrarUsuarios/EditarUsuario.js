@@ -12,7 +12,6 @@ const EditarUsuario = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [unidades, setUnidades] = useState([]);
   const [error, setError] = useState({ error: false, message: "" });
-  const [case1, setCase1] = useState([]);
   const [formValues, setFormValues] = useState({
     nombre: props.user.nombre,
     primerApellido: props.user.primerApellido,
@@ -55,7 +54,8 @@ const EditarUsuario = (props) => {
       correoPersonal: props.user.correoPersonal,
       username: props.user.username,
       idUnidadAcademica: props.user.idUnidadAcademica,
-      numeroDeEmpleado: props.user.id,
+      //numeroDeEmpleado: props.user.id,
+      numeroDeEmpleado: props.user.numeroDeEmpleado,
       Cargo: props.user.cargo,
     };
     const sub = {
@@ -67,8 +67,8 @@ const EditarUsuario = (props) => {
       username: props.user.username,
       idUnidadAcademica: props.user.idUnidadAcademica,
       numeroDeEmpleado: props.user.id,
-      extension: props.user.Extencion,
-      telefono: props.user.Telefono,
+      extension: props.user.extencion,
+      telefono: props.user.telefono,
       cargo: props.user.rol,
       Cargo: props.user.cargo,
     };
@@ -80,41 +80,43 @@ const EditarUsuario = (props) => {
       correoPersonal: props.user.correoPersonal,
       username: props.user.username,
       idUnidadAcademica: props.user.idUnidadAcademica,
-      numeroDeEmpleado: props.user.id,
+      numeroDeEmpleado: props.user.numeroDeEmpleado,
       cargo: props.user.rol,
     };
 
     e.preventDefault();
     console.log(formValues);
     console.log("Estamos en la Funcion Submit");
-   
-    
-     //Caso1();
-  };
-  async function Caso1(){
-    if (props.user.rol === "DIRECTOR") {
-      try {
-        const response = await editarUsuario(props.user.id,dir );
-        console.log(response);
-      } catch (error) {}}
-    //} else {
-    async function Caso2(){
-      if (props.user.rol === "SUBDIRECTOR") {
-        try {
-          const response = await editarUsuario(props.user.id, sub);
-          console.log(response);
-        } catch (error) {}}
-      //} else {
-    async function Caso3(){
-        if (props.user.rol === "REVISOR") {
-          try {
-            const response = await editarUsuario(props.user.id, rev );
-            console.log(response);
-          } catch (error) {}
-        } else {
+    if (props.user.rol === "DIRECTOR"){Caso1} else{
+      if (props.user.rol === "SUBDIRECTOR"){Caso2} else{
+        if (props.user.rol === "REVISOR"){Caso3} else{
         }
       }
     }
+    
+
+     //Caso1();}
+     const Caso1 = async () => {
+            try {
+              const response = await editarUsuario(props.user.id, dir );
+              console.log(response);
+            } catch (error) {}}
+
+      const Caso2 = async () => {
+            try {
+              const response = await editarUsuario(props.user.id, sub);
+              console.log(response);
+            } catch (error) {}}
+        
+      const Caso3 = async () => {
+            try {
+              const response = await editarUsuario(props.user.id, rev );
+              console.log(response);
+            } catch (error) {}} 
+  };
+    
+      
+    
 
   return (
     <div className="modal-content">
