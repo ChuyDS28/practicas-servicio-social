@@ -7,10 +7,7 @@ import { registrarRevisor } from "../../../api/services/registro";
 
 const AgregarUsuario = () => {
 
-  useEffect(() => {
-    let elems = document.querySelectorAll(".tabs");
-    M.Tabs.init(elems, {responsiveThreshold: "100%"});
-  });
+
 
   const SignupForm = () => {
     let navigate = useNavigate();
@@ -131,11 +128,15 @@ const AgregarUsuario = () => {
           <h5 className="center ">Agregar nuevo Usuario </h5>
         </div>
         <div class="row">
-          <div class="col s12">
-            <ul class="tabs s4" >
-              <li
-               
-                class="tab col s4 "
+          <div class="center" style={{ marginInline: "11px" }} >
+{/* 
+            <option value="" disabled>
+                  Selecciona una opción
+            </option> */}
+              <button 
+              
+              className="col s4 waves-effect waves-light btn"
+              
                 onClick={() => {
                   setTipoUsuario("DIRECTOR");
                   setFormValues({
@@ -156,14 +157,12 @@ const AgregarUsuario = () => {
                   });
                 }}
               >
-                <a href="#director">
-                  Director
-                </a>
-              </li>
-            
+                Director
+              </button>
+               
+              <button   
+              className="col s4 waves-effect waves-light btn"
               
-              <li
-                class="tab col s4"
                 onClick={() => {
                   setTipoUsuario("SUBDIRECTOR");
                   setFormValues({
@@ -184,14 +183,14 @@ const AgregarUsuario = () => {
                   });
                 }}
               >
-                <a href="#subdirector">Subdirector</a>
-              </li>
+                Subdirector
+              </button>
 
-              <li
-                class="tab col s4"
-                style={{ maxWidth: "100px" }}
+              <button              
+               className="col s4 waves-effect waves-light btn"
                 onClick={() => {
                   setTipoUsuario("REVISOR");
+                  
                   setFormValues({
                     username: "",
                     password: "",
@@ -210,11 +209,12 @@ const AgregarUsuario = () => {
                   });
                 }}
               >
-                <a  href="#revisor">Revisor</a>
-              </li>
-              </ul>
-            
+                Revisor
+               
+              </button>
+             
           </div>
+
           <form onSubmit={handleUserSubmit}>
             <div className="col s4 input-field">
               <label htmlFor="nombre">Nombre</label>
