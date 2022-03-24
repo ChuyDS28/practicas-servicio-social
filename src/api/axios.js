@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./auth";
 
 //const baseURL = "http://148.204.63.165/api";
-const baseURL = "http://148.204.63.240/api";
+const baseURL = "https://www.ipnegocios.ipn.mx/api";
 
 //****usuarios****/
 //  admin

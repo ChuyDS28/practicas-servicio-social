@@ -128,6 +128,7 @@ const AgregarUsuario = () => {
           <h5 className="center ">Agregar nuevo Usuario </h5>
         </div>
         <div class="row">
+          
           <div class="center" style={{ marginInline: "11px" }} >
 {/* 
             <option value="" disabled>
