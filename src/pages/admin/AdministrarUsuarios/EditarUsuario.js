@@ -1,12 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import M from "materialize-css/dist/js/materialize.min.js";
 import { obtenerUnidades } from "../../../api/services/unidadAcademica";
-import { registrarUsuario } from "../../../api/services/registro";
-import { useNavigate, useParams } from "react-router-dom";
 import { editarUsuario } from "../../../api/services/usuarios";
 
-import DatosUsuario from "./DatosUsuario";
-import AdministrarUsuarios from "./AdministrarUsuarios";
 
 const EditarUsuario = (props) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -47,9 +42,6 @@ const EditarUsuario = (props) => {
   }, []);
   const submit = async (e) => {
     
-    
-    
-
     e.preventDefault();
     console.log(formValues);
     console.log("Estamos en la Funcion Submit");
@@ -60,11 +52,7 @@ const EditarUsuario = (props) => {
       }
     }*/
 
-
      //Caso1();}
-
-
-
 
             if(props.user.rol === "DIRECTOR"){Caso1()}
             if(props.user.rol === "SUBDIRECTOR"){Caso2()}
@@ -158,7 +146,7 @@ const EditarUsuario = (props) => {
                   type="text"
                   required
                   placeholder="Nombre"
-                  name="Nombre"
+                  name="nombre"
                   value={formValues.nombre}
                   onChange={handleChange}
                 />
@@ -192,7 +180,7 @@ const EditarUsuario = (props) => {
                   type="text"
                   required
                   placeholder="Correo Personal"
-                  name="Correo Personal"
+                  name="correoPersonal"
                   value={formValues.correoPersonal}
                   onChange={handleChange}
                 />
@@ -203,7 +191,7 @@ const EditarUsuario = (props) => {
                   type="text"
                   required
                   placeholder="Correo Institucional"
-                  name="Correo Institucional"
+                  name="correoInstitucional"
                   value={formValues.correoInstitucional}
                   onChange={handleChange}
                 />
@@ -214,7 +202,7 @@ const EditarUsuario = (props) => {
                   type="text"
                   required
                   placeholder="Nombre Usuario"
-                  name="Nombre Usuario"
+                  name="username"
                   value={formValues.username}
                   onChange={handleChange}
                 />
@@ -225,7 +213,7 @@ const EditarUsuario = (props) => {
                   type="text"
                   required
                   placeholder="Número de Empleado"
-                  name="Número de Empleado"
+                  name="numeroDeEmpleado"
                   value={formValues.numeroDeEmpleado}
                   onChange={handleChange}
                 />
@@ -237,7 +225,7 @@ const EditarUsuario = (props) => {
                     type="text"
                     required
                     placeholder="Extensión"
-                    name="Extensión"
+                    name="extension"
                     value={formValues.extension}
                     onChange={handleChange}
                   />
@@ -250,7 +238,7 @@ const EditarUsuario = (props) => {
                     type="text"
                     required
                     placeholder="Teléfono"
-                    name="Teléfono"
+                    name="telefono"
                     value={formValues.telefono}
                     onChange={handleChange}
                   />
@@ -290,7 +278,7 @@ const EditarUsuario = (props) => {
               <br />
               <button
                 type="submit"
-                //onClick={Caso1}
+                onClick={submit}
                 className="waves-effect waves-light btn right  "
               >
                 Actualizar usuario.
