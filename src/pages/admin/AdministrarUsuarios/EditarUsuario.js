@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { obtenerUnidades } from "../../../api/services/unidadAcademica";
 import { editarUsuario } from "../../../api/services/usuarios";
 
@@ -45,14 +45,6 @@ const EditarUsuario = (props) => {
     e.preventDefault();
     console.log(formValues);
     console.log("Estamos en la Funcion Submit");
-    /*if (props.user.rol === "DIRECTOR"){Caso1()} else{
-      if (props.user.rol === "SUBDIRECTOR"){Caso2()} else{
-        if (props.user.rol === "REVISOR"){Caso3()} else{
-        }
-      }
-    }*/
-
-     //Caso1();}
 
             if(props.user.rol === "DIRECTOR"){Caso1()}
             if(props.user.rol === "SUBDIRECTOR"){Caso2()}
@@ -65,10 +57,8 @@ const EditarUsuario = (props) => {
       primerApellido: props.user.primerApellido,
       segundoApellido: props.user.segundoApellido,
       correoInstitucional: props.user.correoInstitucional,
-      //correoPersonal: props.user.correoPersonal,
       username: props.user.username,
       idUnidadAcademica: props.user.idUnidadAcademica,
-      //numeroDeEmpleado: props.user.id,
       numeroDeEmpleado: props.user.numeroDeEmpleado,
       Cargo: props.user.cargo,
     };
@@ -87,7 +77,6 @@ const EditarUsuario = (props) => {
       primerApellido: props.user.primerApellido,
       segundoApellido: props.user.segundoApellido,
       correoInstitucional: props.user.correoInstitucional,
-      //correoPersonal: props.user.correoPersonal,
       username: props.user.username,
       idUnidadAcademica: props.user.idUnidadAcademica,
       numeroDeEmpleado: props.user.id,
