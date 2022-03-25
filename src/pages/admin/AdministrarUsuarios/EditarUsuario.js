@@ -65,7 +65,7 @@ const EditarUsuario = (props) => {
       primerApellido: props.user.primerApellido,
       segundoApellido: props.user.segundoApellido,
       correoInstitucional: props.user.correoInstitucional,
-      correoPersonal: props.user.correoPersonal,
+      //correoPersonal: props.user.correoPersonal,
       username: props.user.username,
       idUnidadAcademica: props.user.idUnidadAcademica,
       //numeroDeEmpleado: props.user.id,
@@ -174,6 +174,7 @@ const EditarUsuario = (props) => {
                   onChange={handleChange}
                 />
               </div>
+              {props.user.rol === "REVISOR" && (
               <div className="col  s12 m6 xl4">
                 <label>Correo Personal</label>
                 <input
@@ -184,7 +185,7 @@ const EditarUsuario = (props) => {
                   value={formValues.correoPersonal}
                   onChange={handleChange}
                 />
-              </div>
+              </div>)}
               <div className="col  s12 m6 xl4">
                 <label>Correo Institucional</label>
                 <input
@@ -278,7 +279,7 @@ const EditarUsuario = (props) => {
               <br />
               <button
                 type="submit"
-                onClick={submit}
+                //onClick={submit}
                 className="waves-effect waves-light btn right  "
               >
                 Actualizar usuario.
