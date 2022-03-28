@@ -16,8 +16,8 @@ export function obtenerUsuarios(pag) {
 
 export function editarUsuario(id, data) {
   console.log(id,data)
-  console.log(data)
-  return axios.patch|(`/usuarios/${id}`, 
+  //console.log(data)
+  return axios.patch(`/usuarios/${id}`, 
     data
   );
 }

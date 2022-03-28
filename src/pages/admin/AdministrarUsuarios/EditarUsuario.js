@@ -4,6 +4,7 @@ import { editarUsuario } from "../../../api/services/usuarios";
 
 
 const EditarUsuario = (props) => {
+  //let navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [unidades, setUnidades] = useState([]);
   const [error, setError] = useState({ error: false, message: "" });
@@ -17,7 +18,8 @@ const EditarUsuario = (props) => {
     username: props.user.username,
     password: "",
     Cpassword: "",
-    numeroDeEmpleado: props.user.id,
+    numeroDeEmpleado: props.user.numeroDeEmpleado,
+    Id: props.user.id,
     idUnidadAcademica: props.user.idUnidadAcademica,
     cargo: props.user.rol,
     extension: props.user.Extencion,
@@ -40,79 +42,83 @@ const EditarUsuario = (props) => {
   useEffect(() => {
     getUnidades();
   }, []);
-  const submit = async (e) => {
-    
+  const submit = (e) => {
+            
     e.preventDefault();
     console.log(formValues);
     console.log("Estamos en la Funcion Submit");
-
-            if(props.user.rol === "DIRECTOR"){Caso1()}
-            if(props.user.rol === "SUBDIRECTOR"){Caso2()}
-            if(props.user.rol === "REVISOR"){Caso3()}      
+          if(props.user.rol === "DIRECTOR"){Caso1()}
+          if(props.user.rol === "SUBDIRECTOR"){Caso2()}
+          if(props.user.rol === "REVISOR"){Caso3()} 
+                 
   };
-  const Caso1 = async () => {
-    console.log("Estamos en la función Director");
-    const dir = {
-      nombre: props.user.nombre,
-      primerApellido: props.user.primerApellido,
-      segundoApellido: props.user.segundoApellido,
-      correoInstitucional: props.user.correoInstitucional,
-      username: props.user.username,
-      idUnidadAcademica: props.user.idUnidadAcademica,
-      numeroDeEmpleado: props.user.numeroDeEmpleado,
-      Cargo: props.user.cargo,
-    };
-        try {
-          const response = await editarUsuario(props.user.id, dir );
-          console.log(response);
-        } catch (error) {
-          console.log("Error en funcion Director")
-          console.log(error)
-        }}  
+          const Caso1 = async () => {
+            console.log("Estamos en la función Director");
+            const dir = {
+              nombre: formValues.nombre,
+              primerApellido: formValues.primerApellido,
+              segundoApellido: formValues.segundoApellido,
+              correoInstitucional: formValues.correoInstitucional,
+              username: formValues.username,
+              idUnidadAcademica: formValues.idUnidadAcademica,
+              numeroDeEmpleado: formValues.numeroDeEmpleado,
+              Cargo: formValues.Cargo,
+              Id: formValues.Id,
+            };
+                try {
+                  const response = await editarUsuario(dir.Id, dir );
+                  console.log(response);
+                  //navigate("/admin/usuarios");
+                } catch (error) {
+                  console.log("Error en funcion Director")
+                  console.log(error)
+                }};
 
-  const Caso2 = async () => {
-    console.log("Estamos en la función Subdirector");
-    const sub = {
-      nombre: props.user.nombre,
-      primerApellido: props.user.primerApellido,
-      segundoApellido: props.user.segundoApellido,
-      correoInstitucional: props.user.correoInstitucional,
-      username: props.user.username,
-      idUnidadAcademica: props.user.idUnidadAcademica,
-      numeroDeEmpleado: props.user.id,
-      extension: props.user.extencion,
-      telefono: props.user.telefono,
-      cargo: props.user.rol,
-      Cargo: props.user.cargo,
-    };
+          const Caso2 = async () => {
+            console.log("Estamos en la función Subdirector");
+            const sub = {
+              nombre: formValues.nombre,
+              primerApellido: formValues.primerApellido,
+              segundoApellido: formValues.segundoApellido,
+              correoInstitucional: formValues.correoInstitucional,
+              username: formValues.username,
+              idUnidadAcademica: formValues.idUnidadAcademica,
+              numeroDeEmpleado: formValues.numeroDeEmpleado,
+              extension: formValues.extencion,
+              telefono: formValues.telefono,
+              cargo: formValues.cargo,
+              Cargo: formValues.Cargo,
+              Id: formValues.Id,
+            };
         try {
-          const response = await editarUsuario(props.user.id, sub);
+          const response = await editarUsuario(sub.Id, sub);
           console.log(response);
         } catch (error) {
           console.log("Error en funcion Subdirector")
           console.log(error)
-        }}
+        }};
         
         const Caso3 = async () => {
           console.log("Estamos en la función Revisor");
           const rev = {
-            nombre: props.user.nombre,
-            primerApellido: props.user.primerApellido,
-            segundoApellido: props.user.segundoApellido,
-            correoInstitucional: props.user.correoInstitucional,
-            correoPersonal: props.user.correoPersonal,
-            username: props.user.username,
-            idUnidadAcademica: props.user.idUnidadAcademica,
-            numeroDeEmpleado: props.user.numeroDeEmpleado,
-            cargo: props.user.rol,
+            nombre: formValues.nombre,
+            primerApellido: formValues.primerApellido,
+            segundoApellido: formValues.segundoApellido,
+            correoInstitucional: formValues.correoInstitucional,
+            correoPersonal: formValues.correoPersonal,
+            username: formValues.username,
+            idUnidadAcademica: formValues.idUnidadAcademica,
+            numeroDeEmpleado: formValues.numeroDeEmpleado,
+            cargo: formValues.cargo,
+            Id: formValues.Id,
           };
               try {
-                const response = await editarUsuario(props.user.id, rev );
+                const response = await editarUsuario(rev.Id, rev );
                 console.log(response);
               } catch (error) {
                 console.log("Error en funcion Revisor")
                 console.log(error)
-              }} 
+              }}; 
 
   return (
     <div className="modal-content">
