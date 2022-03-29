@@ -6,9 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { registrarRevisor } from "../../../api/services/registro";
 
 const AgregarUsuario = () => {
-
-
-
   const SignupForm = () => {
     let navigate = useNavigate();
     const [unidades, setUnidades] = useState([]);
@@ -113,6 +110,14 @@ const AgregarUsuario = () => {
       }
     };
 
+    const style = {
+      boton: {
+        background: "#00695c",
+      },
+    };
+
+    // background: "#4c857b",
+
     const handleUserSubmit = (event) => {
       (tipoUsuario === "DIRECTOR" || tipoUsuario === "SUBDIRECTOR") &&
         handleSubmit();
@@ -122,98 +127,69 @@ const AgregarUsuario = () => {
       console.log(formValues);
     };
 
+    function conjunto() {
+      setFormValues({
+        username: "",
+        password: "",
+        nombre: "",
+        primerApellido: "",
+        segundoApellido: "",
+        numeroDeEmpleado: "",
+        correoInstitucional: "",
+        correoInstitucional: "",
+        idUnidadAcademica: "",
+        cargo: "",
+        telefono: "",
+        extension: "",
+        activo: "true",
+        correoPersonal: "",
+      });
+    }
+
     return (
       <div className="modal-content">
         <div className="teal white-text section center">
-          <h5 className="center ">Agregar nuevo Usuario </h5>
+          <h5>Agregar nuevo Usuario </h5>
+          <h7>Insterta tus datos:</h7>
         </div>
-        <div class="row">
-          
-          <div class="center" style={{ marginInline: "11px" }} >
-{/* 
-            <option value="" disabled>
-                  Selecciona una opción
-            </option> */}
-              <button 
-              
-              className="col s4 waves-effect waves-light btn"
-              
-                onClick={() => {
-                  setTipoUsuario("DIRECTOR");
-                  setFormValues({
-                    username: "",
-                    password: "",
-                    nombre: "",
-                    primerApellido: "",
-                    segundoApellido: "",
-                    numeroDeEmpleado: "",
-                    correoInstitucional: "",
-                    correoInstitucional: "",
-                    idUnidadAcademica: "",
-                    cargo: "",
-                    telefono: "",
-                    extension: "",
-                    activo: "true",
-                    correoPersonal: "",
-                  });
-                }}
-              >
-                Director
-              </button>
-               
-              <button   
-              className="col s4 waves-effect waves-light btn"
-              
-                onClick={() => {
-                  setTipoUsuario("SUBDIRECTOR");
-                  setFormValues({
-                    username: "",
-                    password: "",
-                    nombre: "",
-                    primerApellido: "",
-                    segundoApellido: "",
-                    numeroDeEmpleado: "",
-                    correoInstitucional: "",
-                    correoInstitucional: "",
-                    idUnidadAcademica: "",
-                    cargo: "",
-                    telefono: "",
-                    extension: "",
-                    activo: "true",
-                    correoPersonal: "",
-                  });
-                }}
-              >
-                Subdirector
-              </button>
 
-              <button              
-               className="col s4 waves-effect waves-light btn"
-                onClick={() => {
-                  setTipoUsuario("REVISOR");
-                  
-                  setFormValues({
-                    username: "",
-                    password: "",
-                    nombre: "",
-                    primerApellido: "",
-                    segundoApellido: "",
-                    numeroDeEmpleado: "",
-                    correoInstitucional: "",
-                    correoInstitucional: "",
-                    idUnidadAcademica: "",
-                    cargo: "",
-                    telefono: "",
-                    extension: "",
-                    activo: "true",
-                    correoPersonal: "",
-                  });
-                }}
-              >
-                Revisor
-               
-              </button>
-             
+        <div class="row">
+          <div
+            class="center"
+            style={{ marginInline: "11px", marginTop: "2px" }}
+          >
+            <button
+              className="col s4 waves-effect waves-light btn"
+              style={tipoUsuario === "DIRECTOR" ? style.boton : {}}
+              onClick={() => {
+                setTipoUsuario("DIRECTOR");
+                conjunto();
+              }}
+            >
+              Director
+            </button>
+
+            <button
+              className="col s4 waves-effect waves-light btn"
+              style={tipoUsuario === "SUBDIRECTOR" ? style.boton : {}}
+              onClick={() => {
+                setTipoUsuario("SUBDIRECTOR");
+                conjunto();
+              }}
+            >
+              Subdirector
+            </button>
+
+            <button
+              className="col s4 waves-effect waves-light btn"
+              style={tipoUsuario === "REVISOR" ? style.boton : {}}
+              onClick={() => {
+                setTipoUsuario("REVISOR");
+                conjunto();
+              }}
+            >
+              Revisor
+            </button>
           </div>
 
           <form onSubmit={handleUserSubmit}>
@@ -260,7 +236,7 @@ const AgregarUsuario = () => {
 
             {tipoUsuario === "REVISOR" && (
               <div className="col s6 input-field">
-                <label htmlFor="correopersonal">CORREO PERSONAL</label>
+                <label htmlFor="correopersonal">Correo personal</label>
                 <input
                   type="text"
                   required
@@ -303,27 +279,8 @@ const AgregarUsuario = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="col s6">
-              <label>Unidad Academica</label>
-              <select
-                className="browser-default"
-                required
-                name="idUnidadAcademica"
-                value={formValues.idUnidadAcademica}
-                onChange={handleChange}
-              >
-                <option value="" disabled>
-                  Selecciona una opción
-                </option>
-                {unidades.map((centro, index) => (
-                  <option key={index} value={centro.id}>
-                    {centro.nombre}
-                  </option>
-                ))}
-              </select>
-            </div>
 
-            {(tipoUsuario === "SUBDIRECTOR") && (
+            {tipoUsuario === "SUBDIRECTOR" && (
               <div>
                 <div className="col  s6 input-field">
                   <label htmlFor="cargo">Cargo</label>
@@ -358,23 +315,42 @@ const AgregarUsuario = () => {
               </div>
             )}
 
-            <div className="col s8">
+            <div className="col s6">
+              <label>Unidad Academica</label>
+              <select
+                className="browser-default"
+                required
+                name="idUnidadAcademica"
+                value={formValues.idUnidadAcademica}
+                onChange={handleChange}
+              >
+                <option value="" disabled>
+                  Selecciona una opción
+                </option>
+                {unidades.map((centro, index) => (
+                  <option key={index} value={centro.id}>
+                    {centro.nombre}
+                  </option>
+                ))}
+              </select>
+              <br />
+            </div>
+
+            <div className="col s12">
               <button type="submit" className="waves-effect waves-light btn   ">
                 Registrar {tipoUsuario}
                 <i className="material-icons right">done</i>
               </button>
+
+              <button className=" modal-close waves-effect waves-green btn-flat right">
+                Cerrar
+              </button>
             </div>
           </form>
         </div>
-
-        <button className=" modal-close waves-effect waves-green btn-flat right">
-          Cerrar
-        </button>
-        <br />
       </div>
     );
   };
-
   return (
     <div className="row">
       <div className="col s12 m12">
