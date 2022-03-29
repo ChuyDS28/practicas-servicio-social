@@ -264,7 +264,7 @@ const EditarUsuario = (props) => {
                 >
                   <option value="">Seleccionar Unidad Académica</option>
                   {unidades.map((centro) => (
-                    <option value={centro.id}>
+                    <option value={centro.id}key={centro.id }>
                       {centro.nombre}-{centro.clave}
                     </option>
                   ))}
