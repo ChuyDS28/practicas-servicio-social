@@ -72,11 +72,13 @@ const AgregarUsuario = () => {
         });
         console.log(response);
         navigate("/admin/usuarios");
+        window.location.reload(true);
       } catch (error) {
         console.log(error);
         console.log(error.response);
         M.toast({ html: "Error al registrar", classes: "red" });
       }
+
     };
 
     const handleSubmitRev = async () => {
@@ -103,11 +105,13 @@ const AgregarUsuario = () => {
         });
         console.log(responserev);
         navigate("/admin/usuarios");
+        window.location.reload(true);
       } catch (error) {
         console.log(error);
         console.log(error.responserev);
         M.toast({ html: "Error al registrar", classes: "red" });
       }
+
     };
 
     const style = {
@@ -146,6 +150,17 @@ const AgregarUsuario = () => {
       });
     }
 
+  //   function refreshPage(){
+      
+  //     window.location.reload(3);
+  // } 
+
+  // function refreshPage(){window.location.reload(true);
+  
+  // }
+//Función para actualizar cada 5 segundos(5000 milisegundos)
+
+
     return (
       <div className="modal-content">
         <div className="teal white-text section center">
@@ -153,9 +168,9 @@ const AgregarUsuario = () => {
           <h7>Insterta tus datos:</h7>
         </div>
 
-        <div class="row">
+        <div className="row">
           <div
-            class="center"
+            className="center"
             style={{ marginInline: "11px", marginTop: "2px" }}
           >
             <button
@@ -337,11 +352,11 @@ const AgregarUsuario = () => {
             </div>
 
             <div className="col s12">
-              <button type="submit" className="waves-effect waves-light btn   ">
+              <button type="submit" className="waves-effect waves-light btn"
+             >
                 Registrar {tipoUsuario}
                 <i className="material-icons right">done</i>
               </button>
-
               <button className=" modal-close waves-effect waves-green btn-flat right">
                 Cerrar
               </button>
