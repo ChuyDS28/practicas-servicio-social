@@ -69,6 +69,7 @@ const EditarUsuario = (props) => {
                   const response = await editarUsuario(dir.Id, dir );
                   console.log(response);
                   //navigate("/admin/usuarios");
+                  window.location.reload(true);
                 } catch (error) {
                   console.log("Error en funcion Director")
                   console.log(error)
@@ -84,7 +85,7 @@ const EditarUsuario = (props) => {
               username: formValues.username,
               idUnidadAcademica: formValues.idUnidadAcademica,
               numeroDeEmpleado: formValues.numeroDeEmpleado,
-              extension: formValues.extencion,
+              extension: formValues.extension,
               telefono: formValues.telefono,
               cargo: formValues.cargo,
               Cargo: formValues.Cargo,
@@ -93,6 +94,7 @@ const EditarUsuario = (props) => {
         try {
           const response = await editarUsuario(sub.Id, sub);
           console.log(response);
+          window.location.reload(true);
         } catch (error) {
           console.log("Error en funcion Subdirector")
           console.log(error)
@@ -115,6 +117,7 @@ const EditarUsuario = (props) => {
               try {
                 const response = await editarUsuario(rev.Id, rev );
                 console.log(response);
+                window.location.reload(true);
               } catch (error) {
                 console.log("Error en funcion Revisor")
                 console.log(error)
@@ -123,7 +126,7 @@ const EditarUsuario = (props) => {
   return (
     <div className="modal-content">
       <div className="teal white-text section center">
-        <h5 className="center ">Agregar nuevo Usuario</h5>
+        <h5 className="center ">Editar Usuario</h5>
       </div>
       <div className="center ">
         <p>
@@ -261,35 +264,43 @@ const EditarUsuario = (props) => {
                   name="idUnidadAcademica"
                   value={formValues.idUnidadAcademica}
                   onChange={handleChange}
-                >
-                  <option value="">Seleccionar Unidad Académica</option>
+                > 
+                  {unidades.map((centro) => (
+                  <option  value={centro.id} key={centro.id }>
+                    {centro.nombre.props}
+                  </option>
+                  ))}
                   {unidades.map((centro) => (
                     <option value={centro.id}key={centro.id }>
                       {centro.nombre}-{centro.clave}
                     </option>
                   ))}
+                  
                 </select>
               </div>
-              <br />
+
+              <div className="col s12">
               <br />
               <button
                 type="submit"
                 //onClick={submit}
-                className="waves-effect waves-light btn right  "
+                className="waves-effect waves-light btn left"
               >
                 Actualizar usuario.
                 <i className="material-icons right">save</i>
               </button>
+              <button className=" modal-close waves-effect waves-green btn-flat right">
+          Cerrar
+          <i className="material-icons right">close</i>
+        </button>
+        </div>
             </div>
           </form>
         </div>
       </div>
-      <div>
-        <button className=" modal-close waves-effect waves-green btn-flat right">
-          Cerrar
-          <i className="material-icons right">close</i>
-        </button>
-      </div>
+    
+
+    
     </div>
   );
 };
