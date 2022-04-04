@@ -5,22 +5,22 @@ import { editarUsuario } from "../../../api/services/usuarios";
 
 const EditarUsuario = (props) => {
   //let navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false);
+
   const [unidades, setUnidades] = useState([]);
-  const [error, setError] = useState({ error: false, message: "" });
+  // const [error, setError] = useState({ error: false, message: "" });
   const [formValues, setFormValues] = useState({
     nombre: props.user.nombre,
     primerApellido: props.user.primerApellido,
     segundoApellido: props.user.segundoApellido,
-    correoInstitucional: props.user.correoInstitucional,
+    correoInstitucional:  props.user.correoInstitucional,
     correoPersonal: props.user.correoPersonal,
     confirmarCorreo: "",
     username: props.user.username,
     password: "",
     Cpassword: "",
-    numeroDeEmpleado: props.user.numeroDeEmpleado,
+    numeroDeEmpleado: props.user.numeroEmpleado,
     Id: props.user.id,
-    idUnidadAcademica: props.user.idUnidadAcademica,
+    idUnidadAcademica: props.user.unidadAcademica.id,
     cargo: props.user.rol,
     extension: props.user.Extencion,
     telefono: props.user.Telefono,
@@ -204,7 +204,7 @@ const EditarUsuario = (props) => {
                   name="username"
                   value={formValues.username}
                   onChange={handleChange}
-                />
+                />  
               </div>
               <div className="col  s12 m6 xl4">
                 <label>Número de Empleado</label>
@@ -265,11 +265,11 @@ const EditarUsuario = (props) => {
                   value={formValues.idUnidadAcademica}
                   onChange={handleChange}
                 > 
-                  {unidades.map((centro) => (
-                  <option  value={centro.id} key={centro.id }>
-                    {centro.nombre.props}
+                  
+                  <option  value="" >
+                  {props.user.idUnidadAcademica}
                   </option>
-                  ))}
+                  
                   {unidades.map((centro) => (
                     <option value={centro.id}key={centro.id }>
                       {centro.nombre}-{centro.clave}
