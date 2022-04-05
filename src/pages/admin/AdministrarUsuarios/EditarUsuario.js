@@ -217,7 +217,7 @@ const EditarUsuario = (props) => {
                   onChange={handleChange}
                 />
               </div>
-              {props.user.rol !== "DIRECTOR" && (
+              {props.user.rol === "SUBDIRECTOR" && (
                 <div className="col  s12 m6 xl4">
                   <label>Extensión</label>
                   <input
@@ -230,7 +230,7 @@ const EditarUsuario = (props) => {
                   />
                 </div>
               )}
-              {props.user.rol !== "DIRECTOR" && (
+              {props.user.rol === "SUBDIRECTOR" && (
                 <div className="col  s12 m6 xl4">
                   <label>Teléfono</label>
                   <input
@@ -243,7 +243,7 @@ const EditarUsuario = (props) => {
                   />
                 </div>
               )}
-              {props.user.rol !== "REVISOR" && (
+              {props.user.rol === "SUBDIRECTOR" && (
                 <div className="col  s12 m6 xl4">
                   <label>Cargo</label>
                   <input
