@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from "react";
 import moment from "moment";
 import "moment/locale/es";
-import { obtenerUsuarios } from "../../../api/services/usuarios";
-import { Link } from "react-router-dom";
-import Modal from "../../../components/Modal";
 
 const DatosUsuario = (props) => {
   moment.locale();
@@ -40,42 +36,20 @@ const DatosUsuario = (props) => {
             </p>
           </div>
         )}
-        <br />
-        <div className="col s12 m4 l12">
-          <p>
-            <strong>Cargo:&nbsp;&nbsp;</strong>
-            {props.user.unidad}
-          </p>
-        </div>
-        <br />
+
         <div className="col s12 l12">
           <p>
             <strong>Usermane:&nbsp;&nbsp;</strong>
             {props.user.username}
           </p>
         </div>
-        <br />
-        <div className="col s12 m4 l12">
-          <p>
-            <strong>Correo institucional:&nbsp;&nbsp;</strong>
-            {props.user.correoInstitucional}
-          </p>
-        </div>
-        <br />
+
         <div className="col s12 m4 l12">
           <p>
             <strong>id:&nbsp;&nbsp;</strong>
             {props.user.id}
           </p>
         </div>
-        <br />
-        <div className="col s12 m4 l12">
-          <p>
-            <strong>Correo personal:&nbsp;&nbsp;</strong>
-            {props.user.correoPersonal}
-          </p>
-        </div>
-        <br />
         <div className="col s12 m7 xl12">
           <p>
             <strong>Fecha de registro:&nbsp;&nbsp;</strong>
@@ -89,21 +63,44 @@ const DatosUsuario = (props) => {
             {moment(props.user.fechaUltimaConexion).format("LL h:mm a")}
           </p>
         </div>
-        <br />
-        <div className="col s12 m7 xl12">
+
+        {props.user.rol === "REVISOR" && (
+          <div className="col s12 m4 l12">
+            <p>
+              <strong>Correo personal:&nbsp;&nbsp;</strong>
+              {props.user.correoPersonal}
+            </p>
+          </div>
+        )}
+
+        {props.user.rol === "SUBDIRECTOR" && (
+          <div>
+            <div className="col s12 m4 l12">
+              <p>
+                <strong>Cargo:&nbsp;&nbsp;</strong>
+                {props.user.unidad}
+              </p>
+            </div>
+            <div className="col s12 m5 xl12">
+              <p>
+                <strong>Extensión:&nbsp;&nbsp;</strong>
+                {props.user.Extencion}
+              </p>
+            </div>
+            <div className="col s12 m7 xl12">
+              <p>
+                <strong>Número de telefono:&nbsp;&nbsp;</strong>
+                {props.user.Telefono}
+              </p>
+            </div>
+          </div>
+        )}
+        <div className="col s12 m4 l12">
           <p>
-            <strong>Número de telefono:&nbsp;&nbsp;</strong>
-            {props.user.Telefono}
+            <strong>Correo institucional:&nbsp;&nbsp;</strong>
+            {props.user.correoInstitucional}
           </p>
         </div>
-        <br />
-        <div className="col s12 m5 xl12">
-          <p>
-            <strong>Extensión:&nbsp;&nbsp;</strong>
-            {props.user.Extencion}
-          </p>
-        </div>
-        <br />
       </div>
       <button className="light-blue lighten-2 white-text modal-close waves-effect waves-green btn-flat right">
         Cerrar
