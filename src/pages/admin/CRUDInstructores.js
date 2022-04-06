@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import RegistrarInstructor from "../../components/RegistrarInstructor";
 import ba18 from "../../assets/images/ba18.png";
+import { obtenerInstructores } from "../../api/services/instructores";
+import FilasInstructoresAdmin from "./FilasInstructoresAdmin";
+import Modal from "../../components/Modal.js";
+import InfiniteScroll from "react-infinite-scroll-component";
 const style = {
-  blockquote:{
-    borderColor: "#ffffff",/* Just change the color value and that's it*/
+  blockquote: {
+    borderColor: "#ffffff" /* Just change the color value and that's it*/,
   },
   headerImg: {
     position: "relative",
@@ -36,63 +40,110 @@ const style = {
   },
 };
 const CRUDInstructores = () => {
-  useEffect(() => {
-    var modales = document.querySelectorAll(".modal");
-    M.Modal.init(modales, {});
-    var textNeedCount = document.querySelectorAll("#input_text, #textarea1");
-    M.CharacterCounter.init(textNeedCount);
-  }, []);
+  const [instructores, setInstructores] = useState([]);
+  const [modalAgregar, setModalAgregar] = useState(false);
+  const [numPag, setNumPag] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const ModalAgregarInstructor = () => {
-    return (
-      <div id="modal1" className="modal">
-        <div className="modal-content  row">
-          <RegistrarInstructor />
-        </div>
-      </div>
-    );
-  };
+  function capitalize(word) {
+    return word.length > 0
+      ? word[0].toUpperCase() + word.slice(1).toLowerCase()
+      : word;
+  }
+
+  function capitalizeName(name) {
+    try {
+      const words = name.split(" ");
+      const capitalizeArray = words.map((str) => capitalize(str));
+      return capitalizeArray.join(" ");
+    } catch (error) {
+      return name;
+    }
+  }
+
+  // useEffect(() => {
+  //   getInstructores();
+  // }, []);
+
+  async function getInstructores() {
+    if (numPag === 0) setLoading(true);
+    try {
+      const dataU = await obtenerInstructores(numPag);
+      // setInstructores(dataU.data);
+      console.log(dataU);
+      if (dataU.data.length === 0) {
+        setHasMore(false);
+        setLoading(false);
+        return;
+      }
+      setHasMore(true);
+      setInstructores([...instructores, ...dataU.data]);
+      setNumPag((newPage) => newPage + 1);
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+    }
+    if (numPag === 0) setLoading(false);
+  }
 
   return (
     <>
-      <ModalAgregarInstructor />
+      <Modal open={modalAgregar} fnCloseModal={() => setModalAgregar(false)}>
+        <div className="modal-content">
+          <RegistrarInstructor
+            getInstructores={getInstructores}
+            ModalRegistro={setModalAgregar}
+          />
+        </div>
+      </Modal>
+
       <header className="" style={{ position: "relative", height: "50vh" }}>
-        <img style={style.headerImg} className="responsive-img" src={ba18} alt="" />
+        <img
+          style={style.headerImg}
+          className="responsive-img"
+          src={ba18}
+          alt=""
+        />
         <div className="" style={style.headerFilter}></div>
         <div className="" style={style.headerTitle}>
           <h2 className="white-text center" style={{ fontSize: "3rem" }}>
             <b>INSTRUCTORES</b>
           </h2>
-          
+
           <div className="">
             <center>
-             <blockquote>
+              <blockquote>
                 <h5 className="black-text ">
-               <b><i> Aquí puedes consultar, agregar, editar o eliminar instructores.</i></b>
+                  <b>
+                    <i>
+                      {" "}
+                      Aquí puedes consultar, agregar, editar o eliminar
+                      instructores.
+                    </i>
+                  </b>
                 </h5>
-          </blockquote>
-           
+              </blockquote>
             </center>
           </div>
         </div>
       </header>
-      <br/>
-      <br/>
-      <div className="container  ">
+      <br />
+      <br />
+      <div className="bigContainer">
         <Link
           to="/admin/listadoCatalogos"
           className="waves-effect waves-light btn-flat right"
         >
           Regresar
         </Link>
-        <a
-          href="#modal1"
+        <button
           className="modal-trigger waves-effect waves-light btn right"
+          onClick={() => setModalAgregar(true)}
         >
           Agregar nuevo Instructor
-        </a>
+        </button>
 
-       
         <div className="row ">
           <div className="input-field col s8 m4 l4 xl4  ">
             <input id="input_text" type="text" data-length="13" required />
@@ -109,229 +160,71 @@ const CRUDInstructores = () => {
             </button>
           </div>
         </div>
-        <table className="striped responsive-table ">
-          <thead className="yellow lighten-2">
-            <tr className="yellow lighten-2">
-              <th className="yellow lighten-2">Nombre</th>
-              <th className="yellow lighten-2"> RFC</th>
-              <th className="yellow lighten-2"> Area</th>
-              <th className= "yellow lighten-2"> CV</th> <th> Doc. Probatorios </th>
-              {/* <th> Status</th> */}
-              <th className= "yellow lighten-2">Editar</th>
-              <th className= "yellow lighten-2">Borrar</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr className="white">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td><b>TICs</b></td>
-
-              <td>
-                <button className="waves-effect waves-light btn yellow darken-3 ">CV</button>
-              </td>
-              <td>
-                <button
-                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
-                  style={{
-                    borderColor: "#ffeb3b",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-             {/*  <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td> */}
-              <td>
-                <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
-                  <i class="material-icons left ">edit</i>
-                </button>
-              </td>
-              <td>
-                <button class="waves-effect waves-light  btn-flat red-text">
-                  <i class="material-icons left ">delete</i>
-                </button>
-              </td>
-            </tr>
-            <tr className="lime lighten-5">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td><b>TICs</b></td>
-
-              <td>
-                <button className="waves-effect waves-light btn yellow darken-3 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
-                  style={{
-                    borderColor: "#ffeb3b",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-             {/*  <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td> */}
-              <td>
-                <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
-                  <i class="material-icons left ">edit</i>
-                </button>
-              </td>
-              <td>
-                <button class="waves-effect waves-light  btn-flat red-text">
-                  <i class="material-icons left ">delete</i>
-                </button>
-              </td>
-            </tr>   <tr className="white">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td><b>TICs</b></td>
-
-              <td>
-                <button className="waves-effect waves-light btn yellow darken-3  ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
-                  style={{
-                    borderColor: "#ffeb3b",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-             {/*  <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td> */}
-              <td>
-                <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
-                  <i class="material-icons left ">edit</i>
-                </button>
-              </td>
-              <td>
-                <button class="waves-effect waves-light  btn-flat red-text">
-                  <i class="material-icons left ">delete</i>
-                </button>
-              </td>
-            </tr>   <tr className="lime lighten-5">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td><b>TICs</b></td>
-
-              <td>
-                <button className="waves-effect waves-light btn yellow darken-3 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
-                  style={{
-                    borderColor: "#ffeb3b",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                 <b> Documentación</b>
-                </button>
-              </td>
-             {/*  <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td> */}
-              <td>
-                <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
-                  <i class="material-icons left ">edit</i>
-                </button>
-              </td>
-              <td>
-                <button class="waves-effect waves-light  btn-flat red-text">
-                  <i class="material-icons left ">delete</i>
-                </button>
-              </td>
-            </tr>   <tr className="white">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td><b>TICs</b></td>
-
-              <td>
-                <button className="waves-effect waves-light btn 5 yellow darken-3 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn deep-orange-text text-accent-2  outlined"
-                  style={{
-                    borderColor: "#ffeb3b",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-             {/*  <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td> */}
-              <td>
-                <button class="waves-effect waves-light  btn-flat yellow-text text-darken-4   ">
-                  <i class="material-icons left ">edit</i>
-                </button>
-              </td>
-              <td>
-                <button class="waves-effect waves-light  btn-flat red-text">
-                  <i class="material-icons left ">delete</i>
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div
+          style={{
+            border: "1px solid #d3d3d3",
+            m: 3,
+            maxHeight: "100%",
+            margin: "25px",
+          }}
+        >
+          <InfiniteScroll
+            dataLength={instructores.length}
+            next={getInstructores}
+            hasMore={hasMore}
+            style={{ overflow: "-moz-hidden-unscrollable" }}
+            loader={
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            }
+            endMessage={
+              <center>
+                <b>No hay mas instructores registrados</b>
+              </center>
+            }
+          >
+            <table>
+              <thead className="grey lighten-3 grey-text text-darken-3">
+                <tr>
+                  <th style={{ minWidth: "190px" }}>Nombre</th>
+                  <th> RFC</th>
+                  <th> Area</th>
+                  <th> CV</th> <th> Doc. Probatorios </th>
+                  <th>Editar</th>
+                  <th style={{ maxWidth: "60px" }}>Borrar</th>
+                </tr>
+              </thead>
+              <tbody>
+                {instructores.map((instructor) => {
+                  let Area;
+                  Area = capitalizeName(instructor.area.replace(/_/g, " "));
+                  return (
+                    <FilasInstructoresAdmin
+                      key={instructor.id}
+                      getInstructores={getInstructores}
+                      nombre={instructor.nombreCompleto}
+                      rfc={instructor.rfc}
+                      area={Area}
+                      unidad={instructor.unidadAcademica.nombre}
+                      id={instructor.id}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </InfiniteScroll>
+        </div>
       </div>
     </>
   );

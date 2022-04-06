@@ -1,5 +1,5 @@
 export const TOKEN_KEY = "HR-TOKEN-SESSION";
-//Agregar token,local storage
+
 export function setToken(token) {
   localStorage.setItem(TOKEN_KEY, token);
 }

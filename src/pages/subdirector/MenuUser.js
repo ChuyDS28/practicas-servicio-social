@@ -5,7 +5,6 @@ import sub from "../../assets/images/sub.png";
 import ba2 from "../../assets/images/ba2.png";
 import Background from "../../assets/images/Background.png";
 import rec from "../../assets/images/rec.png";
-import Footer from "../Footer";
 const style = {
   headerTitle: {
     position: "absolute",
@@ -133,12 +132,12 @@ const MenuUser = () => {
             <h5>
               <b>Listado general</b>
             </h5>
-            <p className="  textHeight">
+            <p className="textHeight">
               Aquí puedes consultar la <br />
               información básica de todos los programas...
             </p>
             <Link
-              to="/subdirector/menu"
+              to="/subdirector/programasGeneral"
               className="waves-effect waves-light btn red accent-2    "
               style={style.botones}
             >

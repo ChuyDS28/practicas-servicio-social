@@ -78,7 +78,6 @@ const AgregarUsuario = () => {
         console.log(error.response);
         M.toast({ html: "Error al registrar", classes: "red" });
       }
-
     };
 
     const handleSubmitRev = async () => {
@@ -111,7 +110,6 @@ const AgregarUsuario = () => {
         console.log(error.responserev);
         M.toast({ html: "Error al registrar", classes: "red" });
       }
-
     };
 
     const style = {
@@ -119,8 +117,6 @@ const AgregarUsuario = () => {
         background: "#00695c",
       },
     };
-
-    // background: "#4c857b",
 
     const handleUserSubmit = (event) => {
       (tipoUsuario === "DIRECTOR" || tipoUsuario === "SUBDIRECTOR") &&
@@ -149,17 +145,6 @@ const AgregarUsuario = () => {
         correoPersonal: "",
       });
     }
-
-  //   function refreshPage(){
-      
-  //     window.location.reload(3);
-  // } 
-
-  // function refreshPage(){window.location.reload(true);
-  
-  // }
-//Función para actualizar cada 5 segundos(5000 milisegundos)
-
 
     return (
       <div className="modal-content">
@@ -352,8 +337,7 @@ const AgregarUsuario = () => {
             </div>
 
             <div className="col s12">
-              <button type="submit" className="waves-effect waves-light btn"
-             >
+              <button type="submit" className="waves-effect waves-light btn">
                 Registrar {tipoUsuario}
                 <i className="material-icons right">done</i>
               </button>

@@ -3,15 +3,17 @@ import Table from "./Table"
 import Table2 from "./Table2"
 import Header from "../Header";
 import Table3 from "./Table3";
-/*import Table4 from "./Table4"
+import Table4 from "./Table4"
 import Table5 from "./Table5"
 import Table6 from "./Table6"
-import Table7 from "./Table7"
 import Table8 from "./Table8"
+import Table7 from "./Table7"
 import Table9 from "./Table9"
 import Table10 from "./Table10"
 import Table11 from "./Table11"
-import Table12 from "./Table12" */
+import Table12 from "./Table12" 
+import Table13 from "./Table13" 
+
 
 const styles = StyleSheet.create({
     body: {
@@ -37,15 +39,16 @@ const styles = StyleSheet.create({
           <Table data={[]} />
           <Table2 data={[]} />
          <Table3 data={[]} />
-           {/*     <Table4 data={[]} />
-          <Table5 data={[]} />
-          <Table6 data={[]} />
-          <Table7 data={[]} />
-          <Table8 data={[]} />
-          <Table9 data={[]} />
-          <Table10 data={[]} />
-          <Table11 data={[]} />
-          <Table12 data={[]} /> */}
+         <Table4 data={[]} />
+         <Table5 data={[]} />
+         <Table6 data={[]} />
+         <Table7 data={[]} />
+         <Table8 data={[]} />
+         <Table9 data={[]} />
+         <Table10 data={[]} />
+         <Table11 data={[]} />
+         <Table12 data={[]} /> 
+         <Table13 data={[]} /> 
           <Text
             style={styles.pageNumber}
             render={({ pageNumber, totalPages }) =>

@@ -4,6 +4,7 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import ba8 from "../../../assets/images/ba8.png";
 import StepContainer from "./StepContainer";
 import { obtenerPrograma } from "../../../api/services/subdirector/programas";
+import { obtenerSolicitud } from "../../../api/services/subdirector/solicitudRegistro";
 
 const style = {
   headerImg: {
@@ -39,6 +40,7 @@ const RegistroDetalle = () => {
   let params = useParams();
 
   const [programa, setPrograma] = useState({});
+  const [solicitud, setSolicitud] = useState({});
 
   useEffect(() => {
     getPrograma();
@@ -50,7 +52,10 @@ const RegistroDetalle = () => {
     try {
       const dataU = await obtenerPrograma(params.programaId);
       console.log(dataU);
+      const dataS = await obtenerSolicitud(dataU.data.programa.id);
+      console.log(dataS);
       setPrograma(dataU.data);
+      setSolicitud(dataS.data);
     } catch (error) {
       console.log(error);
       console.log(error.response);
@@ -211,7 +216,10 @@ const RegistroDetalle = () => {
             title="Solicitud de registro"
             status={0}
             callback={() =>
-              navigate("/subdirector/programas/2/generarSolicitud")
+              Object.entries(solicitud).length > 0 &&
+              navigate(
+                `/subdirector/programas/${params.programaId}/generarSolicitud/${solicitud?.id}`
+              )
             }
             btnTitle="Solicitud de registro"
             observaciones=""

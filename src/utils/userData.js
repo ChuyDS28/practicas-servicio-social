@@ -8,7 +8,7 @@ export function getUserData() {
 }
 
 export function deleteUserData() {
-  sessionStorage.removeItem(USER_DATA_KEY);
+  localStorage.removeItem(USER_DATA_KEY);
 }
 
 export function userSessionTime() {

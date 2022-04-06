@@ -139,7 +139,15 @@ const CentrosDVDR = () => {
       >
         <InformacionDelCentro data={estadoSeleccionado} />{" "}
       </Modal>
-      <Mapa data={data} fnabrirmodal={abrirModal} />
+      <div className="container">
+        <h3
+          className="header   blue-grey-text text-darken-3"
+          style={{ fontSize: "3.1rem", fontWeight: "500" }}
+        >
+           Centros de Vinculación y Desarrollo Regional
+        </h3>
+        <Mapa data={data} fnabrirmodal={abrirModal} />
+      </div>
     </>
   );
 };

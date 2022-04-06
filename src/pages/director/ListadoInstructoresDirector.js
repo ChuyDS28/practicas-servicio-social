@@ -1,8 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css/dist/js/materialize.min.js";
 import ba12 from "../../assets/images/ba12.png";
-import parteba9 from"../../assets/images/parteba9.png";
+import parteba9 from "../../assets/images/parteba9.png";
+import { obtenerInstructores } from "../../api/services/instructores.js";
+import FilasInstructoresDirector from "./FilasInstructoresDirector";
+import InfiniteScroll from "react-infinite-scroll-component";
+
 const style = {
   infoContainer: {
     padding: "25px",
@@ -92,6 +96,11 @@ const style = {
   },
 };
 const ListadoInstructoresDirector = () => {
+  const [instructores, setInstructores] = useState([]);
+  const [numPag, setNumPag] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     var modales = document.querySelectorAll(".modal");
     M.Modal.init(modales, {});
@@ -99,9 +108,50 @@ const ListadoInstructoresDirector = () => {
     M.CharacterCounter.init(textNeedCount);
   }, []);
 
+  // useEffect(() => {
+  //   getInstructores();
+  // }, []);
+
+  async function getInstructores() {
+    if (numPag === 0) setLoading(true);
+    try {
+      const dataU = await obtenerInstructores(numPag);
+      // setInstructores(dataU.data);
+      console.log(dataU);
+      if (dataU.data.length === 0) {
+        setHasMore(false);
+        setLoading(false);
+        return;
+      }
+      setHasMore(true);
+      setInstructores([...instructores, ...dataU.data]);
+      setNumPag((newPage) => newPage + 1);
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+    }
+    if (numPag === 0) setLoading(false);
+  }
+
+  function capitalize(word) {
+    return word.length > 0
+      ? word[0].toUpperCase() + word.slice(1).toLowerCase()
+      : word;
+  }
+
+  function capitalizeName(name) {
+    try {
+      const words = name.split(" ");
+      const capitalizeArray = words.map((str) => capitalize(str));
+      return capitalizeArray.join(" ");
+    } catch (error) {
+      return name;
+    }
+  }
+
   return (
     <>
-     <header className="row" style={{ position: "relative", height: "50vh" }}>
+      <header className="row" style={{ position: "relative", height: "50vh" }}>
         <div
           className="col s12 m11 l10 xl8 "
           style={{
@@ -139,7 +189,7 @@ const ListadoInstructoresDirector = () => {
           />
         </div>
       </header>
-      <div className="container  ">
+      <div className="bigContainer">
         <Link
           to="/director/menu"
           className="waves-effect waves-light btn-flat right"
@@ -147,7 +197,6 @@ const ListadoInstructoresDirector = () => {
           Regresar
         </Link>
 
-      
         <div className="row ">
           <div className="input-field col s4  ">
             <input id="input_text" type="text" data-length="13" required />
@@ -155,151 +204,83 @@ const ListadoInstructoresDirector = () => {
           </div>
 
           <div className="input-field col s2">
-          <button
-                type="submit"
-                className="waves-effect waves-light btn outlined teal-text text-accent-4 show-on-smal "
-                style={{ borderColor: "#00bfa5", borderWidth: "2px" }}
-              >
-                Buscar
-                <i className="material-icons right">search</i>
-              </button>
+            <button
+              type="submit"
+              className="waves-effect waves-light btn outlined teal-text text-accent-4 show-on-smal "
+              style={{ borderColor: "#00bfa5", borderWidth: "2px" }}
+            >
+              Buscar
+              <i className="material-icons right">search</i>
+            </button>
           </div>
         </div>
-        
-        <table className="striped responsive-table ">
-          <thead className="amber darken-4">
-            <tr className="amber darken-4">
-              <th className="amber darken-4 white-text">Nombre</th>
-              <th className="amber darken-4 white-text"> RFC</th>
-              <th className="amber darken-4 white-text"> CV</th> 
-              <th className="amber darken-4 white-text"> Doc. Probatorios </th>
-              <th className="amber darken-4 white-text"> Status</th>
-            </tr>
-          </thead>
 
-          <tbody>
-            <tr className="amber lighten-5">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td>
-                <button className="waves-effect waves-light btn  cyan lighten-1">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn indigo-text text-darken-4  outlined"
-                  style={{
-                    borderColor: "#2196f3",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-              <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td>
-            </tr>
-            <tr className="white">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td>
-                <button className="waves-effect waves-light btn  cyan lighten-1 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn indigo-text text-darken-4  outlined"
-                  style={{
-                    borderColor: "#2196f3",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-              <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td>
-            </tr>
-            <tr  className="amber lighten-5">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td>
-                <button className="waves-effect waves-light btn  cyan lighten-1 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn indigo-text text-darken-4  outlined"
-                  style={{
-                    borderColor: "#2196f3",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-              <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td>
-            </tr>
-            <tr className="white">
-              <td>
-                <i className="material-icons  teal-text text-darken-2  left circle  teal lighten-4   ">
-                  local_library
-                </i>
-                <b>Antonio Ayola</b>
-              </td>
-              <td><b>VECJ880326 XXX</b></td>
-              <td>
-                <button className="waves-effect waves-light btn  cyan lighten-1 ">CV</button>
-              </td>
-              <td>
-              <button
-                  className="waves-effect waves-light btn indigo-text text-darken-4  outlined"
-                  style={{
-                    borderColor: "#2196f3",
-                    borderWidth: "2px",
-                    position: "relative",
-                    marginBottom: "0px",
-                  }}
-                >
-                  <b>Documentación</b>
-                </button>
-              </td>
-              <td>
-                <span className="new badge green  " data-badge-caption="">
-                  Cuenta Activada
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div
+          style={{
+            border: "1px solid #d3d3d3",
+            m: 3,
+            maxHeight: "100%",
+            margin: "25px",
+          }}
+        >
+          <InfiniteScroll
+            dataLength={instructores.length}
+            next={getInstructores}
+            hasMore={hasMore}
+            style={{ overflow: "-moz-hidden-unscrollable" }}
+            loader={
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            }
+            endMessage={
+              <center>
+                <b>No hay mas instructores registrados</b>
+              </center>
+            }
+          >
+            <table
+            // className="striped responsive-table "
+            >
+              <thead className="grey lighten-3   grey-text text-darken-3">
+                <tr className="">
+                  <th style={{ minWidth: "190px" }}>Nombre</th>
+                  <th> RFC</th>
+                  <th> Area</th>
+                  <th> CV</th>
+                  <th style={{ maxWidth: "60px" }}> Doc. Probatorios </th>
+                  {/* <th className="amber darken-4 white-text"> Status</th> */}
+                </tr>
+              </thead>
+
+              <tbody>
+                {instructores.map((instructor) => {
+                  let Area;
+                  Area = capitalizeName(instructor.area.replace(/_/g, " "));
+                  return (
+                    <FilasInstructoresDirector
+                      key={instructor.id}
+                      nombre={instructor.nombreCompleto}
+                      rfc={instructor.rfc}
+                      area={Area}
+                      id={instructor.id}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </InfiniteScroll>
+        </div>
       </div>
     </>
   );

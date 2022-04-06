@@ -5,7 +5,6 @@ import parteba2 from "../../assets/images/parteba2.png";
 import ba from "../../assets/images/ba.png";
 import Background2 from "../../assets/images/Background2.png";
 import rec2 from "../../assets/images/rec2.png";
-import Footer from "../Footer";
 const style = {
   headerTitle: {
     position: "absolute",
