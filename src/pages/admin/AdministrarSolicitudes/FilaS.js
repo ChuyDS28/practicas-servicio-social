@@ -58,6 +58,54 @@ const FilaS = (props) => {
           </button>
         )}
       </td>
+
+
+
+
+
+
+
+
+      <td>
+       
+       
+       
+       <button
+            className={estilo}
+            onClick={(e) => {
+              e.stopPropagation();
+              props.fnAsignar();
+            }}
+          >Asignar revisor
+          </button>
+
+
+
+
+      {/* {props.revisor ? (
+          revisor
+        ) : (
+          <button
+            className={estilo}
+            onClick={(e) => {
+              e.stopPropagation();
+              props.fnAsignar();
+            }}
+          >
+            {revisor}
+          </button>
+        )} */}
+      </td>
+
+
+
+
+
+
+
+
+
+      
       <td>
         {props.completado ? (
           <button
@@ -73,7 +121,6 @@ const FilaS = (props) => {
           "Sin Completar"
         )}
       </td>
-
       <td>
         <Link
           to="/admin/DetallesRegistro"

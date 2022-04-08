@@ -274,6 +274,7 @@ const AdministrarSolicitudes = () => {
               <th className="cyan darken-1 white-text">Solicitudes</th>
               <th className="cyan darken-1 white-text">Status</th>
               <th className="cyan darken-1 white-text">Revisor</th>
+              <th className="cyan darken-1 white-text">Asignar</th>
               <th className="cyan darken-1 white-text">Aprobar</th>
               <th className="cyan darken-1 white-text">Ver</th>
             </tr>
