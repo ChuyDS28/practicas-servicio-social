@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export function obtenerSolicitudes(pag) {
-    return axios.get(`/solicitudes?pagina=0&tam=10`, {
+    return axios.get(`/solicitudes`, {
       params: { pagina: pag, tam: 50 },
     });
   }

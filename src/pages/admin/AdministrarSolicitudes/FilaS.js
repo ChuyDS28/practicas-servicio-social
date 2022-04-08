@@ -32,10 +32,10 @@ const FilaS = (props) => {
         //  history.push("/admin/DetallesRegistro");
       }}
     >
-      <td>
+      <td>  {/*1*/}
         <b>{props.solicitud}</b>
       </td>
-      <td>
+      <td> {/*2*/}
         <span className={color2} data-badge-caption="">
           {props.status}
         </span>
@@ -43,45 +43,24 @@ const FilaS = (props) => {
           {props.status2}
         </span>
       </td>
-      <td>
-        {props.revisor ? (
-          revisor
-        ) : (
+
+
+      <td> {/*3*/}
+        Nombre
+      </td>
+
+
+      <td> {/*4*/}
+        
           <button
-            className={estilo}
+            className="btn"
             onClick={(e) => {
               e.stopPropagation();
               props.fnAsignar();
             }}
           >
-            {revisor}
+            AsignarRevisor();
           </button>
-        )}
-      </td>
-
-
-
-
-
-
-
-
-      <td>
-       
-       
-       
-       <button
-            className={estilo}
-            onClick={(e) => {
-              e.stopPropagation();
-              props.fnAsignar();
-            }}
-          >Asignar revisor
-          </button>
-
-
-
-
       {/* {props.revisor ? (
           revisor
         ) : (
@@ -98,15 +77,7 @@ const FilaS = (props) => {
       </td>
 
 
-
-
-
-
-
-
-
-      
-      <td>
+      <td> {/*5*/}
         {props.completado ? (
           <button
             className="waves-effect waves-light btn outlined"
@@ -121,7 +92,9 @@ const FilaS = (props) => {
           "Sin Completar"
         )}
       </td>
-      <td>
+
+
+      <td> {/*6*/}
         <Link
           to="/admin/DetallesRegistro"
           className="waves-effect waves-light btn outlined"
