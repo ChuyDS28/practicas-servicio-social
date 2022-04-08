@@ -4,6 +4,7 @@ import ba14 from "../../../assets/images/ba14.png";
 import parteba11 from "../../../assets/images/parteba11.png";
 import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
+import {asignarRevisor} from "../../../api/services/admin/solicitudes";
 
 const style = {
   infoContainer: {
@@ -98,22 +99,49 @@ const AdministrarSolicitudes = () => {
   const [modalAprobar, setModalAprobar] = useState(false);
   const [modalAyuda, setModalAyuda] = useState(false);
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
+  const [revisor, setRevisor] = useState ([])
+
+  useEffect(() => {
+    getRevisor();
+  }, []);
+
+  async function getRevisor() {
+    try {
+      const dataU = await asignarRevisor(0);
+      setRevisor(dataU.data);
+      console.log(dataU);
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+    }
+  }
 
   const ModalAsignarRevisor = () => {
     return (
       <div className="modal-content  ">
         <h5>Asignar Revisor</h5>
-        <div className="  col s6">
-          <label>Revisores:</label>
-          <select className="browser-default" defaultValue="" required>
-            <option value="" disabled>
-              Selecciona una opción
-            </option>
-            <option value="1">Antonio</option>
-            <option value="2">Luis</option>
-            <option value="2">ssdsd </option>
-          </select>
-        </div>
+
+
+            <div className="col s6">
+              <label>Unidad Academica</label>
+              <select
+                className="browser-default"
+                required
+                name=""
+              
+              >
+
+                {revisor.map((centro) => (
+                    <option value={centro.id}key={centro.id }>
+                      {centro.nombre}-{centro.clave}
+                    </option>
+                  ))}
+
+
+
+              </select>
+              <br />
+            </div>
 
         <br />
         <button type="submit" className="waves-effect waves-light btn   ">
@@ -126,6 +154,7 @@ const AdministrarSolicitudes = () => {
       </div>
     );
   };
+  
   const ModalHelp = () => {
     return (
       <div class="modal-content ">

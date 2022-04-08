@@ -73,6 +73,7 @@ const FilaS = (props) => {
           "Sin Completar"
         )}
       </td>
+
       <td>
         <Link
           to="/admin/DetallesRegistro"
