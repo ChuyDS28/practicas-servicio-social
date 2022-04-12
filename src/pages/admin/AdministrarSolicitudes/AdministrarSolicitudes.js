@@ -5,6 +5,7 @@ import parteba11 from "../../../assets/images/parteba11.png";
 import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
 import {asignarRevisor} from "../../../api/services/admin/solicitudes";
+import {obtenerUsuarios} from "../../../api/services/usuarios"
 
 const style = {
   infoContainer: {
@@ -107,7 +108,7 @@ const AdministrarSolicitudes = () => {
 
   async function getRevisor() {
     try {
-      const dataU = await asignarRevisor(0);
+      const dataU = await obtenerUsuarios(0);
       setRevisor(dataU.data);
       console.log(dataU);
     } catch (error) {
@@ -131,11 +132,16 @@ const AdministrarSolicitudes = () => {
               
               >
 
-                {revisor.map((centro) => (
-                    <option value={centro.id}key={centro.id }>
-                      {centro.nombre}-{centro.clave}
+                {revisor.map((usuario) => (
+                    <option value={usuario.id}key={usuario.id }>
+                      {usuario.nombre}
                     </option>
                   ))}
+
+
+
+
+
 
 
 

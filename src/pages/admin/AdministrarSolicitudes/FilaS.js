@@ -59,7 +59,7 @@ const FilaS = (props) => {
               props.fnAsignar();
             }}
           >
-            AsignarRevisor();
+            AsignarRevisor
           </button>
       {/* {props.revisor ? (
           revisor
