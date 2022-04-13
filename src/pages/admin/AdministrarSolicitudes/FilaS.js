@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+
 const FilaS = (props) => {
+  const { user, fn, getUsuarios } = props;
+
   let estilo = "";
   let revisor = "";
   let color2 = "";
@@ -33,7 +36,7 @@ const FilaS = (props) => {
       }}
     >
       <td>  {/*1*/}
-        <b>{props.solicitud}</b>
+        {`${user.programa.nombre}`}
       </td>
       <td> {/*2*/}
         <span className={color2} data-badge-caption="">

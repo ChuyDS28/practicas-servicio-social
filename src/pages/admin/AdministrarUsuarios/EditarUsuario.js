@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { obtenerUnidades } from "../../../api/services/unidadAcademica";
 import { editarUsuario } from "../../../api/services/usuarios";
 
-
 const EditarUsuario = (props) => {
   //let navigate = useNavigate();
 

@@ -328,10 +328,11 @@ const AgregarUsuario = () => {
                   Selecciona una opción
                 </option>
                 {unidades.map((centro, index) => (
-                  <option key={index} value={centro.id}>
+                  <option key={index} value={centro.id }>
                     {centro.nombre}
                   </option>
                 ))}
+                
               </select>
               <br />
             </div>

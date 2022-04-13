@@ -6,6 +6,7 @@ import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
 import {asignarRevisor} from "../../../api/services/admin/solicitudes";
 import {obtenerUsuarios} from "../../../api/services/usuarios"
+import {obtenerSolicitudes} from "../../../api/services/admin/solicitudes"
 
 const style = {
   infoContainer: {
@@ -106,6 +107,35 @@ const AdministrarSolicitudes = () => {
     getRevisor();
   }, []);
 
+
+
+  const [loading, setLoading] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [numPag, setNumPag] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+
+  async function getSolicitudes() {
+    if (numPag === 0) setLoading(true);
+    try {
+      const dataU = await obtenerSolicitudes(numPag);
+      // console.log(dataU);
+      if (dataU.data.length === 0) {
+        setHasMore(false);
+        setLoading(false);
+        return;
+      }
+      setHasMore(true);
+      setUsers([...users, ...dataU.data]);
+      setNumPag((newPage) => newPage + 1);
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+    }
+  }
+
+
+
+
   async function getRevisor() {
     try {
       const dataU = await obtenerUsuarios(0);
@@ -131,26 +161,19 @@ const AdministrarSolicitudes = () => {
                 name=""
               
               >
-
                 {revisor.map((usuario) => (
                     <option value={usuario.id}key={usuario.id }>
-                      {usuario.nombre}
+                      
+                     {usuario.rol === "REVISOR" &&(usuario.nombre)}
                     </option>
                   ))}
-
-
-
-
-
-
-
 
               </select>
               <br />
             </div>
 
         <br />
-        <button type="submit" className="waves-effect waves-light btn   ">
+        <button onSubmit={asignarRevisor} type="submit" className="waves-effect waves-light btn   ">
           Asignar
           <i className="material-icons right">picture_as_pdf</i>
         </button>
@@ -287,52 +310,11 @@ const AdministrarSolicitudes = () => {
           </thead>
 
           <tbody>
-            <FilaS
-              color1="trPointer teal lighten-5"
-              solicitud="Solicitud Curso Informática"
-              status="Pendiente - Asignar Revisor"
-              link="#modal1"
-              texto2="Asignar revisor"
-              fnAsignar={() => setModalAsignarRevisor(true)}
-            />
-            <FilaS
-              color1="trPointer white"
-              solicitud="Solicitud Curso Informática"
-              status="Pendiente - Asignar Revisor"
-              link="#modal1"
-              texto2="Asignar revisor"
-              fnAsignar={() => setModalAsignarRevisor(true)}
-            />
-            <FilaS
-              color1="trPointer teal lighten-5"
-              solicitud="Solicitud Curso Informática"
-              status="Asignado"
-              revisor
-              texto2="Antonio Ayola"
-              completado
-              fn={() => setModalAprobar(true)}
-              fnAsignar={() => setModalAsignarRevisor(true)}
-            />
-            <FilaS
-              color1="trPointer white"
-              solicitud="Solicitud Curso Informática"
-              status="Asignado"
-              status2="En proceso"
-              revisor
-              texto2="Antonio Ayola"
-              fnAsignar={() => setModalAsignarRevisor(true)}
-            />
-            <FilaS
-              color1="trPointer teal lighten-5"
-              solicitud="Solicitud Curso Informática"
-              status="Asignado"
-              revisor
-              texto2="Antonio Ayola"
-              completado
-              fn={() => setModalAprobar(true)}
-              fnAsignar={() => setModalAsignarRevisor(true)}
-            />
-          </tbody>
+              {users.map((user) => (
+                <FilaS key={user.id} user={user} getSolicitudess={getSolicitudes} />
+              ))}
+            </tbody>
+
         </table>
       </div>
     </>
