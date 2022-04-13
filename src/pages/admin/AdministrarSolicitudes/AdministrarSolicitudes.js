@@ -5,7 +5,6 @@ import parteba11 from "../../../assets/images/parteba11.png";
 import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
 import {asignarRevisor} from "../../../api/services/admin/solicitudes";
-import {obtenerUsuarios} from "../../../api/services/usuarios"
 import {obtenerSolicitudes} from "../../../api/services/admin/solicitudes"
 
 const style = {
@@ -101,32 +100,34 @@ const AdministrarSolicitudes = () => {
   const [modalAprobar, setModalAprobar] = useState(false);
   const [modalAyuda, setModalAyuda] = useState(false);
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
-  const [revisor, setRevisor] = useState ([])
+  const [revisor, setRevisores] = useState ([])
 
   useEffect(() => {
+    getSolicitudes();
     getRevisor();
   }, []);
 
 
 
   const [loading, setLoading] = useState(false);
-  const [users, setUsers] = useState([]);
+  const [solicitudes, setSolicitudes] = useState([]);
   const [numPag, setNumPag] = useState(0);
   const [hasMore, setHasMore] = useState(true);
 
   async function getSolicitudes() {
     if (numPag === 0) setLoading(true);
+    console.log("funcion getSolicitudes");
     try {
       const dataU = await obtenerSolicitudes(numPag);
-      // console.log(dataU);
+      console.log(dataU);
       if (dataU.data.length === 0) {
         setHasMore(false);
         setLoading(false);
         return;
       }
       setHasMore(true);
-      setUsers([...users, ...dataU.data]);
-      setNumPag((newPage) => newPage + 1);
+      setSolicitudes([...solicitudes, ...dataU.data]);
+      setNumPag((newPage) => newPage + 1); 
     } catch (error) {
       console.log(error);
       console.log(error.response);
@@ -138,8 +139,8 @@ const AdministrarSolicitudes = () => {
 
   async function getRevisor() {
     try {
-      const dataU = await obtenerUsuarios(0);
-      setRevisor(dataU.data);
+      const dataU = await (0);
+      setRevisores(dataU.data);
       console.log(dataU);
     } catch (error) {
       console.log(error);
@@ -245,12 +246,12 @@ const AdministrarSolicitudes = () => {
       <Modal open={modalAyuda} fnCloseModal={() => setModalAyuda(false)}>
         <ModalHelp />
       </Modal>
-      <Modal
+{/*       <Modal
         open={modalAsignarRevisor}
         fnCloseModal={() => setModalAsignarRevisor(false)}
       >
         <ModalAsignarRevisor />
-      </Modal>
+      </Modal> */}
       <header className="row" style={{ position: "relative", height: "50vh" }}>
         <div
           className="col s12 m11 l10 xl8 "
@@ -310,9 +311,10 @@ const AdministrarSolicitudes = () => {
           </thead>
 
           <tbody>
-              {users.map((user) => (
-                <FilaS key={user.id} user={user} getSolicitudess={getSolicitudes} />
+              {solicitudes.map((solicitud) => (
+                <FilaS key={solicitud.id} solicitud={solicitud} getSolicitudes={getSolicitudes} />
               ))}
+           
             </tbody>
 
         </table>

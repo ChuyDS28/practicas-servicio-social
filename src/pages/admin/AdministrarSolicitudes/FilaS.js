@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 
 const FilaS = (props) => {
-  const { user, fn, getUsuarios } = props;
+  const { solicitud, fn, getSolicitudes } = props;
 
   let estilo = "";
   let revisor = "";
@@ -36,20 +36,32 @@ const FilaS = (props) => {
       }}
     >
       <td>  {/*1*/}
-        {`${user.programa.nombre}`}
+        {solicitud?.programa?.nombre}
       </td>
       <td> {/*2*/}
-        <span className={color2} data-badge-caption="">
-          {props.status}
-        </span>
-        <span className={colour} data-badge-caption="">
-          {props.status2}
-        </span>
+      {solicitud.revisor? 
+      <span className="new badge green white-text  "   data-badge-caption="">
+      Asignado
+    </span>:
+        <span className="new badge red white-text  "   data-badge-caption="">
+        Pendiente - Asignar Revisor
+      </span>}
+      
+      <span className="new badge orange white-text  "   data-badge-caption="">
+      {solicitud.estatus }
+    </span>
+  
+    
+        
       </td>
 
 
       <td> {/*3*/}
-        Nombre
+      {solicitud.revisor?.nombre }
+      <tr></tr>
+      {solicitud.revisor?.primerApellido }
+      <tr></tr>
+      {solicitud.revisor?.segundoApellido }
       </td>
 
 
