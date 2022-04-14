@@ -28,10 +28,10 @@ const AgregarUsuario = () => {
     });
 
     useEffect(() => {
-      getUnidades();
+      getRevisores();
     }, []);
 
-    async function getUnidades() {
+    async function getRevisores() {
       try {
         const dataU = await obtenerUnidades(0);
         setUnidades(dataU.data);

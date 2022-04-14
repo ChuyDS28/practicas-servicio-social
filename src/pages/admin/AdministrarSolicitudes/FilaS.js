@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import ModalAsignarRevisor from "./ModalAsignarRevisor";
+import Modal from "../../../components/Modal";
+
+
 
 const FilaS = (props) => {
   const { solicitud, fn, getSolicitudes } = props;
+  const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
+
+
 
   let estilo = "";
   let revisor = "";
@@ -29,7 +36,16 @@ const FilaS = (props) => {
     colour = "new badge red";
   }
 
+
+
+
   return (
+
+    <>
+      <Modal open={modalAsignarRevisor} fnCloseModal={() => setModalAsignarRevisor(false)}>
+        <ModalAsignarRevisor/>
+</Modal>
+   
     <tr
       onClick={() => {
         //  history.push("/admin/DetallesRegistro");
@@ -71,7 +87,11 @@ const FilaS = (props) => {
             className="btn"
             onClick={(e) => {
               e.stopPropagation();
-              props.fnAsignar();
+              setModalAsignarRevisor(true);
+              
+              // props.fnAsignar();
+
+              
             }}
           >
             AsignarRevisor
@@ -99,6 +119,7 @@ const FilaS = (props) => {
             onClick={(e) => {
               e.stopPropagation();
               props.fn();
+
             }}
           >
             Aprobar
@@ -118,6 +139,9 @@ const FilaS = (props) => {
         </Link>
       </td>
     </tr>
+
+
+    </>
   );
 };
 

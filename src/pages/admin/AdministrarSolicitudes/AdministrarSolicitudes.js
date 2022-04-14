@@ -4,7 +4,8 @@ import ba14 from "../../../assets/images/ba14.png";
 import parteba11 from "../../../assets/images/parteba11.png";
 import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
-import {asignarRevisor} from "../../../api/services/admin/solicitudes";
+import ModalAsignarRevisor from "./ModalAsignarRevisor";
+
 import {obtenerSolicitudes} from "../../../api/services/admin/solicitudes"
 
 const style = {
@@ -100,14 +101,12 @@ const AdministrarSolicitudes = () => {
   const [modalAprobar, setModalAprobar] = useState(false);
   const [modalAyuda, setModalAyuda] = useState(false);
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
-  const [revisor, setRevisores] = useState ([])
+
 
   useEffect(() => {
     getSolicitudes();
-    getRevisor();
+    
   }, []);
-
-
 
   const [loading, setLoading] = useState(false);
   const [solicitudes, setSolicitudes] = useState([]);
@@ -137,54 +136,7 @@ const AdministrarSolicitudes = () => {
 
 
 
-  async function getRevisor() {
-    try {
-      const dataU = await (0);
-      setRevisores(dataU.data);
-      console.log(dataU);
-    } catch (error) {
-      console.log(error);
-      console.log(error.response);
-    }
-  }
 
-  const ModalAsignarRevisor = () => {
-    return (
-      <div className="modal-content  ">
-        <h5>Asignar Revisor</h5>
-
-
-            <div className="col s6">
-              <label>Unidad Academica</label>
-              <select
-                className="browser-default"
-                required
-                name=""
-              
-              >
-                {revisor.map((usuario) => (
-                    <option value={usuario.id}key={usuario.id }>
-                      
-                     {usuario.rol === "REVISOR" &&(usuario.nombre)}
-                    </option>
-                  ))}
-
-              </select>
-              <br />
-            </div>
-
-        <br />
-        <button onSubmit={asignarRevisor} type="submit" className="waves-effect waves-light btn   ">
-          Asignar
-          <i className="material-icons right">picture_as_pdf</i>
-        </button>
-        <button className="modal-close waves-effect waves-green btn-flat right">
-          Cerrar
-        </button>
-      </div>
-    );
-  };
-  
   const ModalHelp = () => {
     return (
       <div class="modal-content ">
