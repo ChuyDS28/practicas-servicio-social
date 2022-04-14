@@ -62,6 +62,7 @@ const FilaS = (props) => {
       {solicitud.revisor?.primerApellido }
       <tr></tr>
       {solicitud.revisor?.segundoApellido }
+      <tr></tr>
       </td>
 
 
