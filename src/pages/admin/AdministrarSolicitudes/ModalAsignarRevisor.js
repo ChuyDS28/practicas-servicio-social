@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from "react";
+import M from "materialize-css/dist/js/materialize.min.js";
 import { obtenerUsuarios } from "../../../api/services/usuarios";
 import { asignarRevisor } from "../../../api/services/admin/solicitudes";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ModalAsignarRevisor = () => {
+  let navigate = useNavigate();
   const [revisores, setRevisores] = useState([]);
-  const [revisorSeleccionado, setRevisorSeleccionado] = useState(" ");
+  const [revisorSeleccionado, setRevisorSeleccionado] = useState( 
+    {idRevisor: "",}
+  );
+
+
+
+
   const getRevisores = async () => {
     try {
       const response = await obtenerUsuarios(0);
@@ -17,10 +26,36 @@ const ModalAsignarRevisor = () => {
     getRevisores();
   }, []);
 
-  function asignarRevisorSubmit() {
+
+
+  async function asignarRevisorSubmit() {
+    const data = {
+
+      idRevisor: revisorSeleccionado.idRevisor,
+    };
+
+
     console.log("ASIGANR");
     console.log({revisorSeleccionado});
+    try {
+      const responserev = await asignarRevisor(data);
+      M.toast({
+        html: "Revisor asignado",
+        classes: "green",
+      });
+      console.log(responserev);
+      // navigate("/admin/solicitudes");
+      // window.location.reload(true);
+    } catch (error) {
+      console.log(error);
+      console.log(error.responserev);
+      M.toast({ html: "Error al Asignar Revisor", classes: "red" });
+    }
   };
+
+
+
+
 
 
   return (
@@ -33,9 +68,9 @@ const ModalAsignarRevisor = () => {
         <select
           className="browser-default"
           required
-          name=""
+          name="idRevisor"
           onChange={(evento) => setRevisorSeleccionado(evento.target.value)}
-          value={revisorSeleccionado}
+          value={revisorSeleccionado.idRevisor}
         >
 
 
@@ -47,7 +82,7 @@ const ModalAsignarRevisor = () => {
 
             .map((usuario) => (
               <option value={usuario.id} key={usuario.id}>
-                {usuario.rol} - {usuario.nombre}
+                {usuario.nombre}
               </option>
             ))}
         </select>
