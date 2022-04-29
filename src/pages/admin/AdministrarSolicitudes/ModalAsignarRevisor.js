@@ -8,7 +8,8 @@ const ModalAsignarRevisor = () => {
   let navigate = useNavigate();
   const [revisores, setRevisores] = useState([]);
   const [revisorSeleccionado, setRevisorSeleccionado] = useState( 
-    {idRevisor: "",}
+    {idRevisor: "",
+  }
   );
 
 
@@ -26,11 +27,8 @@ const ModalAsignarRevisor = () => {
     getRevisores();
   }, []);
 
-
-
   async function asignarRevisorSubmit() {
     const data = {
-
       idRevisor: revisorSeleccionado.idRevisor,
     };
 
@@ -52,11 +50,6 @@ const ModalAsignarRevisor = () => {
       M.toast({ html: "Error al Asignar Revisor", classes: "red" });
     }
   };
-
-
-
-
-
 
   return (
     <div className="modal-content  ">

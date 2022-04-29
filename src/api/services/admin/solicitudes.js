@@ -14,7 +14,8 @@ export function obtenerSolicitudes(pag) {
   }
 
 export function asignarRevisor(idSolicitud, idRevisor) {
-    return axios.patch(`solicitudes/${idSolicitud}`, {
+    return axios.patch(`solicitudes/${5}`, {
       idRevisor: idRevisor,
+      
     });
   }
