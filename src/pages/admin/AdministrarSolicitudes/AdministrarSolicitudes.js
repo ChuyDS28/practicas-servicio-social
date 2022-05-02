@@ -6,6 +6,7 @@ import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
 import ModalAsignarRevisor from "./ModalAsignarRevisor";
 
+
 import {obtenerSolicitudes} from "../../../api/services/admin/solicitudes"
 
 const style = {
@@ -250,6 +251,7 @@ const AdministrarSolicitudes = () => {
         </button>
         <br />
         <br />
+        
         <table className="striped responsive-table ">
           <thead className="cyan darken-1">
             <tr className="cyan darken-1">
@@ -270,6 +272,7 @@ const AdministrarSolicitudes = () => {
             </tbody>
 
         </table>
+        
       </div>
     </>
   );

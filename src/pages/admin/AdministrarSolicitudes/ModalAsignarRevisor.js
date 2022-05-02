@@ -3,6 +3,8 @@ import M from "materialize-css/dist/js/materialize.min.js";
 import { obtenerUsuarios } from "../../../api/services/usuarios";
 import { asignarRevisor } from "../../../api/services/admin/solicitudes";
 import { useNavigate, useParams } from "react-router-dom";
+import InfiniteScroll
+ from "react-infinite-scroll-component";
 
 const ModalAsignarRevisor = () => {
   let navigate = useNavigate();
@@ -84,6 +86,32 @@ const ModalAsignarRevisor = () => {
       </div>
 
       <br />
+      <InfiniteScroll
+            dataLength={revisores.length}
+            next={getRevisores}
+            //hasMore={hasMore}
+            style={{ overflow: "-moz-hidden-unscrollable" }}
+            loader={
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            }
+            endMessage={
+              <center>
+                <b>No hay mas revisores por mmostrar</b>
+              </center>
+            }
+          >
       <button
         onClick={asignarRevisorSubmit}
         className="waves-effect waves-light btn   "
@@ -91,6 +119,7 @@ const ModalAsignarRevisor = () => {
         Asignar
         <i className="material-icons right">picture_as_pdf</i>
       </button>
+      </InfiniteScroll>
       <button className="modal-close waves-effect waves-green btn-flat right">
         Cerrar
       </button>
