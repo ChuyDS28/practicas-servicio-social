@@ -9,6 +9,8 @@ import InfiniteScroll
 const ModalAsignarRevisor = () => {
   let navigate = useNavigate();
   const [revisores, setRevisores] = useState([]);
+  const [numPag, setNumPag] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
   const [revisorSeleccionado, setRevisorSeleccionado] = useState( 
     {idRevisor: "",
   }
@@ -19,15 +21,25 @@ const ModalAsignarRevisor = () => {
 
   const getRevisores = async () => {
     try {
-      const response = await obtenerUsuarios(0);
+      const response = await obtenerUsuarios(numPag);
       console.log(response);
       setRevisores(response.data);
+      if (response.data.length === 0) {
+        setHasMore(false);
+        // setLoading(false);
+        return;
+      }
+      setHasMore(true);
+      setRevisores([...revisores, ...response.data]);
+      setNumPag((newPage) => newPage + 1);
     } catch (error) {}
   };
 
   useEffect(() => {
     getRevisores();
   }, []);
+
+
 
   async function asignarRevisorSubmit() {
     const data = {
@@ -60,7 +72,7 @@ const ModalAsignarRevisor = () => {
       <div className="col s6">
         <label>Unidad Academica</label>
 
-        <select
+        {/* <select
           className="browser-default"
           required
           name="idRevisor"
@@ -80,16 +92,21 @@ const ModalAsignarRevisor = () => {
                 {usuario.nombre}
               </option>
             ))}
-        </select>
+        </select> */}
 
         <br />
       </div>
 
       <br />
+      <div
+      id = "ModalasignarRevisor-revisores"
+      style = {{overflow: "auto", height: "150px", display:"flex", flexDirection:"column"}}
+      >
       <InfiniteScroll
+            scrollableTarget= "ModalasignarRevisor-revisores"
             dataLength={revisores.length}
             next={getRevisores}
-            //hasMore={hasMore}
+            hasMore={hasMore}
             style={{ overflow: "-moz-hidden-unscrollable" }}
             loader={
               <div class="preloader-wrapper small active">
@@ -108,10 +125,25 @@ const ModalAsignarRevisor = () => {
             }
             endMessage={
               <center>
-                <b>No hay mas revisores por mmostrar</b>
+                <b>No hay mas revisores por mostrar</b>
               </center>
             }
           >
+          {
+            revisores.map (
+              (revisor)=> 
+              <div
+              className="waves-effect waves-light btn "
+              style={{
+                display:"block", width:"100%"
+              }}
+              >
+                {revisor.id}
+              </div>
+            )
+          } 
+      </InfiniteScroll>
+      </div>
       <button
         onClick={asignarRevisorSubmit}
         className="waves-effect waves-light btn   "
@@ -119,7 +151,6 @@ const ModalAsignarRevisor = () => {
         Asignar
         <i className="material-icons right">picture_as_pdf</i>
       </button>
-      </InfiniteScroll>
       <button className="modal-close waves-effect waves-green btn-flat right">
         Cerrar
       </button>

@@ -134,10 +134,6 @@ const AdministrarSolicitudes = () => {
     }
   }
 
-
-
-
-
   const ModalHelp = () => {
     return (
       <div class="modal-content ">
