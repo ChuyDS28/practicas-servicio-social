@@ -16,9 +16,6 @@ const ModalAsignarRevisor = () => {
   }
   );
 
-
-
-
   const getRevisores = async () => {
     try {
       const response = await obtenerUsuarios(numPag);
@@ -100,7 +97,7 @@ const ModalAsignarRevisor = () => {
       <br />
       <div
       id = "ModalasignarRevisor-revisores"
-      style = {{overflow: "auto", height: "150px", display:"flex", flexDirection:"column"}}
+      style = {{overflow: "auto", height: "160px", display:"flex", flexDirection:"column"}}
       >
       <InfiniteScroll
             scrollableTarget= "ModalasignarRevisor-revisores"
@@ -128,20 +125,33 @@ const ModalAsignarRevisor = () => {
                 <b>No hay mas revisores por mostrar</b>
               </center>
             }
+          
+          
+          
           >
-          {
+{
             revisores.map (
               (revisor)=> 
+
+              
+              <center>
               <div
-              className="waves-effect waves-light btn "
+              className="waves-effect waves-light btn center "
               style={{
-                display:"block", width:"100%"
+                display:"block", width:"120px" 
               }}
+              onChange={(evento) => setRevisorSeleccionado(evento.target.value)}
+          value={revisorSeleccionado.idRevisor}
               >
-                {revisor.id}
+                {revisor.nombre}
+
               </div>
+              </center>
             )
-          } 
+          }
+
+          
+           
       </InfiniteScroll>
       </div>
       <button
