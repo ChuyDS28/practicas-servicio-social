@@ -135,7 +135,7 @@ const ModalAsignarRevisor = () => {
 
               
               <center>
-              <div
+              <button
               className="waves-effect waves-light btn center "
               style={{
                 display:"block", width:"120px" 
@@ -145,7 +145,7 @@ const ModalAsignarRevisor = () => {
               >
                 {revisor.nombre}
 
-              </div>
+              </button>
               </center>
             )
           }
