@@ -5,9 +5,9 @@ import parteba11 from "../../../assets/images/parteba11.png";
 import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
 import ModalAsignarRevisor from "./ModalAsignarRevisor";
-
-
 import {obtenerSolicitudes} from "../../../api/services/admin/solicitudes"
+
+
 
 const style = {
   infoContainer: {
