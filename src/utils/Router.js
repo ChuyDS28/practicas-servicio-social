@@ -121,7 +121,7 @@ const Router = () => {
           <Route path="menu" element={<MenuAdmin />} />
           <Route path="usuarios" element={<AdministrarUsuarios />} />
           <Route path="solicitudes" element={<AdministrarSolicitudes />} />
-          <Route path="detallesRegistro/id" element={<DetalleRegistroS />} />
+          <Route path="detallesRegistroId" element={<DetalleRegistroS />} />
           <Route path="listadoCatalogos" element={<ListadoCatalogos />} />
           <Route path="crudInstructores" element={<CRUDInstructores />} />
           <Route path="crudEscuelas" element={<CrudEscuelas />} />

@@ -132,7 +132,7 @@ const FilaS = (props) => {
 
       <td> {/*6*/}
         <Link
-          to="/admin/DetallesRegistro/id"
+          to="/admin/DetallesRegistroId"
           className="waves-effect waves-light btn outlined"
         >
           Ver

@@ -64,10 +64,10 @@ const ModalAsignarRevisor = () => {
 
   return (
     <div className="modal-content  ">
-      <h5>Asignar Revisor</h5>
+      <h5>Seleccion el Revisor:</h5>
 
       <div className="col s6">
-        <label>Unidad Academica</label>
+        <label>Usuarios</label>
 
         {/* <select
           className="browser-default"
@@ -135,17 +135,17 @@ const ModalAsignarRevisor = () => {
 
               
               <center>
-              <button
-              className="waves-effect waves-light btn center "
+              <div
+              className="waves-effect waves-black btn center "
               style={{
                 display:"block", width:"120px" 
               }}
               onChange={(evento) => setRevisorSeleccionado(evento.target.value)}
-          value={revisorSeleccionado.idRevisor}
+              value={revisorSeleccionado.idRevisor}
               >
-                {revisor.nombre}
+{revisor.nombre}
 
-              </button>
+              </div>
               </center>
             )
           }
@@ -154,6 +154,10 @@ const ModalAsignarRevisor = () => {
            
       </InfiniteScroll>
       </div>
+      <br/>
+      <div
+
+      >
       <button
         onClick={asignarRevisorSubmit}
         className="waves-effect waves-light btn   "
@@ -161,9 +165,11 @@ const ModalAsignarRevisor = () => {
         Asignar
         <i className="material-icons right">picture_as_pdf</i>
       </button>
+
       <button className="modal-close waves-effect waves-green btn-flat right">
         Cerrar
       </button>
+      </div>
     </div>
   );
 };
