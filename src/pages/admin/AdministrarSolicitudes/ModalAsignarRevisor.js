@@ -6,13 +6,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import InfiniteScroll
  from "react-infinite-scroll-component";
 
-const ModalAsignarRevisor = () => {
+const ModalAsignarRevisor = (props) => {
   let navigate = useNavigate();
+  const { solicitud, fn, getSolicitudes } = props;
   const [revisores, setRevisores] = useState([]);
   const [numPag, setNumPag] = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [revisorSeleccionado, setRevisorSeleccionado] = useState( 
     {idRevisor: "",
+    idSolicitud: solicitud?.id,
   }
   );
 
@@ -66,6 +68,13 @@ const ModalAsignarRevisor = () => {
     boton: {
       background: "#00695c",
     },
+  };
+
+  const handleChange = (e) => {
+    setRevisorSeleccionado({
+      ...revisorSeleccionado,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
@@ -144,14 +153,16 @@ const ModalAsignarRevisor = () => {
               <center>
               <button
               className="waves-effect waves-black btn center "
-              style={ "" === revisor.nombre ? style.boton : {}}
+              style={revisor.nombre === "revisor.nombre" ? style.boton : {}}
 
               // {{
-              //   display:"block", width:"120px" 
-              // }} 
+              //   display:"block", width:"120px"
+              // }}
 
-              onChange={(evento) => setRevisorSeleccionado(evento.target.value)}
+              // onChange={(evento) => setRevisorSeleccionado(evento.target.value)}
+              onChange={handleChange}
               value={revisorSeleccionado.idRevisor}
+             
               >
 {revisor.nombre}
               </button>

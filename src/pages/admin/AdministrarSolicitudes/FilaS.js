@@ -73,7 +73,7 @@ const FilaS = (props) => {
 
 
       <td> {/*3*/}
-      {solicitud.revisor?.nombre }
+      {solicitud.revisor?.nombre}
       <tr></tr>
       {solicitud.revisor?.primerApellido }
       <tr></tr>
