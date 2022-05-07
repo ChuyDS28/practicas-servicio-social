@@ -43,7 +43,6 @@ const ModalAsignarRevisor = () => {
       idRevisor: revisorSeleccionado.idRevisor,
     };
 
-
     console.log("ASIGANR");
     console.log({revisorSeleccionado});
     try {
@@ -60,6 +59,13 @@ const ModalAsignarRevisor = () => {
       console.log(error.responserev);
       M.toast({ html: "Error al Asignar Revisor", classes: "red" });
     }
+  };
+
+
+  const style = {
+    boton: {
+      background: "#00695c",
+    },
   };
 
   return (
@@ -99,6 +105,7 @@ const ModalAsignarRevisor = () => {
       id = "ModalasignarRevisor-revisores"
       style = {{overflow: "auto", height: "160px", display:"flex", flexDirection:"column"}}
       >
+        
       <InfiniteScroll
             scrollableTarget= "ModalasignarRevisor-revisores"
             dataLength={revisores.length}
@@ -135,17 +142,19 @@ const ModalAsignarRevisor = () => {
 
               
               <center>
-              <div
+              <button
               className="waves-effect waves-black btn center "
-              style={{
-                display:"block", width:"120px" 
-              }}
+              style={ "" === revisor.nombre ? style.boton : {}}
+
+              // {{
+              //   display:"block", width:"120px" 
+              // }} 
+
               onChange={(evento) => setRevisorSeleccionado(evento.target.value)}
               value={revisorSeleccionado.idRevisor}
               >
 {revisor.nombre}
-
-              </div>
+              </button>
               </center>
             )
           }
