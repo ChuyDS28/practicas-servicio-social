@@ -4,13 +4,11 @@ import ba14 from "../../../assets/images/ba14.png";
 import parteba11 from "../../../assets/images/parteba11.png";
 import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
-import {obtenerSolicitudes} from "../../../api/services/admin/solicitudes"
+import { obtenerSolicitudes } from "../../../api/services/admin/solicitudes";
 import M from "materialize-css/dist/js/materialize.min.js";
 import { obtenerUsuarios } from "../../../api/services/usuarios";
 import { asignarRevisor } from "../../../api/services/admin/solicitudes";
-import InfiniteScroll
- from "react-infinite-scroll-component";
-
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const style = {
   infoContainer: {
@@ -106,10 +104,8 @@ const AdministrarSolicitudes = () => {
   const [modalAyuda, setModalAyuda] = useState(false);
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
 
-
   useEffect(() => {
     getSolicitudes();
-    
   }, []);
 
   const [loading, setLoading] = useState(false);
@@ -130,7 +126,7 @@ const AdministrarSolicitudes = () => {
       }
       setHasMore(true);
       setSolicitudes([...solicitudes, ...dataU.data]);
-      setNumPag((newPage) => newPage + 1); 
+      setNumPag((newPage) => newPage + 1);
     } catch (error) {
       console.log(error);
       console.log(error.response);
@@ -195,11 +191,10 @@ const AdministrarSolicitudes = () => {
     const [revisores, setRevisores] = useState([]);
     const [numPag, setNumPag] = useState(0);
     const [hasMore, setHasMore] = useState(true);
-    const [revisorSeleccionado, setRevisorSeleccionado] = useState( 
-      {idRevisor: "",
-    }
-    );
-  
+    const [revisorSeleccionado, setRevisorSeleccionado] = useState({
+      idRevisor: "",
+    });
+
     const getRevisores = async () => {
       try {
         const response = await obtenerUsuarios(numPag);
@@ -215,7 +210,7 @@ const AdministrarSolicitudes = () => {
         setNumPag((newPage) => newPage + 1);
       } catch (error) {}
     };
-  
+
     // useEffect(() => {
     //   getRevisores();
     // }, []);
@@ -224,10 +219,9 @@ const AdministrarSolicitudes = () => {
       const data = {
         idRevisor: revisorSeleccionado.idRevisor,
       };
-  
-  
+
       console.log("ASIGANR");
-      console.log({revisorSeleccionado});
+      console.log({ revisorSeleccionado });
       try {
         const responserev = await asignarRevisor(data);
         M.toast({
@@ -235,22 +229,22 @@ const AdministrarSolicitudes = () => {
           classes: "green",
         });
         console.log(responserev);
-        navigate("/admin/solicitudes");
-        window.location.reload(true);
+        // navigate("/admin/solicitudes");
+        // window.location.reload(true);
       } catch (error) {
         console.log(error);
         console.log(error.responserev);
         M.toast({ html: "Error al Asignar Revisor", classes: "red" });
       }
-    };
-  
+    }
+
     return (
       <div className="modal-content  ">
         <h5>Asignar Revisor</h5>
-  
+
         <div className="col s6">
           <label>Unidad Academica</label>
-  
+
           {/* <select
             className="browser-default"
             required
@@ -272,69 +266,65 @@ const AdministrarSolicitudes = () => {
                 </option>
               ))}
           </select> */}
-  
+
           <br />
         </div>
-  
+
         <br />
         <div
-        id = "ModalasignarRevisor-revisores"
-        style = {{overflow: "auto", height: "160px", display:"flex", flexDirection:"column"}}
+          id="ModalasignarRevisor-revisores"
+          style={{
+            overflow: "auto",
+            height: "160px",
+            display: "flex",
+            flexDirection: "column",
+          }}
         >
-        <InfiniteScroll
-              scrollableTarget= "ModalasignarRevisor-revisores"
-              dataLength={revisores.length}
-              next={getRevisores}
-              hasMore={hasMore}
-              style={{ overflow: "-moz-hidden-unscrollable" }}
-              loader={
-                <div class="preloader-wrapper small active">
-                  <div class="spinner-layer spinner-green-only">
-                    <div class="circle-clipper left">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="gap-patch">
-                      <div class="circle"></div>
-                    </div>
-                    <div class="circle-clipper right">
-                      <div class="circle"></div>
-                    </div>
+          <InfiniteScroll
+            scrollableTarget="ModalasignarRevisor-revisores"
+            dataLength={revisores.length}
+            next={getRevisores}
+            hasMore={hasMore}
+            style={{ overflow: "-moz-hidden-unscrollable" }}
+            loader={
+              <div class="preloader-wrapper small active">
+                <div class="spinner-layer spinner-green-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
                   </div>
                 </div>
-              }
-              endMessage={
-                <center>
-                  <b>No hay mas revisores por mostrar</b>
-                </center>
-              }
-            
-            
-            
-            >
-  {
-              revisores.map (
-                (revisor)=> 
-  
-                
-                <center>
+              </div>
+            }
+            endMessage={
+              <center>
+                <b>No hay mas revisores por mostrar</b>
+              </center>
+            }
+          >
+            {revisores.map((revisor) => (
+              <center>
                 <button
-                className="waves-effect waves-light btn center "
-                style={{
-                  display:"block", width:"120px" 
-                }}
-                onChange={(evento) => setRevisorSeleccionado(evento.target.value)}
-            value={revisorSeleccionado.idRevisor}
+                  className="waves-effect waves-light btn center "
+                  style={{
+                    display: "block",
+                    width: "120px",
+                  }}
+                  onChange={(evento) =>
+                    setRevisorSeleccionado(evento.target.value)
+                  }
+                  value={revisorSeleccionado.idRevisor}
                 >
                   {revisor.nombre}
-  
                 </button>
-                </center>
-              )
-            }
-  
-            
-             
-        </InfiniteScroll>
+              </center>
+            ))}
+          </InfiniteScroll>
         </div>
         <button
           onClick={asignarRevisorSubmit}
@@ -349,34 +339,6 @@ const AdministrarSolicitudes = () => {
       </div>
     );
   };
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <>
@@ -386,12 +348,14 @@ const AdministrarSolicitudes = () => {
       <Modal open={modalAyuda} fnCloseModal={() => setModalAyuda(false)}>
         <ModalHelp />
       </Modal>
-      <Modal open={modalAsignarRevisor} fnCloseModal={() => setModalAsignarRevisor(false)}>
-        <ModalAsignarRevisor/>
+      <Modal
+        open={modalAsignarRevisor}
+        fnCloseModal={() => setModalAsignarRevisor(false)}
+      >
+        <ModalAsignarRevisor />
       </Modal>
 
-      
-{/*       <Modal
+      {/*       <Modal
         open={modalAsignarRevisor}
         fnCloseModal={() => setModalAsignarRevisor(false)}
       >
@@ -443,7 +407,7 @@ const AdministrarSolicitudes = () => {
         </button>
         <br />
         <br />
-        
+
         <table className="striped responsive-table ">
           <thead className="cyan darken-1">
             <tr className="cyan darken-1">
@@ -458,14 +422,15 @@ const AdministrarSolicitudes = () => {
           </thead>
 
           <tbody>
-              {solicitudes.map((solicitud) => (
-                <FilaS key={solicitud.id} solicitud={solicitud} getSolicitudes={getSolicitudes} />
-              ))}
-           
-            </tbody>
-
+            {solicitudes.map((solicitud) => (
+              <FilaS
+                key={solicitud.id}
+                solicitud={solicitud}
+                getSolicitudes={getSolicitudes}
+              />
+            ))}
+          </tbody>
         </table>
-        
       </div>
     </>
   );

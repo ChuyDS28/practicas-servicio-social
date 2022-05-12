@@ -3,13 +3,9 @@ import { Link, useHistory } from "react-router-dom";
 import ModalAsignarRevisor from "./ModalAsignarRevisor";
 import Modal from "../../../components/Modal";
 
-
-
 const FilaS = (props) => {
   const { solicitud, fn, getSolicitudes } = props;
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
-
-
 
   let estilo = "";
   let revisor = "";
@@ -36,73 +32,75 @@ const FilaS = (props) => {
     colour = "new badge red";
   }
 
-
-
-
   return (
-
     <>
-      <Modal open={modalAsignarRevisor} fnCloseModal={() => setModalAsignarRevisor(false)}>
-        <ModalAsignarRevisor
-        idSolicitud = {solicitud.programa.id}
-        
-        />
-</Modal>
-   
-    <tr
-      onClick={() => {
-        //  history.push("/admin/DetallesRegistro");
-      }}
-    >
-      <td>  {/*1*/}
-      {solicitud?.programa?.id}
-      </td>
-      <td>  {/*2*/}
-      {solicitud?.programa?.nombre} 
-      </td>
-      <td> {/*3*/}
-      {solicitud.revisor? 
-      <span className="new badge green white-text  "   data-badge-caption="">
-      Asignado
-    </span>:
-        <span className="new badge red white-text  "   data-badge-caption="">
-        Pendiente - Asignar Revisor
-      </span>}
-      
-      <span className="new badge orange white-text  "   data-badge-caption="">
-      {solicitud.estatus }
-    </span>
-  
-    
-        
-      </td>
+      <Modal
+        open={modalAsignarRevisor}
+        fnCloseModal={() => setModalAsignarRevisor(false)}
+      >
+        <ModalAsignarRevisor idSolicitud={solicitud.programa.id} />
+      </Modal>
 
+      <tr
+        onClick={() => {
+          //  history.push("/admin/DetallesRegistro");
+        }}
+      >
+        <td>
+          {" "}
+          {/*1*/}
+          {solicitud?.programa?.id}
+        </td>
+        <td>
+          {" "}
+          {/*2*/}
+          {solicitud?.programa?.nombre}
+        </td>
+        <td>
+          {" "}
+          {/*3*/}
+          {solicitud.revisor ? (
+            <span
+              className="new badge green white-text  "
+              data-badge-caption=""
+            >
+              Asignado
+            </span>
+          ) : (
+            <span className="new badge red white-text  " data-badge-caption="">
+              Pendiente - Asignar Revisor
+            </span>
+          )}
+          <span className="new badge orange white-text  " data-badge-caption="">
+            {solicitud.estatus}
+          </span>
+        </td>
 
-      <td> {/*4*/}
-      {solicitud.revisor?.nombre}
-      <tr></tr>
-      {solicitud.revisor?.primerApellido }
-      <tr></tr>
-      {solicitud.revisor?.segundoApellido }
-      </td>
+        <td>
+          {" "}
+          {/*4*/}
+          {solicitud.revisor?.nombre}
+          <tr></tr>
+          {solicitud.revisor?.primerApellido}
+          <tr></tr>
+          {solicitud.revisor?.segundoApellido}
+        </td>
 
-
-      <td> {/*5*/}
-        
+        <td>
+          {" "}
+          {/*5*/}
           <button
             className="btn"
             onClick={(e) => {
               e.stopPropagation();
               setModalAsignarRevisor(true);
-              
-              // props.fnAsignar();
 
-              
+              // props.fnAsignar();
             }}
           >
             AsignarRevisor
           </button>
-      {/* {props.revisor ? (
+          {/* {props.revisor ? (
           revisor
         ) : (
           <button
@@ -115,38 +113,37 @@ const FilaS = (props) => {
             {revisor}
           </button>
         )} */}
-      </td>
+        </td>
 
+        <td>
+          {" "}
+          {/*6*/}
+          {props.completado ? (
+            <button
+              className="waves-effect waves-light btn outlined"
+              onClick={(e) => {
+                e.stopPropagation();
+                props.fn();
+              }}
+            >
+              Aprobar
+            </button>
+          ) : (
+            "Sin Completar"
+          )}
+        </td>
 
-      <td> {/*6*/}
-        {props.completado ? (
-          <button
+        <td>
+          {" "}
+          {/*7*/}
+          <Link
+            to="/admin/DetallesRegistroId"
             className="waves-effect waves-light btn outlined"
-            onClick={(e) => {
-              e.stopPropagation();
-              props.fn();
-
-            }}
           >
-            Aprobar
-          </button>
-        ) : (
-          "Sin Completar"
-        )}
-      </td>
-
-
-      <td> {/*7*/}
-        <Link
-          to="/admin/DetallesRegistroId"
-          className="waves-effect waves-light btn outlined"
-        >
-          Ver
-        </Link>
-      </td>
-    </tr>
-
-
+            Ver
+          </Link>
+        </td>
+      </tr>
     </>
   );
 };
