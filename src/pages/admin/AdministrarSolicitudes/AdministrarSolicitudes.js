@@ -235,8 +235,8 @@ const AdministrarSolicitudes = () => {
           classes: "green",
         });
         console.log(responserev);
-        // navigate("/admin/solicitudes");
-        // window.location.reload(true);
+        navigate("/admin/solicitudes");
+        window.location.reload(true);
       } catch (error) {
         console.log(error);
         console.log(error.responserev);
@@ -447,8 +447,8 @@ const AdministrarSolicitudes = () => {
         <table className="striped responsive-table ">
           <thead className="cyan darken-1">
             <tr className="cyan darken-1">
-              <th className="cyan darken-1 white-text">Solicitudes</th>
               <th className="cyan darken-1 white-text">Id</th>
+              <th className="cyan darken-1 white-text">Solicitudes</th>
               <th className="cyan darken-1 white-text">Status</th>
               <th className="cyan darken-1 white-text">Revisor</th>
               <th className="cyan darken-1 white-text">Asignar</th>

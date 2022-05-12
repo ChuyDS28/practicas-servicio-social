@@ -14,7 +14,6 @@ const ModalAsignarRevisor = (props) => {
   const [hasMore, setHasMore] = useState(true);
   const [revisorSeleccionado, setRevisorSeleccionado] = useState( 
     {idRevisor: "",
-   
     nombreRevisor: "",
   }
   );
@@ -41,9 +40,6 @@ const ModalAsignarRevisor = (props) => {
 
 
   async function asignarRevisorSubmit() {
-    const data = {
-      idRevisor: revisorSeleccionado.idRevisor,   
-    };
 
     console.log("PRUEBA ASIGNAR");
     console.log({revisorSeleccionado});
@@ -68,13 +64,6 @@ const ModalAsignarRevisor = (props) => {
     boton: {
       background: "#00695c",
     },
-  };
-
-  const handleChange = (e) => {
-    setRevisorSeleccionado({
-      ...revisorSeleccionado,
-      [e.target.name]: e.target.value,
-    });
   };
 
   return (

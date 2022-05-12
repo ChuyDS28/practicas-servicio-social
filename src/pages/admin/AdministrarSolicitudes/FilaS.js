@@ -55,10 +55,10 @@ const FilaS = (props) => {
       }}
     >
       <td>  {/*1*/}
-      {solicitud?.programa?.nombre} 
+      {solicitud?.programa?.id}
       </td>
       <td>  {/*2*/}
-      {solicitud?.programa?.id}
+      {solicitud?.programa?.nombre} 
       </td>
       <td> {/*3*/}
       {solicitud.revisor? 
