@@ -448,6 +448,7 @@ const AdministrarSolicitudes = () => {
           <thead className="cyan darken-1">
             <tr className="cyan darken-1">
               <th className="cyan darken-1 white-text">Solicitudes</th>
+              <th className="cyan darken-1 white-text">Id</th>
               <th className="cyan darken-1 white-text">Status</th>
               <th className="cyan darken-1 white-text">Revisor</th>
               <th className="cyan darken-1 white-text">Asignar</th>

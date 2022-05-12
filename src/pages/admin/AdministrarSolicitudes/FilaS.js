@@ -55,9 +55,12 @@ const FilaS = (props) => {
       }}
     >
       <td>  {/*1*/}
-        {solicitud?.programa?.id}
+      {solicitud?.programa?.nombre} 
       </td>
-      <td> {/*2*/}
+      <td>  {/*2*/}
+      {solicitud?.programa?.id}
+      </td>
+      <td> {/*3*/}
       {solicitud.revisor? 
       <span className="new badge green white-text  "   data-badge-caption="">
       Asignado
@@ -75,7 +78,7 @@ const FilaS = (props) => {
       </td>
 
 
-      <td> {/*3*/}
+      <td> {/*4*/}
       {solicitud.revisor?.nombre}
       <tr></tr>
       {solicitud.revisor?.primerApellido }
@@ -84,7 +87,7 @@ const FilaS = (props) => {
       </td>
 
 
-      <td> {/*4*/}
+      <td> {/*5*/}
         
           <button
             className="btn"
@@ -115,7 +118,7 @@ const FilaS = (props) => {
       </td>
 
 
-      <td> {/*5*/}
+      <td> {/*6*/}
         {props.completado ? (
           <button
             className="waves-effect waves-light btn outlined"
@@ -133,7 +136,7 @@ const FilaS = (props) => {
       </td>
 
 
-      <td> {/*6*/}
+      <td> {/*7*/}
         <Link
           to="/admin/DetallesRegistroId"
           className="waves-effect waves-light btn outlined"
