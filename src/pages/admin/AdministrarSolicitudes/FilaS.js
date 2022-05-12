@@ -43,7 +43,10 @@ const FilaS = (props) => {
 
     <>
       <Modal open={modalAsignarRevisor} fnCloseModal={() => setModalAsignarRevisor(false)}>
-        <ModalAsignarRevisor/>
+        <ModalAsignarRevisor
+        idSolicitud = {solicitud.programa.id}
+        
+        />
 </Modal>
    
     <tr
@@ -52,7 +55,7 @@ const FilaS = (props) => {
       }}
     >
       <td>  {/*1*/}
-        {solicitud?.programa?.nombre}
+        {solicitud?.programa?.id}
       </td>
       <td> {/*2*/}
       {solicitud.revisor? 

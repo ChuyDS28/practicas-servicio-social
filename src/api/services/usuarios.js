@@ -9,7 +9,7 @@ export function activarUsuario(id) {
 }
 export function obtenerUsuarios(pag) {
   return axios.get(`usuarios`, {
-    params: { pagina: pag, tam: 5 },
+    params: { pagina: pag, tam: 20 },
   });
 }
 

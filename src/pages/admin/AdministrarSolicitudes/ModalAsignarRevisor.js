@@ -8,13 +8,14 @@ import InfiniteScroll
 
 const ModalAsignarRevisor = (props) => {
   let navigate = useNavigate();
-  const { solicitud, fn, getSolicitudes } = props;
+  const { idSolicitud, fn, getSolicitudes } = props;
   const [revisores, setRevisores] = useState([]);
   const [numPag, setNumPag] = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [revisorSeleccionado, setRevisorSeleccionado] = useState( 
     {idRevisor: "",
-    idSolicitud: solicitud?.id,
+   
+    nombreRevisor: "",
   }
   );
 
@@ -39,16 +40,15 @@ const ModalAsignarRevisor = (props) => {
   }, []);
 
 
-
   async function asignarRevisorSubmit() {
     const data = {
-      idRevisor: revisorSeleccionado.idRevisor,
+      idRevisor: revisorSeleccionado.idRevisor,   
     };
 
-    console.log("ASIGANR");
+    console.log("PRUEBA ASIGNAR");
     console.log({revisorSeleccionado});
     try {
-      const responserev = await asignarRevisor(data);
+      const responserev = await asignarRevisor(idSolicitud, revisorSeleccionado.idRevisor);
       M.toast({
         html: "Revisor asignado",
         classes: "green",
@@ -142,14 +142,10 @@ const ModalAsignarRevisor = (props) => {
               </center>
             }
           
-          
-          
           >
 {
-            revisores.map (
-              (revisor)=> 
-
-              
+              revisores.filter((usuario) => usuario.rol === "REVISOR").map (
+              (revisor)=>               
               <center>
               <button
               className="waves-effect waves-black btn center "
@@ -159,8 +155,13 @@ const ModalAsignarRevisor = (props) => {
               //   display:"block", width:"120px"
               // }}
 
-              // onChange={(evento) => setRevisorSeleccionado(evento.target.value)}
-              onChange={handleChange}
+              onClick={() => setRevisorSeleccionado(
+                {idRevisor: revisor.id,
+                nombreRevisor: revisor.nombre,
+              }
+
+              )}
+              // onClick={handleChange}
               value={revisorSeleccionado.idRevisor}
              
               >
@@ -178,6 +179,7 @@ const ModalAsignarRevisor = (props) => {
       <div
 
       >
+      <h4> REVISOR SELECCIONADO: {revisorSeleccionado.nombreRevisor}</h4>
       <button
         onClick={asignarRevisorSubmit}
         className="waves-effect waves-light btn   "
