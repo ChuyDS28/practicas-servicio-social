@@ -75,19 +75,17 @@ const ModalAsignarRevisor = (props) => {
     }
   }
 
-  const style = {
+  const styleNoSelect = {
     boton: {
       background: "#00695c",
     },
   };
-
   return (
     <div className="modal-content  ">
-      <h5>Seleccion el Revisor:</h5>
+      <h4>Selecciona al Revisor:</h4>
 
       <div className="col s6">
-        <label>Usuarios</label>
-
+        <label> Usted ha seleccionado a: {revisorSeleccionado.nombreRevisor}</label>
         {/* <select
           className="browser-default"
           required
@@ -156,7 +154,7 @@ const ModalAsignarRevisor = (props) => {
               <center>
                 <button
                   className="waves-effect waves-black btn center "
-                  style={revisor.nombre === "revisor.nombre" ? style.boton : {}}
+                  style={ revisor.nombre === revisorSeleccionado.nombreRevisor ? styleNoSelect.boton : {}}
                   // {{
                   //   display:"block", width:"120px"
                   // }}
@@ -178,8 +176,7 @@ const ModalAsignarRevisor = (props) => {
       </div>
       <br />
 
-      <h4> Usted ha seleccionado a {revisorSeleccionado.nombreRevisor}</h4>
-
+     
       <div className="input-field col s6">
         {loading ? (
           <div class="preloader-wrapper small active">
