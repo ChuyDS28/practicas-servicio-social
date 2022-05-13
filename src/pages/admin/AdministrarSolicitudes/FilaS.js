@@ -7,6 +7,7 @@ const FilaS = (props) => {
   const { solicitud, fn, getSolicitudes } = props;
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
 
+  
   let estilo = "";
   let revisor = "";
   let color2 = "";
@@ -134,10 +135,9 @@ const FilaS = (props) => {
         </td>
 
         <td>
-          {" "}
           {/*7*/}
           <Link
-            to="/admin/DetallesRegistroId"
+            to={solicitud?.programa?.id}
             className="waves-effect waves-light btn outlined"
           >
             Ver
