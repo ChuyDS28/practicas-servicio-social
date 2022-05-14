@@ -50,7 +50,7 @@ const FilaS = (props) => {
         <td>
           {" "}
           {/*1*/}
-          {solicitud?.programa?.id}
+          {solicitud.id}
         </td>
         <td>
           {" "}
@@ -137,7 +137,8 @@ const FilaS = (props) => {
         <td>
           {/*7*/}
           <Link
-            to={solicitud?.programa?.id}
+            to={`/admin/DetallesRegistro/${solicitud.id}`}
+            
             className="waves-effect waves-light btn outlined"
           >
             Ver
