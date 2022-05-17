@@ -201,7 +201,7 @@ const AdministrarSolicitudes = (props) => {
         fnCloseModal={() => setModalAsignarRevisor(false)}
       >
         <ModalAsignarRevisor
-        idSolicitud={solicitud.id}
+        
         />
       </Modal>
 
