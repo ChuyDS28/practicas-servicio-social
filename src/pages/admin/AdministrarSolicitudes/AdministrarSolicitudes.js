@@ -111,6 +111,12 @@ const AdministrarSolicitudes = (props) => {
   const [solicitudes, setSolicitudes] = useState([]);
   const [numPag, setNumPag] = useState(0);
   const [hasMore, setHasMore] = useState(true);
+  const [idSolicitud, setIdSolicitud] = useState();
+
+    const abrirModalAsignarRevisor = (id) => {
+        setIdSolicitud(id)
+        setModalAsignarRevisor(true);
+    }
 
   async function getSolicitudes() {
     if (numPag === 0) setLoading(true);
@@ -200,9 +206,11 @@ const AdministrarSolicitudes = (props) => {
         open={modalAsignarRevisor}
         fnCloseModal={() => setModalAsignarRevisor(false)}
       >
+        <h3>Modal desde Administrar Solicitudes</h3>
         <ModalAsignarRevisor
-        
+        idSolicitud={solicitud.id}
         />
+        
       </Modal>
 
       {/*       <Modal
@@ -259,7 +267,7 @@ const AdministrarSolicitudes = (props) => {
         <button
           href=""
           className="modal-trigger waves-effect waves-light btn left lime darken-2"
-          onClick={() => setModalAsignarRevisor(true)}
+          onClick={() => abrirModalAsignarRevisor(true)}
         >
          Asignar
         </button>
@@ -292,6 +300,7 @@ const AdministrarSolicitudes = (props) => {
               <FilaS
                 key={solicitud.id}
                 solicitud={solicitud}
+                abrirModalAsignarRevisor={abrirModalAsignarRevisor}
                 getSolicitudes={getSolicitudes}
               />
             ))}

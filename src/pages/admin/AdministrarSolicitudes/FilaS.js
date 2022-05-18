@@ -4,7 +4,7 @@ import ModalAsignarRevisor from "./ModalAsignarRevisor";
 import Modal from "../../../components/Modal";
 
 const FilaS = (props) => {
-  const { solicitud, fn, getSolicitudes } = props;
+  const { abrirModalAsignarRevisor, solicitud, fn, getSolicitudes } = props;
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
 
   
@@ -35,12 +35,12 @@ const FilaS = (props) => {
 
   return (
     <>
-      <Modal
+      {/* <Modal
         open={modalAsignarRevisor}
         fnCloseModal={() => setModalAsignarRevisor(false)}
       >
         <ModalAsignarRevisor idSolicitud={solicitud.programa.id} />
-      </Modal>
+      </Modal> */}
 
       <tr
         onClick={() => {
@@ -94,12 +94,13 @@ const FilaS = (props) => {
             className="btn"
             onClick={(e) => {
               e.stopPropagation();
-              setModalAsignarRevisor(true);
+              abrirModalAsignarRevisor(solicitud.programa.id);
+              //setModalAsignarRevisor(true);
 
               // props.fnAsignar();
             }}
           >
-            AsignarRevisor
+            Asignar Revisor
           </button>
           {/* {props.revisor ? (
           revisor
