@@ -25,10 +25,10 @@ const ModalAsignarRevisor = (props) => {
       setRevisores(response.data);
       if (response.data.length === 0) {
         setHasMore(false);
-        // setLoading(false);
+        //setLoading();
         return;
       }
-      setHasMore(true);
+      setHasMore(false);
       setRevisores([...revisores, ...response.data]);
       setNumPag((newPage) => newPage + 1);
     } catch (error) {}
@@ -130,18 +130,18 @@ const ModalAsignarRevisor = (props) => {
           style={{ overflow: "-moz-hidden-unscrollable" }}
           loader={
             <div class="preloader-wrapper small active">
-              <div class="spinner-layer spinner-green-only">
-                <div class="circle-clipper left">
-                  <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                  <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                  <div class="circle"></div>
-                </div>
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div>
+              <div class="gap-patch">
+                <div class="circle"></div>
+              </div>
+              <div class="circle-clipper right">
+                <div class="circle"></div>
               </div>
             </div>
+          </div>
           }
           endMessage={
             <center>

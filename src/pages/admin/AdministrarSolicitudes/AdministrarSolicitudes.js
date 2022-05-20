@@ -5,7 +5,7 @@ import parteba11 from "../../../assets/images/parteba11.png";
 import FilaS from "./FilaS";
 import Modal from "../../../components/Modal";
 import { obtenerSolicitudes } from "../../../api/services/admin/solicitudes";
-import ModalAsignarRevisor from "./ModalAsignarRevisor"
+import ModalAsignarRevisor from "./ModalAsignarRevisor";
 
 const style = {
   infoContainer: {
@@ -96,13 +96,11 @@ const style = {
   },
 };
 const AdministrarSolicitudes = (props) => {
-  const { solicitud} = props;
+  const { solicitud } = props;
   let navigate = useNavigate();
   const [modalAprobar, setModalAprobar] = useState(false);
   const [modalAyuda, setModalAyuda] = useState(false);
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
-  
- 
 
   useEffect(() => {
     getSolicitudes();
@@ -114,10 +112,10 @@ const AdministrarSolicitudes = (props) => {
   const [hasMore, setHasMore] = useState(true);
   const [idSolicitud, setIdSolicitud] = useState();
 
-    const abrirModalAsignarRevisor = (id) => {
-        setIdSolicitud(id)
-        setModalAsignarRevisor(true);
-    }
+  const abrirModalAsignarRevisor = (id) => {
+    setIdSolicitud(id);
+    setModalAsignarRevisor(true);
+  };
 
   async function getSolicitudes() {
     if (numPag === 0) setLoading(true);
@@ -127,7 +125,7 @@ const AdministrarSolicitudes = (props) => {
       console.log(dataU);
       if (dataU.data.length === 0) {
         setHasMore(false);
-        setLoading(false);
+        //setLoading(false);
         return;
       }
       setHasMore(true);
@@ -192,8 +190,6 @@ const AdministrarSolicitudes = (props) => {
     </div>
   );
 
- 
-
   return (
     <>
       <Modal open={modalAprobar} fnCloseModal={() => setModalAprobar(false)}>
@@ -207,11 +203,7 @@ const AdministrarSolicitudes = (props) => {
         open={modalAsignarRevisor}
         fnCloseModal={() => setModalAsignarRevisor(false)}
       >
-        <h3>PROBANDO</h3>
-        <ModalAsignarRevisor 
-        idSolicitud= {idSolicitud}
-        />
-        
+        <ModalAsignarRevisor idSolicitud={idSolicitud} />
       </Modal>
 
       {/*       <Modal
@@ -270,18 +262,10 @@ const AdministrarSolicitudes = (props) => {
           className="modal-trigger waves-effect waves-light btn left lime darken-2"
           onClick={() => abrirModalAsignarRevisor(true)}
         >
-         Asignar
+          Asignar
         </button>
         <br />
         <br />
-
-
-
-
-
-
-
-
 
         <table className="striped responsive-table ">
           <thead className="cyan darken-1">
