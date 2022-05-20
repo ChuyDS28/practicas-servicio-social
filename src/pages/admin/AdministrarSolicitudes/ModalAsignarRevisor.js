@@ -22,7 +22,7 @@ const ModalAsignarRevisor = (props) => {
       const response = await obtenerUsuarios(numPag);
       console.log(response);
 
-      // setRevisores(response.data);
+     
       if (response.data.length === 0) {
         setHasMore(false);
         //setLoading();
