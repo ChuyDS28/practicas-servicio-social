@@ -101,6 +101,7 @@ const AdministrarSolicitudes = (props) => {
   const [modalAprobar, setModalAprobar] = useState(false);
   const [modalAyuda, setModalAyuda] = useState(false);
   const [modalAsignarRevisor, setModalAsignarRevisor] = useState(false);
+  
  
 
   useEffect(() => {
@@ -206,9 +207,9 @@ const AdministrarSolicitudes = (props) => {
         open={modalAsignarRevisor}
         fnCloseModal={() => setModalAsignarRevisor(false)}
       >
-        <h3>Modal desde Administrar Solicitudes</h3>
-        <ModalAsignarRevisor
-        idSolicitud={solicitud.id}
+        <h3>PROBANDO</h3>
+        <ModalAsignarRevisor 
+        idSolicitud= {idSolicitud}
         />
         
       </Modal>

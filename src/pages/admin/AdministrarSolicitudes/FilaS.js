@@ -94,13 +94,13 @@ const FilaS = (props) => {
             className="btn"
             onClick={(e) => {
               e.stopPropagation();
-              abrirModalAsignarRevisor(solicitud.programa.id);
+              abrirModalAsignarRevisor(solicitud.id)
               //setModalAsignarRevisor(true);
 
               // props.fnAsignar();
             }}
           >
-            Asignar Revisor
+            AsignarRevisor
           </button>
           {/* {props.revisor ? (
           revisor
