@@ -257,13 +257,6 @@ const AdministrarSolicitudes = (props) => {
           Símbología
         </button>
 
-        <button
-          href=""
-          className="modal-trigger waves-effect waves-light btn left lime darken-2"
-          onClick={() => abrirModalAsignarRevisor(true)}
-        >
-          Asignar
-        </button>
         <br />
         <br />
 
