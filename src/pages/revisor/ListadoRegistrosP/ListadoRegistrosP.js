@@ -1,7 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import parteba7 from "../../../assets/images/parteba7.png";
 import ba9 from "../../../assets/images/ba9.png";
+import {programasAsignados} from "../../../api/services/revisor/programas";
+import FilaR from "./FilaR";
 import "./ListadoRegistrosP.css"
 import Footer from "../../Footer";
 const style = {
@@ -75,9 +77,38 @@ const style = {
     padding: "25px",
     borderRadius: "5px",
   },
+
 };
 
+
 const ListadoRegistrosP = () => {
+  useEffect(() => {
+    getSolicitudes();
+  }, []);
+  const [loading, setLoading] = useState(false);
+  const [solicitudes, setSolicitudes] = useState([]);
+  const [numPag, setNumPag] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+  const [idSolicitud, setIdSolicitud] = useState();  
+  async function getSolicitudes() {
+    if (numPag === 0) setLoading(true);
+    console.log("funcion getSolicitudes");
+    try {
+      const dataU = await programasAsignados(numPag);
+      console.log(dataU);
+      if (dataU.data.length === 0) {
+        setHasMore(false);
+        //setLoading(false);
+        return;
+      }
+      setHasMore(true);
+      setSolicitudes([...solicitudes, ...dataU.data]);
+      setNumPag((newPage) => newPage + 1);
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+    }
+  }
   return (
     <>
     
@@ -122,14 +153,14 @@ const ListadoRegistrosP = () => {
         </div>
       </header>
       <br /> 
-    <div className="container section  ">
+    {/* <div className="container section  ">
       <div className="collection">
       <p className="white-text collection-item active  purple darken-2 ">
             <b>Nombre</b>
             <a className=" modal-trigger right white-text" href="#modal1">
               <b>Status</b>&nbsp;
             </a>
-          </p>
+          </p> */}
         {/*   <Link to="/user/registroDetalle" className="collection-item">
             <span className="new badge grey darken-2" data-badge-caption="">
               Deprecado
@@ -154,7 +185,8 @@ const ListadoRegistrosP = () => {
             </span>
             Curso de Informatica
           </Link> */}
-        <Link to="/revisor/revisarRegistro" className="collection-item black-text" style={{ border: "0px" }}>
+          
+        {/* <Link to="/revisor/revisarRegistro" className="collection-item black-text" style={{ border: "0px" }}>
           <span className="new badge blue  " data-badge-caption="">
             En proceso
           </span>
@@ -180,8 +212,34 @@ const ListadoRegistrosP = () => {
         </Link>
         
       </div>
-    </div>
+    </div> */}
+
+    <div className="container section  ">
+    <table>
+          <thead className="white-text collection-item active  purple darken-2 ">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Fecha</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody className="collection-item black-text" style={{ border: "0px" }}>
+            
+            {solicitudes.map((solicitud) => (
+              <FilaR
+                key={solicitud.id}
+                solicitud={solicitud}
+                link={"/revisor/revisarRegistro"}
+                getSolicitudes={getSolicitudes}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
+
   </>
+  
   );
 };
 
