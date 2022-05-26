@@ -3,18 +3,27 @@ import { Link, useHistory } from "react-router-dom";
 
 
 const FilaR = (props) => {
-  const { abrirModalAsignarRevisor, solicitud, fn, getSolicitudes } = props;
+  const { abrirModalAsignarRevisor, registro, fn, getSolicitudes } = props;
     return((
     <>
        <tr>
             <td>  
             {" "}
           {/*1*/}
-          {solicitud.id}
+          {registro.id}
             </td>   
-            <td></td>   
-            <td></td>   
-            <td></td>   
+            <td>
+              {/*2*/}
+          {registro.programa.nombre}
+              </td>   
+            <td>
+          {/*3*/}
+          {registro.fechaAprobacion}
+              </td>   
+            <td>
+         {/*4*/}
+          {registro.estatus}
+              </td>   
         </tr> 
 
     </>

@@ -83,18 +83,20 @@ const style = {
 
 const ListadoRegistrosP = () => {
   useEffect(() => {
-    getSolicitudes();
+    getRegistros();
   }, []);
   const [loading, setLoading] = useState(false);
-  const [solicitudes, setSolicitudes] = useState([]);
+  const [registros, setRegistros] = useState([]);
   const [numPag, setNumPag] = useState(0);
   const [hasMore, setHasMore] = useState(true);
   const [idSolicitud, setIdSolicitud] = useState();  
-  async function getSolicitudes() {
+ 
+ 
+  async function getRegistros() {
     if (numPag === 0) setLoading(true);
     console.log("funcion getSolicitudes");
     try {
-      const dataU = await programasAsignados(numPag);
+      const dataU = await programasAsignados(131);
       console.log(dataU);
       if (dataU.data.length === 0) {
         setHasMore(false);
@@ -102,7 +104,7 @@ const ListadoRegistrosP = () => {
         return;
       }
       setHasMore(true);
-      setSolicitudes([...solicitudes, ...dataU.data]);
+      setRegistros([...registros, ...dataU.data]);
       setNumPag((newPage) => newPage + 1);
     } catch (error) {
       console.log(error);
@@ -226,12 +228,12 @@ const ListadoRegistrosP = () => {
           </thead>
           <tbody className="collection-item black-text" style={{ border: "0px" }}>
             
-            {solicitudes.map((solicitud) => (
+            {registros.map((registro) => (
               <FilaR
-                key={solicitud.id}
-                solicitud={solicitud}
+                key={registro.id}
+                registro={registro}
                 link={"/revisor/revisarRegistro"}
-                getSolicitudes={getSolicitudes}
+                getRegistros={getRegistros}
               />
             ))}
           </tbody>
