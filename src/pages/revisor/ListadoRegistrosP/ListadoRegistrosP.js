@@ -89,10 +89,12 @@ const ListadoRegistrosP = () => {
   const [registros, setRegistros] = useState([]);
   const [numPag, setNumPag] = useState(0);
   const [hasMore, setHasMore] = useState(true);
-  const [idSolicitud, setIdSolicitud] = useState();  
+  const [idSolicitud, setIdSolicitud] = useState();
+  const [idRevisor, setIdRevisor] = useState();  
  
  
   async function getRegistros() {
+    
     if (numPag === 0) setLoading(true);
     console.log("funcion getSolicitudes");
     try {
@@ -224,6 +226,7 @@ const ListadoRegistrosP = () => {
               <th>Nombre</th>
               <th>Fecha</th>
               <th>Status</th>
+              <th>Botón</th>
             </tr>
           </thead>
           <tbody className="collection-item black-text" style={{ border: "0px" }}>

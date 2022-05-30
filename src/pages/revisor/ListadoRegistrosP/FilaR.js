@@ -23,6 +23,15 @@ const FilaR = (props) => {
             <td>
          {/*4*/}
           {registro.estatus}
+              </td> 
+              <td> 
+         {/*5*/}
+         <button
+         
+         >
+           
+         </button>
+          
               </td>   
         </tr> 
 
