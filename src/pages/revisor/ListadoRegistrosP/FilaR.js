@@ -27,9 +27,9 @@ const FilaR = (props) => {
               <td> 
          {/*5*/}
          <button
-         
+         className="waves-effect waves-light btn outlined"
          >
-           
+         VER REGISTRO  
          </button>
           
               </td>   

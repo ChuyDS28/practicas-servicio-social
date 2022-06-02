@@ -6,6 +6,7 @@ import {programasAsignados} from "../../../api/services/revisor/programas";
 import FilaR from "./FilaR";
 import "./ListadoRegistrosP.css"
 import Footer from "../../Footer";
+import { getUserData } from "../../../utils/userData";
 const style = {
   headerTitle: {
     position: "absolute",
@@ -226,7 +227,7 @@ const ListadoRegistrosP = () => {
               <th>Nombre</th>
               <th>Fecha</th>
               <th>Status</th>
-              <th>Botón</th>
+              <th>ver</th>
             </tr>
           </thead>
           <tbody className="collection-item black-text" style={{ border: "0px" }}>
